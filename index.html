@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Creator</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/body.css">
+  <style>
+    [class*="col"] {
+      padding: 1rem;
+      background-color: #33b5e5;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xxl-3 col-6">LGBTQ+</div>
+      <div class="col-xxl-6 col-3 d-flex justify-content-end" st>
+        <div class="search-button" style="display: flex;
+          align-items: center;
+          justify-content: left;
+          width: 220px;
+          height: 50px;
+          border-radius: 15px;
+          cursor: text;
+          background-color: rgb(226, 226, 226);">
+            <img src="images/search-icon.png" style="width: 16px; height: 16px;
+            margin: 10px;">
+            <input type="text" placeholder="Search" style="border: none;
+              width: 90%;
+              outline:none;
+              background-color: transparent;">
+        </div>
+      </div>
+      <div class="col-xxl-3 col-3 right-header">
+        <div class="hid-btn" style="display: flex;">
+          <div class="col-3">Home</div>
+          <div class="col-3">Cvs</div>
+          <div class="col-3">Login</div>
+          <div class="col-3">Register</div>
+        </div>
+        
+        <div class="d-xl-none col-12 text-end">
+          <button id="menu-btn" class="btn btn-light"><img src="images/hamburger-menu.png" style="width: 10px; height: 10px; object-fit: contain;"></button>
+          <div class="sidebar">   
+            <div>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">Cvs</a></li>
+              <li><a href="services.html">Login</a></li>
+              <li><a href="contact.html">Register</a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-6 col-sm-12">
+        <p>Branding | Image making</p>
+        <h1>Awesome portfolio</h1>
+      </div>
+      <div class="col-xxl-6 col-sm-12">
+        <img src="images/Image.png" class="header-img">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/header.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
