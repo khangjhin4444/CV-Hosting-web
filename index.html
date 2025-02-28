@@ -7,70 +7,160 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/body.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
-    [class*="col"] {
-      padding: 1rem;
-      background-color: #33b5e5;
-      border: 1px solid #fff;
-      color: #fff;
+    html, body {
+      font-family: Montserrat;
     }
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xxl-3 col-6">LGBTQ+</div>
-      <div class="col-xxl-6 col-3 d-flex justify-content-end" st>
-        <div class="search-button" style="display: flex;
-          align-items: center;
-          justify-content: left;
-          width: 220px;
-          height: 50px;
-          border-radius: 15px;
-          cursor: text;
-          background-color: rgb(226, 226, 226);">
+  <nav class="navbar navbar-expand-lg pt-0" style="background-color: #F8F0E5;">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand d-flex" style="margin-right: 100px;">
+        <img src="images/lgbt-6.jpg" class="img-fluid" style="margin-right: 3px; width: 40px; height: 100%;">
+        <p>LGBTQ+</p>
+      </a>
+      
+      <div class="row">
+        <button class="search-btn navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#searchBar">
+          <img src="images/search-icon.png" alt="" class="img-fluid">
+        </button>
+        
+        <button class="navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse mt-2 hidden-search" id="searchBar" style="visibility:hidden;">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">
             <img src="images/search-icon.png" style="width: 16px; height: 16px;
-            margin: 10px;">
-            <input type="text" placeholder="Search" style="border: none;
-              width: 90%;
-              outline:none;
-              background-color: transparent;">
+           margin: 10px;">
+          </span>
+          <input type="text" class="form-control" placeholder="Search">
         </div>
       </div>
-      <div class="col-xxl-3 col-3 right-header">
-        <div class="hid-btn" style="display: flex;">
-          <div class="col-3">Home</div>
-          <div class="col-3">Cvs</div>
-          <div class="col-3">Login</div>
-          <div class="col-3">Register</div>
+      
+      <div class="collapse navbar-collapse ms-auto">
+        <div class="px-2 search-button" style="
+          background-color: white;
+          border: none;
+          cursor: text;
+          border-radius: 10px;
+          gap: 6px;  width: 220px; display: flex;
+          align-items: center; justify-content: left;">
+          <div>
+            <img src="images/search-icon.png" style="width: 16px; height: 16px;
+           margin: 10px;">
+          </div>
+           
+           <input type="text" placeholder="Search" style="border: none;
+             width: 90%;
+             outline:none;
+             background-color: transparent;">
         </div>
-        
-        <div class="d-xl-none col-12 text-end">
-          <button id="menu-btn" class="btn btn-light"><img src="images/hamburger-menu.png" style="width: 10px; height: 10px; object-fit: contain;"></button>
-          <div class="sidebar">   
-            <div>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">Cvs</a></li>
-              <li><a href="services.html">Login</a></li>
-              <li><a href="contact.html">Register</a></li>
-            </div>
+      </div>
+
+      
+      
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="navbar-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="nav-link">CVs</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="nav-link">Login</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="nav-link">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- content -->
+  <section class="text-lg-start text-center pt-5" style="background-color: #F8F0E5;">
+    <div class="container">
+      <div class="d-md-flex align-items-center justify-content-around" >
+        <div class="mb-5">
+          <h2>CV | Resume making</h2>
+          <h1 style="font-weight: bold;">My awesome CV</h1>
+          <button  style="background-color: #102C57;
+            color: white;
+            width: 160px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-top: 30px;">
+            CREATE A CV
+          </button>
+        </div>
+        <div style="">
+          <div style="position: relative; width: 300px; height: 500px; margin-top: 10px;">
+            <img class="cv-image" src="images/Developer X.png" style="position: absolute; top: 0; left: 70px; z-index: 1; width: 80%;">
+            <img class="cv-image" src="images/Creative X.png" style="position: absolute; top: 70px; left: 120px; z-index: 2; width: 80%;">
+            <img class="cv-image" src="images/Designer X.png" style="position: absolute; top: 140px; left: 170px; z-index: 3; width: 80%;">
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+  <section class="text-center">
+    <div class="container-fluid pb-5" style="background-color: #F8F0E5; padding-top: 70px; padding-left: 100px; padding-right: 100px;">
+      <div class="p-4" style="
+        font-weight: 600;
+        font-size: 35px; border: 2px solid rgba(0, 0, 0, 0.2); border-left: none; border-right: none;">Stand out with your CV - Unlock new opportunities!</div>
+    </div>
+  </section>
+
+  <section class="text-start">
+    <div class="container-fluid" style="background-color:#F8F0E5;">
+      <div class="container" style="
+      padding: 100px;
+      background-color: #F8F0E5;">
+      <div>
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md order-2">
+            <img src="images/Vector.png" alt="" srcset="">
+            <h1 style="
+            font-weight: 600;
+            font-size: 35px;">Generate an interview-ready cv in minutes</h1>
+            <p class="pt-5" style="font-size: 25px;">Create a polished, professional CV in minutes with our expertly designed templates. Stand out, impress recruiters, and land your next job with ease!</p>
+          </div>
+
+          <div class="col-md pb-5 order 1">
+            <img src="images/Vector (1).png" class="img-fluid">
           </div>
         </div>
       </div>
     </div>
-  </div>
+    </div>
+  </section>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xxl-6 col-sm-12">
-        <p>Branding | Image making</p>
-        <h1>Awesome portfolio</h1>
-      </div>
-      <div class="col-xxl-6 col-sm-12">
-        <img src="images/Image.png" class="header-img">
+  <section class="text-start pt-5" style="background-color: #F8F0E5;">
+    <div class="container">
+      <div class="row align-items-center justify-content-around">
+        <div class="col-md pb-5">
+          <img src="images/Vector (2).png" alt="" srcset="">
+        </div>
+        <div class="col-md pt-5">
+          <img src="images/Vector.png" alt="" srcset="">
+          <h1 style="
+          font-weight: 600;
+          font-size: 35px;">Make a matching cover letter.</h1>
+          <p class="pt-5" style="font-size: 25px;">Our <a href="#">Cover Letter Generator</a> features prewritten content targeted to the job that you can customize and add to your letter with a single click.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <script src="js/header.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

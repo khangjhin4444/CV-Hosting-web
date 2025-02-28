@@ -9,24 +9,12 @@ document.addEventListener('click', (event) => {
   }
 })
 
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.querySelector(".btn-light");
-  const sidebar = document.querySelector(".sidebar");
-
-  menuToggle.addEventListener("click", function () {
-    if (menuToggle.classList.contains("active")) {
-      sidebar.classList.add("open");
-      menuToggle.classList.remove("active");
-    } else {
-      sidebar.classList.remove("open");
-      menuToggle.classList.add("active");
-    }
-  });
-
-  document.addEventListener("click", function (event) {
-    if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
-        sidebar.classList.remove("open");
-        menuToggle.classList.add("active");
-    }
-  });
-});
+let collapse_Search = document.querySelector('.search-btn')
+collapse_Search.addEventListener('click', () => {
+  if (document.querySelector(".hidden-search").style.visibility === 'hidden') {
+    document.querySelector(".hidden-search").style.visibility = 'visible'
+  }
+  else {
+    document.querySelector(".hidden-search").style.visibility = 'hidden'
+  }
+})
