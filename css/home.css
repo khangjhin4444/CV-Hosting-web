@@ -28,6 +28,7 @@
 
 
 .carousel {
+
     width: 100%;
     display: grid;
     grid-auto-flow: column;
@@ -37,6 +38,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    position: relative;
 }
 
 
@@ -44,7 +46,7 @@
 i {
     position: absolute;
     cursor: pointer;
-    top: 50%;
+    top: 65%;
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
@@ -55,14 +57,14 @@ i {
     border-radius: 10px;
     line-height: 45px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    z-index: 100;
 }
 
-i:first-child {
+.bi-chevron-left {
     left: 25px;
-    z-index: 10;
 }
 
-i:last-child {
+.bi-chevron-right {
     right: 25px;
 }
 
