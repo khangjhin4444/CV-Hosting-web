@@ -1,80 +1,80 @@
 .carousel .card {
-  list-style: none;
-  /* scroll-snap-align: start; */
+    list-style: none;
+    /* scroll-snap-align: start; */
 }
 
 .carousel.dragging .card {
-  cursor: grab;
-  user-select: none;
-  pointer-events: none;
+    cursor: grab;
+    user-select: none;
+    pointer-events: none;
 }
 
-.carousel.dragging img{
-  user-select: none;
-  pointer-events: none;
+.carousel.dragging img {
+    user-select: none;
+    pointer-events: none;
 }
 
 .carousel.dragging {
-  scroll-behavior: auto;
-  scroll-snap-type: none;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
 }
 
-.card  img {
-  width: 300px;
-  height: 388px;
-  object-fit: cover;
+.card img {
+    width: 300px;
+    height: 388px;
+    object-fit: cover;
 }
 
 
 
 .carousel {
-  width: 100%;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 5) - 12px);
-  scroll-behavior: smooth;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 5) - 12px);
+    scroll-behavior: smooth;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
 
 
 
 i {
-  position: absolute;
-  cursor: pointer;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: #272626;
-  color: white;
-  font-size: 25px;
-  text-align: center;
-  border-radius: 10px;
-  line-height: 45px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #272626;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 45px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 i:first-child {
-  left: 25px;
-  z-index: 10;
+    left: 25px;
+    z-index: 10;
 }
 
 i:last-child {
-  right: 25px;
+    right: 25px;
 }
 
 
 @media screen and (max-width: 1200px) {
-  .carousel {
-    grid-auto-columns: calc((100%/2) - 9px);
-  }
+    .carousel {
+        grid-auto-columns: calc((100%/2) - 9px);
+    }
 }
 
 @media screen and (max-width: 770px) {
-  .carousel {
-    display: none;
-  }
-} 
+    .carousel {
+        display: none;
+    }
+}
