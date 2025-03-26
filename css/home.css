@@ -66,15 +66,87 @@ i {
   right: 25px;
 }
 
+.card .btn {
+  color: white; 
+  background-color: rgb(53, 109, 164); 
+  width: 200px;
+  cursor: pointer;
+  padding: 17px 10px;
+  border-radius: 0%;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .card-img-overlay {
+  display: flex !important;
+  align-items: flex-end;
+  justify-content: center;
+}
+
 
 @media screen and (max-width: 1200px) {
   .carousel {
     grid-auto-columns: calc((100%/2) - 9px);
   }
+
+  .card-img-overlay {
+    display: flex !important;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .card .btn {
+    width: 250px;
+    font-size: 20px;
+  }
+}
+
+.feedback input, textarea {
+  width: 100%;
+  padding: 22px 20px; /* Keep your existing padding */
+  border: none;
+  border-radius: 0%;
+  margin-bottom: 10px;
+  background-color: #F3F3F3;
+  color: black;
+  font-weight: 600;
+  text-align: left; /* This is good, keeps cursor at left */
+  box-sizing: border-box;
+}
+
+.feedback input::placeholder, textarea::placeholder {
+  text-align: left;
+  vertical-align: top;
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  color: #2D2D2D;
 }
 
 @media screen and (max-width: 770px) {
   .carousel {
+    grid-auto-columns: calc((100%/1) - 9px);
+    width: 70%;
+    height: 70%;
+  }
+
+  .bi-chevron-left {
     display: none;
   }
+
+  .bi-chevron-right {
+    display: none;
+  }
+
+  .card-img-overlay {
+    display: flex !important;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .card .btn {
+    width: 180px;
+    font-size: 15px;
+  }
 } 
+
+
