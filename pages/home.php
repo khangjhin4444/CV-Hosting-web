@@ -93,21 +93,23 @@
         <div class="mb-5">
           <h2>CV | Resume making</h2>
           <h1 style="font-weight: bold;">My awesome CV</h1>
-          <button  style="background-color: #102C57;
-            color: white;
-            width: 160px;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            margin-top: 30px;">
-            CREATE A CV
-          </button>
+          <a href="?page=experience.php">
+            <button  style="background-color: #102C57;
+              color: white;
+              width: 160px;
+              padding-top: 8px;
+              padding-bottom: 8px;
+              margin-top: 30px;">
+              CREATE A CV
+            </button>
+          </a>
         </div>
         <div>
           <div class="img-container" style="position: relative;margin-top: 10px;">
             <!-- <img class="cv-image img-1" src="images/Developer X.png" style="position: absolute; top: 0; left: 70px; z-index: 1; width: 80%;">
             <img class="cv-image img-2" src="images/Creative X.png" style="position: absolute; top: 70px; left: 120px; z-index: 2; width: 80%;">
             <img class="cv-image img-3" src="images/Designer X.png" style="position: absolute; top: 140px; left: 170px; z-index: 3; width: 80%;"> -->
-            <img src="images/Image (1).png" class="img-fluid" alt="" srcset="">
+            <img src="images/Image (1).png" class="img-fluid" alt="ad-img" srcset="">
           </div>
         </div>
        
