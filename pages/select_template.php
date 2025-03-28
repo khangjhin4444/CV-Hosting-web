@@ -1,23 +1,20 @@
-<?php
+<?php echo "hello";
 session_start();
-if (isset($_GET['student'])) {
-  $_SESSION['student'] = $_GET['student'];
-}
-if (isset($_GET['year'])) {
-  $_SESSION['year'] = $_GET['year'];
-}
+$year = $_SESSION['year'];
+echo $year;
+$student = $_SESSION['student'];
+echo $student;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experience</title>
+  <title>Choose a template</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/body.css">
-  <link rel="stylesheet" href="css/experience.css">
+  <link rel="stylesheet" href="css/select_template.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -29,6 +26,7 @@ if (isset($_GET['year'])) {
       padding: 0;
       height: 100%;
       background-color: #F8F0E5;
+      position: relative;
     }
   </style>
 </head>
@@ -101,48 +99,79 @@ if (isset($_GET['year'])) {
   </nav>
 
   <section>
-    <div class="container-fluid pt-4 text-center" style="background-color: #F8F0E5;">
-      <h1 style="font-weight: 600;">How long have you been working ?</h1>
-      <h3 class="pt-3 pb-5">We'll find the best templates for your experience level.</h3>
-      <div class="row align-items-center justify-content-center gy-3">
-        <div class="col col-lg-2">
-          <button id="none" class="year-btn">No experience</button>
+    <div class="container pt-4 text-center" style="background-color: #F8F0E5;">
+      <h1 style="font-weight: 600;">Choose your appropriate CVs</h1>
+      <p class="lead pt-3 pb-3" style="font-size: 25px;">Add your name here to see the preview of you cover letter.</p>
+      <div class="row align-items-center justify-content-center input-row">
+        <div class="col col-lg-4">
+          <input type="text" placeholder="First name">
         </div>
-        <div class="col col-lg-2">
-          <button id="3" class="year-btn">Less than 3 years</button>
-        </div>
-        <div class="col col-lg-2">
-          <button id="5" class="year-btn">3-5 years</button>
-        </div>
-        <div class="col col-lg-2">
-          <button id="10" class="year-btn">5-10 years</button>
-        </div>
-        <div class="col col-lg-2">
-          <button id="11" class="year-btn">10+ years</button>
+        <div class="col col-lg-4">
+          <input type="text" placeholder="Last name">
         </div>
       </div>
-
-      <div class="student student-display">
-        <h2 class="pt-5 pb-5" style="font-weight: 600;">Are you student</h2>
-        <div class="row align-items-center justify-content-center gy-2">
-          <div class="col col-lg-2">
-            <button id="yes" class="student-btn">Yes</button>
-          </div>
-          <div class="col col-lg-2">
-            <button id="no" class="student-btn">No</button>
-          </div>
-          <div class="col col-lg-2">
-            <button id="graduate" class="student-btn">Recent Graduate</button>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </section>
-  <div class="container pt-4" style="justify-content: flex-end; display:flex;">
-      <button class="confirm-button">CONFIRM</button>
-  </div>
   
-  <script src="./js/experience.js"></script>
+  <section>
+    <div class="container">
+      <div class="grid-container">
+        <span class="category" style="grid-area: category;">
+          <h2 class="mb-3">Category</h2>
+          <button class="chosen cate-btn">RECOMMENDED</button>
+          <br>
+          <button class="cate-btn">ALL</button>
+        </span>
+        <div class="temp" style="grid-area: temp1;">
+          <img  src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp1">
+        </div>
+        <div class="temp" style="grid-area: temp2;">
+          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp2">
+        </div>
+        <div class="temp" style="grid-area: temp3;">
+          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp3">
+        </div>
+        <div class="temp" style="grid-area: temp4;">
+          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp4">
+        </div>
+        <div class="temp" style="grid-area: temp5;">
+          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp5">
+        </div>
+        <div class="temp" style="grid-area: temp6;">
+          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp6">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="footer container-fluid d-flex p-3 px-5" style="height: 100px; visibility: hidden;">
+        <div class="row align-items-center w-100">
+            <!-- Cột 1 (bên trái) -->
+            <div class="col-auto">
+                <button class="back-btn">
+                    <i class="bi bi-arrow-left" style="font-weight: bold;"></i>
+                    Back
+                </button>
+            </div>
+
+            <!-- Khoảng trống ở giữa -->
+            <div class="col"></div>
+
+            <!-- Cột 2 (bên phải) -->
+            <div class="col-auto">
+                <a href="">Choose Later</a>
+            </div>
+
+            <!-- Cột 3 (bên phải) -->
+            <div class="col-auto">
+                <button class="confirm-btn">USE THIS TEMPLATE</button>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  
+  <script src="./js/select_template.js"></script>
 </body>
 </html>
