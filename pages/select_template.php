@@ -1,4 +1,4 @@
-<?php echo "hello";
+<?php echo 'hello';
 $year = $_SESSION['year'];
 echo $year;
 $student = $_SESSION['student'];
@@ -18,7 +18,10 @@ echo $student;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <style>
+        <style>
+    .form-floating label::after,.form-floating input {
+        background-color: #F8F0E5 !important;
+    }
     html, body {
       font-family: Montserrat;
       margin: 0;
@@ -102,11 +105,17 @@ echo $student;
       <h1 style="font-weight: 600;">Choose your appropriate CVs</h1>
       <p class="lead pt-3 pb-3" style="font-size: 25px;">Add your name here to see the preview of you cover letter.</p>
       <div class="row align-items-center justify-content-center input-row">
-        <div class="col col-lg-4 pb-3">
-          <input type="text" placeholder="First name">
+        <div class="col col-lg-4">
+            <div class="form-floating">
+                <input type="text" id="fname" name="fname" class="form-control"  placeholder="Eren">
+                <label for="fname">First Name</label>
+            </div>
         </div>
         <div class="col col-lg-4">
-          <input type="text" placeholder="Last name">
+            <div class="form-floating">
+                <input type="text" id="lname" name="lname" class="form-control" placeholder="Yeager">
+                <label for="lname">Last Name</label>
+            </div>
         </div>
       </div>
     </div>
