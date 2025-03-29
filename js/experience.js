@@ -37,7 +37,7 @@ confirmBtn.addEventListener('click', ()=> {
   // console.log(year, student);
   // window.location.href = `?page=select_template.php&year=${year}&student=${student}`;
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", "./pages/experience.php?year=" + year + "&student=" + student , true);
+  xhr.open("GET", "?year=" + year + "&student=" + student , true);
   
   xhr.onload = function () {
     if (this.status == 200) {

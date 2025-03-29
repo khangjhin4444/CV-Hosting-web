@@ -1,5 +1,4 @@
 <?php echo "hello";
-session_start();
 $year = $_SESSION['year'];
 echo $year;
 $student = $_SESSION['student'];
@@ -103,7 +102,7 @@ echo $student;
       <h1 style="font-weight: 600;">Choose your appropriate CVs</h1>
       <p class="lead pt-3 pb-3" style="font-size: 25px;">Add your name here to see the preview of you cover letter.</p>
       <div class="row align-items-center justify-content-center input-row">
-        <div class="col col-lg-4">
+        <div class="col col-lg-4 pb-3">
           <input type="text" placeholder="First name">
         </div>
         <div class="col col-lg-4">
@@ -122,33 +121,19 @@ echo $student;
           <br>
           <button class="cate-btn">ALL</button>
         </span>
-        <div class="temp" style="grid-area: temp1;">
-          <img  src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp1">
-        </div>
-        <div class="temp" style="grid-area: temp2;">
-          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp2">
-        </div>
-        <div class="temp" style="grid-area: temp3;">
-          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp3">
-        </div>
-        <div class="temp" style="grid-area: temp4;">
-          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp4">
-        </div>
-        <div class="temp" style="grid-area: temp5;">
-          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp5">
-        </div>
-        <div class="temp" style="grid-area: temp6;">
-          <img src="./cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="temp6">
-        </div>
+        <span style="grid-area: temp-list;" class="temp-list-grid">
+          <!-- render template here -->
+        </span>
+        
       </div>
     </div>
   </section>
 
   <section>
-    <div class="footer container-fluid d-flex p-3 px-5" style="height: 100px; visibility: hidden;">
+    <div class="footer container-fluid p-3 px-5" style="height: 120px; visibility: hidden;">
         <div class="row align-items-center w-100">
             <!-- Cột 1 (bên trái) -->
-            <div class="col-auto">
+            <div class="col-auto" style="grid-area: back-btn;">
                 <button class="back-btn">
                     <i class="bi bi-arrow-left" style="font-weight: bold;"></i>
                     Back
@@ -156,15 +141,15 @@ echo $student;
             </div>
 
             <!-- Khoảng trống ở giữa -->
-            <div class="col"></div>
+            <div class="col" style="grid-area: blank;"></div>
 
             <!-- Cột 2 (bên phải) -->
-            <div class="col-auto">
+            <div class="col-auto" style="grid-area: choose-later;">
                 <a href="">Choose Later</a>
             </div>
 
             <!-- Cột 3 (bên phải) -->
-            <div class="col-auto">
+            <div class="col-auto" style="grid-area: confirm-btn;">
                 <button class="confirm-btn">USE THIS TEMPLATE</button>
             </div>
         </div>

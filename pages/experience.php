@@ -1,12 +1,3 @@
-<?php
-session_start();
-if (isset($_GET['student'])) {
-  $_SESSION['student'] = $_GET['student'];
-}
-if (isset($_GET['year'])) {
-  $_SESSION['year'] = $_GET['year'];
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -13,14 +13,18 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 0.7fr 1.2fr 1.2fr 1.2fr;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr 4fr;
   grid-gap: 50px;
   margin-top: 20px;
   grid-template-areas: 
-  "category temp1 temp2 temp3"
-  "category temp4 temp5 temp6"
+  "category temp-list"
   ;
+}
+
+.temp-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
 }
 
 .grid-container img {
@@ -80,6 +84,7 @@
   box-shadow: -10px -2px 6px rgba(0, 0, 0, 0.2);
   z-index: 100;
   position: fixed;
+  display: flex;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -91,20 +96,41 @@
     grid-template-columns: 1fr;
     grid-template-areas: 
     "category"
-    "temp1"
-    "temp2"
-    "temp3"
-    "temp4"
-    "temp5"
-    "temp6"
+    "temp-list"
     ;
   }
-  /* .category {
-    display: flex;
-  } */
+  
+  .temp-list-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 
   .grid-container img {
     width: 100%;
     height: auto;
+  }
+
+  .footer .row {
+    padding: 0;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* Chia thành 2 cột */
+    grid-template-areas:
+    "back-btn choose-later"
+    "blank confirm-btn" !important; 
+  }
+
+  .back-btn {
+    font-size: 20px; /* Thu nhỏ chữ */
+    padding: 8px 15px; /* Giảm padding */
+    gap: 10px; /* Giảm khoảng cách giữa icon và chữ */
+  }
+
+  .footer a {
+    font-size: 15px; /* Giảm kích thước chữ */
+  }
+
+  .footer .confirm-btn {
+    font-size: 14px; /* Giảm kích thước chữ */
+    padding: 12px 16px; /* Giảm padding để nút nhỏ hơn */
   }
 }
