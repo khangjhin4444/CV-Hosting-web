@@ -35,7 +35,7 @@ echo $student;
 <body>
   <nav class="navbar navbar-expand-lg pt-0 pb-3" style="background-color: #F8F0E5;">
     <div class="container-fluid">         
-      <a href="#" class="navbar-brand d-flex" style="margin-right: 100px;">
+      <a href="?page=home.php" class="navbar-brand d-flex" style="margin-right: 100px;">
         <img src="images/cv 1.png" class="img-fluid" style="margin-left: 10px; margin-right: 3px; width: 50px; height: 100%;">
         <p style="font-weight: bolder; margin-left: 20px;">LGBTQ+</p>
       </a>

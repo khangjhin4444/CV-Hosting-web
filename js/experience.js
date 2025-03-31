@@ -13,6 +13,9 @@ yearBtns.forEach(btn => {
       document.querySelector('.student').classList.remove("student-display");
       document.querySelector('.student').style.visibility = "visible";
       studentBtns.forEach(btn => {
+        studentBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                  });
         btn.addEventListener('click', () => {
           studentBtns.forEach(btn => {
             btn.classList.remove('active');
@@ -26,6 +29,10 @@ yearBtns.forEach(btn => {
     } else {
       document.querySelector('.student').classList.add("student-display");
       document.querySelector('.student').style.visibility = "hidden";
+        studentBtns.forEach(btn => {
+            btn.classList.remove('active');
+          });
+
       confirmBtn.style.display = "block";
       year = btn.id;
       student = "none";
