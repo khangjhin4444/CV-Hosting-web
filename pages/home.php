@@ -15,6 +15,7 @@
   <style>
     html, body {
       font-family: Montserrat;
+      background-color: #F8F0E5;
     }
   </style>
 </head>
@@ -87,7 +88,7 @@
   </nav>
 
   <!-- content -->
-  <section class="text-lg-start text-center pt-5" style="background-color: #F8F0E5;">
+  <section class="first-section text-lg-start text-center pt-5" style="background-color: #F8F0E5;">
     <div class="container">
       <div class="d-md-flex align-items-center justify-content-around" >
         <div class="mb-5">
