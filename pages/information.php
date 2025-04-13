@@ -328,7 +328,74 @@ $tempId = $_SESSION['tempId'];
               </div>
             </form>
         </div>
-        <button class="btn-next mt-5" id="btn-step5" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step5" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT: Skill</button>
+      </div>
+
+      <div class="col-12 col-lg-10 main-content" id="step6" style="display: none;">
+        <div class="d-flex align-items-center gap-2 mb-5">
+          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
+          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step6">Go Back</a>
+        </div>
+        
+        <div class="row">
+            <h3 style="font-weight: 600;">Share your education details,<br><span style="font-weight: 500; font-size: 20px;">including any completed or ongoing studies, even if you haven't graduated yet. <span></h3>
+            <form class='pt-3'>
+              <div class="row pb-2">
+                <div class="col-12 col-md-6">
+                  <label for="institution">INSTITUTION <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="institution" placeholder="e.g. HCMUT">
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="school-location">SCHOOL LOCATION</label> 
+                  <input type="text" class="form-control" id="school-location" placeholder="e.g. Ho Chi Minh City">
+                </div>
+              </div>
+              <div class="row pb-2">
+                <div class="col-12 col-md-12 col-lg-6">
+                  <label for="degree">DEGREE</label>
+                  <input type="text" class="form-control" id="degree" placeholder="e.g.">
+                </div>
+              </div>
+              <div class="row pb-2" style="height: 100px;">
+                <div class="col-12 col-md-6">
+                  <label for="field-study">FIELD STUDY</label>
+                  <input type="text" class="form-control" id="field-study" placeholder="e.g. Computer Science">
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="graduation-year">GRADUATION YEAR</label>
+                  <div class="row pb-2" style="height: 100%;">
+                    <div class="col-12 col-xxl-6">
+                      <select name="gradMonth" id="gradMonth" style="width: 100%; height: 65%;">
+                        <option disabled selected>Month</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                    </div>
+                    <div class="col-12 col-xxl-6">
+                      <select name="gradYear" id="gradYear" style="width: 100%; height: 65%">
+                        <option disabled selected>Year</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2000">2000</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+        </div>
+        <button class="btn-next mt-5" id="btn-step6" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
       </div>
 
     </div>

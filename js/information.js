@@ -15,6 +15,7 @@ let backStep2 = document.getElementById("back-step2")
 let backStep3 = document.getElementById("back-step3")
 let backStep4 = document.getElementById("back-step4")
 let backStep5 = document.getElementById("back-step5")
+let backStep6 = document.getElementById("back-step6")
 
 let buttonStep1 = document.getElementById("btn-step1")
 let buttonStep2 = document.getElementById("btn-step2")
@@ -30,41 +31,44 @@ buttonStep1.addEventListener('click', () => {
   changeSideBar('2')
   progressElement.style.width = "20%"
 })
-
 buttonStep2.addEventListener('click', () => {
   handleButtonClick('step3')
 })
-backStep2.addEventListener('click', () => {
-  handleButtonClick('step1')
-  changeSideBar('1')
-  progressElement.style.width = "0%"
-})
-
 buttonStep3.addEventListener('click', () => {
   handleButtonClick('step4')
   changeSideBar('3')
   progressElement.style.width = "40%"
 })
-backStep3.addEventListener('click', () => {
-  handleButtonClick('step2')
-})
-
 buttonStep4.addEventListener('click', () => {
   handleButtonClick('step5')
-  
+})
+buttonStep5.addEventListener('click', () => {
+  handleButtonClick('step6')
+  changeSideBar("4")
+  progressElement.style.width = "60%"
+})
+
+
+backStep2.addEventListener('click', () => {
+  handleButtonClick('step1')
+  changeSideBar('1')
+  progressElement.style.width = "0%"
+})
+backStep3.addEventListener('click', () => {
+  handleButtonClick('step2')
 })
 backStep4.addEventListener('click', () => {
   handleButtonClick('step3')
   changeSideBar('2')
   progressElement.style.width = "20%"
 })
-
-// buttonStep5.addEventListener('click', () => {
-//   handleButtonClick('step6')
-// })
 backStep5.addEventListener('click', () => {
   handleButtonClick('step4')
-  
+})
+backStep6.addEventListener('click', () => {
+  handleButtonClick('step5')
+  changeSideBar('3')
+  progressElement.style.width = "40%"
 })
 
 
