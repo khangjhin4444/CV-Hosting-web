@@ -96,19 +96,19 @@
       <h1 style="font-weight: 600;">How long have you been working ?</h1>
       <h3 class="pt-3 pb-5">We'll find the best templates for your experience level.</h3>
       <div class="row align-items-center justify-content-center gy-3">
-        <div class="col col-lg-2">
+        <div class="col col-xxl-2">
           <button id="none" class="year-btn">No experience</button>
         </div>
-        <div class="col col-lg-2">
+        <div class="col col-xxl-2">
           <button id="3" class="year-btn">Less than 3 years</button>
         </div>
-        <div class="col col-lg-2">
+        <div class="col col-xxl-2">
           <button id="5" class="year-btn">3-5 years</button>
         </div>
-        <div class="col col-lg-2">
+        <div class="col col-xxl-2">
           <button id="10" class="year-btn">5-10 years</button>
         </div>
-        <div class="col col-lg-2">
+        <div class="col col-xxl-2">
           <button id="11" class="year-btn">10+ years</button>
         </div>
       </div>
@@ -116,13 +116,13 @@
       <div class="student student-display">
         <h2 class="pt-5 pb-5" style="font-weight: 600;">Are you student</h2>
         <div class="row align-items-center justify-content-center gy-2">
-          <div class="col col-lg-2">
+          <div class="col col-xxl-2">
             <button id="yes" class="student-btn">Yes</button>
           </div>
-          <div class="col col-lg-2">
+          <div class="col col-xxl-2">
             <button id="no" class="student-btn">No</button>
           </div>
-          <div class="col col-lg-2">
+          <div class="col col-xxl-2">
             <button id="graduate" class="student-btn">Recent Graduate</button>
           </div>
         </div>
