@@ -40,6 +40,11 @@ html, body {
   color: black;
 }
 
+.sidebar .step.finish .circle {
+  background-color: #07ff0f;
+  color: black;
+}
+
 .sidebar .progress-bar {
   background-color: #FFFFFF;
   height: 10px;

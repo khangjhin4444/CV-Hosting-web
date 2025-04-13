@@ -27,7 +27,7 @@ const progressElement = document.querySelector('.sidebar .progress-bar .progress
 
 buttonStep1.addEventListener('click', () => {
   handleButtonClick('step2')
-  changeSideBar('step2')
+  changeSideBar('2')
   progressElement.style.width = "20%"
 })
 
@@ -36,13 +36,13 @@ buttonStep2.addEventListener('click', () => {
 })
 backStep2.addEventListener('click', () => {
   handleButtonClick('step1')
-  changeSideBar('step1')
+  changeSideBar('1')
   progressElement.style.width = "0%"
 })
 
 buttonStep3.addEventListener('click', () => {
   handleButtonClick('step4')
-  changeSideBar('step3')
+  changeSideBar('3')
   progressElement.style.width = "40%"
 })
 backStep3.addEventListener('click', () => {
@@ -55,7 +55,7 @@ buttonStep4.addEventListener('click', () => {
 })
 backStep4.addEventListener('click', () => {
   handleButtonClick('step3')
-  changeSideBar('step2')
+  changeSideBar('2')
   progressElement.style.width = "20%"
 })
 
@@ -81,9 +81,17 @@ function handleButtonClick(step) {
 function changeSideBar(step) {
   document.querySelectorAll(".step").forEach(head => {
     if (head.id == step) {
+      if (head.classList.contains("finish")) {
+        head.classList.remove("finish")
+        head.querySelector(".circle").innerHTML = head.id
+      }
       head.classList.add("active")
     } else {
       head.classList.remove("active")
+    }
+    if (Number(head.id) == Number(step) - 1) {
+      head.classList.add("finish")
+      head.querySelector(".circle").innerHTML = '<img src="images/check-lg.svg">'
     }
   })
 }

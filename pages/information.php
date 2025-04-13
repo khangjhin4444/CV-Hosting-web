@@ -26,27 +26,27 @@ $tempId = $_SESSION['tempId'];
             <img src="images/cv 1.png" alt="">
             <h4 style="color: black;">LGBTQ+</h4 style="color: black;">
           </div>
-          <div class="step active" id="step1">
+          <div class="step active" id="1">
             <div class="circle">1</div>
             <span>Heading</span>
           </div>
-          <div class="step" id="step2">
+          <div class="step" id="2">
             <div class="circle">2</div>
             <span>Working history</span>
           </div>
-          <div class="step" id="step3">
+          <div class="step" id="3">
             <div class="circle">3</div>
             <span>Education</span>
           </div>
-          <div class="step" id="step4">
+          <div class="step" id="4">
             <div class="circle">4</div>
             <span>Skills</span>
           </div>
-          <div class="step" id="step5">
+          <div class="step" id="5">
             <div class="circle">5</div>
             <span>Summary</span>
           </div>
-          <div class="step" id="step6">
+          <div class="step" id="6">
             <div class="circle">6</div>
             <span>Finalize</span>
           </div>
