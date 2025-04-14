@@ -42,7 +42,7 @@ html, body {
 }
 
 .sidebar .step.finish .circle {
-  background-color: #07ff0f;
+  background-color: #68FF60;
   color: black;
 }
 
@@ -54,7 +54,7 @@ html, body {
 }
 
 .sidebar .progress-bar .progress {
-  background-color: #07ff0f;
+  background-color: #68FF60;
   height: 100%;
   width: 0%; /* Thay đổi giá trị này để hiển thị tiến trình */
 }
@@ -65,12 +65,14 @@ html, body {
   height: 100vh;
   overflow-y: auto;
   opacity: 0; /* Bắt đầu với opacity 0 */
+  display: none;
   transform: translateX(20px); /* Dịch chuyển nhẹ sang phải */
   transition: opacity 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển đổi mượt */
 }
 
 .main-content.active {
   opacity: 1; /* Hiển thị đầy đủ */
+  display: block;
   transform: translateX(0); /* Trở về vị trí ban đầu */
 }
 
@@ -95,9 +97,24 @@ form .row .col-12 input::placeholder{
   color: #9D9D9D;
 }
 
+select {
+  border: none;
+  outline: none; 
+  appearance: none; 
+  padding: 10px 14px;
+}
 
+select:focus {
+  border: 1px solid rgb(77, 219, 244); 
+}
 
 /* Media query cho màn hình nhỏ */
+@media (max-width: 1350px) {
+  body, html {
+    overflow: auto; 
+  }
+}
+
 @media (max-width: 992px) {
   .sidebar, .main-content {
     height: auto;

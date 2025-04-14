@@ -18,10 +18,10 @@ $tempId = $_SESSION['tempId'];
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container-fluid h-100">
-    <div class="row h-100">
+  <div class="container-fluid" style="height: 100%;">
+    <div class="row" style="height: 100%;">
       <!-- Sidebar -->
-      <div class="col-12 col-lg-2 sidebar">
+      <div class="col-12 col-lg-3 sidebar">
         <div>
           <div class="d-lg-flex d-none p-3 pb-4" style="gap: 10px;">
             <img src="images/cv 1.png" alt="">
@@ -61,10 +61,9 @@ $tempId = $_SESSION['tempId'];
       </div>
 
       <!-- Main Content -->
-      <!-- <div class="col-12 col-lg-10 main-content active" id="step1" >
-        <div class="d-flex align-items-center gap-2 mb-5">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="?page=select_template" class="text-primary p-0" style="font-size: 25px; font-weight: bold;">Go Back</a>
+      <div class="col-12 col-lg-9 main-content active" id="step1">
+        <div class="d-flex align-items-center gap-2 mb-2">    
+          <a href="?page=select_template" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
         
         <div class="row">
@@ -115,13 +114,12 @@ $tempId = $_SESSION['tempId'];
             <p class="pt-2" style="color: blue;">Change templates</p>
           </div>
         </div>
-        <button class="btn-next  mt-5" id="btn-step1" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT: Work History</button>
+        <button class="btn-next  mt-5" id="btn-step1" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Work History</button>
       </div>
 
-      <div class="col-12 col-lg-10 main-content" id="step2a" >
+      <div class="col-12 col-lg-9 main-content" id="step2a" >
         <div class="d-flex align-items-center gap-2 mb-5">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step2a">Go Back</a>
+          <a id="back-step2a" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
         
         <div class="row">
@@ -134,18 +132,17 @@ $tempId = $_SESSION['tempId'];
             
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-lg-block text-center">
+          <div class="col-12 col-xxl-3 d-hidden d-lg-block text-center">
             <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p>
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step2a" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step2a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      <div class="col-12 col-lg-10 main-content" id="step2b" >
-        <div class="d-flex align-items-center gap-2 mb-5">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step2b">Go Back</a>
+      <div class="col-12 col-lg-9 main-content" id="step2b" >
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <a id="back-step2b" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
         
         <div class="row">
@@ -167,12 +164,12 @@ $tempId = $_SESSION['tempId'];
                   <input type="text" class="form-control" id="location" placeholder="e.g. Hồ Chí Minh">
                 </div>
               </div>
-              <div class="row pb-2" style="height: 100px;">
-                <div class="col-12 col-md-6">
+              <div class="row pb-2" >
+                <div class="col-12 col-lg-6">
                   <label for="start-date">START DATE</label>
-                  <div class="row pb-2" style="height: 100%;">
-                    <div class="col-12 col-xxl-6">
-                      <select name="startMonth" id="startMonth" style="width: 100%; height: 65%; border: none; outline:none;">
+                  <div class="row pb-2">
+                    <div class="col-6 col-lg-6">
+                      <select name="startMonth" id="startMonth" style="width: 100%; height: 65px;">
                         <option disabled selected>Month</option>
                         <option value="01">January</option>
                         <option value="02">February</option>
@@ -188,8 +185,8 @@ $tempId = $_SESSION['tempId'];
                         <option value="12">December</option>
                       </select>
                     </div>
-                    <div class="col-12 col-xxl-6">
-                      <select name="startYear" id="startYear" style="width: 100%; height: 65%;">
+                    <div class="col-6 col-lg-6">
+                      <select name="startYear" id="startYear" style="width: 100%; height: 65px;">
                         <option disabled selected>Year</option>
                         <option value="2025">2025</option>
                         <option value="2024">2024</option>
@@ -199,11 +196,11 @@ $tempId = $_SESSION['tempId'];
                     </div>
                   </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-lg-6">
                   <label for="email">END DATE</label>
-                  <div class="row pb-2" style="height: 100%;">
-                    <div class="col-12 col-xxl-6">
-                      <select name="endMonth" id="endMonth" style="width: 100%; height: 65%;">
+                  <div class="row pb-2">
+                    <div class="col-6 col-lg-6">
+                      <select name="endMonth" id="endMonth" style="width: 100%; height: 65px;">
                         <option disabled selected>Month</option>
                         <option value="01">January</option>
                         <option value="02">February</option>
@@ -219,8 +216,8 @@ $tempId = $_SESSION['tempId'];
                         <option value="12">December</option>
                       </select>
                     </div>
-                    <div class="col-12 col-xxl-6">
-                      <select name="endYear" id="endYear" style="width: 100%; height: 65%">
+                    <div class="col-6 col-lg-6">
+                      <select name="endYear" id="endYear" style="width: 100%; height: 65px;">
                         <option disabled selected>Year</option>
                         <option value="2025">2025</option>
                         <option value="2024">2024</option>
@@ -232,20 +229,19 @@ $tempId = $_SESSION['tempId'];
                 </div>
               </div>
               <div class="row">
-                <div class="d-none d-lg-block col-lg-6"></div>
+                <div class="d-lg-block col-lg-6"></div>
                 <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
                   <input type="checkbox" id="currentlyWorking" style="width: 30px; height: 30px;"> <p style="padding: 0; font-size: 20px; margin: 0;">I currently work here</p>
                 </div>
               </div>
             </form>
         </div>
-        <button class="btn-next mt-5" id="btn-step2b" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT: Education</button>
+        <button class="btn-next mt-5" id="btn-step2b" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Education</button>
       </div>
 
-      <div class="col-12 col-lg-10 main-content" id="step3a" >
+      <div class="col-12 col-lg-9 main-content" id="step3a" >
         <div class="d-flex align-items-center gap-2 mb-5">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step3a">Go Back</a>
+          <a id="back-step3a" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
         
         <div class="row">
@@ -257,18 +253,17 @@ $tempId = $_SESSION['tempId'];
             
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-lg-block text-center">
+          <div class="col-12 col-xxl-3 d-hidden d-lg-block text-center">
             <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p>
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step3a" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step3a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      <div class="col-12 col-lg-10 main-content" id="step3b" >
-        <div class="d-flex align-items-center gap-2 mb-5">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step3b">Go Back</a>
+      <div class="col-12 col-lg-9 main-content" id="step3b" >
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <a id="back-step3b" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
         
         <div class="row">
@@ -290,22 +285,22 @@ $tempId = $_SESSION['tempId'];
                   <input type="text" class="form-control" id="degree" placeholder="e.g.">
                 </div>
               </div>
-              <div class="row pb-2" style="height: 100px;">
-                <div class="col-12 col-md-6">
+              <div class="row pb-2">
+                <div class="col-12 col-lg-6">
                   <label for="field-study">FIELD STUDY</label>
                   <input type="text" class="form-control" id="field-study" placeholder="e.g. Computer Science">
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-lg-6">
                   <label for="graduation-year">GRADUATION YEAR</label>
-                  <div class="row pb-2" style="height: 100%;">
-                    <div class="col-12 col-xxl-6">
-                      <select name="gradMonth" id="gradMonth" style="width: 100%; height: 65%;">
+                  <div class="row">
+                    <div class="col-6">
+                      <select name="gradMonth" id="gradMonth" style="width: 100%; height: 57px;">
                         <option disabled selected>Month</option>
                         <option value="01">January</option>
                         <option value="02">February</option>
-                        <option value="03">March</option>
+                        <option value="04">March</option>
                         <option value="04">April</option>
-                        <option value="05">May</option>
+                        <option value="03">May</option>
                         <option value="06">June</option>
                         <option value="07">July</option>
                         <option value="08">August</option>
@@ -315,8 +310,8 @@ $tempId = $_SESSION['tempId'];
                         <option value="12">December</option>
                       </select>
                     </div>
-                    <div class="col-12 col-xxl-6">
-                      <select name="gradYear" id="gradYear" style="width: 100%; height: 65%">
+                    <div class="col-6">
+                      <select name="gradYear" id="gradYear" style="width: 100%; height: 57px;">
                         <option disabled selected>Year</option>
                         <option value="2025">2025</option>
                         <option value="2024">2024</option>
@@ -326,16 +321,17 @@ $tempId = $_SESSION['tempId'];
                     </div>
                   </div>
                 </div>
+                  
+                
               </div>
             </form>
         </div>
-        <button class="btn-next mt-5" id="btn-step3b" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT: Skill</button>
+        <button class="btn-next mt-5" id="btn-step3b" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Skill</button>
       </div>
 
-      <div class="col-12 col-lg-10 main-content" id="step4a" >
+      <div class="col-12 col-lg-9 main-content" id="step4a" >
         <div class="d-flex align-items-center gap-2 mb-5">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step4a">Go Back</a>
+          <a id="back-step4a" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
         
         <div class="row">
@@ -347,30 +343,30 @@ $tempId = $_SESSION['tempId'];
             
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-lg-block text-center">
+          <div class="col-12 col-xxl-3 d-hidden d-lg-block text-center">
             <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p>
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step4a" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step4a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      <div class="col-12 col-lg-10 main-content" id="step4b" >
+      <div class="col-12 col-lg-9 main-content" id="step4b" >
         <div class="d-flex align-items-center gap-2 mb-2">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step4b">Go Back</a>
+          <a id="back-step4b" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
-        <div class="row">
-          <div class="col-12 col-lg-8">
-            <h3 style="font-weight: 600; margin: 0; padding: 0;">What skills would you like to highlight?<br><span style="font-weight: 500; font-size: 20px;">Choose from our pre-written examples below or <br> write your own.<span></h3>
+        <!-- <div class="row">
+          <div class="col-12 col-lg-8 order-1">
+            
           </div>
-          <div class="col-12 col-lg-4 align-self-end text-center" style="text-decoration: underline;">
-            <h3>TEXT EDITOR</h3>
+          <div class="col-12 col-lg-4 align-self-end text-center order-3" style="text-decoration: underline;">
+            
           </div>
-        </div>
+        </div> -->
 
         <div class="row pt-2">
-          <div class="col-12 col-lg-8">
+          <div class="col-12 col-xxl-8">
+            <h3 style="font-weight: 600; margin: 0; padding: 0;">What skills would you like to highlight?<br><span style="font-weight: 500; font-size: 20px;">Choose from our pre-written examples below or <br> write your own.<span></h3>
             <div style="height: 14vh; background-color: #F9E6CB; padding: 14px 16px; padding-right: 35px; border-bottom: 1px solid black;">
               <h6 style="font-weight: bold;">SEARCH BY JOB TITLE FOR PRE-WRITTEN EXAMPLES</h6>
               <div class="d-flex align-items-center">
@@ -387,20 +383,17 @@ $tempId = $_SESSION['tempId'];
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-xxl-4 text-center">
+            <h3 class="pt-3" style="text-decoration: underline; margin-bottom: 24px;">TEXT EDITOR</h3>
             <div id="editor" style="height: 46vh; background-color: white;" contenteditable="true" spellcheck="false"></div>
           </div>
         </div>
-        
-            
-
-        <button class="btn-next" id="btn-step4b" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT: Summary</button>
+        <button class="btn-next mt-4" id="btn-step4b" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Summary</button>
       </div>
 
-      <div class="col-12 col-lg-10 main-content" id="step5a" >
+      <div class="col-12 col-lg-9 main-content" id="step5a" >
         <div class="d-flex align-items-center gap-2 mb-5">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step5a">Go Back</a>
+          <a id="back-step5a" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
         
         <div class="row">
@@ -409,33 +402,32 @@ $tempId = $_SESSION['tempId'];
             <h3 class="p-0" style="font-weight: bolder;">SUMMARY</h3>
             <p class="p-0 m-0" style=" font-size: 20px; font-weight: 600;">Here's what to keep in mind:</p>
             <p class="p-0 m-0" style="font-size: 20px;">Your summary highlights why you're a great fit for the job.<br> We'll provide expert content that you can tailor to make it stand out.</p>
-            
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-lg-block text-center">
+          <div class="col-12 col-xxl-3 d-hidden d-lg-block text-center">
             <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p>
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step5a" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step5a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      <div class="col-12 col-lg-10 main-content" id="step5b" >
+      <div class="col-12 col-lg-9 main-content" id="step5b" >
         <div class="d-flex align-items-center gap-2 mb-2">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step5b">Go Back</a>
+          <a id="back-step5b" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-12 col-lg-8">
-            <h3 style="font-weight: 600; margin: 0; padding: 0;">Briefly tell us about your background<br><span style="font-weight: 500; font-size: 20px;">Choose from our pre-written examples below or <br> write your own.<span></h3>
+            
           </div>
           <div class="col-12 col-lg-4 align-self-end text-center" style="text-decoration: underline;">
             <h3>TEXT EDITOR</h3>
           </div>
-        </div>
+        </div> -->
 
         <div class="row pt-2">
-          <div class="col-12 col-lg-8">
+          <div class="col-12 col-xxl-8">
+            <h3 style="font-weight: 600; margin: 0; padding: 0;">Briefly tell us about your background<br><span style="font-weight: 500; font-size: 20px;">Choose from our pre-written examples below or <br> write your own.<span></h3>
             <div style="height: 14vh; background-color: #F9E6CB; padding: 14px 16px; padding-right: 35px; border-bottom: 1px solid black;">
               <h6 style="font-weight: bold;">SEARCH BY JOB TITLE FOR PRE-WRITTEN EXAMPLES</h6>
               <div class="d-flex align-items-center">
@@ -452,52 +444,59 @@ $tempId = $_SESSION['tempId'];
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-xxl-4 text-center">
+            <h3 class="pt-3" style="text-decoration: underline; margin-bottom: 24px;">TEXT EDITOR</h3>
             <div id="editor-2" style="height: 46vh; background-color: white;" contenteditable="true" spellcheck="false"></div>
           </div>
         </div>
-        <button class="btn-next" id="btn-step5b" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT: Finalize</button>
-      </div> -->
+        <button class="btn-next mt-4" id="btn-step5b" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Finalize</button>
+      </div>
 
-      <div class="col-12 col-lg-10 main-content active" id="step6" >
-        <div class="d-flex align-items-center gap-2 mb-5">
-          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
-          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step6">Go Back</a>
+      <div class="col-12 col-lg-9 main-content" id="step6" >
+        <div class="d-flex align-items-center gap-2">
+          <a id="back-step6" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
         </div>
         
         <div class="row">
           <div class="col-12 col-xxl-9">
             <h4 class="p-0" style="font-weight: bolder;">Do you have anything else to add?<br>These sections are optional.</h4>
             <div class="row pt-4">
-              <div class="col-12 col-lg-6 d-flex align-items-center">
-                <input type="checkbox" style="width: 22px; height: 22px;">
-                <div class="ps-2" style="font-size: 20px;">Websites, Portfolios, Profiles</div>
-              </div>
-              <div class="col-12 col-lg-6 d-flex align-items-center">
-                <input type="checkbox" style="width: 22px; height: 22px;">
-                <div class="ps-2" style="font-size: 20px;">Certifications</div>
-              </div>
+              <div class="col-12 col-lg-6"></div>
+              <div class="col-12 col-lg-6"><h5 style="font-weight: bold;">ADD YOUR OWN</h5></div>
             </div>
-
             <div class="row pt-4">
-              <div class="col-12 col-lg-6 d-flex align-items-center">
-                <input type="checkbox" style="width: 22px; height: 22px;">
-                <div class="ps-2" style="font-size: 20px;">Languages</div>
+              <div class="col-12 col-lg-6">
+                <div class="d-flex align-items-center pb-4">
+                  <input type="checkbox" style="width: 26px; height: 26px;">
+                  <div class="ps-2" style="font-size: 20px;">Websites, Portfolios, Profiles</div>
+                </div>
+                <div class="d-flex align-items-center pb-4">
+                  <input type="checkbox" style="width: 26px; height: 26px;">
+                  <div class="ps-2" style="font-size: 20px;">Certifications</div>
+                </div>
+                <div class="d-flex align-items-center pb-4">
+                  <input type="checkbox" style="width: 26px; height: 26px;">
+                  <div class="ps-2" style="font-size: 20px;">Languages</div>
+                </div>
+                <div class="d-flex align-items-center pb-4">
+                  <input type="checkbox" style="width: 26px; height: 26px;">
+                  <div class="ps-2" style="font-size: 20px;">Accomplishments</div>
+                </div>
+                <div class="d-flex align-items-center pb-4">
+                  <input type="checkbox" style="width: 26px; height: 26px;">
+                  <div class="ps-2" style="font-size: 20px;">Additional Information</div>
+                </div>
+                <div class="d-flex align-items-center pb-4">
+                  <input type="checkbox" style="width: 26px; height: 26px;">
+                  <div class="ps-2" style="font-size: 20px;">Affiliations</div>
+                </div>
               </div>
-              <div class="col-12 col-lg-6 d-flex align-items-center">
-                <input type="checkbox" style="width: 22px; height: 22px;">
-                <div class="ps-2" style="font-size: 20px;">Accomplishments</div>
-              </div>
-            </div>
 
-            <div class="row pt-4">
-              <div class="col-12 col-lg-6 d-flex align-items-center">
-                <input type="checkbox" style="width: 22px; height: 22px;">
-                <div class="ps-2" style="font-size: 20px;">Additional Information</div>
-              </div>
-              <div class="col-12 col-lg-6 d-flex align-items-center">
-                <input type="checkbox" style="width: 22px; height: 22px;">
-                <div class="ps-2" style="font-size: 20px;">Affiliations</div>
+              <div class="col-12 col-lg-6 align-self-start">
+                <div class="d-flex align-items-center pb-4">
+                  <input type="checkbox" style="width: 26px; height: 26px;">
+                  <input type="text" style="font-size: 20px; border: none; padding: 10px 12px; background-color: #F8F0E5; width: 100%;" value="Fill here">
+                </div>
               </div>
             </div>
           </div>
@@ -507,7 +506,7 @@ $tempId = $_SESSION['tempId'];
             <p class="pt-2" style="color: blue;">Change templates</p>
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step6" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step6" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
     </div>
