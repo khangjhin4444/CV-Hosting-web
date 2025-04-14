@@ -353,9 +353,9 @@ $tempId = $_SESSION['tempId'];
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step4a" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
-      </div> -->
+      </div>
 
-      <div class="col-12 col-lg-10 main-content active" id="step4b" >
+      <div class="col-12 col-lg-10 main-content" id="step4b" >
         <div class="d-flex align-items-center gap-2 mb-2">
           <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
           <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step4b">Go Back</a>
@@ -383,74 +383,7 @@ $tempId = $_SESSION['tempId'];
               </div>
             </div>
             <div style="height: 38vh; background-color: #F7E9D6; padding: 10px 12px;">
-              <!-- <p style="font-weight: bold;">Popular Job Titles</p> -->
               <div class="overflow-y-auto ps-3 pe-4 skill-container" style="width: 100%; height: 34vh; scrollbar-width: none;">
-                <div class="row p-2" style="border: 1px solid black; border-bottom: none;">Ready to use examples</div>
-                <!-- <div class="row p-2" style="border: 1px solid black; border-bottom: none;">
-                  <div class="row align-items-center p-0">
-                    <div class="col-1">
-                      <button class="add-to-editor" data-content="Teamwork and collaboration" style="border: none; padding: 0; margin: 0; background-color: transparent;">
-                        <img src="images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
-                      </button>
-                    </div>
-                    <div class="col-11 text-start">
-                      <div style="font-weight: 500;">Teamwork and collaboration</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row p-2" style="border: 1px solid black; border-bottom: none;">
-                  <div class="row align-items-center p-0">
-                    <div class="col-1">
-                      <button class="add-to-editor" data-content="Friendly, positive attitude" style="border: none; padding: 0; margin: 0; background-color: transparent;">
-                        <img src="images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
-                      </button>
-                    </div>
-                    <div class="col-11 text-start">
-                      <div style="font-weight: 500;">Friendly, positive attitude</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row p-2" style="border: 1px solid black; border-bottom: none;">
-                  <div class="row align-items-center p-0">
-                    <div class="col-1">
-                      <button class="add-to-editor" data-content="Problem-solving" style="border: none; padding: 0; margin: 0; background-color: transparent;">
-                        <img src="images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
-                      </button>
-                    </div>
-                    <div class="col-11 text-start">
-                      <div style="font-weight: 500;">Problem-solving</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row p-2" style="border: 1px solid black; border-bottom: none;">
-                  <div class="row align-items-center p-0">
-                    <div class="col-1">
-                      <button class="add-to-editor" data-content="Time management" style="border: none; padding: 0; margin: 0; background-color: transparent;">
-                        <img src="images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
-                      </button>
-                    </div>
-                    <div class="col-11 text-start">
-                      <div style="font-weight: 500;">Time management</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row p-2" style="border: 1px solid black;">
-                  <div class="row align-items-center p-0">
-                    <div class="col-1">
-                      <button class="add-to-editor" data-content="Over thinking" style="border: none; padding: 0; margin: 0; background-color: transparent;">
-                        <img src="images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
-                      </button>
-                    </div>
-                    <div class="col-11 text-start">
-                      <div style="font-weight: 500;">Over thinking</div>
-                    </div>
-                  </div>
-                </div> -->
-
               </div>
             </div>
           </div>
@@ -462,6 +395,119 @@ $tempId = $_SESSION['tempId'];
             
 
         <button class="btn-next" id="btn-step4b" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT: Summary</button>
+      </div>
+
+      <div class="col-12 col-lg-10 main-content" id="step5a" >
+        <div class="d-flex align-items-center gap-2 mb-5">
+          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
+          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step5a">Go Back</a>
+        </div>
+        
+        <div class="row">
+          <div class="col-12 col-xxl-9">
+            <p class="p-0 m-0" style="font-weight: Bold; font-size: 20px;">Finally, let's work on</p>
+            <h3 class="p-0" style="font-weight: bolder;">SUMMARY</h3>
+            <p class="p-0 m-0" style=" font-size: 20px; font-weight: 600;">Here's what to keep in mind:</p>
+            <p class="p-0 m-0" style="font-size: 20px;">Your summary highlights why you're a great fit for the job.<br> We'll provide expert content that you can tailor to make it stand out.</p>
+            
+          </div>
+
+          <div class="col-12 col-xxl-3 d-none d-lg-block text-center">
+            <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
+            <p class="pt-2" style="color: blue;">Change templates</p>
+          </div>
+        </div>
+        <button class="btn-next mt-5" id="btn-step5a" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
+      </div>
+
+      <div class="col-12 col-lg-10 main-content" id="step5b" >
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
+          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step5b">Go Back</a>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <h3 style="font-weight: 600; margin: 0; padding: 0;">Briefly tell us about your background<br><span style="font-weight: 500; font-size: 20px;">Choose from our pre-written examples below or <br> write your own.<span></h3>
+          </div>
+          <div class="col-12 col-lg-4 align-self-end text-center" style="text-decoration: underline;">
+            <h3>TEXT EDITOR</h3>
+          </div>
+        </div>
+
+        <div class="row pt-2">
+          <div class="col-12 col-lg-8">
+            <div style="height: 14vh; background-color: #F9E6CB; padding: 14px 16px; padding-right: 35px; border-bottom: 1px solid black;">
+              <h6 style="font-weight: bold;">SEARCH BY JOB TITLE FOR PRE-WRITTEN EXAMPLES</h6>
+              <div class="d-flex align-items-center">
+                <input class="me-auto search-input" type="text" placeholder="Search by job title" style="padding-left: 14px; height: 45px; width: 100%; border: 1px solid black; background-color: #F9E6CB;">
+                <div style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #E9A354; border-radius: 50%; margin-left: 10px;">
+                  <button class="search-btn" style="border: none; background-color: transparent;">
+                    <img src="images/search-icon.png" alt="" srcset="" style="width: 25px; height: 25px;">
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div style="height: 38vh; background-color: #F7E9D6; padding: 10px 12px;">
+              <div class="overflow-y-auto ps-3 pe-4 summary-container" style="width: 100%; height: 34vh; scrollbar-width: none;">
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div id="editor-2" style="height: 46vh; background-color: white;" contenteditable="true" spellcheck="false"></div>
+          </div>
+        </div>
+        <button class="btn-next" id="btn-step5b" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT: Finalize</button>
+      </div> -->
+
+      <div class="col-12 col-lg-10 main-content active" id="step6" >
+        <div class="d-flex align-items-center gap-2 mb-5">
+          <i class="bi bi-arrow-left" style="font-size: 35px; font-weight: bold"></i>
+          <a href="#" class="text-primary p-0" style="font-size: 25px; font-weight: bold;" id="back-step6">Go Back</a>
+        </div>
+        
+        <div class="row">
+          <div class="col-12 col-xxl-9">
+            <h4 class="p-0" style="font-weight: bolder;">Do you have anything else to add?<br>These sections are optional.</h4>
+            <div class="row pt-4">
+              <div class="col-12 col-lg-6 d-flex align-items-center">
+                <input type="checkbox" style="width: 22px; height: 22px;">
+                <div class="ps-2" style="font-size: 20px;">Websites, Portfolios, Profiles</div>
+              </div>
+              <div class="col-12 col-lg-6 d-flex align-items-center">
+                <input type="checkbox" style="width: 22px; height: 22px;">
+                <div class="ps-2" style="font-size: 20px;">Certifications</div>
+              </div>
+            </div>
+
+            <div class="row pt-4">
+              <div class="col-12 col-lg-6 d-flex align-items-center">
+                <input type="checkbox" style="width: 22px; height: 22px;">
+                <div class="ps-2" style="font-size: 20px;">Languages</div>
+              </div>
+              <div class="col-12 col-lg-6 d-flex align-items-center">
+                <input type="checkbox" style="width: 22px; height: 22px;">
+                <div class="ps-2" style="font-size: 20px;">Accomplishments</div>
+              </div>
+            </div>
+
+            <div class="row pt-4">
+              <div class="col-12 col-lg-6 d-flex align-items-center">
+                <input type="checkbox" style="width: 22px; height: 22px;">
+                <div class="ps-2" style="font-size: 20px;">Additional Information</div>
+              </div>
+              <div class="col-12 col-lg-6 d-flex align-items-center">
+                <input type="checkbox" style="width: 22px; height: 22px;">
+                <div class="ps-2" style="font-size: 20px;">Affiliations</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 d-none d-lg-block text-center">
+            <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
+            <p class="pt-2" style="color: blue;">Change templates</p>
+          </div>
+        </div>
+        <button class="btn-next mt-5" id="btn-step6" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position: absolute; bottom: 55px; right: 45px;">NEXT</button>
       </div>
 
     </div>
