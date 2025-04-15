@@ -40,7 +40,7 @@ if ($isLoggedIn) {
     }
     
 }
-echo($displayName)
+
 ?>
 
 <!DOCTYPE html>
@@ -151,7 +151,7 @@ echo($displayName)
                 <div class="mb-5">
                     <h2>CV | Resume making</h2>
                     <h1 style="font-weight: bold;">My awesome CV</h1>
-                    <a href="<?= BASE_URL ?>/index.php?page=create_cv">
+                    <a href="<?= BASE_URL ?>/index.php?page=experience">
                         <button style="
                             background-color: #102C57;
                             color: white;

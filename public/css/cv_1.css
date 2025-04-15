@@ -1,0 +1,83 @@
+/* 
+---------------------------------------------------------------------------------
+    STRIPPED DOWN RESUME TEMPLATE (Bootstrap Version)
+    HTML resume with Bootstrap 5
+---------------------------------------------------------------------------------
+*/
+
+
+/* Header */
+#hd h1 {
+    font-size: 3rem;
+    /* Adjusted from 48px for consistency */
+    letter-spacing: 3px;
+}
+
+#hd h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Contact Info */
+.contact-info a {
+    color: #990003;
+}
+
+.contact-info a:hover {
+    text-decoration: none;
+}
+
+/* Profile */
+p.enlarge {
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+/* Skills */
+.talent h2 {
+    margin-bottom: 0.5rem;
+}
+
+/* Technical */
+.skills-list li {
+    line-height: 1.75;
+    border-bottom: 1px solid #ccc;
+    padding: 0.25rem 0;
+}
+
+.skills-list li:last-child {
+    border-bottom: none;
+}
+
+/* Experience */
+.job {
+    position: relative;
+}
+
+.job h4 {
+    color: #666;
+}
+
+/* Footer */
+#ft {
+    font-size: 0.95rem;
+}
+
+/* Links */
+a {
+    color: #990003;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Custom Button for PDF (Override Bootstrap if needed) */
+.btn-dark {
+    background: #666;
+    border: none;
+}
+
+.btn-dark:hover {
+    background: #222;
+}

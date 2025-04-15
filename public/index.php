@@ -36,14 +36,28 @@ switch($page) {
         header("Location: " . BASE_URL . "/index.php?page=home");
         exit();
         break;
-    case 'create_cv':
+    case 'experience':
         if (!isset($_SESSION['user'])) {
             header("Location: " . BASE_URL . "/index.php?page=authentication");
             exit();
         }
-        require_once __DIR__ . '/../app/views/create_cv.php';
+        require_once __DIR__ . '/../app/views/experience.php';
         break;
     
+    case 'select_template':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        require_once __DIR__ . '/../app/views/select_template.php';
+        break;
+    case 'information':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        require_once __DIR__ . '/../app/views/information.php';
+        break;
     default:
         
         break;

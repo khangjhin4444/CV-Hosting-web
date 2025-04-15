@@ -12,16 +12,20 @@ class HomeController {
         require_once dirname(__DIR__) . '/views/authentication.php';
     }
 
-    public function createCv() {
-        require_once dirname(__DIR__) . '/views/create_cv.php';
+    public function experience() {
+        require_once dirname(__DIR__) . '/views/experience.php';
+    }
+
+    public function select_template() {
+        require_once dirname(__DIR__) . '/views/select_template.php';
+    }
+
+    public function information() {
+        require_once dirname(__DIR__) . '/views/information.php';
     }
 
     public function myCvs() {
         require_once dirname(__DIR__) . '/views/my_cvs.php';
-    }
-
-    public function contact() {
-        require_once dirname(__DIR__) . '/views/contact.php';
     }
 
     public function admin() {

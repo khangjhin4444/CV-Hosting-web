@@ -15,3 +15,63 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
+-- Bảng CVs
+CREATE TABLE cvs (
+    cv_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,   
+    content TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE personal_info (
+    personal_info_id INT AUTO_INCREMENT PRIMARY KEY,
+    cv_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    surname VARCHAR(100) NOT NULL,
+    city VARCHAR(100),
+    country VARCHAR(100),
+    postcode VARCHAR(20),
+    phone VARCHAR(20),
+    email VARCHAR(255) NOT NULL,
+    address TEXT,
+    FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE working_history (
+    work_id INT AUTO_INCREMENT PRIMARY KEY,
+    cv_id INT NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    employer VARCHAR(100) NOT NULL,
+    location VARCHAR(100),
+    start_date VARCHAR(7), -- Định dạng YYYY-MM
+    end_date VARCHAR(7), -- Định dạng YYYY-MM hoặc 'now'
+    FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
+);
+
+CREATE TABLE education (
+    education_id INT AUTO_INCREMENT PRIMARY KEY,
+    cv_id INT NOT NULL,
+    institution VARCHAR(255) NOT NULL,
+    school_location VARCHAR(100),
+    degree VARCHAR(100),
+    field_study VARCHAR(100),
+    gpa VARCHAR(10),
+    graduation_date VARCHAR(7), -- Định dạng YYYY-MM
+    FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
+);
+
+CREATE TABLE skills (
+    skill_id INT AUTO_INCREMENT PRIMARY KEY,
+    cv_id INT NOT NULL,
+    skill_name VARCHAR(100) NOT NULL,
+    FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
+);
+
+CREATE TABLE summaries (
+    summary_id INT AUTO_INCREMENT PRIMARY KEY,
+    cv_id INT NOT NULL,
+    summary_text TEXT NOT NULL,
+    FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
+);

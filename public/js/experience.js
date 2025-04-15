@@ -48,7 +48,7 @@ confirmBtn.addEventListener('click', ()=> {
   
   xhr.onload = function () {
     if (this.status == 200) {
-      window.location.href = '?page=select_template.php';
+      window.location.href = '/CV-Hosting-web-main/public/index.php?page=select_template';
     }
   };
 
