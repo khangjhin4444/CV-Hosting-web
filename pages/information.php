@@ -144,7 +144,7 @@ $tempId = $_SESSION['tempId'];
 
           </div>
 
-          <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+          <div class="col-12 col-xxl-3 d-xxl-block cv-container" id="<?php echo $tempId; ?>">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
@@ -188,18 +188,18 @@ $tempId = $_SESSION['tempId'];
                   <div class="col-6 col-lg-6">
                     <select name="startMonth" id="startMonth" style="width: 100%; height: 65px;">
                       <option disabled selected>Month</option>
-                      <option value="01">January</option>
-                      <option value="02">February</option>
-                      <option value="03">March</option>
-                      <option value="04">April</option>
-                      <option value="05">May</option>
-                      <option value="06">June</option>
-                      <option value="07">July</option>
-                      <option value="08">August</option>
-                      <option value="09">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="April">April</option>
+                      <option value="May">May</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
                     </select>
                   </div>
                   <div class="col-6 col-lg-6">
@@ -268,7 +268,7 @@ $tempId = $_SESSION['tempId'];
 
           </div>
 
-          <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+          <div class="col-12 col-xxl-3  d-xxl-block cv-container" id="<?php echo $tempId; ?>">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
@@ -317,18 +317,18 @@ $tempId = $_SESSION['tempId'];
                   <div class="col-6">
                     <select name="gradMonth" id="gradMonth" style="width: 100%; height: 57px;">
                       <option disabled selected>Month</option>
-                      <option value="01">January</option>
-                      <option value="02">February</option>
-                      <option value="04">March</option>
-                      <option value="04">April</option>
-                      <option value="03">May</option>
-                      <option value="06">June</option>
-                      <option value="07">July</option>
-                      <option value="08">August</option>
-                      <option value="09">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="April">April</option>
+                      <option value="May">May</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
                     </select>
                   </div>
                   <div class="col-6">
@@ -344,6 +344,31 @@ $tempId = $_SESSION['tempId'];
           </form>
         </div>
         <button class="btn-next mt-5" id="btn-step3b"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+      </div>
+
+      <div class="col-12 col-lg-9 main-content" id="step3c">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <a id="back-step3c" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
+        </div>
+
+        <div class="row">
+          <h3 style="font-weight: 600;">Education summary<br><span
+              style="font-weight: 500; font-size: 20px;">Provide details about your education, including any ongoing studies or incomplete programs.<span></h3>
+          <div class="c-container">
+            
+          </div>
+          
+
+          <div class="d-flex align-items-center justify-content-center p-5 mt-5" style="border: 3px dashed lightblue">
+            <button class="add-course-work" style="border: none; background-color: transparent; color:blue; text-decoration: underline; font-size: 20px;">+ Add any additional course work</button>
+          </div>
+
+        </div>
+        <button class="btn-next mt-5" id="btn-step3c"
           style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Skill</button>
       </div>
 
@@ -365,7 +390,7 @@ $tempId = $_SESSION['tempId'];
 
           </div>
 
-          <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
@@ -410,8 +435,7 @@ $tempId = $_SESSION['tempId'];
               </div>
             </div>
             <div style="height: 38vh; background-color: #F7E9D6; padding: 10px 12px;">
-              <div class="overflow-y-auto ps-3 pe-4 skill-container"
-                style="width: 100%; height: 34vh; scrollbar-width: none;">
+              <div class="overflow-y-auto ps-3 pe-4 skill-container" style="width: 100%; height: 34vh; scrollbar-width: none;">
               </div>
             </div>
           </div>
