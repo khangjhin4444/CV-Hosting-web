@@ -54,14 +54,6 @@ color: #444;">
                         Phosfluorescently implement worldwide vortals and client-focused imperatives.
                         Conveniently initiate virtual paradigms and top-line convergence.</p>
                 </div>
-                <div class='job mb-4 row gap-0'>
-                    <h2 class='h5'>Dolor sit</h2>
-                    <h3>Director, Ipsum Inc</h3>
-                    <h4>Mar 2018 to Dec 2019</h4>
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                        Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                        Conveniently initiate virtual paradigms and top-line convergence.</p>
-                </div>
             </div>
         </section>
 
