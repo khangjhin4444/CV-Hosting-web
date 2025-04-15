@@ -85,7 +85,7 @@ $tempId = $_SESSION['tempId'];
                   <input type="text" class="form-control" id="name" placeholder="e.g. Khoa">
                 </div>
                 <div class="col-12 col-md-6">
-                  <label for="surname">SURNAME</label>
+                  <label for="surname">SURNAME <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="surname" placeholder="e.g. Huỳnh Ngọc">
                 </div>
               </div>
@@ -105,7 +105,7 @@ $tempId = $_SESSION['tempId'];
               </div>
               <div class="row pb-2">
                 <div class="col-12 col-md-6">
-                  <label for="phone">PHONE</label>
+                  <label for="phone">PHONE <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="phone" placeholder="e.g. 09326868686">
                 </div>
                 <div class="col-12 col-md-6">
@@ -215,18 +215,18 @@ $tempId = $_SESSION['tempId'];
                   <div class="col-6 col-lg-6">
                     <select name="endMonth" id="endMonth" style="width: 100%; height: 65px;">
                       <option disabled selected>Month</option>
-                      <option value="01">January</option>
-                      <option value="02">February</option>
-                      <option value="03">March</option>
-                      <option value="04">April</option>
-                      <option value="05">May</option>
-                      <option value="06">June</option>
-                      <option value="07">July</option>
-                      <option value="08">August</option>
-                      <option value="09">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="April">April</option>
+                      <option value="May">May</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
                     </select>
                   </div>
                   <div class="col-6 col-lg-6">
@@ -346,6 +346,8 @@ $tempId = $_SESSION['tempId'];
         <button class="btn-next mt-5" id="btn-step3b"
           style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
+
+      
 
       <div class="col-12 col-lg-9 main-content" id="step3c">
         <div class="d-flex align-items-center gap-2 mb-2">

@@ -933,14 +933,23 @@ document.getElementById('endYear').addEventListener('change', function () {
 let eduSum = []
 let addCourseWork = document.querySelector(".add-course-work")
 addCourseWork.addEventListener('click', () => {
-  handleButtonClick('step3b')
-  document.getElementById("institution").value = ""
-  document.getElementById("degree").value = ""
-  document.getElementById("field-study").value = ""
-  document.getElementById("school-location").value = ""
-  document.getElementById("gradMonth").selectedIndex = 0;
-  document.getElementById("gradYear").selectedIndex = 0;
+    handleButtonClick('step3b')
+    backStep3b.style.display = "block";
+    buttonStep3b.innerHTML = "NEXT";
+    document.getElementById("institution").value = ""
+    document.getElementById("degree").value = ""
+    document.getElementById("field-study").value = ""
+    document.getElementById("school-location").value = ""
+    document.getElementById("gradMonth").selectedIndex = 0;
+    document.getElementById("gradYear").selectedIndex = 0;
 })
+
+let institutionInput = document.getElementById("institution")
+let schoolLocationInput = document.getElementById("school-location")
+let degreeInput = document.getElementById("degree")
+let fieldStudyInput = document.getElementById("field-study")
+let gradMonthInput = document.getElementById("gradMonth")
+let gradYearInput = document.getElementById("gradYear")
 
 let backStep2a = document.getElementById("back-step2a")
 let backStep2b = document.getElementById("back-step2b")
@@ -970,6 +979,10 @@ const progressElement = document.querySelector('.sidebar .progress-bar .progress
 
 
 buttonStep1.addEventListener('click', () => {
+    // if (!document.getElementById("name").value || !document.getElementById("surname").value || !document.getElementById("phone").value || !document.getElementById("email").value) { 
+    //     alert("Please enter your name")
+    //     return
+    // }
     handleButtonClick('step2a')
     changeSideBar('2')
     progressElement.style.width = "20%"
@@ -984,121 +997,134 @@ buttonStep2b.addEventListener('click', () => {
 })
 buttonStep3a.addEventListener('click', () => {
     handleButtonClick('step3b')
+    backStep3b.style.display = "block";
+    buttonStep3b.innerHTML = "NEXT";
 })
 buttonStep3b.addEventListener('click', () => {
-  handleButtonClick('step3c');
+    
 
-  // Collect form data
-  const newEdu = {
-      degree: document.getElementById("degree").value,
-      institution: document.getElementById("institution").value,
-      fieldStudy: document.getElementById("field-study").value,
-      location: document.getElementById("school-location").value,
-      gradMonth: document.getElementById("gradMonth").value,
-      gradYear: document.getElementById("gradYear").value
-  };
-
-  // Generate HTML for the new entry
-  const htmlContent = `
-      <div class="edusum-container mb-4" style="border: 1px solid black">
-          <div>0</div> <!-- Index will be updated in render -->
-          <div class="row">
-              <div class="col first-row-sum" style="font-weight: bold;">${newEdu.degree} ${newEdu.institution} | ${newEdu.fieldStudy}</div>
-              <div class="col d-flex">
-                  <button class="edit-btn ms-auto" style="border: none; background-color: transparent;">
-                      <img src="images/edit.png" alt="edit-img" srcset="">
-                  </button>
-                  <button class="delete-btn ps-4" style="border: none; background-color: transparent;">
-                      <img src="images/delete.png" alt="delete-img" srcset="">
-                  </button>
-              </div>
-          </div>
-          <div class="second-row-sum">${newEdu.location} | Expected in ${newEdu.gradMonth} ${newEdu.gradYear}</div>
-      </div>
-  `;
-
-  // Add new entry to eduSum with data and HTML
-  eduSum.push({
-      data: newEdu,
-      html: htmlContent
-  });
-
-  // Remove duplicates based on data (not HTML)
-  const unique = Array.from(
-      new Map(eduSum.map(obj => [JSON.stringify(obj.data), obj])).values()
-  );
-  eduSum.length = 0; // Clear eduSum
-  eduSum.push(...unique); // Update with unique entries
-
-  // Render the summary
-  renderSummary();
-
-  // Clear form inputs
-  document.getElementById("degree").value = "";
-  document.getElementById("institution").value = "";
-  document.getElementById("field-study").value = "";
-  document.getElementById("school-location").value = "";
-  document.getElementById("gradMonth").value = "";
-  document.getElementById("gradYear").value = "";
+    // Collect form data
+    if (!institutionInput.value && !schoolLocationInput.value && !degreeInput.value && !fieldStudyInput.value && gradMonthInput.value === "Month" && gradYearInput.value === "Year") {
+        renderSummary()
+    } else if (institutionInput.value && schoolLocationInput.value && degreeInput.value && fieldStudyInput.value && gradMonthInput.value !== "Month" && gradYearInput.value !== "Year") {
+        const newEdu = {
+            degree: document.getElementById("degree").value,
+            institution: document.getElementById("institution").value,
+            fieldStudy: document.getElementById("field-study").value,
+            location: document.getElementById("school-location").value,
+            gradMonth: document.getElementById("gradMonth").value,
+            gradYear: document.getElementById("gradYear").value
+        };
+    
+        // Generate HTML for the new entry
+        const htmlContent = `
+            <div class="edusum-container mb-4" style="border: 1px solid black">
+                <div>0</div> <!-- Index will be updated in render -->
+                <div class="row">
+                    <div class="col first-row-sum" style="font-weight: bold;">${newEdu.degree} ${newEdu.institution} | ${newEdu.fieldStudy}</div>
+                    <div class="col d-flex">
+                        <button class="edit-btn ms-auto" style="border: none; background-color: transparent;">
+                            <img src="images/edit.png" alt="edit-img" srcset="">
+                        </button>
+                        <button class="delete-btn ps-4" style="border: none; background-color: transparent;">
+                            <img src="images/delete.png" alt="delete-img" srcset="">
+                        </button>
+                    </div>
+                </div>
+                <div class="second-row-sum">${newEdu.location} | Expected in ${newEdu.gradMonth} ${newEdu.gradYear}</div>
+            </div>
+        `;
+    
+        // Add new entry to eduSum with data and HTML
+        eduSum.push({
+            data: newEdu,
+            html: htmlContent
+        });
+    
+        // Remove duplicates based on data (not HTML)
+        const unique = Array.from(
+            new Map(eduSum.map(obj => [JSON.stringify(obj.data), obj])).values()
+        );
+        eduSum.length = 0; // Clear eduSum
+        eduSum.push(...unique); // Update with unique entries
+    
+        // Render the summary
+        renderSummary();
+    
+        // Clear form inputs
+        document.getElementById("degree").value = "";
+        document.getElementById("institution").value = "";
+        document.getElementById("field-study").value = "";
+        document.getElementById("school-location").value = "";
+        document.getElementById("gradMonth").value = "Month";
+        document.getElementById("gradYear").value = "Year";
+    } else {
+        console.log(gradMonthInput.value, gradYearInput.value)
+        alert("Please fill in all fields or leave blank all fields.");
+        return
+    }
+    handleButtonClick('step3c');
 });
 
 // Function to render the summary
 function renderSummary() {
-  let container = document.querySelector(".c-container");
-  container.innerHTML = "";
+    let container = document.querySelector(".c-container");
+    container.innerHTML = "";
 
-  eduSum.forEach((edu, index) => {
-      // Update the index in the HTML
-      const updatedHtml = edu.html.replace(
-          /<div>\d+<\/div>/,
-          `<div>${index + 1}</div>`
-      ).replace(
-          /id="\d+"/g,
-          `id="${index + 1}"`
-      );
-      container.innerHTML += updatedHtml;
-  });
+    eduSum.forEach((edu, index) => {
+        // Update the index in the HTML
+        const updatedHtml = edu.html.replace(
+            /<div>\d+<\/div>/,
+            `<div>${index + 1}</div>`
+        ).replace(
+            /id="\d+"/g,
+            `id="${index + 1}"`
+        );
+        container.innerHTML += updatedHtml;
+    });
 
-  // Attach event listeners to edit and delete buttons
-  attachButtonListeners();
+    // Attach event listeners to edit and delete buttons
+    attachButtonListeners();
 }
 
 // Function to attach event listeners to buttons
 function attachButtonListeners() {
-  let editBtns = document.querySelectorAll(".edit-btn");
-  let deleteBtns = document.querySelectorAll(".delete-btn");
+    let editBtns = document.querySelectorAll(".edit-btn");
+    let deleteBtns = document.querySelectorAll(".delete-btn");
 
-  editBtns.forEach((editBtn, index) => {
-      editBtn.addEventListener('click', () => {
-          // Populate form with data for editing
-          const edu = eduSum[index].data;
-          document.getElementById("degree").value = edu.degree;
-          document.getElementById("institution").value = edu.institution;
-          document.getElementById("field-study").value = edu.fieldStudy;
-          document.getElementById("school-location").value = edu.location;
-          document.getElementById("gradMonth").value = edu.gradMonth;
-          document.getElementById("gradYear").value = edu.gradYear;
+    editBtns.forEach((editBtn, index) => {
+        editBtn.addEventListener('click', () => {
+            // Populate form with data for editing
+            const edu = eduSum[index].data;
+            document.getElementById("degree").value = edu.degree;
+            document.getElementById("institution").value = edu.institution;
+            document.getElementById("field-study").value = edu.fieldStudy;
+            document.getElementById("school-location").value = edu.location;
+            document.getElementById("gradMonth").value = edu.gradMonth;
+            document.getElementById("gradYear").value = edu.gradYear;
 
-          // Remove the entry being edited
-          eduSum.splice(index, 1);
+            // Remove the entry being edited
+            eduSum.splice(index, 1);
 
-          // Re-render the summary
-          renderSummary();
+            // Re-render the summary
+            renderSummary();
 
-          // Navigate back to the form (assuming handleButtonClick manages navigation)
-          handleButtonClick('step3b');
-      });
-  });
+            // Navigate back to the form (assuming handleButtonClick manages navigation)
+            handleButtonClick('step3b');
+            backStep3b.style.display = "none";
+            buttonStep3b.innerHTML = "Save changes";
+        });
+    });
 
-  deleteBtns.forEach((deleteBtn, index) => {
-      deleteBtn.addEventListener('click', () => {
-          // Remove the entry from eduSum
-          eduSum.splice(index, 1);
+    deleteBtns.forEach((deleteBtn, index) => {
+        deleteBtn.addEventListener('click', () => {
+            // Remove the entry from eduSum
+            eduSum.splice(index, 1);
 
-          // Re-render the summary
-          renderSummary();
-      });
-  });
+            // Re-render the summary
+            renderSummary();
+        });
+    });
 }
 buttonStep3c.addEventListener('click', () => {
     handleButtonClick('step4a')
@@ -1141,7 +1167,7 @@ backStep3a.addEventListener('click', () => {
     progressElement.style.width = "20%"
 })
 backStep3b.addEventListener('click', () => {
-  if (eduSum.length > 1) {
+  if (institutionInput.value && schoolLocationInput.value && degreeInput.value && fieldStudyInput.value && gradMonthInput.value && gradYearInput.value) {
     handleButtonClick('step3c')
   } else {
     handleButtonClick('step3a')
@@ -1149,7 +1175,9 @@ backStep3b.addEventListener('click', () => {
     
 })
 backStep3c.addEventListener('click', () => {
-  handleButtonClick('step3b')
+    handleButtonClick('step2b')
+    changeSideBar("2")
+    progressElement.style.width = "20%"
 })
 backStep4a.addEventListener('click', () => {
     handleButtonClick('step3c')
@@ -1225,145 +1253,155 @@ for (let y = currentYear; y >= 1980; y--) {
 }
 
 
-let skillExamples = [
-  { name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
-  { name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
-  { name: 'Problem-solving', job: ['IT', 'Teacher'] },
-  { name: 'Time management', job: ['IT', 'Teacher'] },
-  { name: 'Over thinking', job: ['IT'] },
-  { name: 'Creative', job: ['IT'] },
-  { name: 'Adaptive', job: ['IT'] }
-];
-
-let summaryExamples = [
-  { name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
-  { name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
-  { name: 'Problem-solving', job: ['IT', 'Teacher'] },
-  { name: 'Time management', job: ['IT', 'Teacher'] },
-  { name: 'Over thinking', job: ['IT'] },
-  { name: 'Creative', job: ['IT'] },
-  { name: 'Adaptive', job: ['IT'] }
-];
-
-let searchInput = document.querySelector(".search-input");
-let searchBtn = document.querySelector(".search-btn");
-let skillContainer = document.querySelector(".skill-container");
-let summaryContainer = document.querySelector(".summary-container");
-
-// Initialize rendering
-renderSkill("");
-renderSummary("");
-
-// Search button event listener
-searchBtn.addEventListener('click', () => {
-  const job = searchInput.value.trim();
-  renderSkill(job);
-  renderSummary(job); // Sync summary rendering with search input
-});
-
-function renderSkill(job) {
-  skillContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
-  const filteredSkills = job === ""
-    ? skillExamples
-    : skillExamples.filter(skill => skill.job.some(j => j.toLowerCase().includes(job.toLowerCase())));
-
-  filteredSkills.forEach(skill => {
-    skillContainer.insertAdjacentHTML('beforeend',
-      `
-        <div class="row p-2" style="border: 1px solid black; border-top: none;">
-          <div class="row align-items-center p-0">
-            <div class="col-1">
-              <button class="add-to-skill-editor" data-content="${skill.name}" style="border: none; padding: 0; margin: 0; background-color: transparent;">
-                <img src="images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
-              </button>
-            </div>
-            <div class="col-11 text-start">
-              <div style="font-weight: 500;">${skill.name}</div>
-            </div>
-          </div>
-        </div>
-      `
-    );
-  });
-}
-
-function renderSummary(job) {
-  summaryContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
-  const filteredSummaries = job === ""
-    ? summaryExamples
-    : summaryExamples.filter(summary => summary.job.some(j => j.toLowerCase().includes(job.toLowerCase())));
-
-  filteredSummaries.forEach(summary => {
-    summaryContainer.insertAdjacentHTML('beforeend',
-      `
-        <div class="row p-2" style="border: 1px solid black; border-top: none;">
-          <div class="row align-items-center p-0">
-            <div class="col-1">
-              <button class="add-to-summary-editor" data-content="${summary.name}" style="border: none; padding: 0; margin: 0; background-color: transparent;">
-                <img src="images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
-              </button>
-            </div>
-            <div class="col-11 text-start">
-              <div style="font-weight: 500;">${summary.name}</div>
-            </div>
-          </div>
-        </div>
-      `
-    );
-  });
-}
-
-// Initialize Quill editors
 const quill = new Quill('#editor', {
-  theme: 'snow'
+    theme: 'snow'
 });
 
 const quill_2 = new Quill('#editor-2', {
-  theme: 'snow'
+    theme: 'snow'
 });
 
-// Single DOMContentLoaded to handle both editors
-document.addEventListener("DOMContentLoaded", function () {
-  // Sets to track selected items for each editor
-  const skillSelectedContents = new Set();
-  const summarySelectedContents = new Set();
-
-  // Function to update Quill editor content
-  function updateQuillEditor(quillInstance, selectedSet) {
-    const html = `<ul>${Array.from(selectedSet)
-      .map(item => `<li>${item}</li>`)
-      .join("")}</ul>`;
-    quillInstance.clipboard.dangerouslyPasteHTML(html);
+let skillExamples = [
+    { name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
+    { name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
+    { name: 'Problem-solving', job: ['IT', 'Teacher'] },
+    { name: 'Time management', job: ['IT', 'Teacher'] },
+    { name: 'Over thinking', job: ['IT'] },
+    { name: 'Creative', job: ['IT'] },
+    { name: 'Adaptive', job: ['IT'] }
+  ];
+  
+  let summaryExamples = [
+    { name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
+    { name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
+    { name: 'Problem-solving', job: ['IT', 'Teacher'] },
+    { name: 'Time management', job: ['IT', 'Teacher'] },
+    { name: 'Over thinking', job: ['IT'] },
+    { name: 'Creative', job: ['IT'] },
+    { name: 'Adaptive', job: ['IT'] }
+  ];
+  
+  let searchInput = document.querySelector(".search-input");
+  let searchBtn = document.querySelector(".search-btn");
+  let skillContainer = document.querySelector(".skill-container");
+  let summaryContainer = document.querySelector(".summary-container");
+  
+  // Initialize rendering
+  renderSkill("");
+  renderSummaryStep5("");
+  
+  // Search button event listener
+  searchBtn.addEventListener('click', () => {
+    const job = searchInput.value.trim();
+    renderSkill(job);
+    renderSummaryStep5(job);
+  });
+  
+  function renderSkill(job) {
+    skillContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
+    const filteredSkills = job === ""
+      ? skillExamples
+      : skillExamples.filter(skill => {
+          if (!skill.job || !Array.isArray(skill.job)) {
+            return false;
+          }
+          return skill.job.some(j => typeof j === 'string' && j.toLowerCase().includes(job.toLowerCase()));
+        });
+  
+    filteredSkills.forEach(skill => {
+      skillContainer.insertAdjacentHTML('beforeend',
+        `
+          <div class="row p-2" style="border: 1px solid black; border-top: none;">
+            <div class="row align-items-center p-0">
+              <div class="col-1">
+                <button class="add-to-skill-editor" data-content="${skill.name}" style="border: none; padding: 0; margin: 0; background-color: transparent;">
+                  <img src="images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
+                </button>
+              </div>
+              <div class="col-11 text-start">
+                <div style="font-weight: 500;">${skill.name}</div>
+              </div>
+            </div>
+          </div>
+        `
+      );
+    });
   }
-
-  // Delegate event listeners to containers
-  skillContainer.addEventListener('click', function (e) {
-    const button = e.target.closest('.add-to-skill-editor');
-    if (button) {
-      const content = button.getAttribute("data-content");
-      if (skillSelectedContents.has(content)) {
-        skillSelectedContents.delete(content);
-        button.querySelector("img").src = "images/plus.png";
-      } else {
-        skillSelectedContents.add(content);
-        button.querySelector("img").src = "images/check-lg.svg";
-      }
-      updateQuillEditor(quill, skillSelectedContents);
+  
+  function renderSummaryStep5(job) {
+    summaryContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
+    let filteredSummaries
+    if (job === "") {
+        filteredSummaries = summaryExamples
+    } else {
+        console.log(job)
+        filteredSummaries = summaryExamples.filter(summary => {
+            if (!summary.job || !Array.isArray(summary.job)) {
+              return false;
+            }
+            return summary.job.some(j => typeof j === 'string' && j.toLowerCase().includes(job.toLowerCase()));
+          });
     }
-  });
-
-  summaryContainer.addEventListener('click', function (e) {
-    const button = e.target.closest('.add-to-summary-editor');
-    if (button) {
-      const content = button.getAttribute("data-content");
-      if (summarySelectedContents.has(content)) {
-        summarySelectedContents.delete(content);
-        button.querySelector("img").src = "images/plus.png";
-      } else {
-        summarySelectedContents.add(content);
-        button.querySelector("img").src = "images/check-lg.svg";
-      }
-      updateQuillEditor(quill_2, summarySelectedContents);
+  
+    filteredSummaries.forEach(summary => {
+      summaryContainer.insertAdjacentHTML('beforeend',
+        `
+          <div class="row p-2" style="border: 1px solid black; border-top: none;">
+            <div class="row align-items-center p-0">
+              <div class="col-1">
+                <button class="add-to-summary-editor" data-content="${summary.name}" style="border: none; padding: 0; margin: 0; background-color: transparent;">
+                  <img src="images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
+                </button>
+              </div>
+              <div class="col-11 text-start">
+                <div style="font-weight: 500;">${summary.name}</div>
+              </div>
+            </div>
+          </div>
+        `
+      );
+    });
+  }
+  
+  // Quill editor logic remains unchanged unless you report issues with it
+  document.addEventListener("DOMContentLoaded", function () {
+    const skillSelectedContents = new Set();
+    const summarySelectedContents = new Set();
+  
+    function updateQuillEditor(quillInstance, selectedSet) {
+      const html = `<ul>${Array.from(selectedSet)
+        .map(item => `<li>${item}</li>`)
+        .join("")}</ul>`;
+      quillInstance.clipboard.dangerouslyPasteHTML(html);
     }
+  
+    skillContainer.addEventListener('click', function (e) {
+      const button = e.target.closest('.add-to-skill-editor');
+      if (button) {
+        const content = button.getAttribute("data-content");
+        if (skillSelectedContents.has(content)) {
+          skillSelectedContents.delete(content);
+          button.querySelector("img").src = "images/plus.png";
+        } else {
+          skillSelectedContents.add(content);
+          button.querySelector("img").src = "images/check-lg.svg";
+        }
+        updateQuillEditor(quill, skillSelectedContents);
+      }
+    });
+  
+    summaryContainer.addEventListener('click', function (e) {
+      const button = e.target.closest('.add-to-summary-editor');
+      if (button) {
+        const content = button.getAttribute("data-content");
+        if (summarySelectedContents.has(content)) {
+          summarySelectedContents.delete(content);
+          button.querySelector("img").src = "images/plus.png";
+        } else {
+          summarySelectedContents.add(content);
+          button.querySelector("img").src = "images/check-lg.svg";
+        }
+        updateQuillEditor(quill_2, summarySelectedContents);
+      }
+    });
   });
-});
