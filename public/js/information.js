@@ -70,10 +70,17 @@ color: #444;">
             </div>
         </section>
         <div class="container row languages-container">
-        <section class="cv_languages col"></section>
-        <section class="cv_pro_languages col"></
+            <section class="cv_languages col-5"></section>
+            <section class="cv_pro_languages col-7"></
         section>
         </div>
+        <section class="row cv_certi">
+        <div class="col-md-3">
+                <h2 class="h4">Certifications</h2>
+            </div>
+            <div class='col-md-9'>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -1389,6 +1396,18 @@ document.querySelectorAll(".step6-check").forEach((check, index) => {
             const nameDisplay = document.querySelectorAll('.cv_websites').forEach(display => {
                 display.innerHTML = '';
             });
+            const cerDisplay = document.querySelectorAll('.cv_certi').forEach(display => {
+                display.innerHTML = '';
+            });
+            if (index === 2) { // Checkbox 3
+                document.querySelectorAll('.cv_languages').forEach(display => {
+                    display.innerHTML = '';
+                });
+            } else if (index === 3) { // Checkbox 4
+                document.querySelectorAll('.cv_pro_languages').forEach(display => {
+                    display.innerHTML = '';
+                });
+            }
         }
     });
 });
@@ -1405,7 +1424,7 @@ document.querySelector('.languages').addEventListener('input', function () {
         display.innerHTML = '';
         if (gia_tri.length === 0) return;
         display.innerHTML = `
-                <div class="col-md-3">
+                <div>
                     <h2 class="h4">Languages</h2>
                 </div>
                 <div class="col-md-9 mb-3">
@@ -1429,8 +1448,8 @@ document.querySelector('.pro-languages').addEventListener('input', function () {
         display.innerHTML = '';
         if (gia_tri.length === 0) return;
         display.innerHTML = `
-                <div class="col-md-3">
-                    <h2 class="h4">Languages</h2>
+                <div>
+                    <h2 class="h4">Programming Languages</h2>
                 </div>
                 <div class="col-md-9 mb-3">
                     <ul class="list-unstyled">
@@ -1446,8 +1465,7 @@ document.querySelector('.websites').addEventListener('input', function () {
     });
 })
 document.querySelector('.certifications').addEventListener('input', function () {
-    const nameDisplay = document.querySelectorAll('.cv_education').forEach(display => {
-        let gia_tri = chuoi.split(",").map(x => x.trim());
-        display.innerHTML += `<h5>WWW: ${this.value}</h5>`;
+    const nameDisplay = document.querySelectorAll('.cv_certi').forEach(display => {
+        display.innerHTML += `${this.value}`;
     });
-})
+});

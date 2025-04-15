@@ -558,12 +558,11 @@ require_once __DIR__ . '/../../config/constant.php';
 
             <div class="row pt-4">
               <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
-                <input class="certifications step6-check" type="checkbox" name="" id="2"
-                  style="width: 30px; height: 30px;">
+                <input class=" step6-check" type="checkbox" name="" id="2" style="width: 30px; height: 30px;">
                 <div style="font-size: 20px;">Certifications</div>
               </div>
               <div class="col-12 col-lg-6">
-                <input class="checked-input" id="2" type="text">
+                <input class="certifications checked-input" id="2" type="text">
               </div>
             </div>
 
@@ -583,15 +582,6 @@ require_once __DIR__ . '/../../config/constant.php';
               </div>
               <div class="col-12 col-lg-6">
                 <input class="checked-input pro-languages" id="4" type="text">
-              </div>
-            </div>
-            <div class="row pt-4">
-              <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
-                <input class="step6-check" type="checkbox" name="" id="5" style="width: 30px; height: 30px;">
-                <div style="font-size: 20px;">Additional Information</div>
-              </div>
-              <div class="col-12 col-lg-6">
-                <input class="checked-input" id="5" type="text">
               </div>
             </div>
 
