@@ -5,7 +5,8 @@ require_once __DIR__ . '/../../config/constant.php';
 
 
 
-// $authController = new AuthController($conn);
+$authController = new AuthController($conn);
+
 
 // Kiểm tra đăng xuất
 if (isset($_GET['action']) && $_GET['action'] === 'logout') {
@@ -18,7 +19,9 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
 $isLoggedIn = isset($_SESSION['user']);
 $displayName = '';
 $role = 'user'; 
+
 if ($isLoggedIn) {
+    
     $user = $_SESSION['user'];
     $email = htmlspecialchars($user['email']);
     $role = isset($user['role']) ? $user['role'] : 'user'; 
@@ -37,6 +40,7 @@ if ($isLoggedIn) {
     }
     
 }
+echo($displayName)
 ?>
 
 <!DOCTYPE html>

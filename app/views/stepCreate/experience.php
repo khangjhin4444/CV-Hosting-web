@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience</title>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/body.css">
-  <link rel="stylesheet" href="css/experience.css">
+  <link rel="stylesheet" href="/CV-Hosting-web-main/public/node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/header.css">
+  <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/body.css">
+  <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/experience.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
   <style>
     html, body {
       font-family: Montserrat;
@@ -133,7 +134,7 @@
   <div class="container pt-4" style="justify-content: flex-end; display:flex;">
       <button class="confirm-button">CONFIRM</button>
   </div>
-  
-  <script src="./js/experience.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/CV-Hosting-web-main/public/js/experience.js"></script>
 </body>
 </html>

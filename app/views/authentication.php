@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once __DIR__ . '/../../config/constant.php';
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../controllers/AuthController.php';
@@ -8,7 +8,8 @@ $authController = new AuthController($conn);
 $action = $_GET['action'] ?? 'login';
 
 if (isset($_SESSION['user']) && $action !== 'logout' && $action !== 'google_callback' && $action !== 'facebook_callback') {
-    header('Location: ' . BASE_URL . '/index.php?page=home');
+    echo($_GET['action']);
+    // header('Location: ' . BASE_URL . '/index.php?page=home');
     exit;
 }
 
@@ -48,6 +49,7 @@ if ($action === 'logout'){
 
 if ($action === 'start-google-login'){
   $authController->startGoogleLogin();
+
 }
 
 if ($action === 'start-facebook-login'){
@@ -55,9 +57,11 @@ if ($action === 'start-facebook-login'){
 }
 
 if ($action === 'google_callback'){
+  
   $code = $_GET['code'];
   $state = $_GET['state'];
   $result = $authController->handleGoogleCallback($code, $state);
+  echo($state . " " . $result['msg']);
   if ($result['success']){
     header('Location: ' . BASE_URL . '/index.php?page=home');
     exit;

@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 require_once  __DIR__ . '/../config/constant.php';
 
@@ -21,5 +21,32 @@ if (isset($_GET['tempId'])) {
 require_once __DIR__ . '/../config/routes.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+switch($page) {
+    case 'home':
+        require_once __DIR__ . '/../app/views/home.php';
+        break;
+    case 'authentication':
+        require_once __DIR__ . '/../app/views/authentication.php';
+        
+        break;
+    
+    case 'logout':
+        session_destroy();
+        header("Location: " . BASE_URL . "/index.php?page=home");
+        exit();
+        break;
+    case 'create_cv':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        require_once __DIR__ . '/../app/views/create_cv.php';
+        break;
+    
+    default:
+        
+        break;
+}
 
 ?>

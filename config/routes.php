@@ -23,6 +23,15 @@ switch ($page) {
         header("Location: " . BASE_URL . "/index.php?page=home");
         exit();
         break;
+    case 'create_cv':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        $controller = new HomeController();
+        $controller->createCv();
+        break;
+    
     default:
         $controller = new HomeController();
         $controller->notFound();
