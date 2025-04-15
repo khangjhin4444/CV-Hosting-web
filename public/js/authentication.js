@@ -22,14 +22,14 @@ function renderLogin() {
           <form id="login-form">
               <div class="input-group pb-3" style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
                   <p style="color: #000; font-size: 20px; font-weight: 400; margin-bottom: 0;">Email address</p>
-                  <input class="email form-control" name="email" placeholder="Email address" style="width: 483px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; border-radius: 10px; border: 1px solid #B6B6B8;">
+                  <input class="email form-control" name="email" placeholder="Email address" style="width: 500px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; border-radius: 10px; border: 1px solid #B6B6B8;">
                   <div class="email-notification" style="visibility: hidden;">Must contain @gmail.com</div>
               </div>
 
               <div  style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
                   <p class="input-group" style="color: #000; font-size: 20px; font-weight: 400; margin-bottom: 0;">Your password</p>
-                  <div style="position: relative; width: 490px;">
-                      <input class="form-control" id="password" name="password" type="password" placeholder="Enter password" style="display: flex; width: 483px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; gap: 10px; border-radius: 10px; border: 1px solid #B6B6B8;">
+                  <div style="position: relative; width: 500px;">
+                      <input class="form-control" id="password" name="password" type="password" placeholder="Enter password" style="display: flex; width: 500px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; gap: 10px; border-radius: 10px; border: 1px solid #B6B6B8;">
                       <button id="togglePassword" type="button" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
                           <img id="eyeIcon" src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Show" style="width: 20px; height: 20px;">
                       </button>
@@ -156,14 +156,14 @@ async function renderSignUp() {
 
           <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
               <p style="color: #000; font-size: 20px; font-weight: 400;">Email address</p>
-              <input required class="email" name="email" placeholder="Email address" style="width: 483px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; border-radius: 10px; border: 1px solid #B6B6B8;">
+              <input required class="email" name="email" placeholder="Email address" style="width: 500px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; border-radius: 10px; border: 1px solid #B6B6B8;">
               <div class="email-notification" style="visibility: hidden;">Must contain @gmail.com</div>
           </div>
 
           <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
               <p style="color: #000; font-size: 20px; font-weight: 400;">Your password</p>
-              <div style="position: relative; width: 490px;">
-                  <input required id="password1" name="password" type="password" placeholder="Enter password" style="display: flex; width: 483px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; gap: 10px; border-radius: 10px; border: 1px solid #B6B6B8;">
+              <div style="position: relative; width: 500px;">
+                  <input required id="password1" name="password" type="password" placeholder="Enter password" style="display: flex; width: 500px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; gap: 10px; border-radius: 10px; border: 1px solid #B6B6B8;">
                   <button id="togglePassword1" type="button" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
                       <img id="eyeIcon1" src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Show" style="width: 20px; height: 20px;">
                   </button>
@@ -177,8 +177,8 @@ async function renderSignUp() {
 
           <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
               <p style="color: #000; font-size: 20px; font-weight: 400;">Confirm your password</p>
-              <div style="position: relative; width: 490px;">
-                  <input required id="password2" type="password" placeholder="Enter password" style="display: flex; width: 483px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; gap: 10px; border-radius: 10px; border: 1px solid #B6B6B8;">
+              <div style="position: relative; width: 500px;">
+                  <input required id="password2" type="password" placeholder="Enter password" style="display: flex; width: 500px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; gap: 10px; border-radius: 10px; border: 1px solid #B6B6B8;">
                   <button id="togglePassword2" type="button" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
                       <img id="eyeIcon2" src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Show" style="width: 20px; height: 20px;">
                   </button>
@@ -306,31 +306,57 @@ function renderInformationInput(savedEmail, savedPassword) {
                   <a class="go-back" style="font-size: 15px; cursor: pointer; margin-left: 10px; color: var(--primary, #3B9AB8); text-decoration-line: underline;">Go back</a>
               </div>
           </div>
-
+          
           <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
-              <p style="color: #000; font-size: 20px; font-weight: 400;">Full name</p>
-              <input required class="name" name="name" placeholder="Name" style="width: 483px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; border-radius: 10px; border: 1px solid #B6B6B8;">
+              <p style="color: #000; font-size: 20px; font-weight: 400;">First name</p>
+              <input required class="f-name" name="name" placeholder="Name" style="width: 500px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; border-radius: 10px; border: 1px solid #B6B6B8;">
+              <div class="name-notification"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+              <p style="color: #000; font-size: 20px; font-weight: 400;">Last name</p>
+              <input required class="l-name" name="name" placeholder="Name" style="width: 500px; padding-left: 14px; padding-top: 14px; padding-bottom: 16px; align-items: center; border-radius: 10px; border: 1px solid #B6B6B8;">
               <div class="name-notification"></div>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 16px; align-items: center; justify-content: center;">
-              <button type="submit" class="login-button">Sign Up</button>
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <button disabled type="submit" class="login-button inactive">Sign Up</button>
           </div>
       </form>
   `;
 
     const form = document.querySelector('#info-form');
-    const nameInput = form.querySelector('.name');
+    const fnameInput = form.querySelector('.f-name');
+    const lnameInput = form.querySelector('.l-name');
+
+    fnameInput.addEventListener('input', () => {
+      if (lnameInput.value && fnameInput.value) {
+        form.querySelector('.login-button').disabled = false;
+        form.querySelector('.login-button').classList.remove('inactive');
+      } else {
+        form.querySelector('.login-button').disabled = true;
+        form.querySelector('.login-button').classList.add('inactive');
+      }
+    })
+
+    lnameInput.addEventListener('input', () => {
+      if (lnameInput.value && fnameInput.value) {
+        form.querySelector('.login-button').disabled = false;
+        form.querySelector('.login-button').classList.remove('inactive');
+      } else {
+        form.querySelector('.login-button').disabled = true;
+        form.querySelector('.login-button').classList.add('inactive');
+      }
+    })
     const nameNotification = form.querySelector('.name-notification');
 
     // Validate name
-    nameInput.addEventListener('input', () => {
-        if (nameInput.value.trim().length < 2) {
-            nameInput.setCustomValidity('Name must be at least 2 characters');
+    fnameInput.addEventListener('input', () => {
+        if (fnameInput.value.trim().length < 2) {
+            fnameInput.setCustomValidity('Name must be at least 2 characters');
             nameNotification.textContent = 'Name must be at least 2 characters';
             nameNotification.style.color = 'red';
         } else {
-            nameInput.setCustomValidity('');
+            fnameInput.setCustomValidity('');
             nameNotification.textContent = '';
         }
     });
@@ -338,14 +364,14 @@ function renderInformationInput(savedEmail, savedPassword) {
     // Submit info form
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (!nameInput.checkValidity()) {
-            nameNotification.textContent = nameInput.validationMessage;
+        if (!fnameInput.checkValidity()) {
+            nameNotification.textContent = fnameInput.validationMessage;
             nameNotification.style.color = 'red';
             return;
         }
 
         // Tách first_name và last_name từ full name
-        const fullName = nameInput.value.trim();
+        const fullName = fnameInput.value.trim();
         const nameParts = fullName.split(' ');
         const firstName = nameParts[0];
         const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
