@@ -12,7 +12,7 @@ $tempId = $_SESSION['tempId'];
   <title>Contact Info</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/information.css">
+  <link rel="stylesheet" href="/Web assignment/css/information.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -76,7 +76,7 @@ $tempId = $_SESSION['tempId'];
 
         <div class="row">
           <div class="col-12 col-xxl-9">
-            <h3 style="font-weight: 600;">What is the preferred method for employers to reach you?</h3>
+            <h3 style="font-weight: 600;">What is the preferred method for employers<br> to reach you?</h3>
             <p class="text-muted" style="font-weight: 600;">We recommend providing your email and phone number.</p>
             <form class="pt-3">
               <div class="row pb-2">
@@ -118,8 +118,8 @@ $tempId = $_SESSION['tempId'];
           </div>
 
           <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>">
-            <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
-            <p class="pt-2" style="color: blue;">Change templates</p> -->
+            <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">-->
+             
           </div>
         </div>
         <button class="btn-next  mt-5" id="btn-step1"
@@ -150,7 +150,7 @@ $tempId = $_SESSION['tempId'];
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step2a"
-          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px; position:fixed; bottom: 40px; right: 35px;">NEXT</button>
       </div>
 
       <div class="col-12 col-lg-9 main-content" id="step2b">
@@ -274,7 +274,7 @@ $tempId = $_SESSION['tempId'];
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step3a"
-          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px; position:fixed; bottom: 40px; right: 35px;">NEXT</button>
       </div>
 
       <div class="col-12 col-lg-9 main-content" id="step3b">
@@ -347,8 +347,6 @@ $tempId = $_SESSION['tempId'];
           style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      
-
       <div class="col-12 col-lg-9 main-content" id="step3c">
         <div class="d-flex align-items-center gap-2 mb-2">
           <a id="back-step3c" href="#" class="p-0"
@@ -398,7 +396,7 @@ $tempId = $_SESSION['tempId'];
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step4a"
-          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px; position:fixed; bottom: 40px; right: 35px;">NEXT</button>
       </div>
 
       <div class="col-12 col-lg-9 main-content" id="step4b">
@@ -474,7 +472,7 @@ $tempId = $_SESSION['tempId'];
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step5a"
-          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px; position:fixed; bottom: 40px; right: 35px;">NEXT</button>
       </div>
 
       <div class="col-12 col-lg-9 main-content" id="step5b">
@@ -541,57 +539,72 @@ $tempId = $_SESSION['tempId'];
             <h4 class="p-0" style="font-weight: bolder;">Do you have anything else to add?<br>These sections are
               optional.</h4>
             <div class="row pt-4">
-              <div class="col-12 col-lg-6"></div>
+              <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
+                <input class="step6-check" type="checkbox" name="" id="1" style="width: 30px; height: 30px;">
+                <div style="font-size: 20px;">Websites, Portfolios, Profiles</div>
+              </div>
               <div class="col-12 col-lg-6">
-                <h5 style="font-weight: bold;">ADD YOUR OWN</h5>
+                <input class="checked-input" id="1" type="text" >
               </div>
             </div>
-            <div class="row pt-4">
-              <div class="col-12 col-lg-6">
-                <div class="d-flex align-items-center pb-4">
-                  <input type="checkbox" style="width: 26px; height: 26px;">
-                  <div class="ps-2" style="font-size: 20px;">Websites, Portfolios, Profiles</div>
-                </div>
-                <div class="d-flex align-items-center pb-4">
-                  <input type="checkbox" style="width: 26px; height: 26px;">
-                  <div class="ps-2" style="font-size: 20px;">Certifications</div>
-                </div>
-                <div class="d-flex align-items-center pb-4">
-                  <input type="checkbox" style="width: 26px; height: 26px;">
-                  <div class="ps-2" style="font-size: 20px;">Languages</div>
-                </div>
-                <div class="d-flex align-items-center pb-4">
-                  <input type="checkbox" style="width: 26px; height: 26px;">
-                  <div class="ps-2" style="font-size: 20px;">Accomplishments</div>
-                </div>
-                <div class="d-flex align-items-center pb-4">
-                  <input type="checkbox" style="width: 26px; height: 26px;">
-                  <div class="ps-2" style="font-size: 20px;">Additional Information</div>
-                </div>
-                <div class="d-flex align-items-center pb-4">
-                  <input type="checkbox" style="width: 26px; height: 26px;">
-                  <div class="ps-2" style="font-size: 20px;">Affiliations</div>
-                </div>
-              </div>
 
-              <div class="col-12 col-lg-6 align-self-start">
-                <div class="d-flex align-items-center pb-4">
-                  <input type="checkbox" style="width: 26px; height: 26px;">
-                  <input type="text"
-                    style="font-size: 20px; border: none; padding: 10px 12px; background-color: #F8F0E5; width: 100%;"
-                    value="Fill here">
-                </div>
+            <div class="row pt-4">
+              <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
+                <input class="step6-check" type="checkbox" name="" id="2" style="width: 30px; height: 30px;">
+                <div style="font-size: 20px;">Certifications</div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <input class="checked-input" id="2" type="text" >
+              </div>
+            </div>
+
+            <div class="row pt-4">
+              <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
+                <input class="step6-check" type="checkbox" name="" id="3" style="width: 30px; height: 30px;">
+                <div style="font-size: 20px;">Languages</div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <input class="checked-input" id="3" type="text" >
+              </div>
+            </div>
+
+            <div class="row pt-4">
+              <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
+                <input class="step6-check" type="checkbox" name="" id="4" style="width: 30px; height: 30px;">
+                <div style="font-size: 20px;">Accomplishments</div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <input class="checked-input" id="4" type="text" >
+              </div>
+            </div>
+
+            <div class="row pt-4">
+              <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
+                <input class="step6-check" type="checkbox" name="" id="5" style="width: 30px; height: 30px;">
+                <div style="font-size: 20px;">Additional Information</div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <input class="checked-input" id="5" type="text" >
+              </div>
+            </div>
+
+            <div class="row pt-4">
+              <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
+                <input class="step6-check" type="checkbox" name="" id="6" style="width: 30px; height: 30px;">
+                <input type="text" style="font-size: 20px; border: none; background-color: #F8F0E5; width: 100%;" value="Fill Your Own">
+              </div>
+              <div class="col-12 col-lg-6">
+                <input class="checked-input" id="6" type="text" >
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>" data-state="normal">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step6"
-          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step6" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position:fixed; bottom: 40px; right: 35px;">NEXT</button>
       </div>
 
     </div>
