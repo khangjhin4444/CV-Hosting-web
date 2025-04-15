@@ -109,9 +109,9 @@ $tempId = $_SESSION['tempId'];
             </form>
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-lg-block text-center">
-            <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
-            <p class="pt-2" style="color: blue;">Change templates</p>
+          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+            <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
+            <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
         <button class="btn-next  mt-5" id="btn-step1" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Work History</button>
@@ -132,9 +132,9 @@ $tempId = $_SESSION['tempId'];
             
           </div>
 
-          <div class="col-12 col-xxl-3 d-hidden d-lg-block text-center">
-            <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
-            <p class="pt-2" style="color: blue;">Change templates</p>
+          <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+            <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
+            <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step2a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
@@ -253,9 +253,9 @@ $tempId = $_SESSION['tempId'];
             
           </div>
 
-          <div class="col-12 col-xxl-3 d-hidden d-lg-block text-center">
-            <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
-            <p class="pt-2" style="color: blue;">Change templates</p>
+          <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+            <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
+            <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step3a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
@@ -343,9 +343,9 @@ $tempId = $_SESSION['tempId'];
             
           </div>
 
-          <div class="col-12 col-xxl-3 d-hidden d-lg-block text-center">
-            <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
-            <p class="pt-2" style="color: blue;">Change templates</p>
+          <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+            <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
+            <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step4a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
@@ -404,9 +404,9 @@ $tempId = $_SESSION['tempId'];
             <p class="p-0 m-0" style="font-size: 20px;">Your summary highlights why you're a great fit for the job.<br> We'll provide expert content that you can tailor to make it stand out.</p>
           </div>
 
-          <div class="col-12 col-xxl-3 d-hidden d-lg-block text-center">
-            <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
-            <p class="pt-2" style="color: blue;">Change templates</p>
+          <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+            <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
+            <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step5a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
@@ -501,9 +501,9 @@ $tempId = $_SESSION['tempId'];
             </div>
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-lg-block text-center">
-            <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
-            <p class="pt-2" style="color: blue;">Change templates</p>
+          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+            <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
+            <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
         <button class="btn-next mt-5" id="btn-step6" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
@@ -513,6 +513,6 @@ $tempId = $_SESSION['tempId'];
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script src="js/information.js"></script>
+  <script  src="js/information.js"></script>
 </body>
 </html>

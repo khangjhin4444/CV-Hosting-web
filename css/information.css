@@ -108,6 +108,23 @@ select:focus {
   border: 1px solid rgb(77, 219, 244); 
 }
 
+.cv_template {
+  transform: scale(0.3);
+  transform-origin: top left;
+  /* Đảm bảo thu nhỏ từ góc trên bên trái */
+  width: 310%;
+  /* Bù lại kích thước để tránh bị cắt nội dung */
+  height: 100%;
+  /* Bù lại kích thước để tránh bị cắt nội dung */
+}
+
+.cv-container {
+  background-color: white;
+  height: 400px;
+  padding: 20px 20px;
+  /* overflow-y: hidden; */
+}
+
 /* Media query cho màn hình nhỏ */
 @media (max-width: 1350px) {
   body, html {
