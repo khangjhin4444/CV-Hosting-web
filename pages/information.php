@@ -1,10 +1,11 @@
-<?php 
+<?php
 $tempId = $_SESSION['tempId'];
 // echo $tempId;
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,13 @@ $tempId = $_SESSION['tempId'];
   <link rel="stylesheet" href="css/information.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css\cv_1.css" media="all" />
 </head>
+
 <body>
   <div class="container-fluid" style="height: 100%;">
     <div class="row" style="height: 100%;">
@@ -57,15 +62,18 @@ $tempId = $_SESSION['tempId'];
             <div class="progress"></div>
           </div>
         </div>
-        
+
       </div>
 
       <!-- Main Content -->
       <div class="col-12 col-lg-9 main-content active" id="step1">
-        <div class="d-flex align-items-center gap-2 mb-2">    
-          <a href="?page=select_template" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <a href="?page=select_template" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
-        
+
         <div class="row">
           <div class="col-12 col-xxl-9">
             <h3 style="font-weight: 600;">What is the preferred method for employers to reach you?</h3>
@@ -105,7 +113,7 @@ $tempId = $_SESSION['tempId'];
                   <input type="email" class="form-control" id="email" placeholder="e.g. khoa.huynh314@hcmut.edu.com">
                 </div>
               </div>
-              
+
             </form>
           </div>
 
@@ -114,22 +122,26 @@ $tempId = $_SESSION['tempId'];
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
-        <button class="btn-next  mt-5" id="btn-step1" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Work History</button>
+        <button class="btn-next  mt-5" id="btn-step1"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Work History</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step2a" >
+      <div class="col-12 col-lg-9 main-content" id="step2a">
         <div class="d-flex align-items-center gap-2 mb-5">
-          <a id="back-step2a" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+          <a id="back-step2a" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
-        
+
         <div class="row">
           <div class="col-12 col-xxl-9">
             <p class="p-0 m-0" style="font-weight: Bold; font-size: 20px;">Now let's complete your</p>
             <h3 class="p-0" style="font-weight: bolder;">WORK HISTORY</h3>
             <p class="p-0" style="font-weight: Bold; font-size: 20px;">Here's what to keep in mind:</p>
-            <p class="p-0" style="font-size: 25px;">You can list work experience, internships, scholarships, 
-            relevant coursework, and academic achievements.</p>
-            
+            <p class="p-0" style="font-size: 25px;">You can list work experience, internships, scholarships,
+              relevant coursework, and academic achievements.</p>
+
           </div>
 
           <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
@@ -137,120 +149,131 @@ $tempId = $_SESSION['tempId'];
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step2a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step2a"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step2b" >
+      <div class="col-12 col-lg-9 main-content" id="step2b">
         <div class="d-flex align-items-center gap-2 mb-2">
-          <a id="back-step2b" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+          <a id="back-step2b" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
-        
+
         <div class="row">
-            <h3 style="font-weight: 600;">Share details about your most recent job,<br>and we'll work backward from there.</h3>
-            <form class="pt-3">
-              <div class="row pb-2">
-                <div class="col-12 col-md-6">
-                  <label for="title">TITLE <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="title" placeholder="e.g. Khoa">
-                </div>
-                <div class="col-12 col-md-6">
-                  <label for="employer">EMPLOYER <span class="text-danger">*</span></label> 
-                  <input type="text" class="form-control" id="employer" placeholder="e.g. Huỳnh Ngọc">
-                </div>
+          <h3 style="font-weight: 600;">Share details about your most recent job,<br>and we'll work backward from there.
+          </h3>
+          <form class="pt-3">
+            <div class="row pb-2">
+              <div class="col-12 col-md-6">
+                <label for="title">TITLE <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="title" placeholder="e.g. Khoa">
               </div>
-              <div class="row pb-2">
-                <div class="col-12 col-md-12 col-lg-6">
-                  <label for="location">LOCATION</label>
-                  <input type="text" class="form-control" id="location" placeholder="e.g. Hồ Chí Minh">
-                </div>
+              <div class="col-12 col-md-6">
+                <label for="employer">EMPLOYER <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="employer" placeholder="e.g. Huỳnh Ngọc">
               </div>
-              <div class="row pb-2" >
-                <div class="col-12 col-lg-6">
-                  <label for="start-date">START DATE</label>
-                  <div class="row pb-2">
-                    <div class="col-6 col-lg-6">
-                      <select name="startMonth" id="startMonth" style="width: 100%; height: 65px;">
-                        <option disabled selected>Month</option>
-                        <option value="01">January</option>
-                        <option value="02">February</option>
-                        <option value="03">March</option>
-                        <option value="04">April</option>
-                        <option value="05">May</option>
-                        <option value="06">June</option>
-                        <option value="07">July</option>
-                        <option value="08">August</option>
-                        <option value="09">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                      </select>
-                    </div>
-                    <div class="col-6 col-lg-6">
-                      <select name="startYear" id="startYear" style="width: 100%; height: 65px;">
-                        <option disabled selected>Year</option>
-                        <option value="2025">2025</option>
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2000">2000</option>
-                      </select>
-                    </div>
+            </div>
+            <div class="row pb-2">
+              <div class="col-12 col-md-12 col-lg-6">
+                <label for="location">LOCATION</label>
+                <input type="text" class="form-control" id="location" placeholder="e.g. Hồ Chí Minh">
+              </div>
+            </div>
+            <div class="row pb-2">
+              <div class="col-12 col-lg-6">
+                <label for="start-date">START DATE</label>
+                <div class="row pb-2">
+                  <div class="col-6 col-lg-6">
+                    <select name="startMonth" id="startMonth" style="width: 100%; height: 65px;">
+                      <option disabled selected>Month</option>
+                      <option value="01">January</option>
+                      <option value="02">February</option>
+                      <option value="03">March</option>
+                      <option value="04">April</option>
+                      <option value="05">May</option>
+                      <option value="06">June</option>
+                      <option value="07">July</option>
+                      <option value="08">August</option>
+                      <option value="09">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
                   </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                  <label for="email">END DATE</label>
-                  <div class="row pb-2">
-                    <div class="col-6 col-lg-6">
-                      <select name="endMonth" id="endMonth" style="width: 100%; height: 65px;">
-                        <option disabled selected>Month</option>
-                        <option value="01">January</option>
-                        <option value="02">February</option>
-                        <option value="03">March</option>
-                        <option value="04">April</option>
-                        <option value="05">May</option>
-                        <option value="06">June</option>
-                        <option value="07">July</option>
-                        <option value="08">August</option>
-                        <option value="09">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                      </select>
-                    </div>
-                    <div class="col-6 col-lg-6">
-                      <select name="endYear" id="endYear" style="width: 100%; height: 65px;">
-                        <option disabled selected>Year</option>
-                        <option value="2025">2025</option>
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2000">2000</option>
-                      </select>
-                    </div>
+                  <div class="col-6 col-lg-6">
+                    <select name="startYear" id="startYear" style="width: 100%; height: 65px;">
+                      <option disabled selected>Year</option>
+                      <option value="2025">2025</option>
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2000">2000</option>
+                    </select>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="d-lg-block col-lg-6"></div>
-                <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
-                  <input type="checkbox" id="currentlyWorking" style="width: 30px; height: 30px;"> <p style="padding: 0; font-size: 20px; margin: 0;">I currently work here</p>
+              <div class="col-12 col-lg-6">
+                <label for="email">END DATE</label>
+                <div class="row pb-2">
+                  <div class="col-6 col-lg-6">
+                    <select name="endMonth" id="endMonth" style="width: 100%; height: 65px;">
+                      <option disabled selected>Month</option>
+                      <option value="01">January</option>
+                      <option value="02">February</option>
+                      <option value="03">March</option>
+                      <option value="04">April</option>
+                      <option value="05">May</option>
+                      <option value="06">June</option>
+                      <option value="07">July</option>
+                      <option value="08">August</option>
+                      <option value="09">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                  </div>
+                  <div class="col-6 col-lg-6">
+                    <select name="endYear" id="endYear" style="width: 100%; height: 65px;">
+                      <option disabled selected>Year</option>
+                      <option value="2025">2025</option>
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2000">2000</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-            </form>
+            </div>
+            <div class="row">
+              <div class="d-lg-block col-lg-6"></div>
+              <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
+                <input type="checkbox" id="currentlyWorking" style="width: 30px; height: 30px;">
+                <p style="padding: 0; font-size: 20px; margin: 0;">I currently work here</p>
+              </div>
+            </div>
+          </form>
         </div>
-        <button class="btn-next mt-5" id="btn-step2b" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Education</button>
+        <button class="btn-next mt-5" id="btn-step2b"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Education</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step3a" >
+      <div class="col-12 col-lg-9 main-content" id="step3a">
         <div class="d-flex align-items-center gap-2 mb-5">
-          <a id="back-step3a" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+          <a id="back-step3a" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
-        
+
         <div class="row">
           <div class="col-12 col-xxl-9">
             <p class="p-0 m-0" style="font-weight: Bold; font-size: 20px;">Great, let's add your</p>
             <h3 class="p-0" style="font-weight: bolder;">EDUCATION DETAILS</h3>
             <p class="p-0" style="font-weight: Bold; font-size: 20px;">Here's what to keep in mind:</p>
-            <p class="p-0" style="font-size: 25px;">Employers often skim this section, and we'll handle the <br> formatting to make it stand out.</p>
-            
+            <p class="p-0" style="font-size: 25px;">Employers often skim this section, and we'll handle the <br>
+              formatting to make it stand out.</p>
+
           </div>
 
           <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
@@ -258,89 +281,100 @@ $tempId = $_SESSION['tempId'];
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step3a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step3a"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step3b" >
+      <div class="col-12 col-lg-9 main-content" id="step3b">
         <div class="d-flex align-items-center gap-2 mb-2">
-          <a id="back-step3b" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+          <a id="back-step3b" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
-        
+
         <div class="row">
-            <h3 style="font-weight: 600;">Share your education details,<br><span style="font-weight: 500; font-size: 20px;">including any completed or ongoing studies, even if you haven't graduated yet. <span></h3>
-            <form class='pt-3'>
-              <div class="row pb-2">
-                <div class="col-12 col-md-6">
-                  <label for="institution">INSTITUTION <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="institution" placeholder="e.g. HCMUT">
-                </div>
-                <div class="col-12 col-md-6">
-                  <label for="school-location">SCHOOL LOCATION</label> 
-                  <input type="text" class="form-control" id="school-location" placeholder="e.g. Ho Chi Minh City">
-                </div>
+          <h3 style="font-weight: 600;">Share your education details,<br><span
+              style="font-weight: 500; font-size: 20px;">including any completed or ongoing studies, even if you haven't
+              graduated yet. <span></h3>
+          <form class='pt-3'>
+            <div class="row pb-2">
+              <div class="col-12 col-md-6">
+                <label for="institution">INSTITUTION <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="institution" placeholder="e.g. HCMUT">
               </div>
-              <div class="row pb-2">
-                <div class="col-12 col-md-12 col-lg-6">
-                  <label for="degree">DEGREE</label>
-                  <input type="text" class="form-control" id="degree" placeholder="e.g.">
-                </div>
+              <div class="col-12 col-md-6">
+                <label for="school-location">SCHOOL LOCATION</label>
+                <input type="text" class="form-control" id="school-location" placeholder="e.g. Ho Chi Minh City">
               </div>
-              <div class="row pb-2">
-                <div class="col-12 col-lg-6">
-                  <label for="field-study">FIELD STUDY</label>
-                  <input type="text" class="form-control" id="field-study" placeholder="e.g. Computer Science">
-                </div>
-                <div class="col-12 col-lg-6">
-                  <label for="graduation-year">GRADUATION YEAR</label>
-                  <div class="row">
-                    <div class="col-6">
-                      <select name="gradMonth" id="gradMonth" style="width: 100%; height: 57px;">
-                        <option disabled selected>Month</option>
-                        <option value="01">January</option>
-                        <option value="02">February</option>
-                        <option value="04">March</option>
-                        <option value="04">April</option>
-                        <option value="03">May</option>
-                        <option value="06">June</option>
-                        <option value="07">July</option>
-                        <option value="08">August</option>
-                        <option value="09">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                      </select>
-                    </div>
-                    <div class="col-6">
-                      <select name="gradYear" id="gradYear" style="width: 100%; height: 57px;">
-                        <option disabled selected>Year</option>
-                        <option value="2025">2025</option>
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2000">2000</option>
-                      </select>
-                    </div>
+            </div>
+            <div class="row pb-2">
+              <div class="col-12 col-md-12 col-lg-6">
+                <label for="degree">DEGREE</label>
+                <input type="text" class="form-control" id="degree" placeholder="e.g.">
+              </div>
+            </div>
+            <div class="row pb-2">
+              <div class="col-12 col-lg-6">
+                <label for="field-study">FIELD STUDY</label>
+                <input type="text" class="form-control" id="field-study" placeholder="e.g. Computer Science">
+              </div>
+              <div class="col-12 col-lg-6">
+                <label for="graduation-year">GRADUATION YEAR</label>
+                <div class="row">
+                  <div class="col-6">
+                    <select name="gradMonth" id="gradMonth" style="width: 100%; height: 57px;">
+                      <option disabled selected>Month</option>
+                      <option value="01">January</option>
+                      <option value="02">February</option>
+                      <option value="04">March</option>
+                      <option value="04">April</option>
+                      <option value="03">May</option>
+                      <option value="06">June</option>
+                      <option value="07">July</option>
+                      <option value="08">August</option>
+                      <option value="09">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <select name="gradYear" id="gradYear" style="width: 100%; height: 57px;">
+                      <option disabled selected>Year</option>
+                      <option value="2025">2025</option>
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2000">2000</option>
+                    </select>
                   </div>
                 </div>
-                  
-                
               </div>
-            </form>
+
+
+            </div>
+          </form>
         </div>
-        <button class="btn-next mt-5" id="btn-step3b" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Skill</button>
+        <button class="btn-next mt-5" id="btn-step3b"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Skill</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step4a" >
+      <div class="col-12 col-lg-9 main-content" id="step4a">
         <div class="d-flex align-items-center gap-2 mb-5">
-          <a id="back-step4a" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+          <a id="back-step4a" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
-        
+
         <div class="row">
           <div class="col-12 col-xxl-9">
             <p class="p-0 m-0" style="font-weight: Bold; font-size: 20px;">Now let's focus on your</p>
             <h3 class="p-0" style="font-weight: bolder;">SKILLS DETAILS</h3>
-            <p class="p-0 m-0" style=" font-size: 20px;">Employers look for key skills at a glance, and we'll help you</p>
+            <p class="p-0 m-0" style=" font-size: 20px;">Employers look for key skills at a glance, and we'll help you
+            </p>
             <p class="p-0 m-0" style="font-size: 20px;">select the most relevant ones</p>
-            
+
           </div>
 
           <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
@@ -348,12 +382,16 @@ $tempId = $_SESSION['tempId'];
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step4a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step4a"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step4b" >
+      <div class="col-12 col-lg-9 main-content" id="step4b">
         <div class="d-flex align-items-center gap-2 mb-2">
-          <a id="back-step4b" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+          <a id="back-step4b" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
         <!-- <div class="row">
           <div class="col-12 col-lg-8 order-1">
@@ -366,12 +404,17 @@ $tempId = $_SESSION['tempId'];
 
         <div class="row pt-2">
           <div class="col-12 col-xxl-8">
-            <h3 style="font-weight: 600; margin: 0; padding: 0;">What skills would you like to highlight?<br><span style="font-weight: 500; font-size: 20px;">Choose from our pre-written examples below or <br> write your own.<span></h3>
-            <div style="height: 14vh; background-color: #F9E6CB; padding: 14px 16px; padding-right: 35px; border-bottom: 1px solid black;">
+            <h3 style="font-weight: 600; margin: 0; padding: 0;">What skills would you like to highlight?<br><span
+                style="font-weight: 500; font-size: 20px;">Choose from our pre-written examples below or <br> write your
+                own.<span></h3>
+            <div
+              style="height: 14vh; background-color: #F9E6CB; padding: 14px 16px; padding-right: 35px; border-bottom: 1px solid black;">
               <h6 style="font-weight: bold;">SEARCH BY JOB TITLE FOR PRE-WRITTEN EXAMPLES</h6>
               <div class="d-flex align-items-center">
-                <input class="me-auto search-input" type="text" placeholder="Search by job title" style="padding-left: 14px; height: 45px; width: 100%; border: 1px solid black; background-color: #F9E6CB;">
-                <div style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #E9A354; border-radius: 50%; margin-left: 10px;">
+                <input class="me-auto search-input" type="text" placeholder="Search by job title"
+                  style="padding-left: 14px; height: 45px; width: 100%; border: 1px solid black; background-color: #F9E6CB;">
+                <div
+                  style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #E9A354; border-radius: 50%; margin-left: 10px;">
                   <button class="search-btn" style="border: none; background-color: transparent;">
                     <img src="images/search-icon.png" alt="" srcset="" style="width: 25px; height: 25px;">
                   </button>
@@ -379,29 +422,36 @@ $tempId = $_SESSION['tempId'];
               </div>
             </div>
             <div style="height: 38vh; background-color: #F7E9D6; padding: 10px 12px;">
-              <div class="overflow-y-auto ps-3 pe-4 skill-container" style="width: 100%; height: 34vh; scrollbar-width: none;">
+              <div class="overflow-y-auto ps-3 pe-4 skill-container"
+                style="width: 100%; height: 34vh; scrollbar-width: none;">
               </div>
             </div>
           </div>
           <div class="col-12 col-xxl-4 text-center">
             <h3 class="pt-3" style="text-decoration: underline; margin-bottom: 24px;">TEXT EDITOR</h3>
-            <div id="editor" style="height: 46vh; background-color: white;" contenteditable="true" spellcheck="false"></div>
+            <div id="editor" style="height: 46vh; background-color: white;" contenteditable="true" spellcheck="false">
+            </div>
           </div>
         </div>
-        <button class="btn-next mt-4" id="btn-step4b" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Summary</button>
+        <button class="btn-next mt-4" id="btn-step4b"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Summary</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step5a" >
+      <div class="col-12 col-lg-9 main-content" id="step5a">
         <div class="d-flex align-items-center gap-2 mb-5">
-          <a id="back-step5a" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+          <a id="back-step5a" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
-        
+
         <div class="row">
           <div class="col-12 col-xxl-9">
             <p class="p-0 m-0" style="font-weight: Bold; font-size: 20px;">Finally, let's work on</p>
             <h3 class="p-0" style="font-weight: bolder;">SUMMARY</h3>
             <p class="p-0 m-0" style=" font-size: 20px; font-weight: 600;">Here's what to keep in mind:</p>
-            <p class="p-0 m-0" style="font-size: 20px;">Your summary highlights why you're a great fit for the job.<br> We'll provide expert content that you can tailor to make it stand out.</p>
+            <p class="p-0 m-0" style="font-size: 20px;">Your summary highlights why you're a great fit for the job.<br>
+              We'll provide expert content that you can tailor to make it stand out.</p>
           </div>
 
           <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
@@ -409,12 +459,16 @@ $tempId = $_SESSION['tempId'];
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step5a" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step5a"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step5b" >
+      <div class="col-12 col-lg-9 main-content" id="step5b">
         <div class="d-flex align-items-center gap-2 mb-2">
-          <a id="back-step5b" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+          <a id="back-step5b" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
         <!-- <div class="row">
           <div class="col-12 col-lg-8">
@@ -427,12 +481,17 @@ $tempId = $_SESSION['tempId'];
 
         <div class="row pt-2">
           <div class="col-12 col-xxl-8">
-            <h3 style="font-weight: 600; margin: 0; padding: 0;">Briefly tell us about your background<br><span style="font-weight: 500; font-size: 20px;">Choose from our pre-written examples below or <br> write your own.<span></h3>
-            <div style="height: 14vh; background-color: #F9E6CB; padding: 14px 16px; padding-right: 35px; border-bottom: 1px solid black;">
+            <h3 style="font-weight: 600; margin: 0; padding: 0;">Briefly tell us about your background<br><span
+                style="font-weight: 500; font-size: 20px;">Choose from our pre-written examples below or <br> write your
+                own.<span></h3>
+            <div
+              style="height: 14vh; background-color: #F9E6CB; padding: 14px 16px; padding-right: 35px; border-bottom: 1px solid black;">
               <h6 style="font-weight: bold;">SEARCH BY JOB TITLE FOR PRE-WRITTEN EXAMPLES</h6>
               <div class="d-flex align-items-center">
-                <input class="me-auto search-input" type="text" placeholder="Search by job title" style="padding-left: 14px; height: 45px; width: 100%; border: 1px solid black; background-color: #F9E6CB;">
-                <div style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #E9A354; border-radius: 50%; margin-left: 10px;">
+                <input class="me-auto search-input" type="text" placeholder="Search by job title"
+                  style="padding-left: 14px; height: 45px; width: 100%; border: 1px solid black; background-color: #F9E6CB;">
+                <div
+                  style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #E9A354; border-radius: 50%; margin-left: 10px;">
                   <button class="search-btn" style="border: none; background-color: transparent;">
                     <img src="images/search-icon.png" alt="" srcset="" style="width: 25px; height: 25px;">
                   </button>
@@ -440,29 +499,38 @@ $tempId = $_SESSION['tempId'];
               </div>
             </div>
             <div style="height: 38vh; background-color: #F7E9D6; padding: 10px 12px;">
-              <div class="overflow-y-auto ps-3 pe-4 summary-container" style="width: 100%; height: 34vh; scrollbar-width: none;">
+              <div class="overflow-y-auto ps-3 pe-4 summary-container"
+                style="width: 100%; height: 34vh; scrollbar-width: none;">
               </div>
             </div>
           </div>
           <div class="col-12 col-xxl-4 text-center">
             <h3 class="pt-3" style="text-decoration: underline; margin-bottom: 24px;">TEXT EDITOR</h3>
-            <div id="editor-2" style="height: 46vh; background-color: white;" contenteditable="true" spellcheck="false"></div>
+            <div id="editor-2" style="height: 46vh; background-color: white;" contenteditable="true" spellcheck="false">
+            </div>
           </div>
         </div>
-        <button class="btn-next mt-4" id="btn-step5b" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Finalize</button>
+        <button class="btn-next mt-4" id="btn-step5b"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Finalize</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step6" >
+      <div class="col-12 col-lg-9 main-content" id="step6">
         <div class="d-flex align-items-center gap-2">
-          <a id="back-step6" href="#" class="p-0" style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go Back</span></a>
+          <a id="back-step6" href="#" class="p-0"
+            style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
+              class="bi bi-arrow-left pe-2" style="font-size: 35px; font-weight: bold"></i><span class="text-primary">Go
+              Back</span></a>
         </div>
-        
+
         <div class="row">
           <div class="col-12 col-xxl-9">
-            <h4 class="p-0" style="font-weight: bolder;">Do you have anything else to add?<br>These sections are optional.</h4>
+            <h4 class="p-0" style="font-weight: bolder;">Do you have anything else to add?<br>These sections are
+              optional.</h4>
             <div class="row pt-4">
               <div class="col-12 col-lg-6"></div>
-              <div class="col-12 col-lg-6"><h5 style="font-weight: bold;">ADD YOUR OWN</h5></div>
+              <div class="col-12 col-lg-6">
+                <h5 style="font-weight: bold;">ADD YOUR OWN</h5>
+              </div>
             </div>
             <div class="row pt-4">
               <div class="col-12 col-lg-6">
@@ -495,7 +563,9 @@ $tempId = $_SESSION['tempId'];
               <div class="col-12 col-lg-6 align-self-start">
                 <div class="d-flex align-items-center pb-4">
                   <input type="checkbox" style="width: 26px; height: 26px;">
-                  <input type="text" style="font-size: 20px; border: none; padding: 10px 12px; background-color: #F8F0E5; width: 100%;" value="Fill here">
+                  <input type="text"
+                    style="font-size: 20px; border: none; padding: 10px 12px; background-color: #F8F0E5; width: 100%;"
+                    value="Fill here">
                 </div>
               </div>
             </div>
@@ -506,13 +576,15 @@ $tempId = $_SESSION['tempId'];
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step6" style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step6"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script  src="js/information.js"></script>
+  <script src="js/information.js"></script>
 </body>
+
 </html>
