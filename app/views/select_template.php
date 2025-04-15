@@ -1,8 +1,8 @@
-<?php echo 'hello';
+<?php
 $year = $_SESSION['year'];
-echo $year;
+// echo $year;
 $student = $_SESSION['student'];
-echo $student;
+// echo $student;
 $test = '{
     "name": "John Doe",
     "age": 30,
@@ -20,9 +20,9 @@ if (gettype($test) === 'string') {
 }
 foreach ($test as $res)
   if (gettype($res) === 'array') {
-    echo implode(' ', $res);
+    // echo implode(' ', $res);
   } else
-    echo $res;
+    // echo $res;
 $heading = [
   'name' => 'Khoa',
   'surname' => 'Huynh',
@@ -157,7 +157,7 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
     <div class="container-fluid"><a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex" style="margin-right: 100px;"><img
           src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid"
           style="margin-left: 10px; margin-right: 3px; width: 50px; height: 100%;">
-        <p style="font-weight: bolder; margin-left: 20px;">LGBTQ+</p>
+        <p style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
       </a>
       <div class="row"><button class="search-btn navbar-toggler shadow-0 border-0" type="button"
           data-bs-toggle="collapse" data-bs-target="#searchBar"><img src="images/search-icon.png" alt=""
@@ -198,15 +198,15 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
           </li>
           
               <li class="navbar-item">
-                  <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link">My CVs</a>
+                  <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link"  style="width: 90px;">My CVs</a>
               </li>
               
               
               <li class="navbar-item">
-                  <a href="#" class="nav-link"><?= $displayName ?></a>
+                  <a href="#" class="nav-link" style="width: 200px;"><?= $displayName ?></a>
               </li>
               <li class="navbar-item">
-                  <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link">Log Out</a>
+                  <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log Out</a>
               </li>
         </ul>
       </div>

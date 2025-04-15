@@ -1,6 +1,9 @@
 <?php
 $tempId = $_SESSION['tempId'];
 // echo $tempId;
+if (isset($_GET['tempId'])) {
+  $tempId = $_GET['tempId'];
+}
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../../config/constant.php';
 
@@ -32,8 +35,11 @@ require_once __DIR__ . '/../../config/constant.php';
       <div class="col-12 col-lg-3 sidebar">
         <div>
           <div class="d-lg-flex d-none p-3 pb-4" style="gap: 10px;">
-            <img src="/CV-Hosting-web-main/public/images/cv 1.png" alt="">
-            <h4 style="color: black;">LGBTQ+</h4 style="color: black;">
+            <a class="d-flex align-items-center" style="text-decoration: none;" href="index.php">
+              <img src="/CV-Hosting-web-main/public/images/cv 1.png" alt="">
+              <h4 style="color: black;">LGBTQ+</h4 style="color: black;">
+            </a>
+            
           </div>
           <div class="step active" id="1">
             <div class="circle">1</div>
@@ -69,7 +75,7 @@ require_once __DIR__ . '/../../config/constant.php';
       </div>
 
       <!-- Main Content -->
-      <div class="col-12 col-lg-9 main-content" id="step1">
+      <div class="col-12 col-lg-9 main-content active" id="step1">
         <div class="d-flex align-items-center gap-2 mb-2">
           <a href="<?= BASE_URL ?>/index.php?page=select_template" class="p-0"
             style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
@@ -534,7 +540,7 @@ require_once __DIR__ . '/../../config/constant.php';
           style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Finalize</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content active" id="step6">
+      <div class="col-12 col-lg-9 main-content" id="step6">
         <div class="d-flex align-items-center gap-2">
           <a id="back-step6" href="#" class="p-0"
             style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i

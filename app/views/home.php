@@ -33,7 +33,7 @@ if ($isLoggedIn) {
     $userData = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($userData) {
         // Nếu có dữ liệu, hiển thị tên
-        $displayName = htmlspecialchars($userData['first_name'] );
+        $displayName = htmlspecialchars($userData['first_name']. " " .$userData['last_name']);
     } else {
         // Nếu không có dữ liệu, hiển thị email
         $displayName = $email;
@@ -53,7 +53,7 @@ if ($isLoggedIn) {
     <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/header.css">
     <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/body.css">
     <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/home.css">
-    <!-- <link rel="icon" href="/CV-Hosting-web-main/public/images/favicon.ico"> -->
+    <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -91,7 +91,7 @@ if ($isLoggedIn) {
                 </div>
             </div>
 
-            <div class="collapse navbar-collapse ms-auto justify-content-end" style="width: 100%;">
+            <div class="collapse navbar-collapse  justify-content-end" style="width: 100%;">
                 <div class="px-2 search-button" style="
                     background-color: white;
                     border: none;
@@ -112,13 +112,13 @@ if ($isLoggedIn) {
             </div>
 
             <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ">
                     <li class="navbar-item">
                         <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
                     </li>
                     <?php if ($isLoggedIn): ?>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link">My CVs</a>
+                            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
                         </li>
                         <?php if ($role === 'admin'): ?>
                             <li class="navbar-item">
@@ -126,10 +126,10 @@ if ($isLoggedIn) {
                             </li>
                         <?php endif; ?>
                         <li class="navbar-item">
-                            <a href="#" class="nav-link"><?= $displayName ?></a>
+                            <a href="#" class="nav-link" style="width: 200px;"><?= $displayName ?></a>
                         </li>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link">Log Out</a>
+                            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log Out</a>
                         </li>
                     <?php else: ?>
                         <li class="navbar-item">
@@ -234,80 +234,24 @@ if ($isLoggedIn) {
         </div>
     </section>
 
-    <div class="container-fluid wrapper pb-5 m-0 p-0 d-flex text-center justify-content-center align-items-center" style="
+    <div class="container-fluid wrapper pb-5 m-0 p-0 d-flex  justify-content-center align-items-center" style="
         position: relative;
         flex-direction: column;
         width: 100%;
         background-color: #102C57;">
-        <h1 class="pt-5 pb-2 fs-2" style="color: white;">
-            Add a <span style="color: #DAC0A3;">Cover letter</span> for Extra impact
-        </h1>
-        <p class="lead pb-5 px-5 fs-3" style="color: white;">
-            98% of hiring managers appreciate a well-written cover letter. Use these templates to improve yours!
-        </p>
+        <div class="text-center">
+            <h1 class="pt-5 pb-2 fs-2" style="color: white;">
+                Add a <span style="color: #DAC0A3;">Cover letter</span> for Extra impact
+            </h1>
+            <p class="lead pb-5 px-5 fs-3" style="color: white;">
+                98% of hiring managers appreciate a well-written cover letter. Use these templates to improve yours!
+            </p>
+        </div>
+        
 
         <i id="left" class="bi bi-chevron-left"></i>
         <ul class="carousel p-0 m-0 gx-5">
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template.png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template (1).png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template (2).png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template (2).png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template (1).png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template.png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template (1).png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template (2).png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template (2).png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
-            <li class="card">
-                <img src="/CV-Hosting-web-main/public/images/CV template (1).png" alt="" draggable="false" class="img-fluid">
-                <div class="card-img-overlay d-none pb-4">
-                    <button class="btn">USE THIS TEMPLATE</button>
-                </div>
-            </li>
+            
         </ul>
         <i id="right" class="bi bi-chevron-right"></i>
         <div class="container d-flex justify-content-center align-items-center pt-5">
@@ -331,7 +275,7 @@ if ($isLoggedIn) {
                     </p>
                     <div>
                         <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/discord.png" alt="">
-                        <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/facebook.png" alt="">
+                        <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/Vector-facebook.png" alt="">
                         <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/basket.png" alt="">
                         <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/insta.png" alt="">
                         <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/be.png" alt="">
