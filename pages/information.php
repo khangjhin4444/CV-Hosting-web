@@ -168,17 +168,17 @@ $tempId = $_SESSION['tempId'];
             <div class="row pb-2">
               <div class="col-12 col-md-6">
                 <label for="title">TITLE <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="title" placeholder="e.g. Khoa">
+                <input type="text" class="form-control" id="title" placeholder="e.g. Senior">
               </div>
               <div class="col-12 col-md-6">
                 <label for="employer">EMPLOYER <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="employer" placeholder="e.g. Huỳnh Ngọc">
+                <input type="text" class="form-control" id="employer" placeholder="e.g. Software Engineer">
               </div>
             </div>
             <div class="row pb-2">
               <div class="col-12 col-md-12 col-lg-6">
                 <label for="location">LOCATION</label>
-                <input type="text" class="form-control" id="location" placeholder="e.g. Hồ Chí Minh">
+                <input type="text" class="form-control" id="location" placeholder="e.g. Dream Company">
               </div>
             </div>
             <div class="row pb-2">
@@ -205,10 +205,6 @@ $tempId = $_SESSION['tempId'];
                   <div class="col-6 col-lg-6">
                     <select name="startYear" id="startYear" style="width: 100%; height: 65px;">
                       <option disabled selected>Year</option>
-                      <option value="2025">2025</option>
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2000">2000</option>
                     </select>
                   </div>
                 </div>
@@ -236,10 +232,6 @@ $tempId = $_SESSION['tempId'];
                   <div class="col-6 col-lg-6">
                     <select name="endYear" id="endYear" style="width: 100%; height: 65px;">
                       <option disabled selected>Year</option>
-                      <option value="2025">2025</option>
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2000">2000</option>
                     </select>
                   </div>
                 </div>
@@ -342,10 +334,6 @@ $tempId = $_SESSION['tempId'];
                   <div class="col-6">
                     <select name="gradYear" id="gradYear" style="width: 100%; height: 57px;">
                       <option disabled selected>Year</option>
-                      <option value="2025">2025</option>
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2000">2000</option>
                     </select>
                   </div>
                 </div>

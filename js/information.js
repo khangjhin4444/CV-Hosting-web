@@ -80,9 +80,9 @@ let tempList = [{
               </div>
               <div class="col-md-9">
                   <div class='job mb-4 row gap-0'>
-                      <h2 class='h5'>Lorem ipsum</h2>
-                      <h3>Web Designer, Lorem Corp</h3>
-                      <h4>Jan 2020 to Dec 2022</h4>
+                      <h2 class='h5 cv_location'>Lorem ipsum</h2>
+                      <h3><span class="cv_title">Web Designer</span>, <span class="cv_employer">Lorem Corp</span></h3>
+                      <h4><span class="start_date_cv">Jan 2020</span> to <span class="end_date_cv">Dec 2022</span></h4>
                       <p>Intrinsicly enable optimal core competencies through corporate relationships.
                           Phosfluorescently implement worldwide vortals and client-focused imperatives.
                           Conveniently initiate virtual paradigms and top-line convergence.</p>
@@ -892,38 +892,38 @@ document.getElementById('email').addEventListener('input', function () {
 // WORKING HISTORY
 
 document.getElementById('title').addEventListener('input', function () {
-    const nameDisplay = document.querySelectorAll('#email_cv').forEach(display => {
+    const nameDisplay = document.querySelectorAll('.cv_title').forEach(display => {
         display.innerHTML = this.value;
     });
 })
 document.getElementById('employer').addEventListener('input', function () {
-    const nameDisplay = document.querySelectorAll('#email_cv').forEach(display => {
+    const nameDisplay = document.querySelectorAll('.cv_employer').forEach(display => {
         display.innerHTML = this.value;
     });
 })
 document.getElementById('location').addEventListener('input', function () {
-    const nameDisplay = document.querySelectorAll('#email_cv').forEach(display => {
+    const nameDisplay = document.querySelectorAll('.cv_location').forEach(display => {
         display.innerHTML = this.value;
     });
 })
 document.getElementById('startMonth').addEventListener('change', function () {
-    const nameDisplay = document.querySelectorAll('#email_cv').forEach(display => {
+    const nameDisplay = document.querySelectorAll('.start_date_cv').forEach(display => {
         display.innerHTML = this.value;
     });
 })
 document.getElementById('startYear').addEventListener('change', function () {
-    const nameDisplay = document.querySelectorAll('#email_cv').forEach(display => {
-        display.innerHTML = this.value;
+    const nameDisplay = document.querySelectorAll('.start_date_cv').forEach(display => {
+        display.innerHTML += "/" + this.value;
     });
 })
 document.getElementById('endMonth').addEventListener('change', function () {
-    const nameDisplay = document.querySelectorAll('#email_cv').forEach(display => {
+    const nameDisplay = document.querySelectorAll('.end_date_cv').forEach(display => {
         display.innerHTML = this.value;
     });
 })
 document.getElementById('endYear').addEventListener('change', function () {
-    const nameDisplay = document.querySelectorAll('#email_cv').forEach(display => {
-        display.innerHTML = this.value;
+    const nameDisplay = document.querySelectorAll('.end_date_cv').forEach(display => {
+        display.innerHTML += "/" + this.value;
     });
 })
 
