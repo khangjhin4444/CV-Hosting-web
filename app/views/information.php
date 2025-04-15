@@ -594,7 +594,7 @@ require_once __DIR__ . '/../../config/constant.php';
             <div class="row pt-4">
               <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
                 <input class="step6-check" type="checkbox" name="" id="6" style="width: 30px; height: 30px;">
-                <input type="text" style="font-size: 20px; border: none; background-color: #F8F0E5; width: 100%;"
+                <input class="" type="text" style="font-size: 20px; border: none; background-color: #F8F0E5; width: 100%;"
                   value="Fill Your Own">
               </div>
               <div class="col-12 col-lg-6">
