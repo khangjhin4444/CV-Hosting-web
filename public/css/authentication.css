@@ -16,7 +16,7 @@ body {
 }
 
 .right {
-  flex:1.5;
+  flex:1;
   position: relative;
   display: flex;
   justify-content: center;

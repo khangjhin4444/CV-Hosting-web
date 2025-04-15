@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once  __DIR__ . '/../config/constant.php';
+require_once __DIR__ . '/../config/constant.php';
 
 
 
@@ -22,20 +22,19 @@ require_once __DIR__ . '/../config/routes.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-switch($page) {
+switch ($page) {
     case 'home':
         require_once __DIR__ . '/../app/views/home.php';
         break;
     case 'authentication':
         require_once __DIR__ . '/../app/views/authentication.php';
-        
+
         break;
-    
+
     case 'logout':
         session_destroy();
         header("Location: " . BASE_URL . "/index.php?page=home");
         exit();
-        break;
     case 'experience':
         if (!isset($_SESSION['user'])) {
             header("Location: " . BASE_URL . "/index.php?page=authentication");
@@ -43,7 +42,7 @@ switch($page) {
         }
         require_once __DIR__ . '/../app/views/experience.php';
         break;
-    
+
     case 'select_template':
         if (!isset($_SESSION['user'])) {
             header("Location: " . BASE_URL . "/index.php?page=authentication");
@@ -59,7 +58,7 @@ switch($page) {
         require_once __DIR__ . '/../app/views/information.php';
         break;
     default:
-        
+
         break;
 }
 
