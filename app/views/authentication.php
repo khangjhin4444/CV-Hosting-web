@@ -7,11 +7,7 @@ require_once __DIR__ . '/../controllers/AuthController.php';
 $authController = new AuthController($conn);
 $action = $_GET['action'] ?? 'login';
 
-if (isset($_SESSION['user']) && $action !== 'logout' && $action !== 'google_callback' && $action !== 'facebook_callback') {
-  echo ($_GET['action']);
-  // header('Location: ' . BASE_URL . '/index.php?page=home');
-  exit;
-}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($action === 'register') {
@@ -21,22 +17,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lastName = $_POST['last_name'];
 
     $result = $authController->register($email, $password, $firstName, $lastName);
-    if ($result['success']) {
-      header('Location: ' . BASE_URL . '/index.php?page=authentication&action=login');
+    // Kiểm tra nếu là AJAX request (từ fetch API)
+    $isAjax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && 
+              strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' ||
+              strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false;
+    
+    if ($isAjax) {
+      // Nếu là AJAX request, trả về JSON
+      header('Content-Type: application/json');
+      echo json_encode($result);
       exit;
     } else {
-      $error = $result['msg'];
+      // Nếu là form submit thông thường, chuyển hướng
+      if ($result['success']) {
+        header('Location: ' . BASE_URL . '/index.php?page=authentication&action=login');
+        exit;
+      } else {
+        $error = $result['msg'];
+      }
     }
   } elseif ($action === 'login') {
+    // Tương tự cho login...
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     $result = $authController->login($email, $password);
-    if ($result['success']) {
-      header('Location: ' . BASE_URL . '/index.php?page=home');
+    
+    // Kiểm tra nếu là AJAX request
+    $isAjax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && 
+              strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' ||
+              strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false;
+    
+    if ($isAjax) {
+      header('Content-Type: application/json');
+      echo json_encode($result);
       exit;
     } else {
-      $error = $result['msg'];
+      if ($result['success']) {
+        header('Location: ' . BASE_URL . '/index.php?page=home');
+        exit;
+      } else {
+        $error = $result['msg'];
+      }
     }
   }
 }
@@ -61,7 +83,7 @@ if ($action === 'google_callback') {
   $code = $_GET['code'];
   $state = $_GET['state'];
   $result = $authController->handleGoogleCallback($code, $state);
-  echo ($state . " " . $result['msg']);
+
   if ($result['success']) {
     header('Location: ' . BASE_URL . '/index.php?page=home');
     exit;
@@ -108,7 +130,7 @@ if ($action === 'facebook_callback') {
 </head>
 
 <body>
-  <!-- <script type="text/javascript" src="/eel.js"></script> -->
+  <!-- <script type="text/javascript" src="/eel.js"></> -->
   <div style="display: flex;
       height: 100vh;">
     <div class="left">

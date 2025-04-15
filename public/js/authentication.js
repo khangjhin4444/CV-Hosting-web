@@ -2,7 +2,10 @@
 async function postData(url, data) {
     const response = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded',
+            'X-Requested-With': 'XMLHttpRequest', // Thêm header này để xác định request là AJAX
+            'Accept': 'application/json' // Đặt Accept header để yêu cầu JSON response
+         },
         body: new URLSearchParams(data).toString()
     });
     return response.json();
@@ -104,14 +107,14 @@ function renderLogin() {
             return;
         }
 
-        const response = await postData('/cv-hosting-web/public/index.php?page=authentication&action=login', {
+        const response = await postData('/CV-Hosting-web-main/public/index.php?page=authentication&action=login', {
             email: emailInput.value,
             password: passwordInput.value
         });
 
         if (response.success) {
             // Chuyển hướng dựa trên role từ session
-            const roleResponse = await fetch('/cv-hosting-web/public/index.php?page=get_role', {
+            const roleResponse = await fetch('/CV-Hosting-web-main/public/index.php?page=get_role', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams({ email: emailInput.value })
@@ -120,13 +123,14 @@ function renderLogin() {
             const role = roleData.role;
 
             if (role === 'user') {
-                window.location.href = '/cv-hosting-web/public/index.php?page=home';
+                window.location.href = '/CV-Hosting-web-main/public/index.php?page=home';
             } else if (role === 'admin') {
-                window.location.href = '/cv-hosting-web/public/index.php?page=admin';
+                window.location.href = '/CV-Hosting-web-main/public/index.php?page=admin';
             } else {
                 alert('Unknown role');
             }
         } else {
+            alert(response.msg);
             emailNotification.textContent = response.message;
             emailNotification.style.color = 'red';
         }
@@ -191,8 +195,8 @@ async function renderSignUp() {
               <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; align-self: stretch;">
                   <p>Or log in with</p>
                   <div class="last-row">
-                      <a href="/cv-hosting-web/public/index.php?page=authentication&action=start-google-login"><img style="width: 22px;" src="images/google.png"></a>
-                      <a href="/cv-hosting-web/public/index.php?page=authentication&action=start-facebook-login"><img style="width: 22px;" src="images/Facebook.png"></a>
+                      <a href="/CV-Hosting-web-main/public/index.php?page=authentication&action=start-google-login"><img style="width: 22px;" src="images/google.png"></a>
+                      <a href="/CV-Hosting-web-main/public/index.php?page=authentication&action=start-facebook-login"><img style="width: 22px;" src="images/Facebook.png"></a>
                   </div>
               </div>
           </div>
@@ -370,13 +374,12 @@ function renderInformationInput(savedEmail, savedPassword) {
             return;
         }
 
-        // Tách first_name và last_name từ full name
-        const fullName = fnameInput.value.trim();
-        const nameParts = fullName.split(' ');
-        const firstName = nameParts[0];
-        const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
+        
+        
+        const firstName = fnameInput.value.trim();
+        const lastName = lnameInput.value.trim();
 
-        const response = await postData('/cv-hosting-web/public/index.php?page=authentication&action=register', {
+        const response = await postData('/CV-Hosting-web-main/public/index.php?page=authentication&action=register', {
             email: savedEmail,
             password: savedPassword,
             first_name: firstName,
@@ -387,6 +390,9 @@ function renderInformationInput(savedEmail, savedPassword) {
             alert('Sign up successful');
             renderLogin();
         } else {
+
+            alert(response.msg);
+
             nameNotification.textContent = response.message;
             nameNotification.style.color = 'red';
         }

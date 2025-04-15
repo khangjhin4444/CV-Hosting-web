@@ -13,7 +13,7 @@ class User{
             return ['success' => False, 'msg' => 'Invalid email']; 
         }
         if (!Validation::validatePassword($password)) {
-            return ['success' => False, 'msg' => 'Invalid password, must be at least 8 characters']; 
+            return ['success' => False, 'msg' => 'Invalid password']; 
         }
 
         $stmt = $this->conn->prepare("SELECT id, oauth_provider FROM users WHERE email = :email");

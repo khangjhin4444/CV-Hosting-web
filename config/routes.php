@@ -10,10 +10,7 @@ switch ($page) {
         $controller->index();
         break;
     case 'authentication':
-        if (isset($_SESSION['user'])) {
-            header("Location: " . BASE_URL . "/index.php?page=my_cvs");
-            exit();
-        }
+        
         $controller = new HomeController();
         $controller->authentication();
         break;
