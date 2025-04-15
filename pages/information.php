@@ -347,7 +347,7 @@ $tempId = $_SESSION['tempId'];
           style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-      
+
 
       <div class="col-12 col-lg-9 main-content" id="step3c">
         <div class="d-flex align-items-center gap-2 mb-2">
@@ -358,15 +358,17 @@ $tempId = $_SESSION['tempId'];
         </div>
 
         <div class="row">
-          <h3 style="font-weight: 600;">Education summary<br><span
-              style="font-weight: 500; font-size: 20px;">Provide details about your education, including any ongoing studies or incomplete programs.<span></h3>
+          <h3 style="font-weight: 600;">Education summary<br><span style="font-weight: 500; font-size: 20px;">Provide
+              details about your education, including any ongoing studies or incomplete programs.<span></h3>
           <div class="c-container">
-            
+
           </div>
-          
+
 
           <div class="d-flex align-items-center justify-content-center p-5 mt-5" style="border: 3px dashed lightblue">
-            <button class="add-course-work" style="border: none; background-color: transparent; color:blue; text-decoration: underline; font-size: 20px;">+ Add any additional course work</button>
+            <button class="add-course-work"
+              style="border: none; background-color: transparent; color:blue; text-decoration: underline; font-size: 20px;">+
+              Add any additional course work</button>
           </div>
 
         </div>
@@ -437,7 +439,8 @@ $tempId = $_SESSION['tempId'];
               </div>
             </div>
             <div style="height: 38vh; background-color: #F7E9D6; padding: 10px 12px;">
-              <div class="overflow-y-auto ps-3 pe-4 skill-container" style="width: 100%; height: 34vh; scrollbar-width: none;">
+              <div class="overflow-y-auto ps-3 pe-4 skill-container"
+                style="width: 100%; height: 34vh; scrollbar-width: none;">
               </div>
             </div>
           </div>

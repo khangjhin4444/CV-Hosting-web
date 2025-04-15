@@ -22,7 +22,7 @@ let tempList = [{
               <div class="col-md-3">
                   <h2 class="h4">Profile Summary</h2>
               </div>
-              <div class="container col-md-9">
+              <div class="container col-md-9 cv_summary">
                   <p class='lead enlarge mb-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <p class='lead enlarge mb-2'>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
@@ -34,44 +34,11 @@ let tempList = [{
                   <h2 class="h4">Skills</h2>
               </div>
               <div class="col-md-9 mb-3">
-                  <div class="row">
-                      <div class='col-md-4 talent'>
-                          <h2 class='h5'>Lorem ipsum</h2>
-                      </div>
-                      <div class='col-md-4 talent'>
-                          <h2 class='h5'>Dolor sit</h2>
-                      </div>
-                      <div class='col-md-4 talent'>
-                          <h2 class='h5'>Amet consectetur</h2>
-                      </div>
+                  <div class="row skills-list">
                   </div>
               </div>
           </section>
 
-          <!-- Technical -->
-          <section class="row mb-4 border-bottom">
-              <div class="col-md-3">
-                  <h2 class="h4">Technical</h2>
-              </div>
-              <div class="col-md-9">
-                  <div class="row skills-list">
-                      <div class='col-md-4'>
-                          <ul class='list-unstyled'>
-                              <li>Lorem ipsum</li>
-                              <li>Dolor sit</li>
-                              <li>Amet consectetur</li>
-                          </ul>
-                      </div>
-                      <div class='col-md-4'>
-                          <ul class='list-unstyled'>
-                              <li>Adipiscing elit</li>
-                              <li>Sed do</li>
-                              <li>Eiusmod tempor</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </section>
 
           <!-- Experience -->
           <section class="row mb-4 border-bottom">
@@ -104,8 +71,9 @@ let tempList = [{
                   <h2 class="h4">Education</h2>
               </div>
               <div class='col-md-9'>
-                  <h2 class='h5'>Lorem University - Lorem City</h2>
-                  <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
+                  <h2 class='h5'><span class="cv_uni">Lorem</span> University - <span class="cv_city">Lorem</span> City</h2>
+                  <h3><span class="cv_degree">Bachelor</span> of <span class="cv_field_study"></span></h3>
+                  <h5>Gradution year: <span class="cv_year"></span></h5>
               </div>
               
           </section>
@@ -161,31 +129,6 @@ let tempList = [{
                       </div>
                       <div class='col-md-4 talent'>
                           <h2 class='h5'>Amet consectetur</h2>
-                      </div>
-                  </div>
-              </div>
-          </section>
-
-          <!-- Technical -->
-          <section class="row mb-4 border-bottom">
-              <div class="col-md-3">
-                  <h2 class="h4">Technical</h2>
-              </div>
-              <div class="col-md-9">
-                  <div class="row skills-list">
-                      <div class='col-md-4'>
-                          <ul class='list-unstyled'>
-                              <li>Lorem ipsum</li>
-                              <li>Dolor sit</li>
-                              <li>Amet consectetur</li>
-                          </ul>
-                      </div>
-                      <div class='col-md-4'>
-                          <ul class='list-unstyled'>
-                              <li>Adipiscing elit</li>
-                              <li>Sed do</li>
-                              <li>Eiusmod tempor</li>
-                          </ul>
                       </div>
                   </div>
               </div>
@@ -927,6 +870,41 @@ document.getElementById('endYear').addEventListener('change', function () {
     });
 })
 
+// EDUCATION
+document.getElementById('institution').addEventListener('input', function () {
+    const nameDisplay = document.querySelectorAll('.cv_uni').forEach(display => {
+        display.innerHTML = this.value;
+    });
+})
+document.getElementById('school-location').addEventListener('input', function () {
+    const nameDisplay = document.querySelectorAll('.cv_city').forEach(display => {
+        display.innerHTML = this.value;
+    });
+})
+document.getElementById('degree').addEventListener('input', function () {
+    const nameDisplay = document.querySelectorAll('.cv_degree').forEach(display => {
+        display.innerHTML = this.value;
+    });
+})
+document.getElementById('field-study').addEventListener('input', function () {
+    const nameDisplay = document.querySelectorAll('.cv_field_study').forEach(display => {
+        display.innerHTML = this.value;
+    });
+})
+document.getElementById('gradMonth').addEventListener('change', function () {
+    const nameDisplay = document.querySelectorAll('.cv_year').forEach(display => {
+        display.innerHTML = this.value;
+    });
+})
+document.getElementById('gradYear').addEventListener('change', function () {
+    const nameDisplay = document.querySelectorAll('.cv_year').forEach(display => {
+        display.innerHTML += " " + this.value;
+    });
+})
+
+// SKILLS handle at button 4b
+
+// SUMMARY
 
 
 // Navigation 
@@ -1001,7 +979,7 @@ buttonStep3a.addEventListener('click', () => {
     buttonStep3b.innerHTML = "NEXT";
 })
 buttonStep3b.addEventListener('click', () => {
-    
+
 
     // Collect form data
     if (!institutionInput.value && !schoolLocationInput.value && !degreeInput.value && !fieldStudyInput.value && gradMonthInput.value === "Month" && gradYearInput.value === "Year") {
@@ -1015,7 +993,7 @@ buttonStep3b.addEventListener('click', () => {
             gradMonth: document.getElementById("gradMonth").value,
             gradYear: document.getElementById("gradYear").value
         };
-    
+
         // Generate HTML for the new entry
         const htmlContent = `
             <div class="edusum-container mb-4" style="border: 1px solid black">
@@ -1034,23 +1012,23 @@ buttonStep3b.addEventListener('click', () => {
                 <div class="second-row-sum">${newEdu.location} | Expected in ${newEdu.gradMonth} ${newEdu.gradYear}</div>
             </div>
         `;
-    
+
         // Add new entry to eduSum with data and HTML
         eduSum.push({
             data: newEdu,
             html: htmlContent
         });
-    
+
         // Remove duplicates based on data (not HTML)
         const unique = Array.from(
             new Map(eduSum.map(obj => [JSON.stringify(obj.data), obj])).values()
         );
         eduSum.length = 0; // Clear eduSum
         eduSum.push(...unique); // Update with unique entries
-    
+
         // Render the summary
         renderSummary();
-    
+
         // Clear form inputs
         document.getElementById("degree").value = "";
         document.getElementById("institution").value = "";
@@ -1138,6 +1116,27 @@ buttonStep4b.addEventListener('click', () => {
     handleButtonClick('step5a')
     changeSideBar("5")
     progressElement.style.width = "80%"
+    const quillContent = quill.root.innerHTML;
+    console.log(quillContent);
+
+    let skillsHtml = '';
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(quillContent, 'text/html');
+    const listItems = doc.querySelectorAll('li');
+
+    listItems.forEach(item => {
+        const skillText = item.textContent.trim();
+        skillsHtml += `
+            <div class='col-md-4 talent'>
+                <h2 class='h5'>${skillText}</h2>
+            </div>
+        `;
+    });
+
+    document.querySelectorAll(".skills-list").forEach(index => {
+        index.innerHTML = skillsHtml
+    });
 })
 buttonStep5a.addEventListener('click', () => {
     handleButtonClick('step5b')
@@ -1147,6 +1146,25 @@ buttonStep5b.addEventListener('click', () => {
     handleButtonClick('step6')
     changeSideBar("6")
     progressElement.style.width = "100%"
+    const quillContent = quill_2.root.innerHTML;
+    console.log(quillContent);
+
+    let skillsHtml = '';
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(quillContent, 'text/html');
+    const listItems = doc.querySelectorAll('li');
+
+    listItems.forEach(item => {
+        const skillText = item.textContent.trim();
+        skillsHtml += `
+        <p class='lead enlarge mb-2'>${skillText}</p>
+        `;
+    });
+
+    document.querySelectorAll(".cv_summary").forEach(index => {
+        index.innerHTML = skillsHtml
+    });
 })
 buttonStep6.addEventListener('click', () => {
 
@@ -1167,12 +1185,12 @@ backStep3a.addEventListener('click', () => {
     progressElement.style.width = "20%"
 })
 backStep3b.addEventListener('click', () => {
-  if (institutionInput.value && schoolLocationInput.value && degreeInput.value && fieldStudyInput.value && gradMonthInput.value && gradYearInput.value) {
-    handleButtonClick('step3c')
-  } else {
-    handleButtonClick('step3a')
-  }
-    
+    if (institutionInput.value && schoolLocationInput.value && degreeInput.value && fieldStudyInput.value && gradMonthInput.value && gradYearInput.value) {
+        handleButtonClick('step3c')
+    } else {
+        handleButtonClick('step3a')
+    }
+
 })
 backStep3c.addEventListener('click', () => {
     handleButtonClick('step2b')
@@ -1269,9 +1287,9 @@ let skillExamples = [
     { name: 'Over thinking', job: ['IT'] },
     { name: 'Creative', job: ['IT'] },
     { name: 'Adaptive', job: ['IT'] }
-  ];
-  
-  let summaryExamples = [
+];
+
+let summaryExamples = [
     { name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
     { name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
     { name: 'Problem-solving', job: ['IT', 'Teacher'] },
@@ -1279,38 +1297,38 @@ let skillExamples = [
     { name: 'Over thinking', job: ['IT'] },
     { name: 'Creative', job: ['IT'] },
     { name: 'Adaptive', job: ['IT'] }
-  ];
-  
-  let searchInput = document.querySelector(".search-input");
-  let searchBtn = document.querySelector(".search-btn");
-  let skillContainer = document.querySelector(".skill-container");
-  let summaryContainer = document.querySelector(".summary-container");
-  
-  // Initialize rendering
-  renderSkill("");
-  renderSummaryStep5("");
-  
-  // Search button event listener
-  searchBtn.addEventListener('click', () => {
+];
+
+let searchInput = document.querySelector(".search-input");
+let searchBtn = document.querySelector(".search-btn");
+let skillContainer = document.querySelector(".skill-container");
+let summaryContainer = document.querySelector(".summary-container");
+
+// Initialize rendering
+renderSkill("");
+renderSummaryStep5("");
+
+// Search button event listener
+searchBtn.addEventListener('click', () => {
     const job = searchInput.value.trim();
     renderSkill(job);
     renderSummaryStep5(job);
-  });
-  
-  function renderSkill(job) {
+});
+
+function renderSkill(job) {
     skillContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
     const filteredSkills = job === ""
-      ? skillExamples
-      : skillExamples.filter(skill => {
-          if (!skill.job || !Array.isArray(skill.job)) {
-            return false;
-          }
-          return skill.job.some(j => typeof j === 'string' && j.toLowerCase().includes(job.toLowerCase()));
+        ? skillExamples
+        : skillExamples.filter(skill => {
+            if (!skill.job || !Array.isArray(skill.job)) {
+                return false;
+            }
+            return skill.job.some(j => typeof j === 'string' && j.toLowerCase().includes(job.toLowerCase()));
         });
-  
+
     filteredSkills.forEach(skill => {
-      skillContainer.insertAdjacentHTML('beforeend',
-        `
+        skillContainer.insertAdjacentHTML('beforeend',
+            `
           <div class="row p-2" style="border: 1px solid black; border-top: none;">
             <div class="row align-items-center p-0">
               <div class="col-1">
@@ -1324,11 +1342,11 @@ let skillExamples = [
             </div>
           </div>
         `
-      );
+        );
     });
-  }
-  
-  function renderSummaryStep5(job) {
+}
+
+function renderSummaryStep5(job) {
     summaryContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
     let filteredSummaries
     if (job === "") {
@@ -1337,15 +1355,15 @@ let skillExamples = [
         console.log(job)
         filteredSummaries = summaryExamples.filter(summary => {
             if (!summary.job || !Array.isArray(summary.job)) {
-              return false;
+                return false;
             }
             return summary.job.some(j => typeof j === 'string' && j.toLowerCase().includes(job.toLowerCase()));
-          });
+        });
     }
-  
+
     filteredSummaries.forEach(summary => {
-      summaryContainer.insertAdjacentHTML('beforeend',
-        `
+        summaryContainer.insertAdjacentHTML('beforeend',
+            `
           <div class="row p-2" style="border: 1px solid black; border-top: none;">
             <div class="row align-items-center p-0">
               <div class="col-1">
@@ -1359,49 +1377,49 @@ let skillExamples = [
             </div>
           </div>
         `
-      );
+        );
     });
-  }
-  
-  // Quill editor logic remains unchanged unless you report issues with it
-  document.addEventListener("DOMContentLoaded", function () {
+}
+
+// Quill editor logic remains unchanged unless you report issues with it
+document.addEventListener("DOMContentLoaded", function () {
     const skillSelectedContents = new Set();
     const summarySelectedContents = new Set();
-  
+
     function updateQuillEditor(quillInstance, selectedSet) {
-      const html = `<ul>${Array.from(selectedSet)
-        .map(item => `<li>${item}</li>`)
-        .join("")}</ul>`;
-      quillInstance.clipboard.dangerouslyPasteHTML(html);
+        const html = `<ul>${Array.from(selectedSet)
+            .map(item => `<li>${item}</li>`)
+            .join("")}</ul>`;
+        quillInstance.clipboard.dangerouslyPasteHTML(html);
     }
-  
+
     skillContainer.addEventListener('click', function (e) {
-      const button = e.target.closest('.add-to-skill-editor');
-      if (button) {
-        const content = button.getAttribute("data-content");
-        if (skillSelectedContents.has(content)) {
-          skillSelectedContents.delete(content);
-          button.querySelector("img").src = "images/plus.png";
-        } else {
-          skillSelectedContents.add(content);
-          button.querySelector("img").src = "images/check-lg.svg";
+        const button = e.target.closest('.add-to-skill-editor');
+        if (button) {
+            const content = button.getAttribute("data-content");
+            if (skillSelectedContents.has(content)) {
+                skillSelectedContents.delete(content);
+                button.querySelector("img").src = "images/plus.png";
+            } else {
+                skillSelectedContents.add(content);
+                button.querySelector("img").src = "images/check-lg.svg";
+            }
+            updateQuillEditor(quill, skillSelectedContents);
         }
-        updateQuillEditor(quill, skillSelectedContents);
-      }
     });
-  
+
     summaryContainer.addEventListener('click', function (e) {
-      const button = e.target.closest('.add-to-summary-editor');
-      if (button) {
-        const content = button.getAttribute("data-content");
-        if (summarySelectedContents.has(content)) {
-          summarySelectedContents.delete(content);
-          button.querySelector("img").src = "images/plus.png";
-        } else {
-          summarySelectedContents.add(content);
-          button.querySelector("img").src = "images/check-lg.svg";
+        const button = e.target.closest('.add-to-summary-editor');
+        if (button) {
+            const content = button.getAttribute("data-content");
+            if (summarySelectedContents.has(content)) {
+                summarySelectedContents.delete(content);
+                button.querySelector("img").src = "images/plus.png";
+            } else {
+                summarySelectedContents.add(content);
+                button.querySelector("img").src = "images/check-lg.svg";
+            }
+            updateQuillEditor(quill_2, summarySelectedContents);
         }
-        updateQuillEditor(quill_2, summarySelectedContents);
-      }
     });
-  });
+});
