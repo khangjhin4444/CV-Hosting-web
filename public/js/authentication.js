@@ -44,8 +44,8 @@ function renderLogin() {
                   <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; align-self: stretch;">
                       <p>Or log in with</p>
                       <div class="last-row">
-                          <a href="/CV-Hosting-web-main/public/index.php?page=authentication&action=start-google-login"><img style="width: 22px;" src="images/google.png"></a>
-                          <a href="/CV-Hosting-web-main/public/index.php?page=authentication&action=start-facebook-login"><img style="width: 22px;" src="images/Facebook.png"></a>
+                          <a class=" p-2 border-3 rounded-circle" href="/CV-Hosting-web-main/public/index.php?page=authentication&action=start-google-login"><img style="width: 35px; height:35px; object-fit: contain;" src="images/google.png"></a>
+                          <a class=" p-2 border-3 rounded-circle" href="/CV-Hosting-web-main/public/index.php?page=authentication&action=start-facebook-login"><img class ="rounded-circle" style="width: 40px; height:40px; object-fit: contain;" src="images/Facebook.png"></a>
                       </div>
                   </div>
               </div>
