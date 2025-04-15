@@ -61,6 +61,13 @@ switch ($page) {
         }
         require_once __DIR__ . '/../app/views/information.php';
         break;
+    case 'my_cvs':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        require_once __DIR__ . '/../app/views/my_cvs.php';
+        break;
     default:
 
         break;

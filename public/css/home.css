@@ -1,5 +1,8 @@
 .carousel .card {
     list-style: none;
+    height: 320px;
+    padding: 15px 14px;
+    /* width: 250px; */
     /* scroll-snap-align: start; */
 }
 
@@ -19,11 +22,11 @@
     scroll-snap-type: none;
 }
 
-
+/* 
 .card img {
     object-fit: contain;
     border-radius: 10px;
-}
+} */
 
 
 
@@ -82,6 +85,45 @@ i {
     display: flex !important;
     align-items: flex-end;
     justify-content: center;
+}
+
+
+.cv-preview-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.cv_template {
+    pointer-events: none;
+}
+
+.cv-preview-wrapper .cv_template {
+    transform: scale(0.3);
+    transform-origin: top left;
+    width: 310%;
+    height: auto;
+}
+
+.card-img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: auto; /* Ensure overlay is clickable */
+}
+
+.card:hover .card-img-overlay {
+    display: flex !important;
+}
+
+.card .btn.use-btn {
+    pointer-events: auto; /* Ensure buttons are clickable */
 }
 
 

@@ -90,13 +90,13 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
                 </li>
                 
                     <li class="navbar-item">
-                        <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link">My CVs</a>
+                        <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="#" class="nav-link"><?= $displayName ?></a>
+                        <a href="#" class="nav-link" style="width: 200px;"><?= $displayName ?></a>
                     </li>
                     <li class="navbar-item">
-                        <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link">Log Out</a>
+                        <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log Out</a>
                     </li>
                 
             </ul>
