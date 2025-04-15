@@ -347,11 +347,6 @@ $tempId = $_SESSION['tempId'];
           style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT</button>
       </div>
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 70c8c64678b91f4a0f9419199476d69a5e82b2ab
       <div class="col-12 col-lg-9 main-content" id="step3c">
         <div class="d-flex align-items-center gap-2 mb-2">
           <a id="back-step3c" href="#" class="p-0"
