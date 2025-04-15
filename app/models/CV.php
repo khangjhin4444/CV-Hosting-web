@@ -1,15 +1,13 @@
 <?php
 
-class CV{
+class CV {
     private $conn;
 
-    public function __construct($conn){
+    public function __construct($conn) {
         $this->conn = $conn;
     }
 
-    
-
-    public function createCV($userId, $heading, $workingHistory, $education, $skills, $summary, $finalize) {
+    public function createCV($userId, $heading, $workingHistory, $education, $skills, $summary, $additional) {
         try {
             $this->conn->beginTransaction();
 
@@ -96,32 +94,20 @@ class CV{
                 }
             }
 
-            // Lưu ngôn ngữ lập trình
-            foreach ($finalize['languages'] as $lang) {
-                if (!empty($lang)) {
-                    $stmt = $this->conn->prepare("
-                        INSERT INTO languages (cv_id, language_name)
-                        VALUES (:cv_id, :language_name)
-                    ");
-                    $stmt->execute([
-                        'cv_id' => $cvId,
-                        'language_name' => $lang,
-                    ]);
-                }
-            }
-
-            // Lưu công cụ
-            foreach ($finalize['tools'] as $tool) {
-                if (!empty($tool)) {
-                    $stmt = $this->conn->prepare("
-                        INSERT INTO tools (cv_id, tool_name)
-                        VALUES (:cv_id, :tool_name)
-                    ");
-                    $stmt->execute([
-                        'cv_id' => $cvId,
-                        'tool_name' => $tool,
-                    ]);
-                }
+            // Lưu additional
+            if (!empty($additional)) {
+                $stmt = $this->conn->prepare("
+                    INSERT INTO additional (cv_id, website, certification, languages, programming_languages, your_own)
+                    VALUES (:cv_id, :website, :certification, :languages, :programming_languages, :your_own)
+                ");
+                $stmt->execute([
+                    'cv_id' => $cvId,
+                    'website' => $additional['website'] ?? '',
+                    'certification' => $additional['certification'] ?? '',
+                    'languages' => !empty($additional['languages']) ? implode(',', $additional['languages']) : '',
+                    'programming_languages' => !empty($additional['programming_languages']) ? implode(',', $additional['programming_languages']) : '',
+                    'your_own' => $additional['your_own'] ?? '',
+                ]);
             }
 
             $this->conn->commit();
@@ -162,15 +148,17 @@ class CV{
             $stmt->execute(['cv_id' => $cvId]);
             $cv['summary'] = array_column($stmt->fetchAll(PDO::FETCH_ASSOC), 'summary_text');
 
-            // Lấy ngôn ngữ
-            $stmt = $this->conn->prepare("SELECT language_name FROM languages WHERE cv_id = :cv_id");
+            // Lấy additional
+            $stmt = $this->conn->prepare("SELECT * FROM additional WHERE cv_id = :cv_id");
             $stmt->execute(['cv_id' => $cvId]);
-            $cv['finalize']['languages'] = array_column($stmt->fetchAll(PDO::FETCH_ASSOC), 'language_name');
-
-            // Lấy công cụ
-            $stmt = $this->conn->prepare("SELECT tool_name FROM tools WHERE cv_id = :cv_id");
-            $stmt->execute(['cv_id' => $cvId]);
-            $cv['finalize']['tools'] = array_column($stmt->fetchAll(PDO::FETCH_ASSOC), 'tool_name');
+            $additional = $stmt->fetch(PDO::FETCH_ASSOC);
+            $cv['additional'] = $additional ? [
+                'website' => $additional['website'] ?? '',
+                'certification' => $additional['certification'] ?? '',
+                'languages' => $additional['languages'] ? explode(',', $additional['languages']) : [],
+                'programming_languages' => $additional['programming_languages'] ? explode(',', $additional['programming_languages']) : [],
+                'your_own' => $additional['your_own'] ?? ''
+            ] : [];
 
             return ['success' => true, 'data' => $cv];
         } catch (Exception $e) {
@@ -189,7 +177,5 @@ class CV{
             return ['success' => false, 'msg' => 'Error fetching user CVs: ' . $e->getMessage()];
         }
     }
-
 }
-
 ?>

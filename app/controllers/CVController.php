@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/../models/CV.php';
 
 class CVController {
@@ -8,10 +9,6 @@ class CVController {
         $this->cvModel = new CV($conn);
     }
 
-    /**
-     * Xử lý yêu cầu tạo CV
-     * @return void
-     */
     public function createCV() {
         header('Content-Type: application/json');
 
@@ -23,13 +20,19 @@ class CVController {
         $userId = $_SESSION['user']['id'];
 
         try {
-            // Thu thập dữ liệu từ form
+            // Thu thập dữ liệu từ form (hoặc JSON)
             $heading = $_POST['heading'] ?? [];
             $working_history = $_POST['working_history'] ?? [];
             $education = $_POST['education'] ?? [];
             $skills = $_POST['skills'] ?? [];
             $summary = $_POST['summary'] ?? [];
-            $finalize = $_POST['finalize'] ?? ['languages' => [], 'tools' => []];
+            $additional = $_POST['additional'] ?? [
+                'website' => '',
+                'certification' => '',
+                'languages' => [],
+                'programming_languages' => [],
+                'your_own' => ''
+            ];
 
             // Validate dữ liệu cơ bản
             if (empty($heading['name']) || empty($heading['email'])) {
@@ -38,7 +41,7 @@ class CVController {
             }
 
             // Gọi model để lưu CV
-            $result = $this->cvModel->createCV($userId, $heading, $working_history, $education, $skills, $summary, $finalize);
+            $result = $this->cvModel->createCV($userId, $heading, $working_history, $education, $skills, $summary, $additional);
             echo json_encode($result);
         } catch (Exception $e) {
             error_log("Error saving CV: " . $e->getMessage());
@@ -46,11 +49,6 @@ class CVController {
         }
         exit;
     }
-
-    /**
-     * Xử lý yêu cầu lấy CV
-     * @return void
-     */
 
     public function getCV() {
         header('Content-Type: application/json');
@@ -68,16 +66,10 @@ class CVController {
             exit;
         }
 
-        // Gọi model để lấy CV
         $result = $this->cvModel->getCV($cvId);
         echo json_encode($result);
         exit;
     }
-
-    /**
-     * Xử lý yêu cầu lay CV theo userId
-     * @return void
-     */
 
     public function getUserCVs() {
         header('Content-Type: application/json');
@@ -89,9 +81,26 @@ class CVController {
 
         $userId = $_SESSION['user']['id'];
 
-        // Gọi model để lấy CV
         $result = $this->cvModel->getUserCVs($userId);
         echo json_encode($result);
         exit;
     }
+
+    public function handleRequest() {
+        $action = $_GET['action'] ?? '';
+        if ($action === 'createCV' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->createCV();
+        } elseif ($action === 'getCV' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            $this->getCV();
+        } elseif ($action === 'getUserCVs' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            $this->getUserCVs();
+        } else {
+            header('Content-Type: application/json');
+            echo json_encode(['success' => false, 'msg' => 'Invalid action']);
+            exit;
+        }
+    }
 }
+
+
+?>

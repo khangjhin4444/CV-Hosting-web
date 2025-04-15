@@ -35,43 +35,53 @@ CREATE TABLE personal_info (
     postcode VARCHAR(20),
     phone VARCHAR(20),
     email VARCHAR(255) NOT NULL,
-    address TEXT,
     FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE working_history (
     work_id INT AUTO_INCREMENT PRIMARY KEY,
     cv_id INT NOT NULL,
-    title VARCHAR(100) NOT NULL,
-    employer VARCHAR(100) NOT NULL,
+    title VARCHAR(100),
+    employer VARCHAR(100) ,
     location VARCHAR(100),
     start_date VARCHAR(7), -- Định dạng YYYY-MM
     end_date VARCHAR(7), -- Định dạng YYYY-MM hoặc 'now'
     FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB;
 
 CREATE TABLE education (
     education_id INT AUTO_INCREMENT PRIMARY KEY,
     cv_id INT NOT NULL,
-    institution VARCHAR(255) NOT NULL,
+    institution VARCHAR(255),
     school_location VARCHAR(100),
     degree VARCHAR(100),
     field_study VARCHAR(100),
     gpa VARCHAR(10),
-    graduation_date VARCHAR(7), -- Định dạng YYYY-MM
+    graduation_date VARCHAR(7), 
     FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB;
 
 CREATE TABLE skills (
     skill_id INT AUTO_INCREMENT PRIMARY KEY,
     cv_id INT NOT NULL,
-    skill_name VARCHAR(100) NOT NULL,
+    skill_name TEXT,
     FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB;;
 
 CREATE TABLE summaries (
     summary_id INT AUTO_INCREMENT PRIMARY KEY,
     cv_id INT NOT NULL,
-    summary_text TEXT NOT NULL,
+    summary_text TEXT,
     FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB;
+
+CREATE TABLE additional (
+    additional_id INT AUTO_INCREMENT PRIMARY KEY,
+    cv_id INT NOT NULL,
+    website VARCHAR(255),
+    certification VARCHAR(255),
+    languages VARCHAR(255),
+    programming_languages VARCHAR(255),
+    your_own TEXT,
+    FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
+) ENGINE=InnoDB;

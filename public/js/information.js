@@ -1469,3 +1469,89 @@ document.querySelector('.certifications').addEventListener('input', function () 
         display.innerHTML += `${this.value}`;
     });
 });
+
+
+const heading = {
+    name: document.getElementById('name').value || '',
+    surname: document.getElementById('surname').value || '',
+    city: document.getElementById('city').value || '',
+    country: document.getElementById('country').value || '',
+    postcode: document.getElementById('postcode').value || '',
+    phone: document.getElementById('phone').value || '',
+    email: document.getElementById('email').value || '',
+};
+
+const startMonth = document.getElementById('startMonth').value;
+const startYear = document.getElementById('startYear').value;
+const endMonth = document.getElementById('endMonth').value;
+const endYear = document.getElementById('endYear').value;
+const currentlyWorking = document.getElementById('currentlyWorking').checked;
+
+const workingHistory = [
+    {
+      title: document.getElementById('title').value || '',
+      employer: document.getElementById('employer').value || '',
+      location: document.getElementById('location').value || '',
+      start_date: startMonth && startYear && startMonth !== 'Month' && startYear !== 'Year' ? `${startMonth} ${startYear}` : '',
+      end_date: currentlyWorking ? 'Present' : (endMonth && endYear && endMonth !== 'Month' && endYear !== 'Year' ? `${endMonth} ${endYear}` : ''),
+    }
+  ];
+  
+const education = eduSum.map(edu => ({
+    institution: edu.data.institution || '',
+    school_location: edu.data.location || '',
+    degree: edu.data.degree || '',
+    field_study: edu.data.fieldStudy || '',
+    grad_date: edu.data.gradMonth && edu.data.gradYear ? `${edu.data.gradMonth} ${edu.data.gradYear}` : '',
+}));
+
+const skills = Array.from(skillSelectedContents);
+
+const summary = Array.from(summarySelectedContents);
+
+
+const websites = document.querySelector('.websites').value;
+const certifications = document.querySelector('.certifications').value;
+const languages = document.querySelector('.languages').value;
+const proLanguages = document.querySelector('.pro-languages').value;
+const your_own = document.querySelector('.checked-input[id="6"]').value;
+
+const additional = {
+    websites: websites || '',
+    certifications: certifications || '',
+    languages: languages ? languages.split(',').map(item => item.trim()).filter(item => item) : [],
+    proLanguages: proLanguages ? proLanguages.split(',').map(item => item.trim()).filter(item => item) : [],
+    your_own: your_own || ''
+};
+
+const cvData = {
+    heading: heading,
+    workingHistory: workingHistory,
+    education: education,
+    skills: skills,
+    summary: summary,
+    additional: additional
+};
+
+fetch('/CV-Hosting-web-main/app/controllers/CVController.php?action=createCV', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(cvData)
+})
+.then(response => response.json())
+.then(data => {
+    if (data.success){
+        alert('CV created successfully! CV ID: ' + data.cv_id);
+        window.location.href = '/CV-Hosting-web-main/public/index.php?page=home';
+    } else {
+        alert('Error creating CV: ' + data.msg);
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+    alert('An error occurred while creating the CV. Please try again.');
+}
+)
+
