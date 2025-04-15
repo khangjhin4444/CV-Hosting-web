@@ -5,6 +5,9 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 use League\OAuth2\Client\Provider\Google;
 use League\OAuth2\Client\Provider\Facebook;
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
+
 class AuthController {
     private $userModel;
     private $googleProvider;
@@ -14,15 +17,15 @@ class AuthController {
         $this->userModel = new User($conn);
 
         $this->googleProvider = new Google([
-            'clientId' => '880006161529-bdgcldoj4lacab82ep9lbt8bq0cb6kn4.apps.googleusercontent.com',
-            'clientSecret' => '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',
-            'redirectUri' => 'http://localhost/CV-Hosting-web-main/public/index.php?page=authentication&action=google_callback',
+            'clientId' => $_ENV["GOOGLE_CLIENT_ID"], // Replace with your Google client ID
+            'clientSecret' => $_ENV["GOOGLE_CLIENT_SECRET"], // Replace with your Google client secret
+            'redirectUri' => $_ENV["GOOGLE_REDIRECT_URI"], // Replace with your redirect URI
         ]);
 
         $this->facebookProvider = new Facebook([
-            'clientId' => '695956439553498',
-            'clientSecret' => '224b88c47646cbe55452aa2a6aafd115',
-            'redirectUri' => 'http://localhost/cv-hosting-web/public/index.php?page=authentication&action=facebook_callback',
+            'clientId' => $_ENV["FACEBOOK_CLIENT_ID"], // Replace with your Facebook client ID
+            'clientSecret' => $_ENV["FACEBOOK_CLIENT_SECRET"], // Replace with your Facebook client secret
+            'redirectUri' => $_ENV["FACEBOOK_REDIRECT_URI"], // Replace with your redirect URI
             'graphApiVersion' => 'v20.0',
         ]);
     }
