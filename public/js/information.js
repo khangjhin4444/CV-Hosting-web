@@ -1415,3 +1415,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.querySelectorAll('.cv-container').forEach(container => {
+    container.addEventListener('click', () => {
+        container.classList.add("enlarged");
+        document.body.style.overflow = 'hidden';
+    });
+})
+document.addEventListener('click', (e) => {
+    document.querySelectorAll('.cv-container').forEach(container => {
+        if (!container.contains(e.target)) {
+            container.classList.remove('enlarged');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+document.querySelectorAll(".step6-check").forEach((check, index) => {
+    check.addEventListener("change", () => {
+        const input = document.querySelectorAll(".checked-input")[index];
+
+        if (check.checked) {
+            input.style.visibility = "visible";
+            setTimeout(() => {
+                input.focus();
+            }, 10);
+        } else {
+            input.style.visibility = "hidden";
+        }
+    });
+});

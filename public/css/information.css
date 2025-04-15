@@ -134,6 +134,44 @@ select:focus {
   padding-right: 20px;
 }
 
+.cv-container {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  z-index: 1;
+  transform: scale(1);
+  /* trạng thái mặc định */
+  opacity: 1;
+}
+
+/* Trạng thái phóng to */
+.cv-container.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.7);
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  padding: 20px;
+  opacity: 1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+.checked-input {
+  font-size: 20px;
+  border: none;
+  padding: 10px 12px;
+  background-color: #F8F0E5;
+  border: 1px solid #ccc;
+  width: 100%;
+  visibility: hidden;
+}
+
 
 /* Media query cho màn hình nhỏ */
 @media (max-width: 1400px) {
