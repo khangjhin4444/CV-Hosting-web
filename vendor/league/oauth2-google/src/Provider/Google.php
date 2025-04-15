@@ -8,7 +8,6 @@ use League\OAuth2\Client\Token\AccessToken;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
 
-
 class Google extends AbstractProvider
 {
     use BearerAuthorizationTrait;
