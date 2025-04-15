@@ -33,7 +33,7 @@ if ($isLoggedIn) {
     $userData = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($userData) {
         // Nếu có dữ liệu, hiển thị tên
-        $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_name']);
+        $displayName = htmlspecialchars($userData['first_name'] );
     } else {
         // Nếu không có dữ liệu, hiển thị email
         $displayName = $email;
