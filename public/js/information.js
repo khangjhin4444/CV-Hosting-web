@@ -22,7 +22,7 @@ color: #444;">
             <div class="col-md-3">
                 <h2 class="h4">Profile Summary</h2>
             </div>
-            <div class="container col-md-9">
+            <div class="container col-md-9 cv_summary">
                 <p class='lead enlarge mb-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <p class='lead enlarge mb-2'>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
@@ -34,44 +34,11 @@ color: #444;">
                 <h2 class="h4">Skills</h2>
             </div>
             <div class="col-md-9 mb-3">
-                <div class="row">
-                    <div class='col-md-4 talent'>
-                        <h2 class='h5'>Lorem ipsum</h2>
-                    </div>
-                    <div class='col-md-4 talent'>
-                        <h2 class='h5'>Dolor sit</h2>
-                    </div>
-                    <div class='col-md-4 talent'>
-                        <h2 class='h5'>Amet consectetur</h2>
-                    </div>
+                <div class="row skills-list">
                 </div>
             </div>
         </section>
 
-        <!-- Technical -->
-        <section class="row mb-4 border-bottom">
-            <div class="col-md-3">
-                <h2 class="h4">Technical</h2>
-            </div>
-            <div class="col-md-9">
-                <div class="row skills-list">
-                    <div class='col-md-4'>
-                        <ul class='list-unstyled'>
-                            <li>Lorem ipsum</li>
-                            <li>Dolor sit</li>
-                            <li>Amet consectetur</li>
-                        </ul>
-                    </div>
-                    <div class='col-md-4'>
-                        <ul class='list-unstyled'>
-                            <li>Adipiscing elit</li>
-                            <li>Sed do</li>
-                            <li>Eiusmod tempor</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Experience -->
         <section class="row mb-4 border-bottom">
@@ -104,8 +71,9 @@ color: #444;">
                 <h2 class="h4">Education</h2>
             </div>
             <div class='col-md-9'>
-                <h2 class='h5'>Lorem University - Lorem City</h2>
-                <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
+                <h2 class='h5'><span class="cv_uni">Lorem</span> University - <span class="cv_city">Lorem</span> City</h2>
+                <h3><span class="cv_degree">Bachelor</span> of <span class="cv_field_study"></span></h3>
+                <h5>Gradution year: <span class="cv_year"></span></h5>
             </div>
             
         </section>
@@ -161,31 +129,6 @@ color: #444;">
                     </div>
                     <div class='col-md-4 talent'>
                         <h2 class='h5'>Amet consectetur</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical -->
-        <section class="row mb-4 border-bottom">
-            <div class="col-md-3">
-                <h2 class="h4">Technical</h2>
-            </div>
-            <div class="col-md-9">
-                <div class="row skills-list">
-                    <div class='col-md-4'>
-                        <ul class='list-unstyled'>
-                            <li>Lorem ipsum</li>
-                            <li>Dolor sit</li>
-                            <li>Amet consectetur</li>
-                        </ul>
-                    </div>
-                    <div class='col-md-4'>
-                        <ul class='list-unstyled'>
-                            <li>Adipiscing elit</li>
-                            <li>Sed do</li>
-                            <li>Eiusmod tempor</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -927,20 +870,64 @@ document.getElementById('endYear').addEventListener('change', function () {
   });
 })
 
+// EDUCATION
+document.getElementById('institution').addEventListener('input', function () {
+  const nameDisplay = document.querySelectorAll('.cv_uni').forEach(display => {
+      display.innerHTML = this.value;
+  });
+})
+document.getElementById('school-location').addEventListener('input', function () {
+  const nameDisplay = document.querySelectorAll('.cv_city').forEach(display => {
+      display.innerHTML = this.value;
+  });
+})
+document.getElementById('degree').addEventListener('input', function () {
+  const nameDisplay = document.querySelectorAll('.cv_degree').forEach(display => {
+      display.innerHTML = this.value;
+  });
+})
+document.getElementById('field-study').addEventListener('input', function () {
+  const nameDisplay = document.querySelectorAll('.cv_field_study').forEach(display => {
+      display.innerHTML = this.value;
+  });
+})
+document.getElementById('gradMonth').addEventListener('change', function () {
+  const nameDisplay = document.querySelectorAll('.cv_year').forEach(display => {
+      display.innerHTML = this.value;
+  });
+})
+document.getElementById('gradYear').addEventListener('change', function () {
+  const nameDisplay = document.querySelectorAll('.cv_year').forEach(display => {
+      display.innerHTML += " " + this.value;
+  });
+})
+
+// SKILLS handle at button 4b
+
+// SUMMARY
 
 
 // Navigation 
 let eduSum = []
 let addCourseWork = document.querySelector(".add-course-work")
 addCourseWork.addEventListener('click', () => {
-handleButtonClick('step3b')
-document.getElementById("institution").value = ""
-document.getElementById("degree").value = ""
-document.getElementById("field-study").value = ""
-document.getElementById("school-location").value = ""
-document.getElementById("gradMonth").selectedIndex = 0;
-document.getElementById("gradYear").selectedIndex = 0;
+  handleButtonClick('step3b')
+  backStep3b.style.display = "block";
+  buttonStep3b.innerHTML = "NEXT";
+  document.getElementById("institution").value = ""
+  document.getElementById("degree").value = ""
+  document.getElementById("field-study").value = ""
+  document.getElementById("school-location").value = ""
+  document.getElementById("gradMonth").selectedIndex = 0;
+  document.getElementById("gradYear").selectedIndex = 0;
 })
+
+let institutionInput = document.getElementById("institution")
+let schoolLocationInput = document.getElementById("school-location")
+let degreeInput = document.getElementById("degree")
+let fieldStudyInput = document.getElementById("field-study")
+let gradMonthInput = document.getElementById("gradMonth")
+let gradYearInput = document.getElementById("gradYear")
 
 let backStep2a = document.getElementById("back-step2a")
 let backStep2b = document.getElementById("back-step2b")
@@ -970,6 +957,10 @@ const progressElement = document.querySelector('.sidebar .progress-bar .progress
 
 
 buttonStep1.addEventListener('click', () => {
+  // if (!document.getElementById("name").value || !document.getElementById("surname").value || !document.getElementById("phone").value || !document.getElementById("email").value) { 
+  //     alert("Please enter your name")
+  //     return
+  // }
   handleButtonClick('step2a')
   changeSideBar('2')
   progressElement.style.width = "20%"
@@ -984,121 +975,134 @@ buttonStep2b.addEventListener('click', () => {
 })
 buttonStep3a.addEventListener('click', () => {
   handleButtonClick('step3b')
+  backStep3b.style.display = "block";
+  buttonStep3b.innerHTML = "NEXT";
 })
 buttonStep3b.addEventListener('click', () => {
-handleButtonClick('step3c');
 
-// Collect form data
-const newEdu = {
-    degree: document.getElementById("degree").value,
-    institution: document.getElementById("institution").value,
-    fieldStudy: document.getElementById("field-study").value,
-    location: document.getElementById("school-location").value,
-    gradMonth: document.getElementById("gradMonth").value,
-    gradYear: document.getElementById("gradYear").value
-};
 
-// Generate HTML for the new entry
-const htmlContent = `
-    <div class="edusum-container mb-4" style="border: 1px solid black">
-        <div>0</div> <!-- Index will be updated in render -->
-        <div class="row">
-            <div class="col first-row-sum" style="font-weight: bold;">${newEdu.degree} ${newEdu.institution} | ${newEdu.fieldStudy}</div>
-            <div class="col d-flex">
-                <button class="edit-btn ms-auto" style="border: none; background-color: transparent;">
-                    <img src="/CV-Hosting-web-main/public/images/edit.png" alt="edit-img" srcset="">
-                </button>
-                <button class="delete-btn ps-4" style="border: none; background-color: transparent;">
-                    <img src="/CV-Hosting-web-main/public/images/delete.png" alt="delete-img" srcset="">
-                </button>
-            </div>
-        </div>
-        <div class="second-row-sum">${newEdu.location} | Expected in ${newEdu.gradMonth} ${newEdu.gradYear}</div>
-    </div>
-`;
+  // Collect form data
+  if (!institutionInput.value && !schoolLocationInput.value && !degreeInput.value && !fieldStudyInput.value && gradMonthInput.value === "Month" && gradYearInput.value === "Year") {
+      renderSummary()
+  } else if (institutionInput.value && schoolLocationInput.value && degreeInput.value && fieldStudyInput.value && gradMonthInput.value !== "Month" && gradYearInput.value !== "Year") {
+      const newEdu = {
+          degree: document.getElementById("degree").value,
+          institution: document.getElementById("institution").value,
+          fieldStudy: document.getElementById("field-study").value,
+          location: document.getElementById("school-location").value,
+          gradMonth: document.getElementById("gradMonth").value,
+          gradYear: document.getElementById("gradYear").value
+      };
 
-// Add new entry to eduSum with data and HTML
-eduSum.push({
-    data: newEdu,
-    html: htmlContent
-});
+      // Generate HTML for the new entry
+      const htmlContent = `
+          <div class="edusum-container mb-4" style="border: 1px solid black">
+              <div>0</div> <!-- Index will be updated in render -->
+              <div class="row">
+                  <div class="col first-row-sum" style="font-weight: bold;">${newEdu.degree} ${newEdu.institution} | ${newEdu.fieldStudy}</div>
+                  <div class="col d-flex">
+                      <button class="edit-btn ms-auto" style="border: none; background-color: transparent;">
+                          <img src="/CV-Hosting-web-main/public/images/edit.png" alt="edit-img" srcset="">
+                      </button>
+                      <button class="delete-btn ps-4" style="border: none; background-color: transparent;">
+                          <img src="/CV-Hosting-web-main/public/images/delete.png" alt="delete-img" srcset="">
+                      </button>
+                  </div>
+              </div>
+              <div class="second-row-sum">${newEdu.location} | Expected in ${newEdu.gradMonth} ${newEdu.gradYear}</div>
+          </div>
+      `;
 
-// Remove duplicates based on data (not HTML)
-const unique = Array.from(
-    new Map(eduSum.map(obj => [JSON.stringify(obj.data), obj])).values()
-);
-eduSum.length = 0; // Clear eduSum
-eduSum.push(...unique); // Update with unique entries
+      // Add new entry to eduSum with data and HTML
+      eduSum.push({
+          data: newEdu,
+          html: htmlContent
+      });
 
-// Render the summary
-renderSummary();
+      // Remove duplicates based on data (not HTML)
+      const unique = Array.from(
+          new Map(eduSum.map(obj => [JSON.stringify(obj.data), obj])).values()
+      );
+      eduSum.length = 0; // Clear eduSum
+      eduSum.push(...unique); // Update with unique entries
 
-// Clear form inputs
-document.getElementById("degree").value = "";
-document.getElementById("institution").value = "";
-document.getElementById("field-study").value = "";
-document.getElementById("school-location").value = "";
-document.getElementById("gradMonth").value = "";
-document.getElementById("gradYear").value = "";
+      // Render the summary
+      renderSummary();
+
+      // Clear form inputs
+      document.getElementById("degree").value = "";
+      document.getElementById("institution").value = "";
+      document.getElementById("field-study").value = "";
+      document.getElementById("school-location").value = "";
+      document.getElementById("gradMonth").value = "Month";
+      document.getElementById("gradYear").value = "Year";
+  } else {
+      console.log(gradMonthInput.value, gradYearInput.value)
+      alert("Please fill in all fields or leave blank all fields.");
+      return
+  }
+  handleButtonClick('step3c');
 });
 
 // Function to render the summary
 function renderSummary() {
-let container = document.querySelector(".c-container");
-container.innerHTML = "";
+  let container = document.querySelector(".c-container");
+  container.innerHTML = "";
 
-eduSum.forEach((edu, index) => {
-    // Update the index in the HTML
-    const updatedHtml = edu.html.replace(
-        /<div>\d+<\/div>/,
-        `<div>${index + 1}</div>`
-    ).replace(
-        /id="\d+"/g,
-        `id="${index + 1}"`
-    );
-    container.innerHTML += updatedHtml;
-});
+  eduSum.forEach((edu, index) => {
+      // Update the index in the HTML
+      const updatedHtml = edu.html.replace(
+          /<div>\d+<\/div>/,
+          `<div>${index + 1}</div>`
+      ).replace(
+          /id="\d+"/g,
+          `id="${index + 1}"`
+      );
+      container.innerHTML += updatedHtml;
+  });
 
-// Attach event listeners to edit and delete buttons
-attachButtonListeners();
+  // Attach event listeners to edit and delete buttons
+  attachButtonListeners();
 }
 
 // Function to attach event listeners to buttons
 function attachButtonListeners() {
-let editBtns = document.querySelectorAll(".edit-btn");
-let deleteBtns = document.querySelectorAll(".delete-btn");
+  let editBtns = document.querySelectorAll(".edit-btn");
+  let deleteBtns = document.querySelectorAll(".delete-btn");
 
-editBtns.forEach((editBtn, index) => {
-    editBtn.addEventListener('click', () => {
-        // Populate form with data for editing
-        const edu = eduSum[index].data;
-        document.getElementById("degree").value = edu.degree;
-        document.getElementById("institution").value = edu.institution;
-        document.getElementById("field-study").value = edu.fieldStudy;
-        document.getElementById("school-location").value = edu.location;
-        document.getElementById("gradMonth").value = edu.gradMonth;
-        document.getElementById("gradYear").value = edu.gradYear;
+  editBtns.forEach((editBtn, index) => {
+      editBtn.addEventListener('click', () => {
+          // Populate form with data for editing
+          const edu = eduSum[index].data;
+          document.getElementById("degree").value = edu.degree;
+          document.getElementById("institution").value = edu.institution;
+          document.getElementById("field-study").value = edu.fieldStudy;
+          document.getElementById("school-location").value = edu.location;
+          document.getElementById("gradMonth").value = edu.gradMonth;
+          document.getElementById("gradYear").value = edu.gradYear;
 
-        // Remove the entry being edited
-        eduSum.splice(index, 1);
+          // Remove the entry being edited
+          eduSum.splice(index, 1);
 
-        // Re-render the summary
-        renderSummary();
+          // Re-render the summary
+          renderSummary();
 
-        // Navigate back to the form (assuming handleButtonClick manages navigation)
-        handleButtonClick('step3b');
-    });
-});
+          // Navigate back to the form (assuming handleButtonClick manages navigation)
+          handleButtonClick('step3b');
+          backStep3b.style.display = "none";
+          buttonStep3b.innerHTML = "Save changes";
+      });
+  });
 
-deleteBtns.forEach((deleteBtn, index) => {
-    deleteBtn.addEventListener('click', () => {
-        // Remove the entry from eduSum
-        eduSum.splice(index, 1);
+  deleteBtns.forEach((deleteBtn, index) => {
+      deleteBtn.addEventListener('click', () => {
+          // Remove the entry from eduSum
+          eduSum.splice(index, 1);
 
-        // Re-render the summary
-        renderSummary();
-    });
-});
+          // Re-render the summary
+          renderSummary();
+      });
+  });
 }
 buttonStep3c.addEventListener('click', () => {
   handleButtonClick('step4a')
@@ -1112,6 +1116,27 @@ buttonStep4b.addEventListener('click', () => {
   handleButtonClick('step5a')
   changeSideBar("5")
   progressElement.style.width = "80%"
+  const quillContent = quill.root.innerHTML;
+  console.log(quillContent);
+
+  let skillsHtml = '';
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(quillContent, 'text/html');
+  const listItems = doc.querySelectorAll('li');
+
+  listItems.forEach(item => {
+      const skillText = item.textContent.trim();
+      skillsHtml += `
+          <div class='col-md-4 talent'>
+              <h2 class='h5'>${skillText}</h2>
+          </div>
+      `;
+  });
+
+  document.querySelectorAll(".skills-list").forEach(index => {
+      index.innerHTML = skillsHtml
+  });
 })
 buttonStep5a.addEventListener('click', () => {
   handleButtonClick('step5b')
@@ -1121,6 +1146,25 @@ buttonStep5b.addEventListener('click', () => {
   handleButtonClick('step6')
   changeSideBar("6")
   progressElement.style.width = "100%"
+  const quillContent = quill_2.root.innerHTML;
+  console.log(quillContent);
+
+  let skillsHtml = '';
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(quillContent, 'text/html');
+  const listItems = doc.querySelectorAll('li');
+
+  listItems.forEach(item => {
+      const skillText = item.textContent.trim();
+      skillsHtml += `
+      <p class='lead enlarge mb-2'>${skillText}</p>
+      `;
+  });
+
+  document.querySelectorAll(".cv_summary").forEach(index => {
+      index.innerHTML = skillsHtml
+  });
 })
 buttonStep6.addEventListener('click', () => {
 
@@ -1141,15 +1185,17 @@ backStep3a.addEventListener('click', () => {
   progressElement.style.width = "20%"
 })
 backStep3b.addEventListener('click', () => {
-if (eduSum.length > 1) {
-  handleButtonClick('step3c')
-} else {
-  handleButtonClick('step3a')
-}
-  
+  if (institutionInput.value && schoolLocationInput.value && degreeInput.value && fieldStudyInput.value && gradMonthInput.value && gradYearInput.value) {
+      handleButtonClick('step3c')
+  } else {
+      handleButtonClick('step3a')
+  }
+
 })
 backStep3c.addEventListener('click', () => {
-handleButtonClick('step3b')
+  handleButtonClick('step2b')
+  changeSideBar("2")
+  progressElement.style.width = "20%"
 })
 backStep4a.addEventListener('click', () => {
   handleButtonClick('step3c')
@@ -1225,24 +1271,32 @@ for (let y = currentYear; y >= 1980; y--) {
 }
 
 
+const quill = new Quill('#editor', {
+  theme: 'snow'
+});
+
+const quill_2 = new Quill('#editor-2', {
+  theme: 'snow'
+});
+
 let skillExamples = [
-{ name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
-{ name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
-{ name: 'Problem-solving', job: ['IT', 'Teacher'] },
-{ name: 'Time management', job: ['IT', 'Teacher'] },
-{ name: 'Over thinking', job: ['IT'] },
-{ name: 'Creative', job: ['IT'] },
-{ name: 'Adaptive', job: ['IT'] }
+  { name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
+  { name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
+  { name: 'Problem-solving', job: ['IT', 'Teacher'] },
+  { name: 'Time management', job: ['IT', 'Teacher'] },
+  { name: 'Over thinking', job: ['IT'] },
+  { name: 'Creative', job: ['IT'] },
+  { name: 'Adaptive', job: ['IT'] }
 ];
 
 let summaryExamples = [
-{ name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
-{ name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
-{ name: 'Problem-solving', job: ['IT', 'Teacher'] },
-{ name: 'Time management', job: ['IT', 'Teacher'] },
-{ name: 'Over thinking', job: ['IT'] },
-{ name: 'Creative', job: ['IT'] },
-{ name: 'Adaptive', job: ['IT'] }
+  { name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
+  { name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
+  { name: 'Problem-solving', job: ['IT', 'Teacher'] },
+  { name: 'Time management', job: ['IT', 'Teacher'] },
+  { name: 'Over thinking', job: ['IT'] },
+  { name: 'Creative', job: ['IT'] },
+  { name: 'Adaptive', job: ['IT'] }
 ];
 
 let searchInput = document.querySelector(".search-input");
@@ -1252,118 +1306,120 @@ let summaryContainer = document.querySelector(".summary-container");
 
 // Initialize rendering
 renderSkill("");
-renderSummary("");
+renderSummaryStep5("");
 
 // Search button event listener
 searchBtn.addEventListener('click', () => {
-const job = searchInput.value.trim();
-renderSkill(job);
-renderSummary(job); // Sync summary rendering with search input
+  const job = searchInput.value.trim();
+  renderSkill(job);
+  renderSummaryStep5(job);
 });
 
 function renderSkill(job) {
-skillContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
-const filteredSkills = job === ""
-  ? skillExamples
-  : skillExamples.filter(skill => skill.job.some(j => j.toLowerCase().includes(job.toLowerCase())));
+  skillContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
+  const filteredSkills = job === ""
+      ? skillExamples
+      : skillExamples.filter(skill => {
+          if (!skill.job || !Array.isArray(skill.job)) {
+              return false;
+          }
+          return skill.job.some(j => typeof j === 'string' && j.toLowerCase().includes(job.toLowerCase()));
+      });
 
-filteredSkills.forEach(skill => {
-  skillContainer.insertAdjacentHTML('beforeend',
-    `
-      <div class="row p-2" style="border: 1px solid black; border-top: none;">
-        <div class="row align-items-center p-0">
-          <div class="col-1">
-            <button class="add-to-skill-editor" data-content="${skill.name}" style="border: none; padding: 0; margin: 0; background-color: transparent;">
-              <img src="/CV-Hosting-web-main/public/images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
-            </button>
-          </div>
-          <div class="col-11 text-start">
-            <div style="font-weight: 500;">${skill.name}</div>
-          </div>
-        </div>
-      </div>
-    `
-  );
-});
-}
-
-function renderSummary(job) {
-summaryContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
-const filteredSummaries = job === ""
-  ? summaryExamples
-  : summaryExamples.filter(summary => summary.job.some(j => j.toLowerCase().includes(job.toLowerCase())));
-
-filteredSummaries.forEach(summary => {
-  summaryContainer.insertAdjacentHTML('beforeend',
-    `
-      <div class="row p-2" style="border: 1px solid black; border-top: none;">
-        <div class="row align-items-center p-0">
-          <div class="col-1">
-            <button class="add-to-summary-editor" data-content="${summary.name}" style="border: none; padding: 0; margin: 0; background-color: transparent;">
-              <img src="/CV-Hosting-web-main/public/images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
-            </button>
-          </div>
-          <div class="col-11 text-start">
-            <div style="font-weight: 500;">${summary.name}</div>
+  filteredSkills.forEach(skill => {
+      skillContainer.insertAdjacentHTML('beforeend',
+          `
+        <div class="row p-2" style="border: 1px solid black; border-top: none;">
+          <div class="row align-items-center p-0">
+            <div class="col-1">
+              <button class="add-to-skill-editor" data-content="${skill.name}" style="border: none; padding: 0; margin: 0; background-color: transparent;">
+                <img src="/CV-Hosting-web-main/public/images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
+              </button>
+            </div>
+            <div class="col-11 text-start">
+              <div style="font-weight: 500;">${skill.name}</div>
+            </div>
           </div>
         </div>
-      </div>
-    `
-  );
-});
+      `
+      );
+  });
 }
 
-// Initialize Quill editors
-const quill = new Quill('#editor', {
-theme: 'snow'
-});
+function renderSummaryStep5(job) {
+  summaryContainer.innerHTML = '<div class="row p-2" style="border: 1px solid black;">Ready to use examples</div>';
+  let filteredSummaries
+  if (job === "") {
+      filteredSummaries = summaryExamples
+  } else {
+      console.log(job)
+      filteredSummaries = summaryExamples.filter(summary => {
+          if (!summary.job || !Array.isArray(summary.job)) {
+              return false;
+          }
+          return summary.job.some(j => typeof j === 'string' && j.toLowerCase().includes(job.toLowerCase()));
+      });
+  }
 
-const quill_2 = new Quill('#editor-2', {
-theme: 'snow'
-});
+  filteredSummaries.forEach(summary => {
+      summaryContainer.insertAdjacentHTML('beforeend',
+          `
+        <div class="row p-2" style="border: 1px solid black; border-top: none;">
+          <div class="row align-items-center p-0">
+            <div class="col-1">
+              <button class="add-to-summary-editor" data-content="${summary.name}" style="border: none; padding: 0; margin: 0; background-color: transparent;">
+                <img src="/CV-Hosting-web-main/public/images/plus.png" alt="" srcset="" style="width: 30px; height: 30px;">
+              </button>
+            </div>
+            <div class="col-11 text-start">
+              <div style="font-weight: 500;">${summary.name}</div>
+            </div>
+          </div>
+        </div>
+      `
+      );
+  });
+}
 
-// Single DOMContentLoaded to handle both editors
+// Quill editor logic remains unchanged unless you report issues with it
 document.addEventListener("DOMContentLoaded", function () {
-// Sets to track selected items for each editor
-const skillSelectedContents = new Set();
-const summarySelectedContents = new Set();
+  const skillSelectedContents = new Set();
+  const summarySelectedContents = new Set();
 
-// Function to update Quill editor content
-function updateQuillEditor(quillInstance, selectedSet) {
-  const html = `<ul>${Array.from(selectedSet)
-    .map(item => `<li>${item}</li>`)
-    .join("")}</ul>`;
-  quillInstance.clipboard.dangerouslyPasteHTML(html);
-}
-
-// Delegate event listeners to containers
-skillContainer.addEventListener('click', function (e) {
-  const button = e.target.closest('.add-to-skill-editor');
-  if (button) {
-    const content = button.getAttribute("data-content");
-    if (skillSelectedContents.has(content)) {
-      skillSelectedContents.delete(content);
-      button.querySelector("img").src = "/CV-Hosting-web-main/public/images/plus.png";
-    } else {
-      skillSelectedContents.add(content);
-      button.querySelector("img").src = "/CV-Hosting-web-main/public/images/check-lg.svg";
-    }
-    updateQuillEditor(quill, skillSelectedContents);
+  function updateQuillEditor(quillInstance, selectedSet) {
+      const html = `<ul>${Array.from(selectedSet)
+          .map(item => `<li>${item}</li>`)
+          .join("")}</ul>`;
+      quillInstance.clipboard.dangerouslyPasteHTML(html);
   }
-});
 
-summaryContainer.addEventListener('click', function (e) {
-  const button = e.target.closest('.add-to-summary-editor');
-  if (button) {
-    const content = button.getAttribute("data-content");
-    if (summarySelectedContents.has(content)) {
-      summarySelectedContents.delete(content);
-      button.querySelector("img").src = "/CV-Hosting-web-main/public/images/plus.png";
-    } else {
-      summarySelectedContents.add(content);
-      button.querySelector("img").src = "/CV-Hosting-web-main/public/images/check-lg.svg";
-    }
-    updateQuillEditor(quill_2, summarySelectedContents);
-  }
-});
+  skillContainer.addEventListener('click', function (e) {
+      const button = e.target.closest('.add-to-skill-editor');
+      if (button) {
+          const content = button.getAttribute("data-content");
+          if (skillSelectedContents.has(content)) {
+              skillSelectedContents.delete(content);
+              button.querySelector("img").src = "/CV-Hosting-web-main/public/images/plus.png";
+          } else {
+              skillSelectedContents.add(content);
+              button.querySelector("img").src = "/CV-Hosting-web-main/public/images/check-lg.svg";
+          }
+          updateQuillEditor(quill, skillSelectedContents);
+      }
+  });
+
+  summaryContainer.addEventListener('click', function (e) {
+      const button = e.target.closest('.add-to-summary-editor');
+      if (button) {
+          const content = button.getAttribute("data-content");
+          if (summarySelectedContents.has(content)) {
+              summarySelectedContents.delete(content);
+              button.querySelector("img").src = "/CV-Hosting-web-main/public/images/plus.png";
+          } else {
+              summarySelectedContents.add(content);
+              button.querySelector("img").src = "/CV-Hosting-web-main/public/images/check-lg.svg";
+          }
+          updateQuillEditor(quill_2, summarySelectedContents);
+      }
+  });
 });

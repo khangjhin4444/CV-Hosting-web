@@ -48,30 +48,6 @@ let tempList = [{
                 </div>
             </section>
 
-            <!-- Technical -->
-            <section class="row mb-4 border-bottom">
-                <div class="col-md-3">
-                    <h2 class="h4">Technical</h2>
-                </div>
-                <div class="col-md-9">
-                    <div class="row skills-list">
-                        <div class='col-md-4'>
-                            <ul class='list-unstyled'>
-                                <li>Lorem ipsum</li>
-                                <li>Dolor sit</li>
-                                <li>Amet consectetur</li>
-                            </ul>
-                        </div>
-                        <div class='col-md-4'>
-                            <ul class='list-unstyled'>
-                                <li>Adipiscing elit</li>
-                                <li>Sed do</li>
-                                <li>Eiusmod tempor</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!-- Experience -->
             <section class="row mb-4 border-bottom">
@@ -915,7 +891,7 @@ cateBtns.forEach((cateBtn) => {
 });
 
 backBtn.addEventListener('click', () => {
-    window.location.href = '?page=experience.php';
+    window.location.href = '/CV-Hosting-web-main/public/index.php?page=experience';
 });
 
 confirmBtn.addEventListener('click', () => {
