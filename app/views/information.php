@@ -69,7 +69,7 @@ require_once __DIR__ . '/../../config/constant.php';
       </div>
 
       <!-- Main Content -->
-      <div class="col-12 col-lg-9 main-content active" id="step1">
+      <div class="col-12 col-lg-9 main-content" id="step1">
         <div class="d-flex align-items-center gap-2 mb-2">
           <a href="<?= BASE_URL ?>/index.php?page=select_template" class="p-0"
             style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
@@ -122,7 +122,7 @@ require_once __DIR__ . '/../../config/constant.php';
 
           <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">-->
-             
+
           </div>
         </div>
         <button class="btn-next  mt-5" id="btn-step1"
@@ -434,7 +434,8 @@ require_once __DIR__ . '/../../config/constant.php';
                 <div
                   style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #E9A354; border-radius: 50%; margin-left: 10px;">
                   <button class="search-btn" style="border: none; background-color: transparent;">
-                    <img src="/CV-Hosting-web-main/public/images/search-icon.png" alt="" srcset="" style="width: 25px; height: 25px;">
+                    <img src="/CV-Hosting-web-main/public/images/search-icon.png" alt="" srcset=""
+                      style="width: 25px; height: 25px;">
                   </button>
                 </div>
               </div>
@@ -511,7 +512,8 @@ require_once __DIR__ . '/../../config/constant.php';
                 <div
                   style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #E9A354; border-radius: 50%; margin-left: 10px;">
                   <button class="search-btn" style="border: none; background-color: transparent;">
-                    <img src="/CV-Hosting-web-main/public/images/search-icon.png" alt="" srcset="" style="width: 25px; height: 25px;">
+                    <img src="/CV-Hosting-web-main/public/images/search-icon.png" alt="" srcset=""
+                      style="width: 25px; height: 25px;">
                   </button>
                 </div>
               </div>
@@ -532,7 +534,7 @@ require_once __DIR__ . '/../../config/constant.php';
           style="width: 200px; padding-top: 20px; padding-bottom: 20px;">NEXT: Finalize</button>
       </div>
 
-      <div class="col-12 col-lg-9 main-content" id="step6">
+      <div class="col-12 col-lg-9 main-content active" id="step6">
         <div class="d-flex align-items-center gap-2">
           <a id="back-step6" href="#" class="p-0"
             style="font-size: 25px; font-weight: bold; text-decoration: none; color: black;"><i
@@ -547,20 +549,21 @@ require_once __DIR__ . '/../../config/constant.php';
             <div class="row pt-4">
               <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
                 <input class="step6-check" type="checkbox" name="" id="1" style="width: 30px; height: 30px;">
-                <div style="font-size: 20px;">Websites, Portfolios, Profiles</div>
+                <div style="font-size: 20px;">Websites</div>
               </div>
               <div class="col-12 col-lg-6">
-                <input class="checked-input" id="1" type="text" >
+                <input class="websites checked-input" id="1" type="text" placeholder="e.g. linkedin.com/in/yourname">
               </div>
             </div>
 
             <div class="row pt-4">
               <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
-                <input class="step6-check" type="checkbox" name="" id="2" style="width: 30px; height: 30px;">
+                <input class="certifications step6-check" type="checkbox" name="" id="2"
+                  style="width: 30px; height: 30px;">
                 <div style="font-size: 20px;">Certifications</div>
               </div>
               <div class="col-12 col-lg-6">
-                <input class="checked-input" id="2" type="text" >
+                <input class="checked-input" id="2" type="text">
               </div>
             </div>
 
@@ -570,37 +573,36 @@ require_once __DIR__ . '/../../config/constant.php';
                 <div style="font-size: 20px;">Languages</div>
               </div>
               <div class="col-12 col-lg-6">
-                <input class="checked-input" id="3" type="text" >
+                <input class="checked-input languages" id="3" type="text">
               </div>
             </div>
-
             <div class="row pt-4">
               <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
                 <input class="step6-check" type="checkbox" name="" id="4" style="width: 30px; height: 30px;">
-                <div style="font-size: 20px;">Accomplishments</div>
+                <div style="font-size: 20px;">Programing Languages</div>
               </div>
               <div class="col-12 col-lg-6">
-                <input class="checked-input" id="4" type="text" >
+                <input class="checked-input pro-languages" id="4" type="text">
               </div>
             </div>
-
             <div class="row pt-4">
               <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
                 <input class="step6-check" type="checkbox" name="" id="5" style="width: 30px; height: 30px;">
                 <div style="font-size: 20px;">Additional Information</div>
               </div>
               <div class="col-12 col-lg-6">
-                <input class="checked-input" id="5" type="text" >
+                <input class="checked-input" id="5" type="text">
               </div>
             </div>
 
             <div class="row pt-4">
               <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
                 <input class="step6-check" type="checkbox" name="" id="6" style="width: 30px; height: 30px;">
-                <input type="text" style="font-size: 20px; border: none; background-color: #F8F0E5; width: 100%;" value="Fill Your Own">
+                <input type="text" style="font-size: 20px; border: none; background-color: #F8F0E5; width: 100%;"
+                  value="Fill Your Own">
               </div>
               <div class="col-12 col-lg-6">
-                <input class="checked-input" id="6" type="text" >
+                <input class="checked-input" id="6" type="text">
               </div>
             </div>
           </div>
@@ -610,7 +612,8 @@ require_once __DIR__ . '/../../config/constant.php';
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
         </div>
-        <button class="btn-next mt-5" id="btn-step6" style="width: 200px; padding-top: 20px; padding-bottom: 20px; position:fixed; bottom: 40px; right: 35px;">NEXT</button>
+        <button class="btn-next mt-5" id="btn-step6"
+          style="width: 200px; padding-top: 20px; padding-bottom: 20px; position:fixed; bottom: 40px; right: 35px;">NEXT</button>
       </div>
 
     </div>

@@ -8,10 +8,11 @@ color: #444;">
             <h1 class="text-uppercase"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h1>
         </div>
         <div class="col-md-6 text-md-end contact-info">
-            <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+            
             <h6 id="city_cv">Lorem ipsum dolor sit amet</h6>
             <h5 id="phone_cv">Lorem ipsum</h5>
-            <h5 ><a id = "email_cv" href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
+            <h5 class="email_cv_h5 ><a id = "email_cv" href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
+            <h5 class ="cv_websites"></h5>
         </div>
     </header>
 
@@ -58,7 +59,7 @@ color: #444;">
         </section>
 
         <!-- Education -->
-        <section class="row">
+        <section class="row mb-2  cv_education">
             <div class="col-md-3">
                 <h2 class="h4">Education</h2>
             </div>
@@ -67,8 +68,12 @@ color: #444;">
                 <h3><span class="cv_degree">Bachelor</span> of <span class="cv_field_study"></span></h3>
                 <h5>Gradution year: <span class="cv_year"></span></h5>
             </div>
-            
         </section>
+        <div class="container row languages-container">
+        <section class="cv_languages col"></section>
+        <section class="cv_pro_languages col"></
+        section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -86,7 +91,7 @@ color: #444;">
             <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
         </div>
         <div class="col-md-6 text-md-end contact-info">
-            <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+            
             <h6>Lorem ipsum dolor sit amet</h6>
             <h5>Lorem ipsum</h5>
             <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -140,14 +145,6 @@ color: #444;">
                         Phosfluorescently implement worldwide vortals and client-focused imperatives.
                         Conveniently initiate virtual paradigms and top-line convergence.</p>
                 </div>
-                <div class='job mb-4 row gap-0'>
-                    <h2 class='h5'>Dolor sit</h2>
-                    <h3>Director, Ipsum Inc</h3>
-                    <h4>Mar 2018 to Dec 2019</h4>
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                        Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                        Conveniently initiate virtual paradigms and top-line convergence.</p>
-                </div>
             </div>
         </section>
 
@@ -159,10 +156,6 @@ color: #444;">
             <div class='col-md-9'>
                 <h2 class='h5'>Lorem University - Lorem City</h2>
                 <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-            </div>
-            <div class='col-md-9'>
-                <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                <h3>Master of Ipsum Design</h3>
             </div>
         </section>
     </main>
@@ -182,7 +175,7 @@ color: #444;">
             <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
         </div>
         <div class="col-md-6 text-md-end contact-info">
-            <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+            
             <h6>Lorem ipsum dolor sit amet</h6>
             <h5>Lorem ipsum</h5>
             <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -261,14 +254,7 @@ color: #444;">
                         Phosfluorescently implement worldwide vortals and client-focused imperatives.
                         Conveniently initiate virtual paradigms and top-line convergence.</p>
                 </div>
-                <div class='job mb-4 row gap-0'>
-                    <h2 class='h5'>Dolor sit</h2>
-                    <h3>Director, Ipsum Inc</h3>
-                    <h4>Mar 2018 to Dec 2019</h4>
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                        Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                        Conveniently initiate virtual paradigms and top-line convergence.</p>
-                </div>
+                
             </div>
         </section>
 
@@ -280,10 +266,6 @@ color: #444;">
             <div class='col-md-9'>
                 <h2 class='h5'>Lorem University - Lorem City</h2>
                 <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-            </div>
-            <div class='col-md-9'>
-                <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                <h3>Master of Ipsum Design</h3>
             </div>
         </section>
     </main>
@@ -303,7 +285,7 @@ color: #444;">
             <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
         </div>
         <div class="col-md-6 text-md-end contact-info">
-            <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+            
             <h6>Lorem ipsum dolor sit amet</h6>
             <h5>Lorem ipsum</h5>
             <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -382,14 +364,7 @@ color: #444;">
                         Phosfluorescently implement worldwide vortals and client-focused imperatives.
                         Conveniently initiate virtual paradigms and top-line convergence.</p>
                 </div>
-                <div class='job mb-4 row gap-0'>
-                    <h2 class='h5'>Dolor sit</h2>
-                    <h3>Director, Ipsum Inc</h3>
-                    <h4>Mar 2018 to Dec 2019</h4>
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                        Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                        Conveniently initiate virtual paradigms and top-line convergence.</p>
-                </div>
+                
             </div>
         </section>
 
@@ -401,10 +376,6 @@ color: #444;">
             <div class='col-md-9'>
                 <h2 class='h5'>Lorem University - Lorem City</h2>
                 <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-            </div>
-            <div class='col-md-9'>
-                <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                <h3>Master of Ipsum Design</h3>
             </div>
         </section>
     </main>
@@ -424,7 +395,7 @@ color: #444;">
             <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
         </div>
         <div class="col-md-6 text-md-end contact-info">
-            <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+            
             <h6>Lorem ipsum dolor sit amet</h6>
             <h5>Lorem ipsum</h5>
             <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -503,14 +474,7 @@ color: #444;">
                         Phosfluorescently implement worldwide vortals and client-focused imperatives.
                         Conveniently initiate virtual paradigms and top-line convergence.</p>
                 </div>
-                <div class='job mb-4 row gap-0'>
-                    <h2 class='h5'>Dolor sit</h2>
-                    <h3>Director, Ipsum Inc</h3>
-                    <h4>Mar 2018 to Dec 2019</h4>
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                        Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                        Conveniently initiate virtual paradigms and top-line convergence.</p>
-                </div>
+                
             </div>
         </section>
 
@@ -522,10 +486,6 @@ color: #444;">
             <div class='col-md-9'>
                 <h2 class='h5'>Lorem University - Lorem City</h2>
                 <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-            </div>
-            <div class='col-md-9'>
-                <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                <h3>Master of Ipsum Design</h3>
             </div>
         </section>
     </main>
@@ -545,7 +505,7 @@ color: #444;">
             <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
         </div>
         <div class="col-md-6 text-md-end contact-info">
-            <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+            
             <h6>Lorem ipsum dolor sit amet</h6>
             <h5>Lorem ipsum</h5>
             <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -624,14 +584,7 @@ color: #444;">
                         Phosfluorescently implement worldwide vortals and client-focused imperatives.
                         Conveniently initiate virtual paradigms and top-line convergence.</p>
                 </div>
-                <div class='job mb-4 row gap-0'>
-                    <h2 class='h5'>Dolor sit</h2>
-                    <h3>Director, Ipsum Inc</h3>
-                    <h4>Mar 2018 to Dec 2019</h4>
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                        Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                        Conveniently initiate virtual paradigms and top-line convergence.</p>
-                </div>
+                
             </div>
         </section>
 
@@ -643,10 +596,6 @@ color: #444;">
             <div class='col-md-9'>
                 <h2 class='h5'>Lorem University - Lorem City</h2>
                 <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-            </div>
-            <div class='col-md-9'>
-                <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                <h3>Master of Ipsum Design</h3>
             </div>
         </section>
     </main>
@@ -666,7 +615,7 @@ color: #444;">
             <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
         </div>
         <div class="col-md-6 text-md-end contact-info">
-            <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+            
             <h6>Lorem ipsum dolor sit amet</h6>
             <h5>Lorem ipsum</h5>
             <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -745,14 +694,7 @@ color: #444;">
                         Phosfluorescently implement worldwide vortals and client-focused imperatives.
                         Conveniently initiate virtual paradigms and top-line convergence.</p>
                 </div>
-                <div class='job mb-4 row gap-0'>
-                    <h2 class='h5'>Dolor sit</h2>
-                    <h3>Director, Ipsum Inc</h3>
-                    <h4>Mar 2018 to Dec 2019</h4>
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                        Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                        Conveniently initiate virtual paradigms and top-line convergence.</p>
-                </div>
+                
             </div>
         </section>
 
@@ -764,10 +706,6 @@ color: #444;">
             <div class='col-md-9'>
                 <h2 class='h5'>Lorem University - Lorem City</h2>
                 <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-            </div>
-            <div class='col-md-9'>
-                <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                <h3>Master of Ipsum Design</h3>
             </div>
         </section>
     </main>
@@ -897,6 +835,12 @@ document.getElementById('gradYear').addEventListener('change', function () {
 // SKILLS handle at button 4b
 
 // SUMMARY
+
+// ADDITIONAL
+
+
+
+
 
 
 // Navigation 
@@ -1442,6 +1386,68 @@ document.querySelectorAll(".step6-check").forEach((check, index) => {
             }, 10);
         } else {
             input.style.visibility = "hidden";
+            const nameDisplay = document.querySelectorAll('.cv_websites').forEach(display => {
+                display.innerHTML = '';
+            });
         }
     });
 });
+document.querySelector('.languages').addEventListener('input', function () {
+    document.querySelectorAll('.languages-container').forEach(display => {
+        display.classList.add('border-top');
+        display.classList.add('pt-3');
+    })
+    const nameDisplay = document.querySelectorAll('.cv_languages');
+    const inputValue = this.value;
+    const gia_tri = inputValue.split(",").map(x => x.trim()).filter(x => x !== "");
+
+    nameDisplay.forEach(display => {
+        display.innerHTML = '';
+        if (gia_tri.length === 0) return;
+        display.innerHTML = `
+                <div class="col-md-3">
+                    <h2 class="h4">Languages</h2>
+                </div>
+                <div class="col-md-9 mb-3">
+                    <ul class="list-unstyled">
+                        ${gia_tri.map(item => `<li class="h5 mb-2">• ${item}</li>`).join('')}
+                    </ul>
+                </div>
+        `;
+    });
+});
+document.querySelector('.pro-languages').addEventListener('input', function () {
+    document.querySelectorAll('.languages-container').forEach(display => {
+        display.classList.add('border-top');
+        display.classList.add('pt-3');
+    })
+    const nameDisplay = document.querySelectorAll('.cv_pro_languages');
+    const inputValue = this.value;
+    const gia_tri = inputValue.split(",").map(x => x.trim()).filter(x => x !== "");
+
+    nameDisplay.forEach(display => {
+        display.innerHTML = '';
+        if (gia_tri.length === 0) return;
+        display.innerHTML = `
+                <div class="col-md-3">
+                    <h2 class="h4">Languages</h2>
+                </div>
+                <div class="col-md-9 mb-3">
+                    <ul class="list-unstyled">
+                        ${gia_tri.map(item => `<li class="h5 mb-2">• ${item}</li>`).join('')}
+                    </ul>
+                </div>
+        `;
+    });
+});
+document.querySelector('.websites').addEventListener('input', function () {
+    const nameDisplay = document.querySelectorAll('.cv_websites').forEach(display => {
+        display.innerHTML = `WWW: ${this.value}`;
+    });
+})
+document.querySelector('.certifications').addEventListener('input', function () {
+    const nameDisplay = document.querySelectorAll('.cv_education').forEach(display => {
+        let gia_tri = chuoi.split(",").map(x => x.trim());
+        display.innerHTML += `<h5>WWW: ${this.value}</h5>`;
+    });
+})

@@ -8,7 +8,7 @@ let tempList = [{
                 <h1 class="text-uppercase"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h1>
             </div>
             <div class="col-md-6 text-md-end contact-info">
-                <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+                
                 <h6>Lorem ipsum dolor sit amet</h6>
                 <h5>Lorem ipsum</h5>
                 <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -82,10 +82,6 @@ let tempList = [{
                 <div class='col-md-9'>
                     <h2 class='h5'>Lorem University - Lorem City</h2>
                     <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-                </div>
-                <div class='col-md-9'>
-                    <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                    <h3>Master of Ipsum Design</h3>
                 </div>
             </section>
         </main>
@@ -105,7 +101,7 @@ let tempList = [{
                 <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
             </div>
             <div class="col-md-6 text-md-end contact-info">
-                <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+                
                 <h6>Lorem ipsum dolor sit amet</h6>
                 <h5>Lorem ipsum</h5>
                 <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -203,10 +199,6 @@ let tempList = [{
                 <div class='col-md-9'>
                     <h2 class='h5'>Lorem University - Lorem City</h2>
                     <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-                </div>
-                <div class='col-md-9'>
-                    <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                    <h3>Master of Ipsum Design</h3>
                 </div>
             </section>
         </main>
@@ -226,7 +218,7 @@ let tempList = [{
                 <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
             </div>
             <div class="col-md-6 text-md-end contact-info">
-                <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+                
                 <h6>Lorem ipsum dolor sit amet</h6>
                 <h5>Lorem ipsum</h5>
                 <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -324,10 +316,6 @@ let tempList = [{
                 <div class='col-md-9'>
                     <h2 class='h5'>Lorem University - Lorem City</h2>
                     <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-                </div>
-                <div class='col-md-9'>
-                    <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                    <h3>Master of Ipsum Design</h3>
                 </div>
             </section>
         </main>
@@ -347,7 +335,7 @@ let tempList = [{
                 <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
             </div>
             <div class="col-md-6 text-md-end contact-info">
-                <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+                
                 <h6>Lorem ipsum dolor sit amet</h6>
                 <h5>Lorem ipsum</h5>
                 <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -445,10 +433,6 @@ let tempList = [{
                 <div class='col-md-9'>
                     <h2 class='h5'>Lorem University - Lorem City</h2>
                     <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-                </div>
-                <div class='col-md-9'>
-                    <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                    <h3>Master of Ipsum Design</h3>
                 </div>
             </section>
         </main>
@@ -468,7 +452,7 @@ let tempList = [{
                 <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
             </div>
             <div class="col-md-6 text-md-end contact-info">
-                <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+                
                 <h6>Lorem ipsum dolor sit amet</h6>
                 <h5>Lorem ipsum</h5>
                 <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -566,10 +550,6 @@ let tempList = [{
                 <div class='col-md-9'>
                     <h2 class='h5'>Lorem University - Lorem City</h2>
                     <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-                </div>
-                <div class='col-md-9'>
-                    <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                    <h3>Master of Ipsum Design</h3>
                 </div>
             </section>
         </main>
@@ -589,7 +569,7 @@ let tempList = [{
                 <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
             </div>
             <div class="col-md-6 text-md-end contact-info">
-                <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+                
                 <h6>Lorem ipsum dolor sit amet</h6>
                 <h5>Lorem ipsum</h5>
                 <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -687,10 +667,6 @@ let tempList = [{
                 <div class='col-md-9'>
                     <h2 class='h5'>Lorem University - Lorem City</h2>
                     <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-                </div>
-                <div class='col-md-9'>
-                    <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                    <h3>Master of Ipsum Design</h3>
                 </div>
             </section>
         </main>
@@ -710,7 +686,7 @@ let tempList = [{
                 <h1 class="text-uppercase name-display">Lorem Ipsum</h1>
             </div>
             <div class="col-md-6 text-md-end contact-info">
-                <h4><a href="#" class="btn btn-dark">Download PDF</a></h4>
+                
                 <h6>Lorem ipsum dolor sit amet</h6>
                 <h5>Lorem ipsum</h5>
                 <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
@@ -808,10 +784,6 @@ let tempList = [{
                 <div class='col-md-9'>
                     <h2 class='h5'>Lorem University - Lorem City</h2>
                     <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-                </div>
-                <div class='col-md-9'>
-                    <h2 class='h5'>Ipsum College - Dolor Town</h2>
-                    <h3>Master of Ipsum Design</h3>
                 </div>
             </section>
         </main>
