@@ -1,0 +1,50 @@
+.year-btn, .student-btn {
+  height: 70px;
+  width: 180px;
+  background-color: white;
+  border: 1px solid #000000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.year-btn:hover, .student-btn:hover {
+  transform: scale(1.02); /* Phóng to 10% */
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+.confirm-button {
+  background-color: #0B3C86;
+  font-weight: 600;
+  color: white;
+  padding: 16px 18px;
+  border: none;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.student {
+  visibility:hidden;
+}
+
+.confirm-button:hover {
+  background-color: #496999;
+}
+
+.active {
+  border: 3px solid #3f84c0;
+}
+
+.active:hover {
+  border: 3px solid #3f84c0;
+}
+
+.student-display {
+  display: block;
+}
+
+
+@media (max-width: 613px) {
+  .student-display {
+    display: none;
+  }
+}

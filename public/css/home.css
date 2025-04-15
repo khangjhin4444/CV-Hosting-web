@@ -1,0 +1,173 @@
+.carousel .card {
+    list-style: none;
+    /* scroll-snap-align: start; */
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+    pointer-events: none;
+}
+
+.carousel.dragging img {
+    user-select: none;
+    pointer-events: none;
+}
+
+.carousel.dragging {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+
+.card img {
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+
+.carousel {
+
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 5) - 12px);
+    scroll-behavior: smooth;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    position: relative;
+}
+
+
+
+i {
+    position: absolute;
+    cursor: pointer;
+    top: 65%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #272626;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 45px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    z-index: 100;
+}
+
+.bi-chevron-left {
+    left: 25px;
+}
+
+.bi-chevron-right {
+    right: 25px;
+}
+
+.card .btn {
+    color: white;
+    background-color: rgb(53, 109, 164);
+    width: 200px;
+    cursor: pointer;
+    padding: 17px 10px;
+    border-radius: 0%;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .card-img-overlay {
+    display: flex !important;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .carousel {
+        grid-auto-columns: calc((100%/2) - 9px);
+    }
+
+    .card-img-overlay {
+        display: flex !important;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .card .btn {
+        width: 250px;
+        font-size: 20px;
+    }
+}
+
+.feedback input,
+textarea {
+    width: 100%;
+    padding: 22px 20px;
+    /* Keep your existing padding */
+    border: none;
+    border-radius: 0%;
+    margin-bottom: 10px;
+    background-color: #F3F3F3;
+    color: black;
+    font-weight: 600;
+    text-align: left;
+    /* This is good, keeps cursor at left */
+    box-sizing: border-box;
+}
+
+.feedback input::placeholder,
+textarea::placeholder {
+    text-align: left;
+    vertical-align: top;
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    color: #2D2D2D;
+}
+
+.first-section {
+    animation: appear 0.4s linear;
+    /* animation-range: view(); */
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .carousel {
+        grid-auto-columns: calc((100%/1) - 9px);
+        width: 70%;
+        height: 70%;
+    }
+
+    .bi-chevron-left {
+        display: none;
+    }
+
+    .bi-chevron-right {
+        display: none;
+    }
+
+    .card-img-overlay {
+        display: flex !important;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .card .btn {
+        width: 180px;
+        font-size: 15px;
+    }
+}

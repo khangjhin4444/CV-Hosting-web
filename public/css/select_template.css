@@ -1,0 +1,136 @@
+.input-row input {
+  font-size: 24px;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px 12px;
+}
+.input-row {
+  border-bottom: 2px solid black;
+  padding-bottom: 37px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 50px;
+  margin-top: 20px;
+  grid-template-areas: 
+  "category temp-list"
+  ;
+}
+
+.temp-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-container img {
+  width: 100%;
+  height: auto;
+}
+
+.category button {
+  font-size: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 7px;
+  width: 270px;
+  padding: 8px 12px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.chosen {
+  background-color: #102C57 !important;
+  color: #DAC0A3;
+}
+
+.temp-chosen {
+  border: 4px solid #102C57;
+  border-radius: 5px;
+}
+
+.back-btn {
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  gap: 15px;
+  border: none;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.4);
+}
+
+.footer a {
+  text-decoration: none;
+  color: #0B3C86;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.footer .confirm-btn {
+  background-color: #0B3C86;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 24px;
+}
+
+.footer {
+  box-shadow: -10px -2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F8F0E5;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "category"
+    "temp-list"
+    ;
+  }
+  
+  .temp-list-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .grid-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer .row {
+    padding: 0;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* Chia thành 2 cột */
+    grid-template-areas:
+    "back-btn choose-later"
+    "blank confirm-btn" !important; 
+  }
+
+  .back-btn {
+    font-size: 20px; /* Thu nhỏ chữ */
+    padding: 8px 15px; /* Giảm padding */
+    gap: 10px; /* Giảm khoảng cách giữa icon và chữ */
+  }
+
+  .footer a {
+    font-size: 15px; /* Giảm kích thước chữ */
+  }
+
+  .footer .confirm-btn {
+    font-size: 14px; /* Giảm kích thước chữ */
+    padding: 12px 16px; /* Giảm padding để nút nhỏ hơn */
+  }
+}
