@@ -144,7 +144,7 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
       transform: scale(0.3);
       transform-origin: top left;
       /* Đảm bảo thu nhỏ từ góc trên bên trái */
-      width: 310%;
+      width: 210%;
       /* Bù lại kích thước để tránh bị cắt nội dung */
       height: 100%;
       /* Bù lại kích thước để tránh bị cắt nội dung */

@@ -103,9 +103,9 @@ $stmt = $conn->prepare('SELECT first_name, last_name FROM users WHERE email = :e
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
-$displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_name']);
+// $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_name']);
 
-$temp = ["id" => 1, "template_name" => "cv_1"];
+$temp = ["id" => 1, "template_name" => "cv_5"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,6 +125,7 @@ $temp = ["id" => 1, "template_name" => "cv_1"];
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/view_templates.css">
+  <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/<?php echo $temp['template_name']?>.css">
   <style>
     .form-floating label::after,
     .form-floating input {

@@ -19,7 +19,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
 $isLoggedIn = isset($_SESSION['user']);
 $displayName = '';
 $role = 'user'; 
-
+$cvCount = 0; // Số lượng CV của người dùng
 if ($isLoggedIn) {
     
     $user = $_SESSION['user'];
@@ -38,7 +38,11 @@ if ($isLoggedIn) {
         // Nếu không có dữ liệu, hiển thị email
         $displayName = $email;
     }
-    
+
+    $stmt = $conn->prepare('SELECT COUNT(*) FROM cvs WHERE user_id = :userid');
+    $stmt->bindParam(':userid', $user['id']);	
+    $stmt->execute();
+    $cvCount = $stmt->fetchColumn();
 }
 
 ?>
@@ -53,7 +57,8 @@ if ($isLoggedIn) {
     <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/header.css">
     <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/body.css">
     <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/home.css">
-    <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_1.css">
+    <!-- <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_1.css"> -->
+    <!-- <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_5.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -151,17 +156,28 @@ if ($isLoggedIn) {
                 <div class="mb-5">
                     <h2>CV | Resume making</h2>
                     <h1 style="font-weight: bold;">My awesome CV</h1>
-                    <a href="<?= BASE_URL ?>/index.php?page=experience">
-                        <button style="
+                    <!-- <a href="<?= BASE_URL ?>/index.php?page=experience"> -->
+                        <button <?php
+                            if ($cvCount >2) {
+                                echo 'disabled';
+                            }
+                        ?> class="create-cv-btn" style="
                             background-color: #102C57;
                             color: white;
                             width: 160px;
                             padding-top: 8px;
                             padding-bottom: 8px;
                             margin-top: 30px;">
-                            CREATE A CV
+                            <?php
+                                if ($cvCount > 2) {
+                                    echo 'Reached the limit!';
+                                } else {
+                                    echo 'CREATE A CV';
+                                }
+                            ?>
+                            
                         </button>
-                    </a>
+                    <!-- </a> -->
                 </div>
                 <div>
                     <div class="img-container" style="position: relative; margin-top: 10px;">
