@@ -1055,8 +1055,6 @@ buttonStep3c.addEventListener('click', () => {
 buttonStep4a.addEventListener('click', () => {
     handleButtonClick('step4b')
 })
-
-const skills_content = [];
 buttonStep4b.addEventListener('click', () => {
     handleButtonClick('step5a')
     changeSideBar("5")
@@ -1069,9 +1067,9 @@ buttonStep4b.addEventListener('click', () => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(quillContent, 'text/html');
     const listItems = doc.querySelectorAll('li');
+
     listItems.forEach(item => {
         const skillText = item.textContent.trim();
-        skills_content.push(skillText)
         skillsHtml += `
           <div class='col-md-4 talent'>
               <h2 class='h5'>${skillText}</h2>
@@ -1087,8 +1085,6 @@ buttonStep5a.addEventListener('click', () => {
     handleButtonClick('step5b')
     renderSummary("")
 })
-
-const summary_content = []
 buttonStep5b.addEventListener('click', () => {
     handleButtonClick('step6')
     changeSideBar("6")
@@ -1104,7 +1100,6 @@ buttonStep5b.addEventListener('click', () => {
 
     listItems.forEach(item => {
         const skillText = item.textContent.trim();
-        summary_content.push(skillText)
         skillsHtml += `
       <p class='lead enlarge mb-2'>${skillText}</p>
       `;
@@ -1114,7 +1109,9 @@ buttonStep5b.addEventListener('click', () => {
         index.innerHTML = skillsHtml
     });
 })
+buttonStep6.addEventListener('click', () => {
 
+})
 
 
 backStep2a.addEventListener('click', () => {
@@ -1152,9 +1149,11 @@ backStep4b.addEventListener('click', () => {
     handleButtonClick('step4a')
 })
 backStep5a.addEventListener('click', () => {
-    skills_content.length = 0
     handleButtonClick('step4b')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83c346de13e6c05c094190bcd0ddc793ffd51bc0
     changeSideBar('4')
     progressElement.style.width = "60%"
 })
@@ -1162,9 +1161,11 @@ backStep5b.addEventListener('click', () => {
     handleButtonClick('step5a')
 })
 backStep6.addEventListener('click', () => {
-    summary_content.length = 0
     handleButtonClick('step5b')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83c346de13e6c05c094190bcd0ddc793ffd51bc0
     changeSideBar('5')
     progressElement.style.width = "80%"
 })
@@ -1331,12 +1332,14 @@ function renderSummaryStep5(job) {
     });
 }
 
-
 // Quill editor logic remains unchanged unless you report issues with it
 document.addEventListener("DOMContentLoaded", function () {
     const skillSelectedContents = new Set();
     const summarySelectedContents = new Set();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83c346de13e6c05c094190bcd0ddc793ffd51bc0
 
     function updateQuillEditor(quillInstance, selectedSet) {
         const html = `<ul>${Array.from(selectedSet)
@@ -1622,4 +1625,78 @@ function saveCV(cvData) {
             }
         });
 };
+
+const startMonth = document.getElementById('startMonth').value;
+const startYear = document.getElementById('startYear').value;
+const endMonth = document.getElementById('endMonth').value;
+const endYear = document.getElementById('endYear').value;
+const currentlyWorking = document.getElementById('currentlyWorking').checked;
+
+const workingHistory = [
+    {
+        title: document.getElementById('title').value || '',
+        employer: document.getElementById('employer').value || '',
+        location: document.getElementById('location').value || '',
+        start_date: startMonth && startYear && startMonth !== 'Month' && startYear !== 'Year' ? `${startMonth} ${startYear}` : '',
+        end_date: currentlyWorking ? 'Present' : (endMonth && endYear && endMonth !== 'Month' && endYear !== 'Year' ? `${endMonth} ${endYear}` : ''),
+    }
+];
+
+const education = eduSum.map(edu => ({
+    institution: edu.data.institution || '',
+    school_location: edu.data.location || '',
+    degree: edu.data.degree || '',
+    field_study: edu.data.fieldStudy || '',
+    grad_date: edu.data.gradMonth && edu.data.gradYear ? `${edu.data.gradMonth} ${edu.data.gradYear}` : '',
+}));
+
+const skills = Array.from(skillSelectedContents);
+
+const summary = Array.from(summarySelectedContents);
+
+
+const websites = document.querySelector('.websites').value;
+const certifications = document.querySelector('.certifications').value;
+const languages = document.querySelector('.languages').value;
+const proLanguages = document.querySelector('.pro-languages').value;
+const your_own = document.querySelector('.checked-input[id="6"]').value;
+
+const additional = {
+    websites: websites || '',
+    certifications: certifications || '',
+    languages: languages ? languages.split(',').map(item => item.trim()).filter(item => item) : [],
+    proLanguages: proLanguages ? proLanguages.split(',').map(item => item.trim()).filter(item => item) : [],
+    your_own: your_own || ''
+};
+
+const cvData = {
+    heading: heading,
+    workingHistory: workingHistory,
+    education: education,
+    skills: skills,
+    summary: summary,
+    additional: additional
+};
+
+fetch('/CV-Hosting-web-main/app/controllers/CVController.php?action=createCV', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(cvData)
+})
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('CV created successfully!');
+            window.location.href = '/CV-Hosting-web-main/public/index.php?page=home';
+        } else {
+            alert('Error creating CV: ' + data.msg);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while creating the CV. Please try again.');
+    }
+    )
 
