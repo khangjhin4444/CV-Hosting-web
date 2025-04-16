@@ -1,0 +1,74 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Varela+Round&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #ffffff;
+}
+
+a {
+    color: #66cc99;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4a4e51;
+}
+
+/* Colors */
+.text-teal {
+    color: #66cc99 !important;
+}
+
+.text-dark {
+    color: #4a4e51 !important;
+}
+
+.text-gray {
+    color: #9099a0 !important;
+}
+
+/* Resume Wrapper */
+.resume-wrapper {
+    min-height: 100vh;
+}
+
+/* Profile Section */
+.profile h1 {
+    font-family: 'Varela Round', sans-serif;
+}
+
+/* Contact Info */
+.contact-info ul li {
+    font-size: 0.9rem;
+}
+
+/* Experience Section */
+.experience {
+    background: #3d3e42;
+}
+
+/* Badges */
+.badge {
+    font-size: 0.9rem;
+    padding: 0.5em 1em;
+    transition: background-color 0.2s ease;
+}
+
+.badge:hover {
+    background-color: #e9ecef;
+}
+
+/* Typography */
+h3.h4 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.experience-title,
+.time {
+    font-size: 0.9rem;
+}

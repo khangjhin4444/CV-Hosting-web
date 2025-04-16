@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Anderson Resume</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style/style_7.css">
+</head>
+
+<body>
+    <div class="resume-wrapper">
+        <div class="row g-0">
+            <!-- Left Column: Profile -->
+            <div class="col-md-5 profile bg-white text-gray p-5">
+                <div class="text-center text-md-start">
+                    <!-- Avatar and Name -->
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="picture-resume me-3">
+                            <img src="https://via.placeholder.com/130" alt="John Anderson" class="rounded-circle" />
+                        </div>
+                        <h1 class="display-5 text-uppercase text-dark">John Anderson</h1>
+                    </div>
+                    <!-- Contact Info -->
+                    <div class="contact-info mb-4">
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-center mb-2">
+                                <span class="fw-bold text-dark me-2">Call</span>
+                                <span>+34 123 456 789</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <span class="fw-bold text-dark me-2">Mail</span>
+                                <span>j.anderson@gmail.com</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <span class="fw-bold text-dark me-2">Web</span>
+                                <span><a href="#" class="text-teal">janderson.com</a></span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <span class="fw-bold text-dark me-2">Home</span>
+                                <span>Los Angeles, CA</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Presentation -->
+                    <div class="contact-presentation mb-4">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod congue nisi, nec
+                            consequat quam. In consectetur faucibus turpis eget laoreet. Sed nec imperdiet purus.</p>
+                    </div>
+                    <!-- Social Links -->
+                    <div class="contact-social">
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-center mb-2">
+                                <span class="fw-bold text-dark me-2">Twitter</span>
+                                <span><a href="#" class="text-teal">@janderson</a></span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <span class="fw-bold text-dark me-2">Dribbble</span>
+                                <span><a href="#" class="text-teal">janderson</a></span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <span class="fw-bold text-dark me-2">Codepen</span>
+                                <span><a href="#" class="text-teal">janderson</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Experience, Skills, Hobbies -->
+            <div class="col-md-7 experience bg-dark text-gray p-5">
+                <!-- Experience -->
+                <h3 class="h4 text-uppercase text-teal mb-4">Experience</h3>
+                <div class="experience-wrapper mb-5">
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="experience-title text-white">Company name</div>
+                            <div class="time">Nov 2012 - Present</div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="experience-title text-white">Front End Developer</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis,
+                                adipiscing leo in, dignissim magna.</p>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="experience-title text-white">Company name</div>
+                            <div class="time">Nov 2010 - Present</div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="experience-title text-white">Freelance, Web Designer / Web Developer</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis,
+                                adipiscing leo in, dignissim magna.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="experience-title text-white">Company name</div>
+                            <div class="time">Nov 2009 - Nov 2010</div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="experience-title text-white">Web Designer</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis,
+                                adipiscing leo in, dignissim magna.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills and Hobbies -->
+                <div class="row">
+                    <!-- Skills -->
+                    <div class="col-md-6">
+                        <h3 class="h4 text-uppercase text-teal mb-4">Skills</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                HTML / HTML5
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-teal" style="width: 80%"></div>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                CSS / CSS3 / SASS / LESS
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-teal" style="width: 90%"></div>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                Javascript
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-teal" style="width: 50%"></div>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                Jquery
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-teal" style="width: 60%"></div>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                Wordpress
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-teal" style="width: 70%"></div>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                Photoshop
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-teal" style="width: 70%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Hobbies -->
+                    <div class="col-md-6">
+                        <h3 class="h4 text-uppercase text-teal mb-4">Hobbies</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing
+                            leo in, dignissim magna.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing
+                            leo in, dignissim magna.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
