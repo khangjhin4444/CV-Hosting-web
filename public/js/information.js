@@ -1602,8 +1602,8 @@ function saveCV(cvData) {
         })
         .then(data => {
             if (data.success) {
-                alert('CV created successfully! CV ID: ' + data.cv_id);
-                window.location.href = '/CV-Hosting-web-main/app/views/public/index.php?page=my_cvs';
+                alert('CV created successfully!');
+                window.location.href = '/CV-Hosting-web-main/public/index.php?page=my_cvs';
             } else {
                 throw new Error(data.msg || 'Unknown error from server');
             }

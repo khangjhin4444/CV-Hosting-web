@@ -36,6 +36,7 @@ class User{
     }
 
     public function login($email, $password){
+        echo "Login attempt with email: $email\n"; // Debug log
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
