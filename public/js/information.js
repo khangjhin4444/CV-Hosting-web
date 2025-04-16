@@ -1150,10 +1150,6 @@ backStep4b.addEventListener('click', () => {
 })
 backStep5a.addEventListener('click', () => {
     handleButtonClick('step4b')
-<<<<<<< HEAD
-
-=======
->>>>>>> 83c346de13e6c05c094190bcd0ddc793ffd51bc0
     changeSideBar('4')
     progressElement.style.width = "60%"
 })
@@ -1162,10 +1158,6 @@ backStep5b.addEventListener('click', () => {
 })
 backStep6.addEventListener('click', () => {
     handleButtonClick('step5b')
-<<<<<<< HEAD
-
-=======
->>>>>>> 83c346de13e6c05c094190bcd0ddc793ffd51bc0
     changeSideBar('5')
     progressElement.style.width = "80%"
 })
@@ -1336,10 +1328,6 @@ function renderSummaryStep5(job) {
 document.addEventListener("DOMContentLoaded", function () {
     const skillSelectedContents = new Set();
     const summarySelectedContents = new Set();
-<<<<<<< HEAD
-
-=======
->>>>>>> 83c346de13e6c05c094190bcd0ddc793ffd51bc0
 
     function updateQuillEditor(quillInstance, selectedSet) {
         const html = `<ul>${Array.from(selectedSet)
