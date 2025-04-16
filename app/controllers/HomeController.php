@@ -28,6 +28,10 @@ class HomeController {
         require_once dirname(__DIR__) . '/views/my_cvs.php';
     }
 
+    public function viewTemplates() {
+        require_once dirname(__DIR__) . '/views/view_templates.php';
+    }
+    
     public function admin() {
         require_once dirname(__DIR__) . '/views/admin.php';
     }

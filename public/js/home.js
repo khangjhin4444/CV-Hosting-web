@@ -725,7 +725,7 @@ color: #444;">
 
 const carousel = document.querySelector('.carousel');
 const arrowBtns = document.querySelectorAll('.wrapper i')
-// const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+let firstCardWidth;
 const carouselChildrens = [...carousel.children];
 
 
@@ -742,7 +742,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     });
     carousel.innerHTML = html;
-    
+    firstCardWidth = carousel.querySelector(".card").offsetWidth;
     // Use event delegation
     carousel.addEventListener('click', (e) => {
         const button = e.target.closest('.use-btn');

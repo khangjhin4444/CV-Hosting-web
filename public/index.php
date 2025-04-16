@@ -68,6 +68,13 @@ switch ($page) {
         }
         require_once __DIR__ . '/../app/views/my_cvs.php';
         break;
+    case 'view_templates':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        require_once __DIR__ . '/../app/views/view_templates.php';
+        break;
     default:
 
         break;

@@ -52,6 +52,16 @@ switch ($page) {
         $controller = new HomeController();
         $controller->myCvs();
         break;
+
+    case 'view_templates':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        $controller = new HomeController();
+        $controller->viewTemplates();
+        break;
+        
     default:
         $controller = new HomeController();
         $controller->notFound();
