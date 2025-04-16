@@ -147,7 +147,7 @@ $templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name
       transform: scale(0.4);
       transform-origin: top left;
       /* Đảm bảo thu nhỏ từ góc trên bên trái */
-      width: 240%;
+      width: 250%;
       /* Bù lại kích thước để tránh bị cắt nội dung */
       height: 110%;
       /* Bù lại kích thước để tránh bị cắt nội dung */
