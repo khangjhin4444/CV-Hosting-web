@@ -130,17 +130,11 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
       <form action="/CV-Hosting-web-main/app/controllers/SettingsController.php" method="post">
         <input type="hidden" name="action" value="save_settings">
         <div class="mb-3">
-          <label for="cv-limit" class="form-label">Số CV tối đa mỗi người dùng:</label>
+          <label for="cv-limit" class="form-label">Max number CV per account:</label>
           <input type="number" id="cv-limit" name="cv_limit" value="<?php echo htmlspecialchars($cv_limit); ?>" min="1" class="form-control" required />
         </div>
 
-        <div class="mb-3">
-          <label for="guest-view" class="form-label">Cho phép khách xem CV công khai:</label>
-          <select id="guest-view" name="guest_view" class="form-select">
-            <option value="1" <?php echo $guest_view == 1 ? 'selected' : ''; ?>>Có</option>
-            <option value="0" <?php echo $guest_view == 0 ? 'selected' : ''; ?>>Không</option>
-          </select>
-        </div>
+        
 
         <button type="submit" class="btn btn-primary">Lưu cấu hình</button>
       </form>
