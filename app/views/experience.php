@@ -14,6 +14,7 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +26,13 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
   <style>
-    html, body {
+    html,
+    body {
       font-family: Montserrat;
       margin: 0;
       padding: 0;
@@ -37,34 +41,39 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
     }
   </style>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg pt-0" style="background-color: #F8F0E5;">
     <div class="container-fluid">
-        <a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex" style="margin-right: 100px;">
-            <img src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid" style="margin-left: 10px; margin-right: 3px; width: 50px; height: 100%;">
-            <p style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
-        </a>
+      <a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex" style="margin-right: 100px;">
+        <img src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid"
+          style="margin-left: 10px; margin-right: 3px; width: 50px; height: 100%;">
+        <p style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
+      </a>
 
-        <div class="row">
-            <button class="search-btn navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#searchBar">
-                <img src="/CV-Hosting-web-main/public/images/search-icon.png" alt="" class="img-fluid">
-            </button>
-            <button class="navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <div class="row">
+        <button class="search-btn navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#searchBar">
+          <img src="/CV-Hosting-web-main/public/images/search-icon.png" alt="" class="img-fluid">
+        </button>
+        <button class="navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse mt-2 hidden-search" id="searchBar" style="visibility: hidden;">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <img src="/CV-Hosting-web-main/public/images/search-icon.png"
+              style="width: 16px; height: 16px; margin: 10px;">
+          </span>
+          <input type="text" class="form-control" placeholder="Search">
         </div>
+      </div>
 
-        <div class="collapse navbar-collapse mt-2 hidden-search" id="searchBar" style="visibility: hidden;">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">
-                    <img src="/CV-Hosting-web-main/public/images/search-icon.png" style="width: 16px; height: 16px; margin: 10px;">
-                </span>
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-        </div>
-
-        <div class="collapse navbar-collapse ms-auto justify-content-end" style="width: 100%;">
-            <div class="px-2 search-button" style="
+      <div class="collapse navbar-collapse ms-auto justify-content-end" style="width: 100%;">
+        <div class="px-2 search-button" style="
                 background-color: white;
                 border: none;
                 cursor: text;
@@ -72,37 +81,38 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
                 gap: 6px;
                 width: 220px;
                 display: flex;">
-                <div>
-                    <img src="/CV-Hosting-web-main/public/images/search-icon.png" style="width: 16px; height: 16px; margin: 10px;">
-                </div>
-                <input type="text" placeholder="Search" style="
+          <div>
+            <img src="/CV-Hosting-web-main/public/images/search-icon.png"
+              style="width: 16px; height: 16px; margin: 10px;">
+          </div>
+          <input type="text" placeholder="Search" style="
                     border: none;
                     width: 90%;
                     outline: none;
                     background-color: transparent;">
-            </div>
         </div>
+      </div>
 
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav ms-auto">
-                <li class="navbar-item">
-                    <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
-                </li>
-                
-                    <li class="navbar-item">
-                        <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="#" class="nav-link" style="width: 200px;"><?= $displayName ?></a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log Out</a>
-                    </li>
-                
-            </ul>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="navbar-item">
+            <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="nav-link w-100"><?= $displayName ?></a>
+          </li>
+          <li class="navbar-item">
+            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log
+              Out</a>
+          </li>
+
+        </ul>
+      </div>
     </div>
-  </nav>  
+  </nav>
 
   <section>
     <div class="container-fluid pt-4 text-center" style="background-color: #F8F0E5;">
@@ -140,13 +150,14 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
           </div>
         </div>
       </div>
-      
+
     </div>
   </section>
   <div class="container pt-4" style="justify-content: flex-end; display:flex;">
-      <button class="confirm-button">CONFIRM</button>
+    <button class="confirm-button">CONFIRM</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/CV-Hosting-web-main/public/js/experience.js"></script>
 </body>
+
 </html>

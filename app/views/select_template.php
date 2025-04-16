@@ -23,16 +23,16 @@ foreach ($test as $res)
     // echo implode(' ', $res);
   } else
     // echo $res;
-$heading = [
-  'name' => 'Khoa',
-  'surname' => 'Huynh',
-  'city' => 'Ho Chi Minh',
-  'country' => 'Viet Nam',
-  'postcode' => '50000',
-  'phone' => '(84)932523714',
-  'email' => 'huynhkhoa03012004@gmail.com',
-  'address' => '273/66 Nguyen Van Dau, Ward 11, Binh Thanh District'
-];
+    $heading = [
+      'name' => 'Khoa',
+      'surname' => 'Huynh',
+      'city' => 'Ho Chi Minh',
+      'country' => 'Viet Nam',
+      'postcode' => '50000',
+      'phone' => '(84)932523714',
+      'email' => 'huynhkhoa03012004@gmail.com',
+      'address' => '273/66 Nguyen Van Dau, Ward 11, Binh Thanh District'
+    ];
 $working_history = [
   [
     'title' => 'Fresher',
@@ -154,8 +154,8 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
 
 <body>
   <nav class="navbar navbar-expand-lg pt-0 pb-3" style="background-color: #F8F0E5;">
-    <div class="container-fluid"><a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex" style="margin-right: 100px;"><img
-          src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid"
+    <div class="container-fluid"><a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex"
+        style="margin-right: 100px;"><img src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid"
           style="margin-left: 10px; margin-right: 3px; width: 50px; height: 100%;">
         <p style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
       </a>
@@ -194,20 +194,21 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav ms-auto">
           <li class="navbar-item">
-              <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
+            <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
           </li>
-          
-              <li class="navbar-item">
-                  <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link"  style="width: 90px;">My CVs</a>
-              </li>
-              
-              
-              <li class="navbar-item">
-                  <a href="#" class="nav-link" style="width: 200px;"><?= $displayName ?></a>
-              </li>
-              <li class="navbar-item">
-                  <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log Out</a>
-              </li>
+
+          <li class="navbar-item">
+            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
+          </li>
+
+
+          <li class="navbar-item">
+            <a href="#" class="nav-link w-100"><?= $displayName ?></a>
+          </li>
+          <li class="navbar-item">
+            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log
+              Out</a>
+          </li>
         </ul>
       </div>
     </div>
