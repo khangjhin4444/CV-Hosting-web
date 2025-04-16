@@ -129,33 +129,36 @@ if ($isLoggedIn) {
             <div class="collapse navbar-collapse w-auto" id="navbarContent">
                 <ul class="navbar-nav align-items-center flex ms-auto">
                     <li class="navbar-item">
-                        <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
+                        <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link text-center">Home</a>
                     </li>
                     <?php if ($isLoggedIn): ?>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
+                            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link text-center"
+                                style="width: 90px;">My CVs</a>
                         </li>
                         <?php if ($role === 'admin'): ?>
                             <li class="navbar-item">
-                                <a href="<?= BASE_URL ?>/index.php?page=admin" class="nav-link">Admin</a>
+                                <a href="<?= BASE_URL ?>/index.php?page=admin" class="nav-link text-center">Admin</a>
                             </li>
                         <?php endif; ?>
                         <li class="navbar-item">
-                            <a href="#" class="nav-link ">
-                                <p class="w-100 m-0" style="display: inline-block; white-space: nowrap;"><?= $displayName ?>
+                            <a href="#" class="nav-link">
+                                <p class="w-100 m-0 text-center" style="display: inline-block; white-space: nowrap;">
+                                    <?= $displayName ?>
                                 </p>
                             </a>
                         </li>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link"
+                            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link text-center"
                                 style="width: 90px;">Log Out</a>
                         </li>
                     <?php else: ?>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=authentication" class="nav-link">Login</a>
+                            <a href="<?= BASE_URL ?>/index.php?page=authentication" class="nav-link text-center">Login</a>
                         </li>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=authentication" class="nav-link">Register</a>
+                            <a href="<?= BASE_URL ?>/index.php?page=authentication"
+                                class="nav-link text-center">Register</a>
                         </li>
                     <?php endif; ?>
                 </ul>
@@ -302,7 +305,7 @@ if ($isLoggedIn) {
     <section class="text-start pt-5">
         <div class="container" style="background-color: #FFFFFF;">
             <div class="row align-items-start justify-content-around">
-                <div class="col-md pb-5">
+                <div class="col-md py-4 pb-5">
                     <h1 class="mb-5" style="font-weight: 600;">Let's work together</h1>
                     <p style="margin-top: 50px; margin-bottom: 60px;">
                         This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com This is
@@ -317,7 +320,7 @@ if ($isLoggedIn) {
                         <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/be.png" alt="">
                     </div>
                 </div>
-                <div class="col-md pb-5 feedback" style="
+                <div class="col-md py-4 pb-5 feedback" style="
                     display: flex;
                     flex-direction: column;
                     gap: 20px;">
