@@ -44,7 +44,14 @@ switch ($page) {
         $controller = new HomeController();
         $controller->information();
         break;
-
+    case 'my_cvs':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        $controller = new HomeController();
+        $controller->myCvs();
+        break;
     default:
         $controller = new HomeController();
         $controller->notFound();

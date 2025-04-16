@@ -110,7 +110,7 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Choose a template</title>
+  <title>CV view</title>
   <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/header.css">
   <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/body.css">
@@ -121,6 +121,7 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/my_cvs.css">
   <style>
     .form-floating label::after,
     .form-floating input {
@@ -141,12 +142,12 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
   <link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_1.css" media="all" />
   <style>
     .cv_template {
-      transform: scale(0.3);
+      transform: scale(0.4);
       transform-origin: top left;
       /* Đảm bảo thu nhỏ từ góc trên bên trái */
-      width: 310%;
+      width: 250%;
       /* Bù lại kích thước để tránh bị cắt nội dung */
-      height: 100%;
+      height: 140%;
       /* Bù lại kích thước để tránh bị cắt nội dung */
     }
   </style>
@@ -214,8 +215,8 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
   </nav>
   <section>
     <div class="container pt-4 text-center" style="background-color: #F8F0E5;">
-      <h1 style="font-weight: 600;">Choose your appropriate CVs</h1>
-      <p class="lead pt-3 pb-3" style="font-size: 25px;">Add your name here to see the preview of you cover letter.</p>
+      <h1 style="font-weight: 600;">Created CVs</h1>
+      <!-- <p class="lead pt-3 pb-3" style="font-size: 25px;">Add your name here to see the preview of you cover letter.</p>
       <div class="row align-items-center justify-content-center input-row">
         <div class="col col-lg-4">
           <div class="form-floating"><input type="text" id="fname" name="fname" class="form-control"
@@ -226,30 +227,15 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
               placeholder="Yeager"><label for="lname">Last Name</label></div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
   <section>
     <div class="container">
-      <div class="grid-container"><span class="category" style="grid-area: category;">
-          <h2 class="mb-3">Category</h2><button class="chosen cate-btn">RECOMMENDED</button><br><button
-            class="cate-btn">ALL</button>
-        </span><span style="grid-area: temp-list;" class="temp-list-grid">
-        </span></div>
+        <span style="grid-area: temp-list;" class="temp-list-grid">
+        </span>
     </div>
   </section>
-  <section>
-    <div class="footer container-fluid p-3 px-5" style="height: 120px; visibility: hidden;">
-      <div class="row align-items-center w-100">
-        <div class="col-auto" style="grid-area: back-btn;"><button class="back-btn"><i class="bi bi-arrow-left"
-              style="font-weight: bold;"></i>Back </button></div>
-        <div class="col" style="grid-area: blank;"></div>
-        <div class="col-auto" style="grid-area: choose-later;"><a href="">Choose Later</a></div>
-        <div class="col-auto" style="grid-area: confirm-btn;"><button class="confirm-btn">USE THIS
-            TEMPLATE</button></div>
-      </div>
-    </div>
-  </section>
-  <script src="/CV-Hosting-web-main/public/js/select_template.js"></script>
+  <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script>
 </body>
 
 </html>
