@@ -18,13 +18,8 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
 // Lấy thông tin người dùng
 $isLoggedIn = isset($_SESSION['user']);
 $displayName = '';
-<<<<<<< HEAD
 $role = 'user';
-
-=======
-$role = 'user'; 
 $cvCount = 0; // Số lượng CV của người dùng
->>>>>>> 83c346de13e6c05c094190bcd0ddc793ffd51bc0
 if ($isLoggedIn) {
 
     $user = $_SESSION['user'];
@@ -44,13 +39,10 @@ if ($isLoggedIn) {
         $displayName = $email;
     }
 
-<<<<<<< HEAD
-=======
     $stmt = $conn->prepare('SELECT COUNT(*) FROM cvs WHERE user_id = :userid');
-    $stmt->bindParam(':userid', $user['id']);	
+    $stmt->bindParam(':userid', $user['id']);
     $stmt->execute();
     $cvCount = $stmt->fetchColumn();
->>>>>>> 83c346de13e6c05c094190bcd0ddc793ffd51bc0
 }
 
 ?>
@@ -179,26 +171,26 @@ if ($isLoggedIn) {
                     <h2>CV | Resume making</h2>
                     <h1 style="font-weight: bold;">My awesome CV</h1>
                     <!-- <a href="<?= BASE_URL ?>/index.php?page=experience"> -->
-                        <button <?php
-                            if ($cvCount >2) {
-                                echo 'disabled';
-                            }
-                        ?> class="create-cv-btn" style="
+                    <button <?php
+                    if ($cvCount > 2) {
+                        echo 'disabled';
+                    }
+                    ?> class="create-cv-btn" style="
                             background-color: #102C57;
                             color: white;
                             width: 160px;
                             padding-top: 8px;
                             padding-bottom: 8px;
                             margin-top: 30px;">
-                            <?php
-                                if ($cvCount > 2) {
-                                    echo 'Reached the limit!';
-                                } else {
-                                    echo 'CREATE A CV';
-                                }
-                            ?>
-                            
-                        </button>
+                        <?php
+                        if ($cvCount > 2) {
+                            echo 'Reached the limit!';
+                        } else {
+                            echo 'CREATE A CV';
+                        }
+                        ?>
+
+                    </button>
                     <!-- </a> -->
                 </div>
                 <div>
