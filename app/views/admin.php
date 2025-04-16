@@ -136,7 +136,6 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
 
         
 
-        <button type="submit" class="btn btn-primary">Lưu cấu hình</button>
       </form>
     </div>
   </div>
