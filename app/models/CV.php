@@ -18,8 +18,8 @@ class CV {
 
             // Lưu thông tin cá nhân
             $stmt = $this->conn->prepare("
-                INSERT INTO personal_info (cv_id, name, surname, city, country, postcode, phone, email, address)
-                VALUES (:cv_id, :name, :surname, :city, :country, :postcode, :phone, :email, :address)
+                INSERT INTO personal_info (cv_id, name, surname, city, country, postcode, phone, email)
+                VALUES (:cv_id, :name, :surname, :city, :country, :postcode, :phone, :email)
             ");
             $stmt->execute([
                 'cv_id' => $cvId,
@@ -30,7 +30,6 @@ class CV {
                 'postcode' => $heading['postcode'] ?? '',
                 'phone' => $heading['phone'] ?? '',
                 'email' => $heading['email'] ?? '',
-                'address' => $heading['address'] ?? '',
             ]);
 
             // Lưu lịch sử làm việc
@@ -52,8 +51,8 @@ class CV {
             // Lưu học vấn
             foreach ($education as $edu) {
                 $stmt = $this->conn->prepare("
-                    INSERT INTO education (cv_id, institution, school_location, degree, field_study, gpa, graduation_date)
-                    VALUES (:cv_id, :institution, :school_location, :degree, :field_study, :gpa, :graduation_date)
+                    INSERT INTO education (cv_id, institution, school_location, degree, field_study, graduation_date)
+                    VALUES (:cv_id, :institution, :school_location, :degree, :field_study, :graduation_date)
                 ");
                 $stmt->execute([
                     'cv_id' => $cvId,
@@ -61,7 +60,6 @@ class CV {
                     'school_location' => $edu['school_location'] ?? '',
                     'degree' => $edu['degree'] ?? '',
                     'field_study' => $edu['field_study'] ?? '',
-                    'gpa' => $edu['gpa'] ?? '',
                     'graduation_date' => $edu['graduation_date'] ?? '',
                 ]);
             }
