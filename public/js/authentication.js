@@ -106,12 +106,12 @@ function renderLogin() {
             emailNotification.style.color = 'red';
             return;
         }
-
+        
         const response = await postData('/CV-Hosting-web-main/public/index.php?page=authentication&action=login', {
             email: emailInput.value,
             password: passwordInput.value
         });
-
+        
         if (response.success) {
             // Chuyển hướng dựa trên role từ session
             const roleResponse = await fetch('/CV-Hosting-web-main/public/index.php?page=get_role', {
