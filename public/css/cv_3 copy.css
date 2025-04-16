@@ -1,0 +1,30 @@
+/* body {
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+} */
+
+.text-teal {
+    color: #20c997 !important;
+}
+
+.link-secondary:hover {
+    color: #20c997 !important;
+}
+
+.border-dotted {
+    border-top: 2px dotted #adb5bd;
+}
+
+.card {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.card-title {
+    letter-spacing: 1px;
+}
+
+.badge {
+    font-size: 0.9rem;
+    padding: 0.5em 1em;
+}

@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name Resume</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="public\css\cv_3.css">
-</head>
-
-<body>
-    <!-- Header -->
-    <header class="bg-light text-center py-3">
+    <!-- <header class="bg-light text-center py-3">
         <h1 class="display-4 fw-bold text-teal text-uppercase mb-1">Your Name</h1>
         <div class="d-flex justify-content-center gap-3 mb-3">
             <a href="#" class="link-secondary fs-3" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -27,9 +10,7 @@
         </p>
     </header>
 
-    <!-- Main Content -->
     <main class="container py-3">
-        <!-- Summary -->
         <section class="card mb-3 shadow-sm">
             <div class="card-body">
                 <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Summary</h2>
@@ -37,8 +18,6 @@
                 <p class="text-muted small">Front end developer</p>
             </div>
         </section>
-
-        <!-- Skills -->
         <section class="card mb-4 shadow-sm">
             <div class="card-body">
                 <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Skills</h2>
@@ -53,8 +32,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Professional Experience -->
         <section class="card mb-4 shadow-sm">
             <div class="card-body">
                 <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Professional Experience</h2>
@@ -79,8 +56,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Education -->
         <section class="card mb-4 shadow-sm">
             <div class="card-body">
                 <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Education</h2>
@@ -96,12 +71,70 @@
                 </div>
             </div>
         </section>
-    </main>
+    </main> -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-</body>
+<?php
+$heading = isset($heading) ? $heading : [];
+$working_history = isset($working_history) ? $working_history : [];
+$education = isset($education) ? $education : [];
+$skills = isset($skills) ? $skills : [];
+$summary = isset($summary) ? $summary : [];
+?>
 
-</html>
+<header class="bg-light text-center py-3">
+    <h1 class="display-4 fw-bold text-teal text-uppercase mb-1">
+        <span class="f-name"><?= htmlspecialchars($heading['name'] ?? 'John') ?></span>
+        <span class="l-name"><?= htmlspecialchars($heading['surname'] ?? 'Doe') ?></span>
+    </h1>
+    <p><a href="mailto:<?= htmlspecialchars($heading['email'] ?? 'examplemail@mail.com') ?>" id="email_cv" class="link-secondary text-decoration-none"><?= htmlspecialchars($heading['email'] ?? 'examplemail@mail.com') ?></a></p>
+    <p id="phone_cv"><?= htmlspecialchars($heading['phone'] ?? '(313) - 867-5309') ?></p>
+    <p id="city_cv"><?= htmlspecialchars($heading['city'] ?? 'Ho Chi Minh') ?></p>
+</header>
+
+<main class="container py-3">
+    <section class="card mb-3 shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Summary</h2>
+            <hr class="border-dotted">
+            <?php foreach ($summary as $item): ?>
+                <p class="text-muted small"><?= htmlspecialchars($item) ?></p>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <section class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Skills</h2>
+            <hr class="border-dotted">
+            <div class="row row-cols-1 row-cols-md-2 g-2">
+                <?php foreach ($skills as $skill): ?>
+                    <div class="col"><span class="badge bg-light text-dark border"><?= htmlspecialchars($skill) ?></span></div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <section class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Professional Experience</h2>
+            <hr class="border-dotted">
+            <?php foreach ($working_history as $job): ?>
+                <div class="mb-3">
+                    <h3 class="h6 text-teal cv_employer"><?= htmlspecialchars($job['employer'] ?? 'Software Engineer') ?> <span class="text-muted small cv_location">| <?= htmlspecialchars($job['location'] ?? 'Dream Company') ?></span></h3>
+                    <p class="text-muted small mb-1 cv_title"><?= htmlspecialchars($job['title'] ?? 'Fresher') ?> | <span class="start_date_cv"><?= htmlspecialchars($job['start_date'] ?? '2020-05') ?></span> - <span class="end_date_cv"><?= htmlspecialchars($job['end_date'] ?? 'now') ?></span></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <section class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Education</h2>
+            <hr class="border-dotted">
+            <?php foreach ($education as $edu): ?>
+                <div class="mb-3">
+                    <h3 class="h6 text-teal cv_uni"><?= htmlspecialchars($edu['insitution'] ?? 'Ho Chi Minh University of Technology') ?> <span class="text-muted small cv_city">| <?= htmlspecialchars($edu['school_location'] ?? 'Ho Chi Minh City, Viet Nam') ?></span></h3>
+                    <p class="text-muted small cv_degree"><?= htmlspecialchars($edu['degree'] ?? 'Bachelor') ?>, <span class="cv_field_study"><?= htmlspecialchars($edu['field_study'] ?? 'Computer Science') ?></span><br><span class="cv_year"><?= htmlspecialchars($edu['graduation_date'] ?? '2024-06') ?></span></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+</main>
