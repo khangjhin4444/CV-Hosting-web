@@ -1,23 +1,19 @@
 <?php
-session_start();
-require_once __DIR__ . '/../config/database.php';
-require_once __DIR__ . '/../config/constant.php';
+
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/constant.php';
 
 header('Content-Type: application/json');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
-    $email = htmlspecialchars(trim($_POST['email']));
-    $stmt = $conn->prepare('SELECT role FROM users WHERE email = :email');
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user'])) {
+    $userId = $_SESSION['user']['id'];
+    $userRole = $_SESSION['user']['role'];
 
-    if ($user) {
-        echo json_encode(['role' => $user['role']]);
-    } else {
-        echo json_encode(['role' => 'none']);
-    }
+    // return the user role
+    echo json_encode(['success' => true, 'role' => $userRole]);
+
 } else {
-    echo json_encode(['error' => 'Invalid request']);
-}
+    echo json_encode(['success' => false, 'msg' => 'Unauthorized']);
+    
+} 
 exit;

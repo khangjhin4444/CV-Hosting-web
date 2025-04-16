@@ -12,6 +12,10 @@ class HomeController {
         require_once dirname(__DIR__) . '/views/authentication.php';
     }
 
+    public function getRole() {
+        require_once dirname(__DIR__) . '/views/get_role.php';
+    }
+
     public function experience() {
         require_once dirname(__DIR__) . '/views/experience.php';
     }
