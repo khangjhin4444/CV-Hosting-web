@@ -112,16 +112,16 @@ function renderLogin() {
             password: passwordInput.value
         });
         
+        
         if (response.success) {
             // Chuyển hướng dựa trên role từ session
             const roleResponse = await fetch('/CV-Hosting-web-main/public/index.php?page=get_role', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({ email: emailInput.value })
+                method: 'POST'
             });
             const roleData = await roleResponse.json();
+            
             const role = roleData.role;
-
+            
             if (role === 'user') {
                 window.location.href = '/CV-Hosting-web-main/public/index.php?page=home';
             } else if (role === 'admin') {
