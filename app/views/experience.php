@@ -97,19 +97,20 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
       <div class="collapse navbar-collapse w-auto" id="navbarContent">
         <ul class="navbar-nav align-items-center flex ms-auto">
           <li class="navbar-item">
-            <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
+            <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link text-center">Home</a>
           </li>
           <li class="navbar-item">
-            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
+            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link text-center" style="width: 90px;">My CVs</a>
           </li>
           <li class="navbar-item">
             <a href="#" class="nav-link ">
-              <p class="w-100 m-0" style="display: inline-block; white-space: nowrap;"><?= $displayName ?>
+              <p class="w-100 m-0 text-center" style="display: inline-block; white-space: nowrap;"><?= $displayName ?>
               </p>
             </a>
           </li>
           <li class="navbar-item">
-            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log
+            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link text-center"
+              style="width: 90px;">Log
               Out</a>
           </li>
         </ul>
