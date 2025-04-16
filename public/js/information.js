@@ -1154,7 +1154,7 @@ backStep4b.addEventListener('click', () => {
 backStep5a.addEventListener('click', () => {
     skills_content.length = 0
     handleButtonClick('step4b')
-    
+
     changeSideBar('4')
     progressElement.style.width = "60%"
 })
@@ -1164,7 +1164,7 @@ backStep5b.addEventListener('click', () => {
 backStep6.addEventListener('click', () => {
     summary_content.length = 0
     handleButtonClick('step5b')
-    
+
     changeSideBar('5')
     progressElement.style.width = "80%"
 })
@@ -1334,9 +1334,9 @@ function renderSummaryStep5(job) {
 
 // Quill editor logic remains unchanged unless you report issues with it
 document.addEventListener("DOMContentLoaded", function () {
-  const skillSelectedContents = new Set();
-  const summarySelectedContents = new Set();
-  
+    const skillSelectedContents = new Set();
+    const summarySelectedContents = new Set();
+
 
     function updateQuillEditor(quillInstance, selectedSet) {
         const html = `<ul>${Array.from(selectedSet)
@@ -1483,143 +1483,143 @@ document.querySelector('.certifications').addEventListener('input', function () 
 
 
 buttonStep6.addEventListener('click', () => {
-  // Kiểm tra các trường bắt buộc
-  if (!document.getElementById('name').value || 
-      !document.getElementById('surname').value || 
-      !document.getElementById('phone').value || 
-      !document.getElementById('email').value) {
-      alert('Please fill in all required fields (Name, Surname, Phone, Email).');
-      return;
-  }
+    // Kiểm tra các trường bắt buộc
+    if (!document.getElementById('name').value ||
+        !document.getElementById('surname').value ||
+        !document.getElementById('phone').value ||
+        !document.getElementById('email').value) {
+        alert('Please fill in all required fields (Name, Surname, Phone, Email).');
+        return;
+    }
 
-  // Thu thập heading
-  const heading = {
-      name: document.getElementById('name').value ,
-      surname: document.getElementById('surname').value ,
-      city: document.getElementById('city').value || '',
-      country: document.getElementById('country').value || '',
-      postcode: document.getElementById('postcode').value || '',
-      phone: document.getElementById('phone').value ,
-      email: document.getElementById('email').value ,
-      address: ''
-  };
+    // Thu thập heading
+    const heading = {
+        name: document.getElementById('name').value,
+        surname: document.getElementById('surname').value,
+        city: document.getElementById('city').value || '',
+        country: document.getElementById('country').value || '',
+        postcode: document.getElementById('postcode').value || '',
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        address: ''
+    };
 
-  // Thu thập workingHistory
-  const startMonth = document.getElementById('startMonth').value;
-  const startYear = document.getElementById('startYear').value;
-  const endMonth = document.getElementById('endMonth').value;
-  const endYear = document.getElementById('endYear').value;
-  const currentlyWorking = document.getElementById('currentlyWorking').checked;
+    // Thu thập workingHistory
+    const startMonth = document.getElementById('startMonth').value;
+    const startYear = document.getElementById('startYear').value;
+    const endMonth = document.getElementById('endMonth').value;
+    const endYear = document.getElementById('endYear').value;
+    const currentlyWorking = document.getElementById('currentlyWorking').checked;
 
-  const workingHistory = [
-      {
-          title: document.getElementById('title').value || '',
-          employer: document.getElementById('employer').value || '',
-          location: document.getElementById('location').value || '',
-          start_date: startMonth && startYear && startMonth !== 'Month' && startYear !== 'Year' ? `${startMonth} ${startYear}` : '',
-          end_date: currentlyWorking ? 'Present' : (endMonth && endYear && endMonth !== 'Month' && endYear !== 'Year' ? `${endMonth} ${endYear}` : '')
-      }
-  ];
+    const workingHistory = [
+        {
+            title: document.getElementById('title').value || '',
+            employer: document.getElementById('employer').value || '',
+            location: document.getElementById('location').value || '',
+            start_date: startMonth && startYear && startMonth !== 'Month' && startYear !== 'Year' ? `${startMonth} ${startYear}` : '',
+            end_date: currentlyWorking ? 'Present' : (endMonth && endYear && endMonth !== 'Month' && endYear !== 'Year' ? `${endMonth} ${endYear}` : '')
+        }
+    ];
 
-  // Thu thập education
-  const education = Array.isArray(eduSum) ? eduSum.map(edu => ({
-      institution: edu.data.institution || '',
-      school_location: edu.data.location || '',
-      degree: edu.data.degree || '',
-      field_study: edu.data.fieldStudy || '',
-      graduation_date: edu.data.gradMonth && edu.data.gradYear ? `${edu.data.gradMonth} ${edu.data.gradYear}` : ''
-  })) : [];
+    // Thu thập education
+    const education = Array.isArray(eduSum) ? eduSum.map(edu => ({
+        institution: edu.data.institution || '',
+        school_location: edu.data.location || '',
+        degree: edu.data.degree || '',
+        field_study: edu.data.fieldStudy || '',
+        graduation_date: edu.data.gradMonth && edu.data.gradYear ? `${edu.data.gradMonth} ${edu.data.gradYear}` : ''
+    })) : [];
 
-  // Thu thập skills
-  const skills = skills_content;
+    // Thu thập skills
+    const skills = skills_content;
 
-  // Thu thập summary
-  const summary = summary_content; 
+    // Thu thập summary
+    const summary = summary_content;
 
-  // Thu thập additional
-  const websiteInput = document.querySelector('.websites') ? document.querySelector('.websites').value : '';
-  const certificationInput = document.querySelector('.certifications') ? document.querySelector('.certifications').value : '';
-  const languagesInput = document.querySelector('.languages') ? document.querySelector('.languages').value : '';
-  const proLanguagesInput = document.querySelector('.pro-languages') ? document.querySelector('.pro-languages').value : '';
-  const yourOwnInput = document.querySelector('.checked-input[id="6"]') ? document.querySelector('.checked-input[id="6"]').value : '';
+    // Thu thập additional
+    const websiteInput = document.querySelector('.websites') ? document.querySelector('.websites').value : '';
+    const certificationInput = document.querySelector('.certifications') ? document.querySelector('.certifications').value : '';
+    const languagesInput = document.querySelector('.languages') ? document.querySelector('.languages').value : '';
+    const proLanguagesInput = document.querySelector('.pro-languages') ? document.querySelector('.pro-languages').value : '';
+    const yourOwnInput = document.querySelector('.checked-input[id="6"]') ? document.querySelector('.checked-input[id="6"]').value : '';
 
-  const additional = {
-      website: websiteInput || '',
-      certification: certificationInput || '',
-      languages: languagesInput ? languagesInput.split(',').map(x => x.trim()).filter(x => x) : [],
-      programming_languages: proLanguagesInput ? proLanguagesInput.split(',').map(x => x.trim()).filter(x => x) : [],
-      your_own: yourOwnInput || ''
-  };
+    const additional = {
+        website: websiteInput || '',
+        certification: certificationInput || '',
+        languages: languagesInput ? languagesInput.split(',').map(x => x.trim()).filter(x => x) : [],
+        programming_languages: proLanguagesInput ? proLanguagesInput.split(',').map(x => x.trim()).filter(x => x) : [],
+        your_own: yourOwnInput || ''
+    };
 
-  // Chuẩn bị cvData
-  const cvData = {
-      heading: heading,
-      working_history: workingHistory,
-      education: education,
-      skills: skills,
-      summary: summary,
-      additional: additional,
-  };
+    // Chuẩn bị cvData
+    const cvData = {
+        heading: heading,
+        working_history: workingHistory,
+        education: education,
+        skills: skills,
+        summary: summary,
+        additional: additional,
+    };
 
-  // Debug dữ liệu trước khi gửi
-  console.log('cvData:', JSON.stringify(cvData, null, 2));
+    // Debug dữ liệu trước khi gửi
+    console.log('cvData:', JSON.stringify(cvData, null, 2));
 
-  // Gửi cvData tới server
-  saveCV(cvData);
+    // Gửi cvData tới server
+    saveCV(cvData);
 });
 
 function saveCV(cvData) {
-  const buttonStep6 = document.getElementById('btn-step6');
+    const buttonStep6 = document.getElementById('btn-step6');
 
-  if (buttonStep6) {
-      buttonStep6.disabled = true;
-      buttonStep6.textContent = 'Saving...';
-  } else {
-      console.warn('Button with ID btn-step6 not found');
-  }
+    if (buttonStep6) {
+        buttonStep6.disabled = true;
+        buttonStep6.textContent = 'Saving...';
+    } else {
+        console.warn('Button with ID btn-step6 not found');
+    }
 
-  fetch('/CV-Hosting-web-main/app/controllers/CVController.php?action=createCV', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-      },
-      body: JSON.stringify(cvData)
-  })
-  .then(response => {
-      if (!response.ok) {
-          return response.text().then(text => {
-              throw new Error(`HTTP error! Status: ${response.status}, Response: ${text}`);
-          });
-      }
-      const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/json')) {
-          return response.text().then(text => {
-              throw new Error(`Response is not JSON. Received: ${text}`);
-          });
-      }
-      return response.json();
-  })
-  .then(data => {
-      if (data.success) {
-          alert('CV created successfully! CV ID: ' + data.cv_id);
-          window.location.href = '/CV-Hosting-web-main/app/views/my_cvs.php';
-      } else {
-          throw new Error(data.msg || 'Unknown error from server');
-      }
-  })
-  .catch(error => {
-      console.error('Error details:', {
-          message: error.message,
-          stack: error.stack
-      });
-      alert(`Failed to create CV: ${error.message}. Please try again.`);
-  })
-  .finally(() => {
-      if (buttonStep6) {
-          buttonStep6.disabled = false;
-          buttonStep6.textContent = 'NEXT';
-      }
-  });
+    fetch('/CV-Hosting-web-main/app/controllers/CVController.php?action=createCV', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(cvData)
+    })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(text => {
+                    throw new Error(`HTTP error! Status: ${response.status}, Response: ${text}`);
+                });
+            }
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                return response.text().then(text => {
+                    throw new Error(`Response is not JSON. Received: ${text}`);
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                alert('CV created successfully! CV ID: ' + data.cv_id);
+                window.location.href = '/CV-Hosting-web-main/app/views/public/index.php?page=my_cvs';
+            } else {
+                throw new Error(data.msg || 'Unknown error from server');
+            }
+        })
+        .catch(error => {
+            console.error('Error details:', {
+                message: error.message,
+                stack: error.stack
+            });
+            alert(`Failed to create CV: ${error.message}. Please try again.`);
+        })
+        .finally(() => {
+            if (buttonStep6) {
+                buttonStep6.disabled = false;
+                buttonStep6.textContent = 'NEXT';
+            }
+        });
 };
 
