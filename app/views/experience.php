@@ -44,11 +44,12 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
 
 <body>
   <nav class="navbar navbar-expand-lg pt-0" style="background-color: #F8F0E5;">
-    <div class="container-fluid">
-      <a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex" style="margin-right: 100px;">
+    <div class="container-fluid d-flex align-items-center">
+      <a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex align-items-center"
+        style="margin-right: 100px;">
         <img src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid"
-          style="margin-left: 10px; margin-right: 3px; width: 50px; height: 100%;">
-        <p style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
+          style="margin-left: 10px; margin-right: 3px; width: 30px; height: 100%;">
+        <p class="my-0" style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
       </a>
 
       <div class="row">
@@ -72,29 +73,29 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
         </div>
       </div>
 
-      <div class="collapse navbar-collapse ms-auto justify-content-end" style="width: 100%;">
+      <div class="collapse navbar-collapse justify-content-end">
         <div class="px-2 search-button" style="
-                background-color: white;
-                border: none;
-                cursor: text;
-                border-radius: 10px;
-                gap: 6px;
-                width: 220px;
-                display: flex;">
+                      background-color: white;
+                      border: none;
+                      cursor: text;
+                      border-radius: 10px;
+                      gap: 6px;
+                      width: 220px;
+                      display: flex;">
           <div>
             <img src="/CV-Hosting-web-main/public/images/search-icon.png"
               style="width: 16px; height: 16px; margin: 10px;">
           </div>
           <input type="text" placeholder="Search" style="
-                    border: none;
-                    width: 90%;
-                    outline: none;
-                    background-color: transparent;">
+                          border: none;
+                          width: 90%;
+                          outline: none;
+                          background-color: transparent;">
         </div>
       </div>
 
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto">
+      <div class="collapse navbar-collapse w-auto" id="navbarContent">
+        <ul class="navbar-nav align-items-center flex ms-auto">
           <li class="navbar-item">
             <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
           </li>
@@ -102,13 +103,15 @@ $displayName = $userData['first_name'] . ' ' . $userData['last_name'];
             <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
           </li>
           <li class="navbar-item">
-            <a href="#" class="nav-link w-100"><?= $displayName ?></a>
+            <a href="#" class="nav-link ">
+              <p class="w-100 m-0" style="display: inline-block; white-space: nowrap;"><?= $displayName ?>
+              </p>
+            </a>
           </li>
           <li class="navbar-item">
             <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log
               Out</a>
           </li>
-
         </ul>
       </div>
     </div>
