@@ -34,7 +34,14 @@ switch ($page) {
     case 'get_role':
         require_once __DIR__ . '/../app/views/get_role.php';
         break;
-
+    
+    case 'admin':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        require_once __DIR__ . '/../app/views/admin.php';
+        break;
     case 'logout':
         session_destroy();
         header("Location: " . BASE_URL . "/index.php?page=home");

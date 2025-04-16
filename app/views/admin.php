@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // Kiểm tra quyền admin
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {

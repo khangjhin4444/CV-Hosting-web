@@ -14,7 +14,20 @@ switch ($page) {
         $controller = new HomeController();
         $controller->authentication();
         break;
-    
+    case 'get_role':
+        
+        $controller = new HomeController();
+        $controller->getRole();
+        break;
+
+    case 'admin':
+        if (!isset($_SESSION['user'])) {
+            header("Location: " . BASE_URL . "/index.php?page=authentication");
+            exit();
+        }
+        $controller = new HomeController();
+        $controller->admin();
+        break;    
     case 'logout':
         session_destroy();
         header("Location: " . BASE_URL . "/index.php?page=home");
