@@ -23,16 +23,16 @@ foreach ($test as $res)
     // echo implode(' ', $res);
   } else
     // echo $res;
-$heading = [
-  'name' => 'Khoa',
-  'surname' => 'Huynh',
-  'city' => 'Ho Chi Minh',
-  'country' => 'Viet Nam',
-  'postcode' => '50000',
-  'phone' => '(84)932523714',
-  'email' => 'huynhkhoa03012004@gmail.com',
-  'address' => '273/66 Nguyen Van Dau, Ward 11, Binh Thanh District'
-];
+    $heading = [
+      'name' => 'Khoa',
+      'surname' => 'Huynh',
+      'city' => 'Ho Chi Minh',
+      'country' => 'Viet Nam',
+      'postcode' => '50000',
+      'phone' => '(84)932523714',
+      'email' => 'huynhkhoa03012004@gmail.com',
+      'address' => '273/66 Nguyen Van Dau, Ward 11, Binh Thanh District'
+    ];
 $working_history = [
   [
     'title' => 'Fresher',
@@ -147,7 +147,7 @@ $templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name
       transform: scale(0.4);
       transform-origin: top left;
       /* Đảm bảo thu nhỏ từ góc trên bên trái */
-      width: 240%;
+      width: 250%;
       /* Bù lại kích thước để tránh bị cắt nội dung */
       height: 110%;
       /* Bù lại kích thước để tránh bị cắt nội dung */
@@ -156,61 +156,75 @@ $templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg pt-0 pb-3" style="background-color: #F8F0E5;">
-    <div class="container-fluid"><a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex" style="margin-right: 100px;"><img
-          src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid"
-          style="margin-left: 10px; margin-right: 3px; width: 50px; height: 100%;">
-        <p style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
+  <nav class="navbar navbar-expand-lg pt-0" style="background-color: #F8F0E5;">
+    <div class="container-fluid d-flex align-items-center">
+      <a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex align-items-center"
+        style="margin-right: 100px;">
+        <img src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid"
+          style="margin-left: 10px; margin-right: 3px; width: 30px; height: 100%;">
+        <p class="my-0" style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
       </a>
-      <div class="row"><button class="search-btn navbar-toggler shadow-0 border-0" type="button"
-          data-bs-toggle="collapse" data-bs-target="#searchBar"><img src="images/search-icon.png" alt=""
-            class="img-fluid"></button><button class="navbar-toggler shadow-0 border-0" type="button"
-          data-bs-toggle="collapse" data-bs-target="#navbarContent"><span class="navbar-toggler-icon"></span></button>
+
+      <div class="row">
+        <button class="search-btn navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#searchBar">
+          <img src="/CV-Hosting-web-main/public/images/search-icon.png" alt="" class="img-fluid">
+        </button>
+        <button class="navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
-      <div class="collapse navbar-collapse mt-2 hidden-search" id="searchBar" style="visibility:hidden;">
-        <div class="input-group mb-3"><span class="input-group-text" id="basic-addon1"><img src="images/search-icon.png"
-              style="width: 16px; height: 16px;
- margin: 10px;
-    ">
-          </span><input type="text" class="form-control" placeholder="Search"></div>
-      </div>
-      <div class="collapse navbar-collapse ms-auto justify-content-end" style="width: 100%;">
-        <div class="px-2 search-button" style="
- background-color: white;
-    border: none;
-    cursor: text;
-    border-radius: 10px;
-    gap: 6px;
-    width: 220px;
-    display: flex;
-    ">
-          <div><img src="/CV-Hosting-web-main/public/images/search-icon.png" style="width: 16px; height: 16px;
- margin: 10px;
-    ">
-          </div><input type="text" placeholder="Search" style="border: none;
- width: 90%;
-    outline:none;
-    background-color: transparent;
-    ">
+
+      <div class="collapse navbar-collapse mt-2 hidden-search" id="searchBar" style="visibility: hidden;">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <img src="/CV-Hosting-web-main/public/images/search-icon.png"
+              style="width: 16px; height: 16px; margin: 10px;">
+          </span>
+          <input type="text" class="form-control" placeholder="Search">
         </div>
       </div>
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto">
+
+      <div class="collapse navbar-collapse justify-content-end">
+        <div class="px-2 search-button" style="
+                          background-color: white;
+                          border: none;
+                          cursor: text;
+                          border-radius: 10px;
+                          gap: 6px;
+                          width: 220px;
+                          display: flex;">
+          <div>
+            <img src="/CV-Hosting-web-main/public/images/search-icon.png"
+              style="width: 16px; height: 16px; margin: 10px;">
+          </div>
+          <input type="text" placeholder="Search" style="
+                              border: none;
+                              width: 90%;
+                              outline: none;
+                              background-color: transparent;">
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse w-auto" id="navbarContent">
+        <ul class="navbar-nav align-items-center flex ms-auto">
           <li class="navbar-item">
-              <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
+            <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
           </li>
-          
-              <li class="navbar-item">
-                  <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link"  style="width: 90px;">My CVs</a>
-              </li>
-              
-              
-              <li class="navbar-item">
-                  <a href="#" class="nav-link" style="width: 200px;"><?= $displayName ?></a>
-              </li>
-              <li class="navbar-item">
-                  <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log Out</a>
-              </li>
+          <li class="navbar-item">
+            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="nav-link ">
+              <p class="w-100 m-0" style="display: inline-block; white-space: nowrap;"><?= $displayName ?>
+              </p>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log
+              Out</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -218,29 +232,29 @@ $templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name
   <section>
     <div class="container pt-2 text-center" style="background-color: #F8F0E5;">
       <h1 style="font-weight: 600;">Created CVs</h1>
-      
+
   </section>
   <section class="pb-5">
     <div class="container pb-5">
-        <span style="grid-area: temp-list;" class="temp-list-grid">
-            <?php foreach ($templates as $temp) {
-              echo "
+      <span style="grid-area: temp-list;" class="temp-list-grid">
+        <?php foreach ($templates as $temp) {
+          echo "
             <div class='temp-wrapper'>
-              <div class='temp' data-id='".$temp['id']."'>
+              <div class='temp' data-id='" . $temp['id'] . "'>
                 ";
-                include __DIR__ . "/../../public/templates/".$temp['template_name'].".php";
-              echo"
+          include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
+          echo "
               </div>
               <div class='temp-buttons'>
                 <button class='edit-btn' >Edit</button>
                 
-                <button class='share-btn' onclick='shareTemplate(".$temp['id'].")'>Share</button>
+                <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ")'>Share</button>
               </div>
             </div>
         </div>
         ";
-          } ?>
-        </span>
+        } ?>
+      </span>
     </div>
   </section>
   <!-- <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script> -->

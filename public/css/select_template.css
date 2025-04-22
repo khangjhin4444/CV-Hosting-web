@@ -91,6 +91,22 @@
   background-color: #F8F0E5;
 }
 
+.temp-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  padding: 15px 15px;
+}
+
+.temp {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  height: 300px; /* hoặc min-height nếu muốn */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;

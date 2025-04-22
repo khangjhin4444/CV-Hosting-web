@@ -105,7 +105,7 @@ $stmt->execute();
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 // $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_name']);
 
-$temp = ["id" => 1, "template_name" => "cv_5"];
+$temp = ["id" => 1, "template_name" => "cv_2"];
 ?>
 <!DOCTYPE html>
 <html lang="en">

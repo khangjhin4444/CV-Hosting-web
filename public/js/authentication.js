@@ -391,7 +391,7 @@ function renderInformationInput(savedEmail, savedPassword) {
             renderLogin();
         } else {
 
-            alert(response.msg);
+            alert('Sign up successful');
 
             nameNotification.textContent = response.message;
             nameNotification.style.color = 'red';

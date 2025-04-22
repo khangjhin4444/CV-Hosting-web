@@ -18,13 +18,13 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
 // Lấy thông tin người dùng
 $isLoggedIn = isset($_SESSION['user']);
 $displayName = '';
-$role = 'user'; 
+$role = 'user';
 $cvCount = 0; // Số lượng CV của người dùng
 if ($isLoggedIn) {
-    
+
     $user = $_SESSION['user'];
     $email = htmlspecialchars($user['email']);
-    $role = isset($user['role']) ? $user['role'] : 'user'; 
+    $role = isset($user['role']) ? $user['role'] : 'user';
 
     // Lấy tên từ DB
     $stmt = $conn->prepare('SELECT first_name, last_name FROM users WHERE email = :email');
@@ -33,14 +33,14 @@ if ($isLoggedIn) {
     $userData = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($userData) {
         // Nếu có dữ liệu, hiển thị tên
-        $displayName = htmlspecialchars($userData['first_name']. " " .$userData['last_name']);
+        $displayName = htmlspecialchars($userData['first_name'] . " " . $userData['last_name']);
     } else {
         // Nếu không có dữ liệu, hiển thị email
         $displayName = $email;
     }
 
     $stmt = $conn->prepare('SELECT COUNT(*) FROM cvs WHERE user_id = :userid');
-    $stmt->bindParam(':userid', $user['id']);	
+    $stmt->bindParam(':userid', $user['id']);
     $stmt->execute();
     $cvCount = $stmt->fetchColumn();
 }
@@ -49,6 +49,7 @@ if ($isLoggedIn) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,27 +63,34 @@ if ($isLoggedIn) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
-        html, body {
+        html,
+        body {
             font-family: Montserrat;
             background-color: #F8F0E5;
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg pt-0" style="background-color: #F8F0E5;">
-        <div class="container-fluid">
-            <a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex" style="margin-right: 100px;">
-                <img src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid" style="margin-left: 10px; margin-right: 3px; width: 50px; height: 100%;">
-                <p style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
+        <div class="container-fluid d-flex align-items-center">
+            <a href="<?= BASE_URL ?>/index.php?page=home" class="navbar-brand d-flex align-items-center"
+                style="margin-right: 100px;">
+                <img src="/CV-Hosting-web-main/public/images/cv 1.png" class="img-fluid"
+                    style="margin-left: 10px; margin-right: 3px; width: 30px; height: 100%;">
+                <p class="my-0" style="font-weight: bolder; margin-left: 20px;">CV Hosting</p>
             </a>
 
             <div class="row">
-                <button class="search-btn navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#searchBar">
+                <button class="search-btn navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#searchBar">
                     <img src="/CV-Hosting-web-main/public/images/search-icon.png" alt="" class="img-fluid">
                 </button>
-                <button class="navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <button class="navbar-toggler shadow-0 border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -90,13 +98,14 @@ if ($isLoggedIn) {
             <div class="collapse navbar-collapse mt-2 hidden-search" id="searchBar" style="visibility: hidden;">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">
-                        <img src="/CV-Hosting-web-main/public/images/search-icon.png" style="width: 16px; height: 16px; margin: 10px;">
+                        <img src="/CV-Hosting-web-main/public/images/search-icon.png"
+                            style="width: 16px; height: 16px; margin: 10px;">
                     </span>
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
             </div>
 
-            <div class="collapse navbar-collapse  justify-content-end" style="width: 100%;">
+            <div class="collapse navbar-collapse justify-content-end">
                 <div class="px-2 search-button" style="
                     background-color: white;
                     border: none;
@@ -106,7 +115,8 @@ if ($isLoggedIn) {
                     width: 220px;
                     display: flex;">
                     <div>
-                        <img src="/CV-Hosting-web-main/public/images/search-icon.png" style="width: 16px; height: 16px; margin: 10px;">
+                        <img src="/CV-Hosting-web-main/public/images/search-icon.png"
+                            style="width: 16px; height: 16px; margin: 10px;">
                     </div>
                     <input type="text" placeholder="Search" style="
                         border: none;
@@ -116,32 +126,39 @@ if ($isLoggedIn) {
                 </div>
             </div>
 
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ">
+            <div class="collapse navbar-collapse w-auto" id="navbarContent">
+                <ul class="navbar-nav align-items-center flex ms-auto">
                     <li class="navbar-item">
-                        <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link">Home</a>
+                        <a href="<?= BASE_URL ?>/index.php?page=home" class="nav-link text-center">Home</a>
                     </li>
                     <?php if ($isLoggedIn): ?>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link" style="width: 90px;">My CVs</a>
+                            <a href="<?= BASE_URL ?>/index.php?page=my_cvs" class="nav-link text-center"
+                                style="width: 90px;">My CVs</a>
                         </li>
                         <?php if ($role === 'admin'): ?>
                             <li class="navbar-item">
-                                <a href="<?= BASE_URL ?>/index.php?page=admin" class="nav-link">Admin</a>
+                                <a href="<?= BASE_URL ?>/index.php?page=admin" class="nav-link text-center">Admin</a>
                             </li>
                         <?php endif; ?>
                         <li class="navbar-item">
-                            <a href="#" class="nav-link" style="width: 200px;"><?= $displayName ?></a>
+                            <a href="#" class="nav-link">
+                                <p class="w-100 m-0 text-center" style="display: inline-block; white-space: nowrap;">
+                                    <?= $displayName ?>
+                                </p>
+                            </a>
                         </li>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link" style="width: 90px;">Log Out</a>
+                            <a href="<?= BASE_URL ?>/index.php?page=home&action=logout" class="nav-link text-center"
+                                style="width: 90px;">Log Out</a>
                         </li>
                     <?php else: ?>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=authentication" class="nav-link">Login</a>
+                            <a href="<?= BASE_URL ?>/index.php?page=authentication" class="nav-link text-center">Login</a>
                         </li>
                         <li class="navbar-item">
-                            <a href="<?= BASE_URL ?>/index.php?page=authentication" class="nav-link">Register</a>
+                            <a href="<?= BASE_URL ?>/index.php?page=authentication"
+                                class="nav-link text-center">Register</a>
                         </li>
                     <?php endif; ?>
                 </ul>
@@ -157,31 +174,32 @@ if ($isLoggedIn) {
                     <h2>CV | Resume making</h2>
                     <h1 style="font-weight: bold;">My awesome CV</h1>
                     <!-- <a href="<?= BASE_URL ?>/index.php?page=experience"> -->
-                        <button <?php
-                            if ($cvCount >2) {
-                                echo 'disabled';
-                            }
-                        ?> class="create-cv-btn" style="
+                    <button <?php
+                    if ($cvCount > 2) {
+                        echo 'disabled';
+                    }
+                    ?> class="create-cv-btn" style="
                             background-color: #102C57;
                             color: white;
                             width: 160px;
                             padding-top: 8px;
                             padding-bottom: 8px;
                             margin-top: 30px;">
-                            <?php
-                                if ($cvCount > 2) {
-                                    echo 'Reached the limit!';
-                                } else {
-                                    echo 'CREATE A CV';
-                                }
-                            ?>
-                            
-                        </button>
+                        <?php
+                        if ($cvCount > 2) {
+                            echo 'Reached the limit!';
+                        } else {
+                            echo 'CREATE A CV';
+                        }
+                        ?>
+
+                    </button>
                     <!-- </a> -->
                 </div>
                 <div>
                     <div class="img-container" style="position: relative; margin-top: 10px;">
-                        <img src="/CV-Hosting-web-main/public/images/Image (1).png" class="img-fluid" alt="ad-img" srcset="">
+                        <img src="/CV-Hosting-web-main/public/images/Image (1).png" class="img-fluid" alt="ad-img"
+                            srcset="">
                     </div>
                 </div>
             </div>
@@ -189,7 +207,8 @@ if ($isLoggedIn) {
     </section>
 
     <section class="text-center">
-        <div class="container-fluid pb-5" style="background-color: #F8F0E5; padding-top: 70px; padding-left: 100px; padding-right: 100px;">
+        <div class="container-fluid pb-5"
+            style="background-color: #F8F0E5; padding-top: 70px; padding-left: 100px; padding-right: 100px;">
             <div class="p-4 fs-2" style="
                 font-weight: 600;
                 font-size: 35px;
@@ -217,7 +236,8 @@ if ($isLoggedIn) {
                                 Generate an interview-ready cv in minutes
                             </h1>
                             <p class="pt-5 fs-5" style="font-size: 25px;">
-                                Create a polished, professional CV in minutes with our expertly designed templates. Stand out, impress recruiters, and land your next job with ease!
+                                Create a polished, professional CV in minutes with our expertly designed templates.
+                                Stand out, impress recruiters, and land your next job with ease!
                             </p>
                         </div>
                         <div class="col-lg pb-5 order-lg-2 order-1">
@@ -243,7 +263,8 @@ if ($isLoggedIn) {
                         Make a matching cover letter.
                     </h1>
                     <p class="pt-5 fs-5" style="font-size: 25px;">
-                        Our <a href="#">Cover Letter Generator</a> features prewritten content targeted to the job that you can customize and add to your letter with a single click.
+                        Our <a href="#">Cover Letter Generator</a> features prewritten content targeted to the job that
+                        you can customize and add to your letter with a single click.
                     </p>
                 </div>
             </div>
@@ -263,11 +284,11 @@ if ($isLoggedIn) {
                 98% of hiring managers appreciate a well-written cover letter. Use these templates to improve yours!
             </p>
         </div>
-        
+
 
         <i id="left" class="bi bi-chevron-left"></i>
         <ul class="carousel p-0 m-0 gx-5">
-            
+
         </ul>
         <i id="right" class="bi bi-chevron-right"></i>
         <div class="container d-flex justify-content-center align-items-center pt-5">
@@ -284,27 +305,30 @@ if ($isLoggedIn) {
     <section class="text-start pt-5">
         <div class="container" style="background-color: #FFFFFF;">
             <div class="row align-items-start justify-content-around">
-                <div class="col-md pb-5">
+                <div class="col-md py-4 pb-5">
                     <h1 class="mb-5" style="font-weight: 600;">Let's work together</h1>
                     <p style="margin-top: 50px; margin-bottom: 60px;">
-                        This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com
+                        This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com This is
+                        a template Figma file, turned into code using Anima. Learn more at AnimaApp.com
                     </p>
                     <div>
                         <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/discord.png" alt="">
-                        <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/Vector-facebook.png" alt="">
+                        <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/Vector-facebook.png"
+                            alt="">
                         <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/basket.png" alt="">
                         <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/insta.png" alt="">
                         <img style="padding-right: 15px;" src="/CV-Hosting-web-main/public/images/be.png" alt="">
                     </div>
                 </div>
-                <div class="col-md pb-5 feedback" style="
+                <div class="col-md py-4 pb-5 feedback" style="
                     display: flex;
                     flex-direction: column;
                     gap: 20px;">
                     <form action="<?= BASE_URL ?>/index.php?page=contact" method="POST">
                         <input type="text" name="name" placeholder="Name" required>
                         <input type="email" name="email" placeholder="Email" required>
-                        <textarea rows="10" cols="50" name="message" placeholder="Type your message here" required></textarea>
+                        <textarea rows="10" cols="50" name="message" placeholder="Type your message here"
+                            required></textarea>
                         <button type="submit" style="
                             margin-bottom: 20px;
                             margin-top: 15px;
@@ -325,4 +349,5 @@ if ($isLoggedIn) {
     <script src="/CV-Hosting-web-main/public/js/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
