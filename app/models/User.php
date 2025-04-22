@@ -31,8 +31,8 @@ class User{
         $stmt->bindParam(':password', $hashPassword);
         $stmt->bindParam(':first_name', $firstName);
         $stmt->bindParam(':last_name', $lastName);
-
-        return $stmt->execute();
+        $stmt->execute();
+        return ['success' => true, 'msg' => 'Registration successful'];
     }
 
     public function login($email, $password){
@@ -78,6 +78,12 @@ class User{
             $stmt->bindParam(':last_name', $lastName);
             return $stmt->execute();
         }
+    }
+
+    public function delete($userId){
+        $stmt = $this->conn->prepare("DELETE FROM users WHERE id = :id");
+        $stmt->bindParam(':id', $userId);
+        return $stmt->execute();
     }
 }
 

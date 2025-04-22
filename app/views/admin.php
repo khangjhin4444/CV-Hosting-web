@@ -111,7 +111,7 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
                   <td><?php echo htmlspecialchars($user['created_at']); ?></td>
                   <td><?php echo htmlspecialchars($user['cv_count']); ?></td>
                   <td>
-                    <form action="/CV-Hosting-web-main/app/controllers/UserController.php" method="post" style="display:inline;">
+                    <form action="/CV-Hosting-web-main/app/controllers/CVController.php?action=createCV'" method="post" style="display:inline;">
                       <input type="hidden" name="action" value="delete">
                       <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
                       <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>

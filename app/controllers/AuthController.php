@@ -162,6 +162,34 @@ class AuthController {
             return ['success' => false, 'msg' => 'Error: ' . $e->getMessage()];
         }
     }
+
+    public function handleRequest() {
+        $action = $_GET['action'] ?? '';
+        if ($action === 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $userId = $_POST['user_id'] ?? null;
+            if ($userId) {
+                $result = $this->userModel->delete($userId);
+                if ($result) {
+                    header('Content-Type: application/json');
+                    echo json_encode(['success' => true, 'msg' => 'User deleted successfully']);
+                    exit;
+                } else {
+                    header('Content-Type: application/json');
+                    echo json_encode(['success' => false, 'msg' => 'Failed to delete user']);
+                    exit;
+                }
+            } else {
+                header('Content-Type: application/json');
+                echo json_encode(['success' => false, 'msg' => 'User ID is required']);
+                exit;
+            }
+        
+        } else {
+            header('Content-Type: application/json');
+            echo json_encode(['success' => false, 'msg' => 'Invalid action']);
+            exit;
+        }
+    }
 }
 
 ?>
