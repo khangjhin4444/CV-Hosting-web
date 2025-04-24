@@ -25,6 +25,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+  height: 900px;
 }
 
 .grid-container img {
@@ -106,6 +107,23 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   height: 100%;
 }
+
+.cv-preview-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+  background-color: white;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.cv-preview-wrapper .cv_template {
+  transform: scale(0.3);
+  transform-origin: top left;
+  width: 310%;
+  height: auto;
+}
+
 
 @media (max-width: 768px) {
   .grid-container {

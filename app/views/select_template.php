@@ -245,11 +245,11 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
   </section>
   <section>
     <div class="container">
-      <div class="grid-container"><span class="category" style="grid-area: category;">
+      <div class="grid-container container"><span class="category" style="grid-area: category;">
           <h2 class="mb-3">Category</h2><button class="chosen cate-btn">RECOMMENDED</button><br><button
             class="cate-btn">ALL</button>
-        </span><span style="grid-area: temp-list;" class="temp-list-grid">
-        </span></div>
+        </span><div style="grid-area: temp-list;" class="row temp-list g-2 pb-5">
+        </div></div>
     </div>
   </section>
   <section>
