@@ -1,8 +1,5 @@
 <?php
-$year = $_SESSION['year'];
-// echo $year;
-$student = $_SESSION['student'];
-// echo $student;
+
 $test = '{
     "name": "John Doe",
     "age": 30,
@@ -258,6 +255,12 @@ $templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name
     </div>
   </section>
   <!-- <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script> -->
+   <script>
+    function shareTemplate(cvId) {
+    console.log('Sharing CV with ID:', cvId);
+    window.location.href = `/CV-Hosting-web-main/public/templates/cv_1.php?cv_id=${cvId}`;
+}
+    </script>
 </body>
 
 </html>

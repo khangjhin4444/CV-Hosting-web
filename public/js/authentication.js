@@ -385,7 +385,7 @@ function renderInformationInput(savedEmail, savedPassword) {
             first_name: firstName,
             last_name: lastName
         });
-
+        
         if (response.success) {
             alert('Sign up successful');
             renderLogin();
