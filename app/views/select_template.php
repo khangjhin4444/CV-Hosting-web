@@ -16,83 +16,84 @@ $test = '{
 }';
 $heading = [[]];
 if (gettype($test) === 'string') {
-  $test = json_decode($test, true);
+    $test = json_decode($test, true);
 }
-foreach ($test as $res)
-  if (gettype($res) === 'array') {
-    // echo implode(' ', $res);
-  } else
-    // echo $res;
-    $heading = [
-      'name' => 'Khoa',
-      'surname' => 'Huynh',
-      'city' => 'Ho Chi Minh',
-      'country' => 'Viet Nam',
-      'postcode' => '50000',
-      'phone' => '(84)932523714',
-      'email' => 'huynhkhoa03012004@gmail.com',
-      'address' => '273/66 Nguyen Van Dau, Ward 11, Binh Thanh District'
-    ];
+foreach ($test as $res) {
+    if (gettype($res) === 'array') {
+        // echo implode(' ', $res);
+    } else { // echo $res;
+        $heading = [
+            'name' => 'Khoa',
+            'surname' => 'Huynh',
+            'city' => 'Ho Chi Minh',
+            'country' => 'Viet Nam',
+            'postcode' => '50000',
+            'phone' => '(84)932523714',
+            'email' => 'huynhkhoa03012004@gmail.com',
+            'address' => '273/66 Nguyen Van Dau, Ward 11, Binh Thanh District',
+        ];
+    }
+}
 $working_history = [
-  [
-    'title' => 'Fresher',
-    'employer' => 'Software Engineer',
-    'location' => 'Dream Company',
-    'start_date' => '2020-05',
-    'end_date' => '2023-08',
-  ],
-  [
-    'title' => 'Freelance',
-    'employer' => 'Fullstack Developer',
-    'location' => 'Home Company',
-    'start_date' => '2023-09',
-    'end_date' => 'now',
-  ]
+    [
+        'title' => 'Fresher',
+        'employer' => 'Software Engineer',
+        'location' => 'Dream Company',
+        'start_date' => '2020-05',
+        'end_date' => '2023-08',
+    ],
+    [
+        'title' => 'Freelance',
+        'employer' => 'Fullstack Developer',
+        'location' => 'Home Company',
+        'start_date' => '2023-09',
+        'end_date' => 'now',
+    ],
 ];
 
 $education = [
-  [
-    'insitution' => 'Ho Chi Minh University of Technology',
-    'school_location' => 'Ho Chi Minh City, Viet Nam',
-    'degree' => 'Bachelor',
-    'field_study' => 'Computer Science',
-    'gpa' => '',
-    'graduation_date' => '2024-06',
-  ]
+    [
+        'insitution' => 'Ho Chi Minh University of Technology',
+        'school_location' => 'Ho Chi Minh City, Viet Nam',
+        'degree' => 'Bachelor',
+        'field_study' => 'Computer Science',
+        'gpa' => '',
+        'graduation_date' => '2024-06',
+    ],
 ];
 $skills = [
-  'Teamwork and Collaboration',
-  'Friendly, positive attitude',
-  'Problem-solving',
-  'Test',
-  'Test',
-  'Test',
-  'Test',
-  'Test',
+    'Teamwork and Collaboration',
+    'Friendly, positive attitude',
+    'Problem-solving',
+    'Test',
+    'Test',
+    'Test',
+    'Test',
+    'Test',
 ];
 $summary = [
-  'Organized and dependable candidate successful at managing multiple priorities with a positive attitude. Willingness to take on added responsibilities to meet team goals.',
-  'Progressively evolve cross-platform ideas before impactful infomediaries.
+    'Organized and dependable candidate successful at managing multiple priorities with a positive attitude. Willingness to take on added responsibilities to meet team goals.',
+    'Progressively evolve cross-platform ideas before impactful infomediaries.
                             Energistically visualize tactical initiatives before cross-media catalysts for change.',
 
 ];
 $finalize = [
-  'languages' => [
-    'html' => 'html',
-    'css' => 'css',
-    'javascript' => 'javascript',
-    'php' => 'php'
-  ],
-  'tools' => [
-    'git' => 'git',
-    'github' => 'github',
-    'docker' => 'docker',
-    'mysql' => 'mysql'
-  ]
+    'languages' => [
+        'html' => 'html',
+        'css' => 'css',
+        'javascript' => 'javascript',
+        'php' => 'php',
+    ],
+    'tools' => [
+        'git' => 'git',
+        'github' => 'github',
+        'docker' => 'docker',
+        'mysql' => 'mysql',
+    ],
 ];
 
-require_once __DIR__ . '/../../config/database.php';
-require_once __DIR__ . '/../../config/constant.php';
+require_once __DIR__.'/../../config/database.php';
+require_once __DIR__.'/../../config/constant.php';
 
 $user = $_SESSION['user'];
 $email = htmlspecialchars($user['email']);
@@ -102,7 +103,7 @@ $stmt = $conn->prepare('SELECT first_name, last_name FROM users WHERE email = :e
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
-$displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_name']);
+$displayName = htmlspecialchars($userData['first_name'].' '.$userData['last_name']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,15 +139,12 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
     }
   </style>
 
-  <link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_1.css" media="all" />
   <style>
     .cv_template {
       transform: scale(0.3);
-      transform-origin: top left;
+      transform-origin: top center;
       /* Đảm bảo thu nhỏ từ góc trên bên trái */
-      width: 270%;
       /* Bù lại kích thước để tránh bị cắt nội dung */
-      height: 100%;
       /* Bù lại kích thước để tránh bị cắt nội dung */
     }
   </style>
@@ -248,8 +246,9 @@ $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_
       <div class="grid-container container"><span class="category" style="grid-area: category;">
           <h2 class="mb-3">Category</h2><button class="chosen cate-btn">RECOMMENDED</button><br><button
             class="cate-btn">ALL</button>
-        </span><div style="grid-area: temp-list;" class="row temp-list g-2 pb-5">
-        </div></div>
+        </span>
+        <div class="row temp-list g-2 pb-5"></div>
+      </div>
     </div>
   </section>
   <section>

@@ -1,9 +1,11 @@
 let tempList = [{
-    id: 1, name: "Template 1", src: `<div data-id="1" class="cv-preview-wrapper temp col-lg-4 col-sm-5"><div class="cv_template" style="font-family: Georgia, serif;
-    color: #444;">
-    <div class="container-fluid">
+    id: 1, name: "Template 1", src: `
+  <link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_1.css" media="all" />
+    <div data-id="1" class="cv-preview-wrapper temp justify-content-center align-items-center">
+    <div class="cv_template container-fluid" style="font-family: Georgia, serif;
+color: #444;">
         <!-- Header -->
-        <header id="hd" class="row border-bottom pb-4 mb-4 display-flex">
+        <header id="hd" class="row border-bottom pb-4 mb-4 d-flex">
             <div class="col-md-6">
                 <h1 class="text-uppercase"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h1>
             </div>
@@ -90,14 +92,14 @@ let tempList = [{
         <footer id="ft" class="border-top text-center py-4 mt-4">
             <p>Jonathan Doe — <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> — (313) - 867-5309</p>
         </footer>
-    </div></div>` }
+    </div>` }
     , {
-    id: 2, name: "Template 2", src: `<div data-id="2" class="cv-preview-wrapper temp col-lg-4 col-sm-5"><div class="cv_template" style="font-family: Georgia, serif;
+    id: 2, name: "Template 2", src: `<div data-id="2" class="cv-preview-wrapper temp align-items-center">
+    <div class="cv_template container-fluid" style="font-family: "Varela Round", sans-serif;
 color: #444;">
-<link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_2 copy.css">
-<div class="resume container shadow-lg rounded ">
+<link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_2 copy.css" media="all" />
         <div class="top border-top py-4 text-start rounded-top">
-            <h5 class="title display-5 text-uppercase"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h5>
+            <h5 class="title display-5 text-uppercase text-start"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h5>
             <h6 class="sub_title text-muted">Graphic & Web Designer</h6>
         </div>
         <div class="bottom py-4">
@@ -113,11 +115,7 @@ color: #444;">
                     <div class="text small fs-6">
                         Improve your ability to find and apply for the right jobs, develop your interview skills
                         and
-                        learn how to perform in the workplace with confidence. <br><br>
-                        At each level, tutor videos and workplace scenarios guide you through the materials,
-                        explain
-                        key language and grammar points and give you vocabulary that you can use in everyday
-                        business life.
+                        learn how to perform in the workplace with confidence.
                     </div>
                     <div class="left_content contact my-5">
                         <div class="row">
@@ -188,27 +186,22 @@ color: #444;">
                         <p class="h5 text-uppercase fw-semibold mb-0">Work Experience</p>
                     </div>
                     <div class="right_content mb-4">
-                        <?php foreach ($working_history as $works)
-
-                            echo "<div class='ex_block d-flex mb-4 align-items-start'>
-                            <div class='dot ms-2 me-3 d-flex align-items-center justify-content-center'
+                        <div class='ex_block d-flex mb-4 align-items-start'>
+                            <div class='dot ms-2 me-3 d-flex align-items-center justify-content-between'
                                 style='width: 24px; height: 24px; font-size: 18px; font-weight: bold; color: #faa91e;'>
                                 +
                             </div>
                             <div class='inform'>
-                                <div class='inform_top d-flex justify-content-between align-items-center'>
-                                    <div class='title fw-bold' style='font-size: 1.1rem; color: #333;'>"
-                                . $works['location'] . "
+                                <div class='inform_top d-flex justify-content-between align-items-center' style="text-align:start;">
+                                    <div class='title fw-bold' style='font-size: 1.1rem; color: #333;'>Lorem ipsum
                                     </div>
                                     <div class='date small bg-orange-light text-white px-2 py-1 rounded'
                                         style='font-size: 0.85rem;'>
-                                        " . $works['start_date'] . " - " . $works['end_date'] . "
+                                        Jan 2020 - Dec 2022
                                     </div>
                                 </div>
                                 <div class='inform_bottom'>
-                                    <h6 class='sub_title text-orange mt-0 mb-1' style='font-size: 1rem;'>
-                                        " . $works['employer'] . "
-                                    </h6>
+                                    <h6 class='sub_title text-orange mt-0 mb-1' style='font-size: 1rem;'>WEB DEVELOPEMENT</h6>
                                     <div class='text small text-muted' style='font-size: 0.9rem; line-height: 1.5;'>
                                         A modern job calls for a modern resume. Show employers that you're up to date
                                         and make a great first
@@ -216,8 +209,7 @@ color: #444;">
                                     </div>
                                 </div>
                             </div>
-                        </div>";
-                        ?>
+                        </div>"
                         <div class="left_content d-flex align-items-center mb-2">
                             <nav class="navbar mark p-1 me-2">
                                 <span class="navbar-toggler-icon"
@@ -226,8 +218,6 @@ color: #444;">
                             <p class="h5 text-uppercase fw-semibold mb-0">Education</p>
                         </div>
                         <div class="right_content edu row mb-4">
-                            <?php foreach ($education as $edu)
-                                echo "
                             <div class='edu_block d-flex mb-4 align-items-start'>
                                     <div class='dot ms-2 me-3 d-flex align-items-center justify-content-center'
                                         style='width: 24px; height: 24px; font-size: 18px; font-weight: bold; color: #faa91e;'>
@@ -235,22 +225,20 @@ color: #444;">
                                     </div>
                                     <div class='inform'>
                                         <div class='title fw-bold' style='font-size: 1.1rem; color: #333;'>
-                                            " . $edu['degree'] . " in " . $edu['field_study'] . "
+                                            Bachelor in Lorem Studies
                                         </div>
                                         <h6 class='sub_title text-orange mt-1 mb-1' style='font-size: 1rem;'>
-                                            " . $edu['school_location'] . "
-                                        </h6>
+                                            Lorem University                                        </h6>
                                         <div class='text small text-muted' style='font-size: 0.9rem; line-height: 1.5;'>
                                             BU has been educating students of all kinds for more than 150 years:
                                             undergraduates, international scholars, master's and doctoral degree candidates.
                                         </div>
                                         <div class='date small bg-orange-light text-white px-2 py-1 rounded mt-2'
                                             style='font-size: 0.85rem;'>
-                                            Expected in " . $edu['graduation_date'] . "
+                                            Expected in April 2026
                                         </div>
                                     </div>
-                                </div>";
-                            ?>
+                                </div>
                         </div>
                         <div class="left_content d-flex align-items-center mb-2">
                             <nav class="navbar mark p-1 me-2">
@@ -333,126 +321,87 @@ color: #444;">
                 </div>
             </div>
     </div>
-</div></div>` }
+</div>` }
     , {
-    id: 3, name: "Template 3", src: `<div data-id="3" class="cv-preview-wrapper temp col-lg-4 col-sm-5"><div class="cv_template" style="font-family: Georgia, serif;
+    id: 3, name: "Template 3", src: `<div data-id="3" class="cv-preview-wrapper temp"><div class="cv_template" style="font-family: Georgia, serif;
     color: #444;">
     <div class="container-fluid">
         <!-- Header -->
-        <header id="hd" class="row border-bottom pb-4 mb-4 display-flex">
-            <div class="col-md-6">
-                <h1 class="text-uppercase name-display"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h1>
+        <header class="bg-light text-center py-3">
+        <h1 class="display-4 fw-bold text-teal text-uppercase mb-1">Your Name</h1>
+        <div class="d-flex justify-content-center gap-3 mb-3">
+            <a href="#" class="link-secondary fs-3" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="#" class="link-secondary fs-3" aria-label="Code"><i class="bi bi-code-slash"></i></a>
+            <a href="#" class="link-secondary fs-3" aria-label="Website"><i class="bi bi-globe"></i></a>
+        </div>
+        <p><a href="mailto:examplemail@mail.com" class="link-secondary text-decoration-none">examplemail@mail.com</a>
+        </p>
+    </header>
+
+    <main class="container py-3">
+        <section class="card mb-3 shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Summary</h2>
+                <hr class="border-dotted">
+                <p class="text-muted small">Front end developer</p>
             </div>
-            <div class="col-md-6 text-md-end contact-info">
-                
-                <h6>Lorem ipsum dolor sit amet</h6>
-                <h5>Lorem ipsum</h5>
-                <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
+        </section>
+        <section class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Skills</h2>
+                <hr class="border-dotted">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                    <div class="col"><span class="badge bg-light text-dark border">HTML5 / CSS3</span></div>
+                    <div class="col"><span class="badge bg-light text-dark border">SASS / Less</span></div>
+                    <div class="col"><span class="badge bg-light text-dark border">JavaScript / jQuery</span></div>
+                    <div class="col"><span class="badge bg-light text-dark border">Bootstrap / Foundation</span></div>
+                    <div class="col"><span class="badge bg-light text-dark border">Git / GitHub</span></div>
+                    <div class="col"><span class="badge bg-light text-dark border">Photoshop / Illustrator</span></div>
+                </div>
             </div>
-        </header>
-
-        <!-- Main Content -->
-        <main id="bd">
-            <!-- Profile -->
-            <section class="column d-flex mb-4 border-bottom">
-                <div class="col-md-3">
-                    <h2 class="h4">Profile Summary</h2>
+        </section>
+        <section class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Professional Experience</h2>
+                <hr class="border-dotted">
+                <div class="mb-3">
+                    <h3 class="h6 text-teal">Some Company <span class="text-muted small">| SomeCity, CA</span></h3>
+                    <p class="text-muted small mb-1">Someposition | 8/2025 - 10/2025</p>
+                    <p class="text-muted small">Developed and maintained web applications using modern front-end
+                        technologies. Collaborated with cross-functional teams to deliver user-focused solutions.</p>
                 </div>
-                <div class="container col-md-9">
-                    <p class='lead enlarge mb-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class='lead enlarge mb-2'>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="mb-3">
+                    <h3 class="h6 text-teal">Some Company <span class="text-muted small">| SomeCity, CA</span></h3>
+                    <p class="text-muted small mb-1">Someposition | 8/2025 - 10/2025</p>
+                    <p class="text-muted small">Designed responsive interfaces and optimized performance for
+                        high-traffic websites. Implemented accessibility best practices.</p>
                 </div>
-            </section>
-
-            <!-- Skills -->
-            <section class="row mb-4 border-bottom">
-                <div class="col-md-3">
-                    <h2 class="h4">Skills</h2>
+                <div>
+                    <h3 class="h6 text-teal">Some Company <span class="text-muted small">| SomeCity, CA</span></h3>
+                    <p class="text-muted small mb-1">Someposition | 8/2025 - 10/2025</p>
+                    <p class="text-muted small">Led front-end development for key projects, ensuring scalability and
+                        maintainability. Mentored junior developers.</p>
                 </div>
-                <div class="col-md-9 mb-3">
-                    <div class="row">
-                        <div class='col-md-4 talent'>
-                            <h2 class='h5'>Lorem ipsum</h2>
-                        </div>
-                        <div class='col-md-4 talent'>
-                            <h2 class='h5'>Dolor sit</h2>
-                        </div>
-                        <div class='col-md-4 talent'>
-                            <h2 class='h5'>Amet consectetur</h2>
-                        </div>
-                    </div>
+            </div>
+        </section>
+        <section class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Education</h2>
+                <hr class="border-dotted">
+                <div class="mb-3">
+                    <h3 class="h6 text-teal">Some School <span class="text-muted small">| Online Training</span></h3>
+                    <p class="text-muted small">Online coding bootcamp with focus on front-end technologies, languages,
+                        and tools.<br>10/2025 - 01/2026</p>
                 </div>
-            </section>
-
-            <!-- Technical -->
-            <section class="row mb-4 border-bottom">
-                <div class="col-md-3">
-                    <h2 class="h4">Technical</h2>
+                <div>
+                    <h3 class="h6 text-teal">Some College <span class="text-muted small">| Some City, CA</span></h3>
+                    <p class="text-muted small">PhD, Computer Science<br>2025 - 2027</p>
                 </div>
-                <div class="col-md-9">
-                    <div class="row skills-list">
-                        <div class='col-md-4'>
-                            <ul class='list-unstyled'>
-                                <li>Lorem ipsum</li>
-                                <li>Dolor sit</li>
-                                <li>Amet consectetur</li>
-                            </ul>
-                        </div>
-                        <div class='col-md-4'>
-                            <ul class='list-unstyled'>
-                                <li>Adipiscing elit</li>
-                                <li>Sed do</li>
-                                <li>Eiusmod tempor</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experience -->
-            <section class="row mb-4 border-bottom">
-                <div class="col-md-3">
-                    <h2 class="h4">Experience</h2>
-                </div>
-                <div class="col-md-9">
-                    <div class='job mb-4 row gap-0'>
-                        <h2 class='h5'>Lorem ipsum</h2>
-                        <h3>Web Designer, Lorem Corp</h3>
-                        <h4>Jan 2020 to Dec 2022</h4>
-                        <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                            Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                            Conveniently initiate virtual paradigms and top-line convergence.</p>
-                    </div>
-                    <div class='job mb-4 row gap-0'>
-                        <h2 class='h5'>Dolor sit</h2>
-                        <h3>Director, Ipsum Inc</h3>
-                        <h4>Mar 2018 to Dec 2019</h4>
-                        <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                            Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                            Conveniently initiate virtual paradigms and top-line convergence.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Education -->
-            <section class="row">
-                <div class="col-md-3">
-                    <h2 class="h4">Education</h2>
-                </div>
-                <div class='col-md-9'>
-                    <h2 class='h5'>Lorem University - Lorem City</h2>
-                    <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer id="ft" class="border-top text-center py-4 mt-4">
-            <p>Jonathan Doe — <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> — (313) - 867-5309</p>
-        </footer>
-    </div></div>` },
-    {
-    id: 4, name: "Template 3", src: `<div data-id="4" class="cv-preview-wrapper temp col-lg-4 col-sm-5"><div class="cv_template" style="font-family: Georgia, serif;
+            </div>
+        </section>
+    </main>    </div></div>` },
+{
+    id: 4, name: "Template 3", src: `<div data-id="4" class="cv-preview-wrapper temp"><div class="cv_template" style="font-family: Georgia, serif;
 color: #444;">
 <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_4 copy.css">
 <div class="resume-wrapper">
@@ -600,9 +549,10 @@ color: #444;">
         </div>
     </div>
 </div></div>` }, {
-    id: 5, name: "cv_5", src: `<div data-id="5" class="cv-preview-wrapper temp col-lg-4 col-sm-5"><div class="cv_template" style="font-family: Georgia, serif;
+    id: 5, name: "cv_5", src: `<div data-id="5" class="cv-preview-wrapper temp"><div class="cv_template" style="font-family: Georgia, serif;
 color: #444;">
-<link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_5 copy.css">
+<link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_5 copy.css" media="all" />
+
 <div class="rela-block page">
     <div class="rela-block top-bar">
         <div class="caps name">
@@ -661,7 +611,7 @@ color: #444;">
 </div>
 </div></div>` }
     , {
-    id: 6, name: "Template 6", src: `<div data-id="6" class="cv-preview-wrapper temp col-lg-4 col-sm-5"><div class="cv_template" style="font-family: Georgia, serif;
+    id: 6, name: "Template 6", src: `<div data-id="6" class="cv-preview-wrapper temp"><div class="cv_template" style="font-family: Georgia, serif;
 color: #444;">
 <div class="container-fluid">
     <!-- Header -->
@@ -770,29 +720,30 @@ color: #444;">
         <p>Jonathan Doe — <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> — (313) - 867-5309</p>
     </footer>
 </div></div>` }
-    ];
+];
 
 
 function renderTemplates() {
     const tempListGrid = document.querySelector('.temp-list');
-    tempListGrid.innerHTML = ''; // Xóa nội dung cũ
+    tempListGrid.innerHTML = ''; // Clear existing content
 
     tempList.forEach((temp) => {
-        // Tạo div chính
-        // div.setAttribute('data-id', temp.id);
-        // div.classList.add('temp', 'bg-light');
-        // div.style.height = '450px';
-        // div.style.padding = '10px 10px';
+        // Create a column div for each template
+        const colDiv = document.createElement('div');
+        colDiv.classList.add('col-md-4', 'col-sm-6', 'mb-3'); // Bootstrap responsive columns
 
-        // Thêm temp.src như innerHTML
-        
+        // Create a template div
 
-        // Thêm div vào tempListGrid
-        tempListGrid.innerHTML += temp.src
+        // Add template content
+        colDiv.innerHTML = temp.src;
+
+        // Append template div to column div
+
+        // Append column div to the temp-list row
+        tempListGrid.appendChild(colDiv);
     });
 }
 renderTemplates();
-
 
 let inputFname = document.getElementById('fname');
 let inputLname = document.getElementById('lname');

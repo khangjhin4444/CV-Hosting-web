@@ -1,30 +1,30 @@
 <?php
 
 // Kiểm tra quyền admin
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+if (! isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     header('Location: /CV-Hosting-web-main/public/index.php');
     exit;
 }
 
 // Kết nối database
-require_once __DIR__ . '/../../config/database.php';
-if (!$conn) {
+require_once __DIR__.'/../../config/database.php';
+if (! $conn) {
     error_log('Database connection failed');
-    die('Database connection failed');
+    exit('Database connection failed');
 }
 
 // Lấy danh sách người dùng và số CV
 try {
-    $stmt = $conn->prepare("
+    $stmt = $conn->prepare('
         SELECT u.id, u.email, u.created_at, COUNT(c.cv_id) as cv_count
         FROM users u
         LEFT JOIN cvs c ON u.id = c.user_id
         GROUP BY u.id
-    ");
+    ');
     $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    error_log('Error fetching users: ' . $e->getMessage());
+    error_log('Error fetching users: '.$e->getMessage());
     $users = [];
 }
 
@@ -40,7 +40,7 @@ try {
     $cv_limit = $settings['cv_limit'] ?? 3;
     $guest_view = $settings['guest_view'] ?? 1;
 } catch (PDOException $e) {
-    error_log('Error fetching settings: ' . $e->getMessage());
+    error_log('Error fetching settings: '.$e->getMessage());
     $cv_limit = 3;
     $guest_view = 1;
 }
@@ -78,12 +78,12 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
   </nav>
 
   <div class="container my-4">
-    <?php if ($success): ?>
+    <?php if ($success) { ?>
       <div class="alert alert-success"><?php echo $success; ?></div>
-    <?php endif; ?>
-    <?php if ($error): ?>
+    <?php } ?>
+    <?php if ($error) { ?>
       <div class="alert alert-danger"><?php echo $error; ?></div>
-    <?php endif; ?>
+    <?php } ?>
 
     <div class="section" id="user-management">
       <h2>User Management</h2>
@@ -99,12 +99,12 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
             </tr>
           </thead>
           <tbody>
-            <?php if (empty($users)): ?>
+            <?php if (empty($users)) { ?>
               <tr>
                 <td colspan="5" class="text-center">No users found</td>
               </tr>
-            <?php else: ?>
-              <?php foreach ($users as $user): ?>
+            <?php } else { ?>
+              <?php foreach ($users as $user) { ?>
                 <tr>
                   <td><?php echo htmlspecialchars($user['id']); ?></td>
                   <td><?php echo htmlspecialchars($user['email']); ?></td>
@@ -118,8 +118,8 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
                     </form>
                   </td>
                 </tr>
-              <?php endforeach; ?>
-            <?php endif; ?>
+              <?php } ?>
+            <?php } ?>
           </tbody>
         </table>
       </div>
