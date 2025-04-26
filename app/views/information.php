@@ -2,10 +2,10 @@
 $tempId = $_SESSION['tempId'];
 // echo $tempId;
 if (isset($_GET['tempId'])) {
-  $tempId = $_GET['tempId'];
+    $tempId = $_GET['tempId'];
 }
-require_once __DIR__ . '/../../config/database.php';
-require_once __DIR__ . '/../../config/constant.php';
+require_once __DIR__.'/../../config/database.php';
+require_once __DIR__.'/../../config/constant.php';
 
 ?>
 
@@ -126,7 +126,7 @@ require_once __DIR__ . '/../../config/constant.php';
             </form>
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container p-2" id="<?php echo $tempId; ?>">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">-->
 
           </div>
@@ -153,7 +153,7 @@ require_once __DIR__ . '/../../config/constant.php';
 
           </div>
 
-          <div class="col-12 col-xxl-3 d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+          <div class="col-12 col-xxl-3 d-xxl-block cv-container p-2" id="<?php echo $tempId; ?>">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
@@ -277,7 +277,7 @@ require_once __DIR__ . '/../../config/constant.php';
 
           </div>
 
-          <div class="col-12 col-xxl-3  d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+          <div class="col-12 col-xxl-3  d-xxl-block cv-container p-2" id="<?php echo $tempId; ?>">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
@@ -401,7 +401,7 @@ require_once __DIR__ . '/../../config/constant.php';
 
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container p-2" id="<?php echo $tempId; ?>">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
@@ -479,7 +479,7 @@ require_once __DIR__ . '/../../config/constant.php';
               We'll provide expert content that you can tailor to make it stand out.</p>
           </div>
 
-          <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container" id="<?php echo $tempId; ?>">
+          <div class="col-12 col-xxl-3 d-hidden d-xxl-block cv-container p-2" id="<?php echo $tempId; ?>">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
@@ -603,7 +603,7 @@ require_once __DIR__ . '/../../config/constant.php';
             </div>
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container" id="<?php echo $tempId; ?>" data-state="normal">
+          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container p-2" id="<?php echo $tempId; ?>" data-state="normal">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>

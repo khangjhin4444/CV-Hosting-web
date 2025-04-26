@@ -1,213 +1,232 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: Montserrat;
-  overflow: hidden;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+    overflow: hidden;
 }
 
 .sidebar {
-  background-color: #4A90E2;
-  color: white;
-  padding: 20px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background-color: #4A90E2;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .sidebar .step {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .sidebar .step .circle {
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  font-weight: bold;
-  color: black;
-  font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
 }
 
 .sidebar .step.active .circle {
-  background-color: #F69840;
-  color: black;
+    background-color: #F69840;
+    color: black;
 }
 
 .sidebar .step.finish .circle {
-  background-color: #68FF60;
-  color: black;
+    background-color: #68FF60;
+    color: black;
 }
 
 .sidebar .progress-bar {
-  background-color: #FFFFFF;
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
+    background-color: #FFFFFF;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .sidebar .progress-bar .progress {
-  background-color: #68FF60;
-  height: 100%;
-  width: 0%; /* Thay đổi giá trị này để hiển thị tiến trình */
+    background-color: #68FF60;
+    height: 100%;
+    width: 0%;
+    /* Thay đổi giá trị này để hiển thị tiến trình */
 }
 
 .main-content {
-  background-color: #F8F0E5;
-  padding: 40px;
-  height: 100vh;
-  overflow-y: auto;
-  opacity: 0; /* Bắt đầu với opacity 0 */
-  display: none;
-  transform: translateX(20px); /* Dịch chuyển nhẹ sang phải */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển đổi mượt */
+    background-color: #F8F0E5;
+    padding: 40px;
+    height: 100vh;
+    overflow-y: auto;
+    opacity: 0;
+    /* Bắt đầu với opacity 0 */
+    display: none;
+    transform: translateX(20px);
+    /* Dịch chuyển nhẹ sang phải */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Hiệu ứng chuyển đổi mượt */
 }
 
 .main-content.active {
-  opacity: 1; /* Hiển thị đầy đủ */
-  display: block;
-  transform: translateX(0); /* Trở về vị trí ban đầu */
+    opacity: 1;
+    /* Hiển thị đầy đủ */
+    display: block;
+    transform: translateX(0);
+    /* Trở về vị trí ban đầu */
 }
 
 .form-control {
-  border-radius: 0;
-  margin-bottom: 15px;
+    border-radius: 0;
+    margin-bottom: 15px;
 }
 
 .btn-next {
-  background-color: #003087;
-  color: white;
-  border-radius: 0;
-  padding: 10px 20px;
-  float: right;
+    background-color: #003087;
+    color: white;
+    border-radius: 0;
+    padding: 10px 20px;
+    float: right;
 }
 
 form .row .col-12 input {
-  padding: 16px 18px;
+    padding: 16px 18px;
 }
 
-form .row .col-12 input::placeholder{
-  color: #9D9D9D;
+form .row .col-12 input::placeholder {
+    color: #9D9D9D;
 }
 
 select {
-  border: none;
-  outline: none; 
-  appearance: none; 
-  padding: 10px 14px;
+    border: none;
+    outline: none;
+    appearance: none;
+    padding: 10px 14px;
 }
 
 select:focus {
-  border: 1px solid rgb(77, 219, 244); 
+    border: 1px solid rgb(77, 219, 244);
 }
 
 .cv_template {
-  transform: scale(0.3);
-  transform-origin: top left;
-  /* Đảm bảo thu nhỏ từ góc trên bên trái */
-  width: 310%;
-  /* Bù lại kích thước để tránh bị cắt nội dung */
-  height: 100%;
-  /* Bù lại kích thước để tránh bị cắt nội dung */
+    transform: scale(0.3);
+    transform-origin: top left;
+    /* Đảm bảo thu nhỏ từ góc trên bên trái */
+    width: 333%;
+    /* Bù lại kích thước để tránh bị cắt nội dung */
+    height: auto;
+    /* Bù lại kích thước để tránh bị cắt nội dung */
 }
 
 .cv-container {
-  background-color: white;
-  height: 400px;
-  padding: 20px 20px;
-  /* overflow-y: hidden; */
+    background-color: white;
+    height: 400px;
+    padding: 20px 20px;
+    /* overflow-y: hidden; */
 }
 
 .edusum-container {
-  background-color: white;
-  height: 100px;
-  width: 100%;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-right: 20px;
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.cv-preview-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 384px;
+    background-color: white;
 }
 
 .cv-container {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  position: relative;
-  z-index: 1;
-  transform: scale(1);
-  /* trạng thái mặc định */
-  opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
+    transform: scale(1);
+    /* trạng thái mặc định */
+    opacity: 1;
 }
 
 /* Trạng thái phóng to */
 .cv-container.enlarged {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.7);
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  background-color: white;
-  padding: 20px;
-  opacity: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.7);
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 20px;
+    opacity: 1;
 }
 
 .main-content {
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 
 .checked-input {
-  font-size: 20px;
-  border: none;
-  padding: 10px 12px;
-  background-color: #F8F0E5;
-  border: 1px solid #ccc;
-  width: 100%;
-  visibility: hidden;
+    font-size: 20px;
+    border: none;
+    padding: 10px 12px;
+    background-color: #F8F0E5;
+    border: 1px solid #ccc;
+    width: 100%;
+    visibility: hidden;
 }
 
 
 /* Media query cho màn hình nhỏ */
 @media (max-width: 1400px) {
-  body, html {
-    overflow: auto; 
-  }
-  .cv-container {
-    visibility:hidden;
-    height: 300px;
-  }
+
+    body,
+    html {
+        overflow: auto;
+    }
+
+    .cv-container {
+        visibility: hidden;
+        height: 300px;
+    }
 }
 
 @media (max-width: 992px) {
-  .sidebar, .main-content {
-    height: auto;
-  }
 
-  .sidebar {
-    padding: 20px;
-  }
+    .sidebar,
+    .main-content {
+        height: auto;
+    }
 
-  .main-content {
-    padding: 20px;
-  }
+    .sidebar {
+        padding: 20px;
+    }
 
-  /* Ẩn các bước không có class active */
-  .sidebar .step {
-    display: none;
-  }
+    .main-content {
+        padding: 20px;
+    }
 
-  /* Chỉ hiển thị bước có class active */
-  .sidebar .step.active {
-    display: flex;
-  }
+    /* Ẩn các bước không có class active */
+    .sidebar .step {
+        display: none;
+    }
 
-  .cv-container {
-    display: none;
-  }
+    /* Chỉ hiển thị bước có class active */
+    .sidebar .step.active {
+        display: flex;
+    }
+
+    .cv-container {
+        display: none;
+    }
 }

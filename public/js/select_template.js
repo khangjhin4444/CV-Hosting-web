@@ -10,10 +10,10 @@ color: #444;">
                 <h1 class="text-uppercase"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h1>
             </div>
             <div class="col-md-6 text-md-end contact-info">
-                
-                <h6>Lorem ipsum dolor sit amet</h6>
-                <h5>Lorem ipsum</h5>
-                <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
+            <h6 id="city_cv">Lorem ipsum dolor sit amet</h6>
+            <h5 id="phone_cv">Lorem ipsum</h5>
+            <h5 class="email_cv_h5" ><a id = "email_cv" href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
+            <h5 class ="cv_websites"></h5>
             </div>
         </header>
 
@@ -24,7 +24,7 @@ color: #444;">
                 <div class="col-md-3">
                     <h2 class="h4">Profile Summary</h2>
                 </div>
-                <div class="container col-md-9">
+                <div class="container col-md-9 cv_summary">
                     <p class='lead enlarge mb-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <p class='lead enlarge mb-2'>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
@@ -36,7 +36,7 @@ color: #444;">
                     <h2 class="h4">Skills</h2>
                 </div>
                 <div class="col-md-9 mb-3">
-                    <div class="row">
+                    <div class="row skills-list">
                         <div class='col-md-4 talent'>
                             <h2 class='h5'>Lorem ipsum</h2>
                         </div>
@@ -58,17 +58,17 @@ color: #444;">
                 </div>
                 <div class="col-md-9">
                     <div class='job mb-4 row gap-0'>
-                        <h2 class='h5'>Lorem ipsum</h2>
-                        <h3>Web Designer, Lorem Corp</h3>
-                        <h4>Jan 2020 to Dec 2022</h4>
+                        <h2 class='h5 cv_location'>Lorem ipsum</h2>
+                        <h3><span class="cv_title">Web Designer</span>, <span class="cv_employer">Lorem Corp</span></h3>
+                        <h4><span class="start_date_cv">Jan 2020</span> to <span class="end_date_cv">Dec 2022</span></h4>
                         <p>Intrinsicly enable optimal core competencies through corporate relationships.
                             Phosfluorescently implement worldwide vortals and client-focused imperatives.
                             Conveniently initiate virtual paradigms and top-line convergence.</p>
                     </div>
                     <div class='job mb-4 row gap-0'>
-                        <h2 class='h5'>Dolor sit</h2>
-                        <h3>Director, Ipsum Inc</h3>
-                        <h4>Mar 2018 to Dec 2019</h4>
+                        <h2 class='h5 cv_location'>Dolor sit</h2>
+                        <h3><span class="cv_title">Director</span>, <span class="cv_employer">Ipsum Inc</span></h3>
+                        <h4><span class="start_date_cv">Mar 2018</span> to <span class="end_date_cv">Dec 2019</span></h4>
                         <p>Intrinsicly enable optimal core competencies through corporate relationships.
                             Phosfluorescently implement worldwide vortals and client-focused imperatives.
                             Conveniently initiate virtual paradigms and top-line convergence.</p>
@@ -77,13 +77,14 @@ color: #444;">
             </section>
 
             <!-- Education -->
-            <section class="row">
+            <section class="row cv_education">
                 <div class="col-md-3">
                     <h2 class="h4">Education</h2>
                 </div>
                 <div class='col-md-9'>
-                    <h2 class='h5'>Lorem University - Lorem City</h2>
-                    <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
+                    <h2 class='h5'><span class="cv_uni">Lorem</span> University - <span class="cv_city">Lorem</span> City</h2>
+                    <h3><span class="cv_degree">Bachelor</span> of <span class="cv_field_study">Lorem</span> Studies</h3>
+                    <h5>Gradution year: <span class="cv_year"></span></h5>
                 </div>
             </section>
         </main>
@@ -98,7 +99,7 @@ color: #444;">
     <div class="cv_template container-fluid" style="font-family: "Varela Round", sans-serif;
 color: #444;">
 <link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_2 copy.css" media="all" />
-        <div class="top border-top py-4 text-start rounded-top">
+        <div class="template-2 top border-top py-4 text-start rounded-top">
             <h5 class="title display-5 text-uppercase text-start"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h5>
             <h6 class="sub_title text-muted">Graphic & Web Designer</h6>
         </div>
@@ -126,7 +127,7 @@ color: #444;">
                                     </div>
                                     <div class="col">
                                         <h6 class="info_title mb-1">Phone</h6>
-                                        <div class="info_text small"><?php echo $heading['phone']; ?></div>
+                                        <div class="info_text small phone_cv">Lorem ipsum</div>
                                     </div>
                                 </div>
                                 <div class="row align-items-center mb-3">
@@ -313,7 +314,7 @@ color: #444;">
                         <div class="right_content hobby d-flex justify-content-between">
                             <i class="bi bi-film fs-3"></i>
                             <i class="bi bi-bicycle fs-3"></i>
-                            <i class="bi bi-airplane fs-3"></i>
+                            <i class="bi bi-book fs-3"></i>
                             <i class="bi bi-headphones fs-3"></i>
                             <i class="bi bi-camera fs-3"></i>
                         </div>
@@ -325,10 +326,11 @@ color: #444;">
     , {
     id: 3, name: "Template 3", src: `<div data-id="3" class="cv-preview-wrapper temp"><div class="cv_template" style="font-family: Georgia, serif;
     color: #444;">
+<link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_3 copy.css">
     <div class="container-fluid">
         <!-- Header -->
         <header class="bg-light text-center py-3">
-        <h1 class="display-4 fw-bold text-teal text-uppercase mb-1">Your Name</h1>
+        <h1 class="display-4 fw-bold text-teal text-uppercase mb-1"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h1>
         <div class="d-flex justify-content-center gap-3 mb-3">
             <a href="#" class="link-secondary fs-3" aria-label="GitHub"><i class="bi bi-github"></i></a>
             <a href="#" class="link-secondary fs-3" aria-label="Code"><i class="bi bi-code-slash"></i></a>
@@ -375,12 +377,6 @@ color: #444;">
                     <p class="text-muted small mb-1">Someposition | 8/2025 - 10/2025</p>
                     <p class="text-muted small">Designed responsive interfaces and optimized performance for
                         high-traffic websites. Implemented accessibility best practices.</p>
-                </div>
-                <div>
-                    <h3 class="h6 text-teal">Some Company <span class="text-muted small">| SomeCity, CA</span></h3>
-                    <p class="text-muted small mb-1">Someposition | 8/2025 - 10/2025</p>
-                    <p class="text-muted small">Led front-end development for key projects, ensuring scalability and
-                        maintainability. Mentored junior developers.</p>
                 </div>
             </div>
         </section>
@@ -553,10 +549,10 @@ color: #444;">
 color: #444;">
 <link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_5 copy.css" media="all" />
 
-<div class="rela-block page">
+<div class="rela-block page template-5">
     <div class="rela-block top-bar">
         <div class="caps name">
-            <div class="abs-center"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></div>
+            <div class="abs-center pb-5"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></div>
         </div>
     </div>
     <div class="side-bar">
@@ -568,10 +564,10 @@ color: #444;">
                 <p class="logo-text">kj</p>
             </div>
         </div>
-        <p>123 My Place Drive</p>
-        <p>Astoria, New York 11105</p>
-        <p>1-800-CALLPLZ</p>
-        <p>emailsareforsquares@gmail.com</p><br>
+        <p class="mb-1">123 My Place Drive</p>
+        <p class="mb-1">Astoria, New York 11105</p>
+        <p class="mb-1">1-800-CALLPLZ</p>
+        <p class="mb-1">emailsareforsquares@gmail.com</p><br>
         <p class="rela-block social twitter">Twitter stuff</p>
         <p class="rela-block social pinterest">Pinterest things</p>
         <p class="rela-block social linked-in">Linked-in man</p>
@@ -590,7 +586,7 @@ color: #444;">
         <h2 class="rela-block caps title">Jr Front-End Developer</h2>
         <div class="rela-block separator"></div>
         <div class="rela-block caps greyed">Profile</div>
-        <p class="long-margin">Retro DIY quinoa, mixtape williamsburg master cleanse bushwick tumblr chillwave
+        <p class="mb-3">Retro DIY quinoa, mixtape williamsburg master cleanse bushwick tumblr chillwave
             starter. </p>
         <div class="rela-block caps greyed">Experience</div>
 
@@ -611,115 +607,202 @@ color: #444;">
 </div>
 </div></div>` }
     , {
-    id: 6, name: "Template 6", src: `<div data-id="6" class="cv-preview-wrapper temp"><div class="cv_template" style="font-family: Georgia, serif;
-color: #444;">
-<div class="container-fluid">
-    <!-- Header -->
-    <header id="hd" class="row border-bottom pb-4 mb-4 display-flex">
-        <div class="col-md-6">
-            <h1 class="text-uppercase name-display"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h1>
+    id: 6, name: "Template 6", src: `<div data-id="6" class="cv-preview-wrapper temp">
+    <link id="theme-style" rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_6.css">
+    <div class="template-6 cv_template">
+        <div class="wrapper">
+            <div class="sidebar-wrapper">
+                <div class="profile-container">
+                    <img class="profile" src="assets/images/profile.png" alt="" />
+                    <h1 class="name text-uppercase"><span class="f-name">Lorem</span> <span class="l-name">Ispum</span></h1>
+                    <h3 class="tagline">Full Stack Developer</h3d>
+                </div><!--//profile-container-->
+
+                <div class="contact-container container-block">
+                    <ul class="list-unstyled contact-list">
+                        <li class="email"><i class="fa-solid fa-envelope"></i><a
+                                href="mailto: yourname@email.com">alan.doe@website.com</a></li>
+                        <li class="phone"><i class="fa-solid fa-phone"></i><a href="tel:0123 456 789">0123 456 789</a>
+                        </li>
+                        <li class="website"><i class="fa-solid fa-globe"></i><a
+                                href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/orbit-free-resume-cv-bootstrap-theme-for-developers/"
+                                target="_blank">portfoliosite.com</a></li>
+                        <li class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a href="#"
+                                target="_blank">linkedin.com/in/alandoe</a></li>
+                        <li class="github"><i class="fa-brands fa-github"></i><a href="#"
+                                target="_blank">github.com/username</a></li>
+                        <li class="twitter"><i class="fa-brands fa-x-twitter"></i><a
+                                href="https://twitter.com/3rdwave_themes" target="_blank">@twittername</a></li>
+                    </ul>
+                </div><!--//contact-container-->
+                <div class="education-container container-block">
+                    <h2 class="container-block-title">Education</h2>
+                    <div class="item">
+                        <h4 class="degree">MSc in Computer Science</h4>
+                        <h5 class="meta">University of London</h5>
+                        <div class="time">2016 - 2018</div>
+                    </div><!--//item-->
+                    <div class="item">
+                        <h4 class="degree">BSc in Applied Mathematics</h4>
+                        <h5 class="meta">Bristol University</h5>
+                        <div class="time">2012 - 2016</div>
+                    </div><!--//item-->
+                </div><!--//education-container-->
+
+                <div class="languages-container container-block">
+                    <h2 class="container-block-title">Languages</h2>
+                    <ul class="list-unstyled interests-list">
+                        <li>English <span class="lang-desc">(Native)</span></li>
+                        <li>French <span class="lang-desc">(Professional)</span></li>
+                        <li>Spanish <span class="lang-desc">(Professional)</span></li>
+                    </ul>
+                </div><!--//interests-->
+
+                <div class="interests-container container-block">
+                    <h2 class="container-block-title">Interests</h2>
+                    <ul class="list-unstyled interests-list">
+                        <li>Climbing</li>
+                        <li>Snowboarding</li>
+                        <li>Cooking</li>
+                    </ul>
+                </div><!--//interests-->
+
+            </div><!--//sidebar-wrapper-->
+
+            <div class="main-wrapper">
+
+                <section class="section summary-section">
+                    <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-user"></i></span>Career
+                        Profile</h2>
+                    <div class="summary">
+                        <p>Summarise your career here lorem ipsum dolor sit amet, consectetuer adipiscing elit. You can
+                            <a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/orbit-free-resume-cv-bootstrap-theme-for-developers/"
+                                target="_blank">download this free resume/CV template here</a>. Aenean commodo ligula
+                            eget
+                            dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.</p>
+                    </div><!--//summary-->
+                </section><!--//section-->
+
+                <section class="section experiences-section">
+                    <h2 class="section-title"><span class="icon-holder"><i
+                                class="fa-solid fa-briefcase"></i></span>Experiences</h2>
+
+                    <div class="item">
+                        <div class="meta">
+                            <div class="upper-row">
+                                <h3 class="job-title">Lead Developer</h3>
+                                <div class="time">2023 - Present</div>
+                            </div><!--//upper-row-->
+                            <div class="company">Startup Hubs, San Francisco</div>
+                        </div><!--//meta-->
+                        <div class="details">
+                            <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                                eu,
+                                pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</p>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                architecto beatae vitae dicta sunt explicabo. </p>
+                        </div><!--//details-->
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <div class="meta">
+                            <div class="upper-row">
+                                <h3 class="job-title">Senior Software Engineer</h3>
+                                <div class="time">2018 - 2023</div>
+                            </div><!--//upper-row-->
+                            <div class="company">Google, London</div>
+                        </div><!--//meta-->
+                        <div class="details">
+                            <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                                eu,
+                                pretium quis, sem.</p>
+
+                        </div><!--//details-->
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <div class="meta">
+                            <div class="upper-row">
+                                <h3 class="job-title">UI Developer</h3>
+                                <div class="time">2016 - 2018</div>
+                            </div><!--//upper-row-->
+                            <div class="company">Amazon, London</div>
+                        </div><!--//meta-->
+                        <div class="details">
+                            <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                                eu,
+                                pretium quis, sem.</p>
+                        </div><!--//details-->
+                    </div><!--//item-->
+
+                </section><!--//section-->
+
+                <section class="skills-section section">
+                    <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-rocket"></i></span>Skills
+                        &amp; Proficiency</h2>
+                    <div class="skillset">
+                        <div class="item">
+                            <h3 class="level-title">Python &amp; Django</h3>
+                            <div class="progress level-bar">
+                                <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 99%"
+                                    aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div><!--//item-->
+
+                        <div class="item">
+                            <h3 class="level-title">Javascript</h3>
+                            <div class="progress level-bar">
+                                <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%"
+                                    aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div><!--//item-->
+
+                        <div class="item">
+                            <h3 class="level-title">React &amp; Angular</h3>
+                            <div class="progress level-bar">
+                                <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%"
+                                    aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div><!--//item-->
+
+                        <div class="item">
+                            <h3 class="level-title">HTML5 &amp; CSS</h3>
+                            <div class="progress level-bar">
+                                <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 95%"
+                                    aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div><!--//item-->
+
+                        <div class="item">
+                            <h3 class="level-title">Ruby on Rails</h3>
+                            <div class="progress level-bar">
+                                <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 85%"
+                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div><!--//item-->
+
+                        <div class="item">
+                            <h3 class="level-title">Sketch &amp; Photoshop</h3>
+                            <div class="progress level-bar">
+                                <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 60%"
+                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div><!--//item-->
+
+                    </div>
+                </section><!--//skills-section-->
+
+            </div><!--//main-body-->
         </div>
-        <div class="col-md-6 text-md-end contact-info">
-            
-            <h6>Lorem ipsum dolor sit amet</h6>
-            <h5>Lorem ipsum</h5>
-            <h5><a href="mailto:name@yourdomain.com">lorem@ipsum.com</a></h5>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main id="bd">
-        <!-- Profile -->
-        <section class="column d-flex mb-4 border-bottom">
-            <div class="col-md-3">
-                <h2 class="h4">Profile Summary</h2>
-            </div>
-            <div class="container col-md-9">
-                <p class='lead enlarge mb-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p class='lead enlarge mb-2'>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section class="row mb-4 border-bottom">
-            <div class="col-md-3">
-                <h2 class="h4">Skills</h2>
-            </div>
-            <div class="col-md-9 mb-3">
-                <div class="row">
-                    <div class='col-md-4 talent'>
-                        <h2 class='h5'>Lorem ipsum</h2>
-                    </div>
-                    <div class='col-md-4 talent'>
-                        <h2 class='h5'>Dolor sit</h2>
-                    </div>
-                    <div class='col-md-4 talent'>
-                        <h2 class='h5'>Amet consectetur</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical -->
-        <section class="row mb-4 border-bottom">
-            <div class="col-md-3">
-                <h2 class="h4">Technical</h2>
-            </div>
-            <div class="col-md-9">
-                <div class="row skills-list">
-                    <div class='col-md-4'>
-                        <ul class='list-unstyled'>
-                            <li>Lorem ipsum</li>
-                            <li>Dolor sit</li>
-                            <li>Amet consectetur</li>
-                        </ul>
-                    </div>
-                    <div class='col-md-4'>
-                        <ul class='list-unstyled'>
-                            <li>Adipiscing elit</li>
-                            <li>Sed do</li>
-                            <li>Eiusmod tempor</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section class="row mb-4 border-bottom">
-            <div class="col-md-3">
-                <h2 class="h4">Experience</h2>
-            </div>
-            <div class="col-md-9">
-                <div class='job mb-4 row gap-0'>
-                    <h2 class='h5'>Lorem ipsum</h2>
-                    <h3>Web Designer, Lorem Corp</h3>
-                    <h4>Jan 2020 to Dec 2022</h4>
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships.
-                        Phosfluorescently implement worldwide vortals and client-focused imperatives.
-                        Conveniently initiate virtual paradigms and top-line convergence.</p>
-                </div>
-                
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="row">
-            <div class="col-md-3">
-                <h2 class="h4">Education</h2>
-            </div>
-            <div class='col-md-9'>
-                <h2 class='h5'>Lorem University - Lorem City</h2>
-                <h3>Bachelor of Lorem Studies — <strong>3.8</strong></h3>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="ft" class="border-top text-center py-4 mt-4">
-        <p>Jonathan Doe — <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> — (313) - 867-5309</p>
-    </footer>
-</div></div>` }
+    </div></div>` }
 ];
 
 
