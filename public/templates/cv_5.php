@@ -74,53 +74,57 @@ $education = isset($education) ? $education : [];
 $skills = isset($skills) ? $skills : [];
 $summary = isset($summary) ? $summary : [];
 ?>
-
-<div class="rela-block page">
-    <div class="rela-block top-bar">
-        <div class="caps name">
-            <div class="abs-center">
-                <span class="f-name"><?= htmlspecialchars($heading['name'] ?? 'Kyle') ?></span>
-                <span class="l-name"><?= htmlspecialchars($heading['surname'] ?? 'Shanks') ?></span>
+<div class="cv_template">
+    <head>
+        <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_5 copy.css">
+    </head>
+    <div class="rela-block page">
+        <div class="rela-block top-bar">
+            <div class="caps name">
+                <div class="abs-center">
+                    <span class="f-name"><?= htmlspecialchars($heading['name'] ?? 'Kyle') ?></span>
+                    <span class="l-name"><?= htmlspecialchars($heading['surname'] ?? 'Shanks') ?></span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="side-bar">
-        <div class="mugshot">
-            <div class="logo">
-                <svg viewbox="0 0 80 80" class="rela-block logo-svg">
-                    <path d="M 10 10 L 52 10 L 72 30 L 72 70 L 30 70 L 10 50 Z" stroke-width="2.5" fill="none" />
-                </svg>
-                <p class="logo-text">kj</p>
+        <div class="side-bar">
+            <div class="mugshot">
+                <div class="logo">
+                    <svg viewbox="0 0 80 80" class="rela-block logo-svg">
+                        <path d="M 10 10 L 52 10 L 72 30 L 72 70 L 30 70 L 10 50 Z" stroke-width="2.5" fill="none" />
+                    </svg>
+                    <p class="logo-text">kj</p>
+                </div>
             </div>
+            <p id="city_cv"><?= htmlspecialchars($heading['city'] ?? 'Astoria') ?></p>
+            <p id="phone_cv"><?= htmlspecialchars($heading['phone'] ?? '1-800-CALLPLZ') ?></p>
+            <p id="email_cv"><?= htmlspecialchars($heading['email'] ?? 'emailsareforsquares@gmail.com') ?></p><br>
+            <p class="rela-block caps side-header">Expertise</p>
+            <?php foreach ($skills as $skill): ?>
+                <p class="rela-block list-thing"><?= htmlspecialchars($skill) ?></p>
+            <?php endforeach; ?>
+            <p class="rela-block caps side-header">Education</p>
+            <?php foreach ($education as $edu): ?>
+                <p class="rela-block list-thing cv_uni"><?= htmlspecialchars($edu['insitution'] ?? 'Ho Chi Minh University of Technology') ?></p>
+                <p class="rela-block list-thing cv_degree"><?= htmlspecialchars($edu['degree'] ?? 'Bachelor') ?> in <span class="cv_field_study"><?= htmlspecialchars($edu['field_study'] ?? 'Computer Science') ?></span></p>
+                <p class="rela-block list-thing cv_year"><?= htmlspecialchars($edu['graduation_date'] ?? '2024-06') ?></p>
+                <p class="rela-block list-thing cv_city"><?= htmlspecialchars($edu['school_location'] ?? 'Ho Chi Minh City, Viet Nam') ?></p>
+            <?php endforeach; ?>
         </div>
-        <p id="city_cv"><?= htmlspecialchars($heading['city'] ?? 'Astoria') ?></p>
-        <p id="phone_cv"><?= htmlspecialchars($heading['phone'] ?? '1-800-CALLPLZ') ?></p>
-        <p id="email_cv"><?= htmlspecialchars($heading['email'] ?? 'emailsareforsquares@gmail.com') ?></p><br>
-        <p class="rela-block caps side-header">Expertise</p>
-        <?php foreach ($skills as $skill): ?>
-            <p class="rela-block list-thing"><?= htmlspecialchars($skill) ?></p>
-        <?php endforeach; ?>
-        <p class="rela-block caps side-header">Education</p>
-        <?php foreach ($education as $edu): ?>
-            <p class="rela-block list-thing cv_uni"><?= htmlspecialchars($edu['insitution'] ?? 'Ho Chi Minh University of Technology') ?></p>
-            <p class="rela-block list-thing cv_degree"><?= htmlspecialchars($edu['degree'] ?? 'Bachelor') ?> in <span class="cv_field_study"><?= htmlspecialchars($edu['field_study'] ?? 'Computer Science') ?></span></p>
-            <p class="rela-block list-thing cv_year"><?= htmlspecialchars($edu['graduation_date'] ?? '2024-06') ?></p>
-            <p class="rela-block list-thing cv_city"><?= htmlspecialchars($edu['school_location'] ?? 'Ho Chi Minh City, Viet Nam') ?></p>
-        <?php endforeach; ?>
-    </div>
-    <div class="rela-block content-container">
-        <h2 class="rela-block caps title">Jr Full-Stack Developer</h2>
-        <div class="rela-block separator"></div>
-        <div class="rela-block caps greyed">Profile</div>
-        <?php foreach ($summary as $item): ?>
-            <p class="long-margin"><?= htmlspecialchars($item) ?></p>
-        <?php endforeach; ?>
-        <div class="rela-block caps greyed">Experience</div>
-        <?php foreach ($working_history as $job): ?>
-            <h3 class="cv_title"><?= htmlspecialchars($job['title'] ?? 'Fresher') ?></h3>
-            <p class="light cv_employer"><?= htmlspecialchars($job['employer'] ?? 'Software Engineer') ?></p>
-            <p class="light cv_location"><?= htmlspecialchars($job['location'] ?? 'Dream Company') ?></p>
-            <p class="light"><span class="start_date_cv"><?= htmlspecialchars($job['start_date'] ?? '2020-05') ?></span> - <span class="end_date_cv"><?= htmlspecialchars($job['end_date'] ?? 'now') ?></span></p>
-        <?php endforeach; ?>
+        <div class="rela-block content-container">
+            <h2 class="rela-block caps title">Jr Full-Stack Developer</h2>
+            <div class="rela-block separator"></div>
+            <div class="rela-block caps greyed">Profile</div>
+            <?php foreach ($summary as $item): ?>
+                <p class="long-margin"><?= htmlspecialchars($item) ?></p>
+            <?php endforeach; ?>
+            <div class="rela-block caps greyed">Experience</div>
+            <?php foreach ($working_history as $job): ?>
+                <h3 class="cv_title"><?= htmlspecialchars($job['title'] ?? 'Fresher') ?></h3>
+                <p class="light cv_employer"><?= htmlspecialchars($job['employer'] ?? 'Software Engineer') ?></p>
+                <p class="light cv_location"><?= htmlspecialchars($job['location'] ?? 'Dream Company') ?></p>
+                <p class="light"><span class="start_date_cv"><?= htmlspecialchars($job['start_date'] ?? '2020-05') ?></span> - <span class="end_date_cv"><?= htmlspecialchars($job['end_date'] ?? 'now') ?></span></p>
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>

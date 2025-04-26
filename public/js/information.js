@@ -723,13 +723,74 @@ color: #444;">
     ];
 
 
+window.onload = function () {
+    if (localStorage.getItem('info')) {
+        info = JSON.parse(localStorage.getItem('info'))
+        document.getElementById("name").value = info.name
+        document.getElementById("surname").value = info.surname
+        document.getElementById("city").value = info.city
+        document.getElementById("country").value = info.country
+        document.getElementById("postcode").value = info.postcode
+        document.getElementById("phone").value = info.phone
+        document.getElementById("email").value = info.email
+        document.getElementById("title").value = info.title
+        document.getElementById("employer").value = info.employer
+        document.getElementById("location").value = info.location
+        document.getElementById("startMonth").selectedIndex = info.startMonth
+        document.getElementById("startYear").selectedIndex = info.startYear
+        document.getElementById("endMonth").selectedIndex = info.endMonth
+        document.getElementById("endYear").selectedIndex = info.endYear
+        document.getElementById("currentlyWorking").checked = info.currentCheckbox
+        document.getElementById("institution").value = info.institution
+        document.getElementById("school-location").value = info.schoolLocation
+        document.getElementById("degree").value = info.degree
+        document.getElementById("field-study").value = info.fieldStudy
+        document.getElementById("gradMonth").selectedIndex = info.gradMonth
+        document.getElementById("gradYear").selectedIndex = info.gradYear
+    }
+}
+
+
 let cv_containers = document.querySelectorAll(".cv-container")
 cv_containers.forEach((cv_container) => {
     const templateId = Number(cv_container.id);
     const template = tempList.find(temp => temp.id === templateId);
     cv_container.innerHTML = template.src;
-    cv_container.innerHTML += '<a class="text-center mt-5"><p class="pt-4" style="color: blue;">Change templates</p></a>';
+    cv_container.innerHTML += '<a href="/CV-Hosting-web-main/public/index.php?page=select_template" class="text-center mt-5 change-temp-link"><p class="pt-4" style="color: blue;">Change templates</p></a>';
 })
+
+
+// Event listener for change temp link
+let changeLinks = document.querySelectorAll(".change-temp-link").forEach(link => {
+    link.addEventListener('click', () => {
+        let info = {
+            name: document.getElementById("name").value,
+            surname: document.getElementById("surname").value,
+            city: document.getElementById("city").value,
+            country: document.getElementById("country").value,
+            postcode: document.getElementById("postcode").value,
+            phone: document.getElementById("phone").value,
+            email: document.getElementById("email").value,
+            title: document.getElementById("title").value,
+            employer: document.getElementById("employer").value,
+            location: document.getElementById("location").value,
+            startMonth: document.getElementById("startMonth").selectedIndex,
+            startYear: document.getElementById("startYear").selectedIndex,
+            endMonth: document.getElementById("endMonth").selectedIndex,
+            endYear: document.getElementById("endYear").selectedIndex,
+            currentCheckbox: document.getElementById("currentlyWorking").checked,
+            institution: document.getElementById("institution").value,
+            schoolLocation: document.getElementById("school-location").value,
+            degree: document.getElementById("degree").value,
+            fieldStudy: document.getElementById("field-study").value,
+            gradMonth: document.getElementById("gradMonth").selectedIndex,
+            gradYear: document.getElementById("gradYear").selectedIndex,
+
+        }
+        localStorage.setItem("info", JSON.stringify(info))
+    })
+})
+
 
 let currentCheckbox = document.getElementById("currentlyWorking");
 
@@ -917,6 +978,34 @@ buttonStep2b.addEventListener('click', () => {
         alert("Please fill all required fields")
         return
     }
+    const monthMap = {
+        "January": 0,
+        "February": 1,
+        "March": 2,
+        "April": 3,
+        "May": 4,
+        "June": 5,
+        "July": 6,
+        "August": 7,
+        "September": 8,
+        "October": 9,
+        "November": 10,
+        "December": 11
+    };
+    const startMonth = document.getElementById("startMonth").value;
+    const startYear = parseInt(document.getElementById("startYear").value);
+
+    const endMonth = document.getElementById("endMonth").value;
+    const endYear = parseInt(document.getElementById("endYear").value);
+
+    const startDate = new Date(startYear, monthMap[startMonth]);
+    const endDate = new Date(endYear, monthMap[endMonth]);
+    if (startDate > endDate) {
+        alert("Invalid Date!")
+        return
+    }
+
+
     handleButtonClick('step3a')
     changeSideBar('3')
     progressElement.style.width = "40%"
@@ -981,12 +1070,12 @@ buttonStep3b.addEventListener('click', () => {
         renderSummary();
 
         // Clear form inputs
-        document.getElementById("degree").value = "";
-        document.getElementById("institution").value = "";
-        document.getElementById("field-study").value = "";
-        document.getElementById("school-location").value = "";
-        document.getElementById("gradMonth").value = "Month";
-        document.getElementById("gradYear").value = "Year";
+        // document.getElementById("degree").value = "";
+        // document.getElementById("institution").value = "";
+        // document.getElementById("field-study").value = "";
+        // document.getElementById("school-location").value = "";
+        // document.getElementById("gradMonth").value = "Month";
+        // document.getElementById("gradYear").value = "Year";
     } else {
         console.log(gradMonthInput.value, gradYearInput.value)
         alert("Please fill in all fields or leave blank all fields.");
@@ -1492,13 +1581,13 @@ document.querySelector('.certifications').addEventListener('input', function () 
 
 buttonStep6.addEventListener('click', () => {
   // Kiểm tra các trường bắt buộc
-  if (!document.getElementById('name').value || 
-      !document.getElementById('surname').value || 
-      !document.getElementById('phone').value || 
-      !document.getElementById('email').value) {
-      alert('Please fill in all required fields (Name, Surname, Phone, Email).');
-      return;
-  }
+//   if (!document.getElementById('name').value || 
+//       !document.getElementById('surname').value || 
+//       !document.getElementById('phone').value || 
+//       !document.getElementById('email').value) {
+//       alert('Please fill in all required fields (Name, Surname, Phone, Email).');
+//       return;
+//   }
 
   // Thu thập heading
   const heading = {
@@ -1611,6 +1700,7 @@ function saveCV(cvData) {
   .then(data => {
       if (data.success) {
           alert('CV created successfully!' );
+          localStorage.clear()
           window.location.href = '/CV-Hosting-web-main/public/index.php?page=my_cvs';
       } else {
           throw new Error(data.msg || 'Unknown error from server');

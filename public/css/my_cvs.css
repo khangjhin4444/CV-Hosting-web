@@ -1,24 +1,22 @@
-.temp-list-grid {
+/* .temp-list-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
-}
+} */
 
 .temp-wrapper {
   display: flex;
   flex-direction: column;
-  height: 500px;
-  padding: 15px 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .temp {
   background-color: #f8f9fa;
   border-radius: 10px;
-  padding: 20px;
-  height: 300px; /* hoặc min-height nếu muốn */
+  padding: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  height: 100%;
 }
 
 .temp-buttons {

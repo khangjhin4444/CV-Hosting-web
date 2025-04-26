@@ -101,7 +101,7 @@ $stmt->execute();
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_name']);
 
-$templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name" => "cv_1"], ["id" => 3, "template_name" => "cv_1"]];
+$templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name" => "cv_2"], ["id" => 3, "template_name" => "cv_3"]];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,7 +138,7 @@ $templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name
     }
   </style>
 
-  <link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_1.css" media="all" />
+  <!-- <link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_1.css" media="all" /> -->
   <style>
     .cv_template {
       transform: scale(0.4);
@@ -231,27 +231,26 @@ $templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name
       <h1 style="font-weight: 600;">Created CVs</h1>
 
   </section>
-  <section class="pb-5">
-    <div class="container pb-5">
-      <span style="grid-area: temp-list;" class="temp-list-grid">
+  <section class="pb-5 h-100">
+    <div class="container h-100">
+      <div class="row h-100">
         <?php foreach ($templates as $temp) {
           echo "
-            <div class='temp-wrapper'>
+            <div class='col temp-wrapper p-0'>
               <div class='temp' data-id='" . $temp['id'] . "'>
                 ";
-          include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
+                include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
           echo "
-              </div>
-              <div class='temp-buttons'>
-                <button class='edit-btn' >Edit</button>
-                
-                <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ")'>Share</button>
+                <div class='temp-buttons'>
+                  <button class='edit-btn' >Delete</button>
+                  
+                  <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ")'>Share</button>
+                </div>
               </div>
             </div>
-        </div>
         ";
         } ?>
-      </span>
+      </div>
     </div>
   </section>
   <!-- <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script> -->

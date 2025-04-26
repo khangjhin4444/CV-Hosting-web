@@ -99,6 +99,9 @@ $summary = isset($summary) ? $summary : [];
 
 <div class="cv_template" style="font-family: Georgia, serif;
   color: #444;">
+  <head>
+    <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_1.css">
+  </head>
   <div class="container-fluid">
       <!-- Header -->
       <header id="hd" class="row border-bottom pb-4 mb-4 display-flex">
@@ -191,3 +194,4 @@ $summary = isset($summary) ? $summary : [];
           </p>
       </footer>
   </div>
+</div>

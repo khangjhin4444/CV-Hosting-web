@@ -1,4 +1,4 @@
-<div class="resume container shadow-lg my-5 rounded px-5 py-4">
+    <!-- <div class="resume container shadow-lg my-5 rounded px-5 py-4">
     <div class="top border-top py-4 text-start rounded-top">
         <h5 class="title display-5 text-uppercase"><?php echo $heading['name'] . ' ' . $heading['surname']; ?></h5>
         <h6 class="sub_title text-muted">Graphic & Web Designer</h6>
@@ -232,7 +232,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <?php
     $heading = isset($heading) ? $heading : [];
@@ -241,8 +241,11 @@
     $skills = isset($skills) ? $skills : [];
     $summary = isset($summary) ? $summary : [];
     ?>
-
-    <div class="resume container shadow-lg my-5 rounded px-5 py-4">
+<div class="cv_template">
+    <head>
+        <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_2 copy.css">
+    </head>
+    <div class="resume container shadow-lg rounded ">
         <div class="top border-top py-4 text-start rounded-top">
             <h5 class="title display-5 text-uppercase">
                 <span class="f-name"><?= htmlspecialchars($heading['name'] ?? 'John') ?></span>
@@ -392,3 +395,4 @@
             </div>
         </div>
     </div>
+</div>
