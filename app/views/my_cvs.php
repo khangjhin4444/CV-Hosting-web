@@ -232,7 +232,20 @@ try {
             <div class='col temp-wrapper p-0'>
               <div class='temp' data-id='" . $temp['id'] . "'>
                 ";
+                // include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
+                ob_start();
+
+                // Thực thi file PHP
                 include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
+
+                // Lấy toàn bộ nội dung sau khi đã render
+                $fullContent = ob_get_clean();
+
+                // Tìm phần body
+                if (preg_match('/<body[^>]*>(.*?)<\/body>/is', $fullContent, $matches)) {
+                    $bodyContent = $matches[1];
+                    echo $bodyContent;
+                }
           echo "
                 <div class='temp-buttons'>
                   <button class='edit-btn' >Delete</button>
