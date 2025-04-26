@@ -6,10 +6,10 @@ $education = isset($education) ? $education : [];
 $skills = isset($skills) ? $skills : [];
 $summary = isset($summary) ? $summary : [];
 ?>
-<!-- <head>
+<head>
   <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_1.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-</head> -->
+</head>
 <!-- <div class="cv_template" style="font-family: Georgia, serif; color: #444;">
   <div class="container-fluid">
       <header id="hd" class="row border-bottom pb-4 mb-4 display-flex">

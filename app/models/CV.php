@@ -12,8 +12,9 @@ class CV {
             $this->conn->beginTransaction();
 
             // Tạo CV
-            $stmt = $this->conn->prepare("INSERT INTO cvs (user_id) VALUES (:user_id)");
-            $stmt->execute(['user_id' => $userId]);
+            $templateId = $_SESSION['user']['template_id'];
+            $stmt = $this->conn->prepare("INSERT INTO cvs (user_id, content) VALUES (:user_id, :content)");
+            $stmt->execute(['user_id' => $userId, 'content' => $templateId,]);
             $cvId = $this->conn->lastInsertId();
 
             // Lưu thông tin cá nhân

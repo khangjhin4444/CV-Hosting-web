@@ -104,6 +104,27 @@ $stmt->bindParam(':email', $email);
 $stmt->execute();
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 $displayName = htmlspecialchars($userData['first_name'].' '.$userData['last_name']);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Get the raw POST data
+  $rawInput = file_get_contents('php://input');
+  $input = json_decode($rawInput, true);
+
+  if (isset($input['templateId'])) {
+      $templateId = intval($input['templateId']); // Sanitize input
+
+      // Save templateId to the session
+      $_SESSION['user']['template_id'] = $templateId;
+
+      // Respond with success
+      echo json_encode(['success' => true]);
+      exit;
+  } else {
+      // Respond with error
+      echo json_encode(['success' => false, 'msg' => 'Invalid template ID']);
+      exit;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

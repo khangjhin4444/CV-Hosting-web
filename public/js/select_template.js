@@ -883,6 +883,26 @@ confirmBtn.addEventListener('click', () => {
         let templateId = chosenTemplate.dataset.id;
         // console.log(templateId);
         // window.location.href = `?page=experience.php&template=${templateId}&category=${categoryId}`;
+        fetch('/CV-Hosting-web-main/public/index.php?page=select_template', { 
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ templateId: templateId }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log('Template ID saved to session successfully');
+                // Redirect to another page if needed
+                window.location.href = '/CV-Hosting-web-main/public/index.php?page=information';
+            } else {
+                console.error('Failed to save Template ID:', data.msg);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
         let xhr = new XMLHttpRequest();
         xhr.open("GET", "?tempId=" + templateId, true);
 
