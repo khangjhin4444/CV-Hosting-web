@@ -292,18 +292,28 @@ if ($isLoggedIn) {
         </ul>
         <i id="right" class="bi bi-chevron-right"></i>
         <div class="container d-flex justify-content-center align-items-center pt-5">
-            <button class="btn btn-lg" style="
+            <button <?php
+                    if ($cvCount > 2) {
+                        echo 'disabled';
+                    }
+                    ?> class="btn btn-lg view-all-btn" style="
                 color: #DAC0A3;
                 background-color: #102C57;
                 border: 2px solid #DAC0A3;
                 border-radius: 0%;">
-                VIEW ALL TEMPLATE
+                <?php
+                        if ($cvCount > 2) {
+                            echo 'Reached the limit!';
+                        } else {
+                            echo 'VIEW ALL TEMPLATES';
+                        }
+                        ?>
             </button>
         </div>
     </div>
 
     <section class="text-start pt-5">
-        <div class="container" style="background-color: #FFFFFF;">
+        <div class="container-fluid" style="background-color: #FFFFFF;">
             <div class="row align-items-start justify-content-around">
                 <div class="col-md py-4 pb-5">
                     <h1 class="mb-5" style="font-weight: 600;">Let's work together</h1>

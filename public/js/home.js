@@ -851,6 +851,10 @@ color: #444;">
     </footer>
 </div>` }];
 
+document.querySelector(".view-all-btn").addEventListener('click', () => {
+    window.location.href = "/CV-Hosting-web-main/public/index.php?page=select_template"
+})
+
 let createBtn = document.querySelector('.create-cv-btn');
 createBtn.addEventListener('click', () => {
     window.location.href = "/CV-Hosting-web-main/public/index.php?page=experience";
