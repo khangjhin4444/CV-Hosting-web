@@ -219,7 +219,7 @@ try {
   </section>
   <section class="pb-5 h-100">
     <div class="container h-100">
-      <div class="row h-100">
+      <div class="row h-100 justify-content-center">
         <?php foreach ($templates as $temp) {
 
           $cvId = $temp['id'];
@@ -233,7 +233,7 @@ try {
             $skills = $cvData['skills'];
             $summary = $cvData['summary'];
             $finalize = $cvData['finalize'];
-            echo "<div class='col temp-wrapper p-0'>";
+            echo "<div class='col-3 temp-wrapper p-0'>";
             echo "<div class='temp' data-id='" . $temp['id'] . "'>";
 
             // Include template và truyền dữ liệu
