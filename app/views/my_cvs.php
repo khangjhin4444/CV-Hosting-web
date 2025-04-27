@@ -253,20 +253,22 @@ try {
                 $fullContent = ob_get_clean();
 
                 // Tìm phần body
+                echo "<div id='cv-content-" . $temp['id'] . "'>";
                 if (preg_match('/<body[^>]*>(.*?)<\/body>/is', $fullContent, $matches)) {
                     $bodyContent = $matches[1];
                     echo $bodyContent;
                 }
-          echo "
-                <div class='temp-buttons'>
-                  <button class='edit-btn' >Delete</button>
-                  
-                  <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ")'>Share</button>
+                echo "</div>";
+              echo "
+                    <div class='temp-buttons'>
+                      <button class='edit-btn' >Delete</button>
+                      
+                      <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ")'>Share</button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-        ";
-          }
+            ";
+              }
         } ?>
       </div>
     </div>
@@ -274,8 +276,32 @@ try {
   <!-- <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script> -->
    <script>
     function shareTemplate(cvId) {
-    console.log('Sharing CV with ID:', cvId);
-    window.location.href = `/CV-Hosting-web-main/public/templates/cv_1.php?cv_id=${cvId}`;
+    const cvElement = document.getElementById('cv-content-' + cvId);
+    if (!cvElement) {
+        alert('Error: CV content not found.');
+        return;
+    }
+    const cvHtml = cvElement.innerHTML;
+
+    const formData = new FormData();
+    formData.append('cv_html', cvHtml);
+
+    fetch('/CV-Hosting-web-main/public/index.php?page=generate_share_link', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.success) {
+            window.location.href = result.link;
+        } else {
+            alert('Error sharing CV: ' + result.message);
+        }
+    })
+    .catch(error => {
+        alert('An error occurred while sharing the CV. Please try again.');
+        console.error('Error:', error);
+    });
 }
     </script>
 </body>

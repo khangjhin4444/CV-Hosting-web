@@ -82,6 +82,9 @@ switch ($page) {
         }
         require_once __DIR__ . '/../app/views/view_templates.php';
         break;
+    case 'generate_share_link':
+        require_once __DIR__ . '/../app/views/generate_share_link.php';
+        break;
     default:
 
         break;

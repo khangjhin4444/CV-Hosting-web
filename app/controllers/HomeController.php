@@ -35,6 +35,10 @@ class HomeController {
     public function viewTemplates() {
         require_once dirname(__DIR__) . '/views/view_templates.php';
     }
+
+    public function generate_share_link() {
+        require_once dirname(__DIR__) . '/views/generate_share_link.php';
+    }
     
     public function admin() {
         require_once dirname(__DIR__) . '/views/admin.php';

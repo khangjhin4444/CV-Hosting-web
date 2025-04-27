@@ -74,6 +74,11 @@ switch ($page) {
         $controller = new HomeController();
         $controller->viewTemplates();
         break;
+    case 'generate_share_link':
+    
+        $controller = new HomeController();
+        $controller->generate_share_link();
+        break;
         
     default:
         $controller = new HomeController();
