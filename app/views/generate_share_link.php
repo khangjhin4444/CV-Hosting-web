@@ -46,7 +46,6 @@ try {
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Shared CV</title>
     
-    <link rel='stylesheet' href='/CV-Hosting-web-main/public/css/" . htmlspecialchars($template_name) . ".css'>
     <link rel='stylesheet' href='/CV-Hosting-web-main/public/css/node_modules/bootstrap/dist/css/bootstrap.css'>
     <link rel='stylesheet' href='/CV-Hosting-web-main/public/css/header.css'>
     <link rel='stylesheet' href='/CV-Hosting-web-main/public/css/body.css'>
@@ -57,7 +56,7 @@ try {
         href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'
         rel='stylesheet'>
 </head>
-<body>
+<body class='p-5' style='margin: 0 80px'>
 " . $cv_content . "
 </body>
 </html>";
