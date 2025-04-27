@@ -217,9 +217,9 @@ try {
       <h1 style="font-weight: 600;">Created CVs</h1>
 
   </section>
-  <section class="pb-5 h-100">
-    <div class="container h-100">
-      <div class="row h-100 justify-content-center">
+  <section>
+    <div class="container-fluid ">
+      <div class="row  justify-content-center">
         <?php foreach ($templates as $temp) {
 
           $cvId = $temp['id'];
@@ -266,7 +266,8 @@ try {
       </div>
     </div>
   </section>
-  <!-- <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script> -->
+  
+  <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script>
   <script>
     function shareTemplate(cvId, template) {
       const cvElement = document.getElementById('cv-content-' + cvId);
