@@ -41,7 +41,7 @@ try {
 
   foreach ($templates as $template) {
     $templateId = $template['id'];
-
+    
     if (isset($userCVs[$templateId])) {
         $cvId = $templateId;
         
@@ -75,7 +75,7 @@ try {
         $stmt->execute([$cvId]);
         $finalize = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-        // Store data for this template
+        // Store data 
         $userCVs[$templateId]['data'] = [
             'heading' => $heading,
             'working_history' => $working_history,
@@ -228,24 +228,26 @@ try {
       <div class="row h-100">
         <?php foreach ($templates as $temp) {
           
-          echo "
-            <div class='col temp-wrapper p-0'>
-              <div class='temp' data-id='" . $temp['id'] . "'>
-                ";
-                // include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
-                ob_start();
+          $cvId = $temp['id'];
+          $cvData = $userCVs[$cvId]['data'] ?? null;
 
-                // Thực thi file PHP
-                include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
+          if ($cvData) {
+              // Gán dữ liệu cho template
+              $heading = $cvData['heading'];
+              $working_history = $cvData['working_history'];
+              $education = $cvData['education'];
+              $skills = $cvData['skills'];
+              $summary = $cvData['summary'];
+              $finalize = $cvData['finalize'];
 
-                // Lấy toàn bộ nội dung sau khi đã render
-                $fullContent = ob_get_clean();
-
-                // Tìm phần body
-                if (preg_match('/<body[^>]*>(.*?)<\/body>/is', $fullContent, $matches)) {
-                    $bodyContent = $matches[1];
-                    echo $bodyContent;
-                }
+              echo "<div class='col temp-wrapper p-0'>";
+              echo "<div class='temp' data-id='" . $temp['id'] . "'>";
+              
+              // Include template và truyền dữ liệu
+              ob_start();
+              include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
+              $bodyContent = ob_get_clean();
+              echo $bodyContent;
           echo "
                 <div class='temp-buttons'>
                   <button class='edit-btn' >Delete</button>
@@ -255,6 +257,7 @@ try {
               </div>
             </div>
         ";
+          }
         } ?>
       </div>
     </div>
