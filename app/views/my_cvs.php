@@ -266,7 +266,7 @@ try {
       </div>
     </div>
   </section>
-  
+
   <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script>
   <script>
     function shareTemplate(cvId, template) {

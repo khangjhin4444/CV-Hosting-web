@@ -19,7 +19,7 @@
 }
 
 /* Contact Info */
-.template-1 .contact-info a {
+.template-1.contact-info a {
     color: #990003;
 }
 
@@ -34,27 +34,27 @@
 }
 
 /* Skills */
-.template-1 .talent h2 {
+.template-1.talent h2 {
     margin-bottom: 0.5rem;
 }
 
 /* Technical */
-.template-1 .skills-list li {
+.template-1.skills-list li {
     line-height: 1.75;
     border-bottom: 1px solid #ccc;
     padding: 0.25rem 0;
 }
 
-.template-1 .skills-list li:last-child {
+.template-1.skills-list li:last-child {
     border-bottom: none;
 }
 
 /* Experience */
-.template-1 .job {
+.template-1.job {
     position: relative;
 }
 
-.template-1 .job h4 {
+.template-1.job h4 {
     color: #666;
 }
 

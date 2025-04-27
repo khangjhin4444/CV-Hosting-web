@@ -130,7 +130,7 @@ echo implode(' ', $summary);
                         <div class="card-body">
                             <h2 class="card-title h4 text-uppercase text-teal fw-semibold">Summary</h2>
                             <hr class="border-dotted">
-                            <p class="text-muted small cv_summary">
+                            <p class=" cv_summary">
                                 <?= htmlspecialchars($summary[0] ?? 'Front end developer') ?>
                             </p>
                         </div>
