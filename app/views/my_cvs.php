@@ -1,97 +1,17 @@
 <?php
 
-$test = '{
-    "name": "John Doe",
-    "age": 30,
-    "email": "john.doe@example.com",
-    "address": {
-        "street": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-    }
-}';
-$heading = [[]];
-if (gettype($test) === 'string') {
-  $test = json_decode($test, true);
-}
-foreach ($test as $res)
-  if (gettype($res) === 'array') {
-    // echo implode(' ', $res);
-  } else
-    // echo $res;
-    $heading = [
-      'name' => 'Khoa',
-      'surname' => 'Huynh',
-      'city' => 'Ho Chi Minh',
-      'country' => 'Viet Nam',
-      'postcode' => '50000',
-      'phone' => '(84)932523714',
-      'email' => 'huynhkhoa03012004@gmail.com',
-      'address' => '273/66 Nguyen Van Dau, Ward 11, Binh Thanh District'
-    ];
-$working_history = [
-  [
-    'title' => 'Fresher',
-    'employer' => 'Software Engineer',
-    'location' => 'Dream Company',
-    'start_date' => '2020-05',
-    'end_date' => '2023-08',
-  ],
-  [
-    'title' => 'Freelance',
-    'employer' => 'Fullstack Developer',
-    'location' => 'Home Company',
-    'start_date' => '2023-09',
-    'end_date' => 'now',
-  ]
-];
 
-$education = [
-  [
-    'insitution' => 'Ho Chi Minh University of Technology',
-    'school_location' => 'Ho Chi Minh City, Viet Nam',
-    'degree' => 'Bachelor',
-    'field_study' => 'Computer Science',
-    'gpa' => '',
-    'graduation_date' => '2024-06',
-  ]
-];
-$skills = [
-  'Teamwork and Collaboration',
-  'Friendly, positive attitude',
-  'Problem-solving',
-  'Test',
-  'Test',
-  'Test',
-  'Test',
-  'Test',
-];
-$summary = [
-  'Organized and dependable candidate successful at managing multiple priorities with a positive attitude. Willingness to take on added responsibilities to meet team goals.',
-  'Progressively evolve cross-platform ideas before impactful infomediaries.
-                            Energistically visualize tactical initiatives before cross-media catalysts for change.',
-
-];
-$finalize = [
-  'languages' => [
-    'html' => 'html',
-    'css' => 'css',
-    'javascript' => 'javascript',
-    'php' => 'php'
-  ],
-  'tools' => [
-    'git' => 'git',
-    'github' => 'github',
-    'docker' => 'docker',
-    'mysql' => 'mysql'
-  ]
-];
 
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../../config/constant.php';
 
+
 $user = $_SESSION['user'];
+$userId = $_SESSION['user']['id'];
+
+
+
+
 $email = htmlspecialchars($user['email']);
 
 // Lấy tên từ DB
@@ -101,7 +21,79 @@ $stmt->execute();
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 $displayName = htmlspecialchars($userData['first_name'] . ' ' . $userData['last_name']);
 
-$templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name" => "cv_2"], ["id" => 3, "template_name" => "cv_3"]];
+$templates = [];
+
+$userCVs = [];
+
+try {
+  $stmt = $conn->prepare("SELECT * FROM cvs WHERE user_id = ?");
+  $stmt->execute([$userId]);
+  $cvs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $i = 1;
+  foreach ($cvs as $cv){
+    $userCVs[$cv['cv_id']] = $cv;
+    $templates[] = [
+        'id' => $cv['cv_id'],
+        'template_name' => "cv_" . htmlspecialchars($cv['content']),
+    ];
+    $i++;
+  }
+
+  foreach ($templates as $template) {
+    $templateId = $template['id'];
+    
+    if (isset($userCVs[$templateId])) {
+        $cvId = $templateId;
+        
+        // Fetch heading
+        $stmt = $conn->prepare("SELECT * FROM personal_info WHERE cv_id = ?");
+        $stmt->execute([$cvId]);
+        $heading = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Fetch working history
+        $stmt = $conn->prepare("SELECT * FROM working_history WHERE cv_id = ?");
+        $stmt->execute([$cvId]);
+        $working_history = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Fetch education
+        $stmt = $conn->prepare("SELECT * FROM education WHERE cv_id = ?");
+        $stmt->execute([$cvId]);
+        $education = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Fetch skills
+        $stmt = $conn->prepare("SELECT skill_name FROM skills WHERE cv_id = ?");
+        $stmt->execute([$cvId]);
+        $skills = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+        // Fetch summary
+        $stmt = $conn->prepare("SELECT summary_text FROM summaries WHERE cv_id = ?");
+        $stmt->execute([$cvId]);
+        $summary = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+        // Fetch additional
+        $stmt = $conn->prepare("SELECT * FROM additional WHERE cv_id = ?");
+        $stmt->execute([$cvId]);
+        $finalize = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        // Store data 
+        $userCVs[$templateId]['data'] = [
+            'heading' => $heading,
+            'working_history' => $working_history,
+            'education' => $education,
+            'skills' => $skills,
+            'summary' => $summary,
+            'finalize' => $finalize
+        ];
+    } else {
+        // If no CV exists for this template, set data as null or handle accordingly
+        $userCVs[$templateId]['data'] = null;
+    }
+  }
+  
+} catch (Exception $e){
+  die('Error fetching ' . $e->getMessage());
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -235,11 +227,23 @@ $templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name
     <div class="container h-100">
       <div class="row h-100">
         <?php foreach ($templates as $temp) {
-          echo "
-            <div class='col temp-wrapper p-0'>
-              <div class='temp' data-id='" . $temp['id'] . "'>
-                ";
-                // include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
+          
+          $cvId = $temp['id'];
+          $cvData = $userCVs[$cvId]['data'] ?? null;
+
+          if ($cvData) {
+              // Gán dữ liệu cho template
+              $heading = $cvData['heading'];
+              $working_history = $cvData['working_history'];
+              $education = $cvData['education'];
+              $skills = $cvData['skills'];
+              $summary = $cvData['summary'];
+              $finalize = $cvData['finalize'];
+
+              echo "<div class='col temp-wrapper p-0'>";
+              echo "<div class='temp' data-id='" . $temp['id'] . "'>";
+              
+              // Include template và truyền dữ liệu
                 ob_start();
 
                 // Thực thi file PHP
@@ -262,6 +266,7 @@ $templates = [["id" => 1, "template_name" => "cv_1"], ["id" => 2, "template_name
               </div>
             </div>
         ";
+          }
         } ?>
       </div>
     </div>
