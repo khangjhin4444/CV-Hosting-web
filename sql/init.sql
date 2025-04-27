@@ -44,8 +44,8 @@ CREATE TABLE working_history (
     title VARCHAR(100),
     employer VARCHAR(100) ,
     location VARCHAR(100),
-    start_date VARCHAR(7), -- Định dạng YYYY-MM
-    end_date VARCHAR(7), -- Định dạng YYYY-MM hoặc 'now'
+    start_date VARCHAR(255), -- Định dạng YYYY-MM
+    end_date VARCHAR(255), -- Định dạng YYYY-MM hoặc 'now'
     FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
