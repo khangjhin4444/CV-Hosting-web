@@ -223,6 +223,7 @@ color: #444;">
                 </p>
             </footer>
         </div>
+    </div>
 </body>
 
 </html>
