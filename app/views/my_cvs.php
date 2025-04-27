@@ -218,7 +218,7 @@ try {
 
   </section>
   <section class="pb-5 h-100">
-    <div class="container h-100">
+    <div class="container-fluid h-100">
       <div class="row h-100 justify-content-center">
         <?php foreach ($templates as $temp) {
 
