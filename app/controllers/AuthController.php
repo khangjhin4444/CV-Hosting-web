@@ -164,26 +164,47 @@ class AuthController {
     }
 
     public function handleRequest() {
-        $action = $_GET['action'] ?? '';
+        // Check if the action is in POST data since the form uses method="post"
+        $action = $_POST['action'] ?? '';
+    
         if ($action === 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $userId = $_POST['user_id'] ?? null;
-            if ($userId) {
-                $result = $this->userModel->delete($userId);
-                if ($result) {
-                    header('Content-Type: application/json');
-                    echo json_encode(['success' => true, 'msg' => 'User deleted successfully']);
-                    exit;
-                } else {
-                    header('Content-Type: application/json');
-                    echo json_encode(['success' => false, 'msg' => 'Failed to delete user']);
-                    exit;
-                }
-            } else {
+            // Check admin privileges
+            if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+                header('Content-Type: application/json');
+                echo json_encode(['success' => false, 'msg' => 'Unauthorized']);
+                exit;
+            }
+    
+            $userId = filter_input(INPUT_POST, 'user_id', FILTER_VALIDATE_INT);
+            if (!$userId) {
                 header('Content-Type: application/json');
                 echo json_encode(['success' => false, 'msg' => 'User ID is required']);
                 exit;
             }
-        
+    
+            // Prevent self-deletion
+            if ($userId === $_SESSION['user']['id']) {
+                header('Content-Type: application/json');
+                echo json_encode(['success' => false, 'msg' => 'You cannot delete your own account']);
+                exit;
+            }
+    
+            try {
+                // Delete user
+                $result = $this->userModel->delete($userId);
+                header('Content-Type: application/json');
+                if ($result) {
+                    echo json_encode(['success' => true, 'msg' => 'User deleted successfully']);
+                } else {
+                    echo json_encode(['success' => false, 'msg' => 'Failed to delete user']);
+                }
+                exit;
+            } catch (Exception $e) {
+                error_log('Error deleting user: ' . $e->getMessage());
+                header('Content-Type: application/json');
+                echo json_encode(['success' => false, 'msg' => 'Error: ' . $e->getMessage()]);
+                exit;
+            }
         } else {
             header('Content-Type: application/json');
             echo json_encode(['success' => false, 'msg' => 'Invalid action']);

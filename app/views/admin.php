@@ -8,10 +8,7 @@ if (! isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 // Kết nối database
 require_once __DIR__.'/../../config/database.php';
-if (! $conn) {
-    error_log('Database connection failed');
-    exit('Database connection failed');
-}
+
 
 // Lấy danh sách người dùng và số CV
 try {
@@ -28,22 +25,7 @@ try {
     $users = [];
 }
 
-// Lấy cấu hình hệ thống
-try {
-    $stmt = $conn->prepare("
-        SELECT setting_name, setting_value
-        FROM settings
-        WHERE setting_name IN ('cv_limit', 'guest_view')
-    ");
-    $stmt->execute();
-    $settings = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
-    $cv_limit = $settings['cv_limit'] ?? 3;
-    $guest_view = $settings['guest_view'] ?? 1;
-} catch (PDOException $e) {
-    error_log('Error fetching settings: '.$e->getMessage());
-    $cv_limit = 3;
-    $guest_view = 1;
-}
+
 
 // Xử lý thông báo
 $success = isset($_GET['success']) ? htmlspecialchars($_GET['success']) : '';
@@ -74,7 +56,7 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
 
   <nav class="nav nav-custom d-flex flex-wrap">
     <a href="#user-management">User Management</a>
-    <a href="#system-settings">System Management</a>
+    
   </nav>
 
   <div class="container my-4">
@@ -111,11 +93,8 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
                   <td><?php echo htmlspecialchars($user['created_at']); ?></td>
                   <td><?php echo htmlspecialchars($user['cv_count']); ?></td>
                   <td>
-                    <form action="/CV-Hosting-web-main/app/controllers/CVController.php?action=createCV'" method="post" style="display:inline;">
-                      <input type="hidden" name="action" value="delete">
-                      <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
-                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
-                    </form>
+                    
+                  <button type="button" class="btn btn-danger btn-sm delete-user" onclick="deleteUser(<?php echo htmlspecialchars($user['id']); ?>)">Delete</button>
                   </td>
                 </tr>
               <?php } ?>
@@ -125,7 +104,7 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
       </div>
     </div>
 
-    <div class="section" id="system-settings">
+    <!-- <div class="section" id="system-settings">
       <h2>System Management</h2>
       <form action="/CV-Hosting-web-main/app/controllers/SettingsController.php" method="post">
         <input type="hidden" name="action" value="save_settings">
@@ -137,9 +116,39 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
         
 
       </form>
-    </div>
+    </div> -->
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function deleteUser(userId) {
+  if (confirm('Are you sure you want to delete this user?')) {
+    // Create a form and submit it programmatically
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/CV-Hosting-web-main/app/controllers/AdminController.php';
+    
+    // Create hidden input for user ID
+    const userIdInput = document.createElement('input');
+    userIdInput.type = 'hidden';
+    userIdInput.name = 'user_id';
+    userIdInput.value = userId;
+    
+    // Create hidden input for action
+    const actionInput = document.createElement('input');
+    actionInput.type = 'hidden';
+    actionInput.name = 'action';
+    actionInput.value = 'delete_user';
+    
+    // Append inputs to form
+    form.appendChild(userIdInput);
+    form.appendChild(actionInput);
+    
+    // Append form to body and submit
+    document.body.appendChild(form);
+    form.submit();
+  }
+}
+  </script>
 </body>
 </html>
