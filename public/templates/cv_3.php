@@ -79,6 +79,12 @@ $working_history = isset($working_history) ? $working_history : [];
 $education = isset($education) ? $education : [];
 $skills = isset($skills) ? $skills : [];
 $summary = isset($summary) ? $summary : [];
+
+    echo implode(' ',$heading);
+    echo implode(' ',$working_history);
+    echo implode(' ',$education);
+    echo implode(' ',$skills);
+    echo implode(' ',$summary);
 ?>
 
 <!DOCTYPE html>
