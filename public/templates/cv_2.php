@@ -298,7 +298,8 @@ $summary = isset($summary) ? $summary : [];
                                         <div class="col">
                                             <h6 class="info_title mb-1">Email</h6>
                                             <div class="info_text small">
-                                                <a id="email_cv" style="word-break: break-all; white-space: normal;"
+                                                <a id="email_cv"
+                                                    style="word-break: break-all; white-space: normal; color: #333; text-decoration: none;"
                                                     href="mailto:<?= htmlspecialchars($heading['email'] ?? 'lorem@ipsum.com') ?>">
                                                     <?= htmlspecialchars($heading['email'] ?? 'lorem@ipsum.com') ?>
                                                 </a>

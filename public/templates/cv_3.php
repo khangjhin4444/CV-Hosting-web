@@ -96,7 +96,7 @@ echo implode(' ', $summary);
 </head>
 
 <body>
-    <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_3 copy.css">
+    <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_3 copy.css" media="all">
     <div data-id="3" class="cv-preview-wrapper temp">
         <div class="cv_template" style="font-family: Georgia, serif; color: #444;">
             <div class="container-fluid">

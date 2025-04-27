@@ -110,7 +110,7 @@ $summary = isset($summary) ? $summary : [];
 <body>
     <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_1.css" media="all">
     <div data-id="1" class="cv-preview-wrapper temp justify-content-center align-items-center">
-        <div class="cv_template container-fluid" style="font-family: Georgia, serif;
+        <div class="cv_template template-1 container-fluid" style="font-family: Georgia, serif;
 color: #444;">
             <!-- Header -->
             <header id="hd" class="row border-bottom pb-4 mb-4 display-flex">

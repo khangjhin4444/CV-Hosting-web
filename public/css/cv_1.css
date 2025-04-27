@@ -7,54 +7,54 @@
 
 
 /* Header */
-#hd h1 {
+.template-1 #hd h1 {
     font-size: 3rem;
     /* Adjusted from 48px for consistency */
     letter-spacing: 3px;
 }
 
-#hd h2 {
+.template-1 #hd h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 /* Contact Info */
-.contact-info a {
+.template-1 .contact-info a {
     color: #990003;
 }
 
-.contact-info a:hover {
+.template-1 .contact-info a:hover {
     text-decoration: none;
 }
 
 /* Profile */
-p.enlarge {
+.template-1 p.enlarge {
     font-size: 1.25rem;
     line-height: 1.5;
 }
 
 /* Skills */
-.talent h2 {
+.template-1 .talent h2 {
     margin-bottom: 0.5rem;
 }
 
 /* Technical */
-.skills-list li {
+.template-1 .skills-list li {
     line-height: 1.75;
     border-bottom: 1px solid #ccc;
     padding: 0.25rem 0;
 }
 
-.skills-list li:last-child {
+.template-1 .skills-list li:last-child {
     border-bottom: none;
 }
 
 /* Experience */
-.job {
+.template-1 .job {
     position: relative;
 }
 
-.job h4 {
+.template-1 .job h4 {
     color: #666;
 }
 
@@ -64,11 +64,11 @@ p.enlarge {
 }
 
 /* Links */
-a {
+.template-1 a {
     color: #990003;
 }
 
-a:hover {
+.template-1 a:hover {
     text-decoration: none;
 }
 
