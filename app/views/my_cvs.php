@@ -263,7 +263,7 @@ try {
                     <div class='temp-buttons'>
                       <button class='edit-btn' >Delete</button>
                       
-                      <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ")'>Share</button>
+                      <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ", \"" . $temp['template_name'] . "\")'>Share</button>
                     </div>
                   </div>
                 </div>
@@ -275,7 +275,7 @@ try {
   </section>
   <!-- <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script> -->
    <script>
-    function shareTemplate(cvId) {
+    function shareTemplate(cvId, template) {
     const cvElement = document.getElementById('cv-content-' + cvId);
     if (!cvElement) {
         alert('Error: CV content not found.');
@@ -285,6 +285,7 @@ try {
 
     const formData = new FormData();
     formData.append('cv_html', cvHtml);
+    formData.append('template', template);
 
     fetch('/CV-Hosting-web-main/public/index.php?page=generate_share_link', {
         method: 'POST',
