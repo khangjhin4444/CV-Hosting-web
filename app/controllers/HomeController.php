@@ -39,7 +39,11 @@ class HomeController {
     public function generate_share_link() {
         require_once dirname(__DIR__) . '/views/generate_share_link.php';
     }
-    
+   
+    public function delete_cv() {
+        require_once dirname(__DIR__) . '/views/delete_cv.php';
+    }
+
     public function admin() {
         require_once dirname(__DIR__) . '/views/admin.php';
     }

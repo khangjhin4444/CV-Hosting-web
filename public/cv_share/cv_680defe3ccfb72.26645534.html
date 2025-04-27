@@ -5,7 +5,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Shared CV</title>
     
-    <link rel='stylesheet' href='/CV-Hosting-web-main/public/css/cv_2.css'>
+    <link rel='stylesheet' href='/CV-Hosting-web-main/public/css/.css'>
     <link rel='stylesheet' href='/CV-Hosting-web-main/public/css/node_modules/bootstrap/dist/css/bootstrap.css'>
     <link rel='stylesheet' href='/CV-Hosting-web-main/public/css/header.css'>
     <link rel='stylesheet' href='/CV-Hosting-web-main/public/css/body.css'>
@@ -18,31 +18,28 @@
 </head>
 <body>
 
-    <div class="cv_template">
-        
-            <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_2 copy.css">
-        
-        <div class="resume container shadow-lg rounded ">
-            <div class="top border-top py-4 text-start rounded-top">
-                <h5 class="title display-5 text-uppercase">
+    <link rel="stylesheet" href="/CV-Hosting-web-main/public/css/cv_2 copy.css" media="all">
+    <div data-id="2" class="cv-preview-wrapper temp align-items-center">
+        <div class="cv_template container-fluid" style="font-family: 'Varela Round', sans-serif; color: #444;">
+            <div class="template-2 top border-top py-4 text-start rounded-top">
+                <h5 class="title display-5 text-uppercase text-start">
                     <span class="f-name">Le</span>
                     <span class="l-name">Nghia</span>
                 </h5>
-                <h6 class="sub_title text-muted">Graphic &amp; Web Designer</h6>
+                <h6 class="sub_title text-muted">
+                    Graphic &amp; Web Designer                </h6>
             </div>
             <div class="bottom py-4">
                 <div class="row g-4">
-                    <div class="col-md-3 left">
+                    <div class="col-4 left">
                         <div class="left_content d-flex align-items-center mb-2">
                             <nav class="navbar mark p-1 me-2">
                                 <span class="navbar-toggler-icon" style="height: 20px; width: 20px; color: #faa91e;"></span>
                             </nav>
                             <p class="h5 text-uppercase fw-semibold mb-0">Profile</p>
                         </div>
-                        <div class="text small fs-6">
-                                                            <p>Adaptive</p>
-                                                            <p>Creative</p>
-                                                    </div>
+                        <div class="text small h6 cv_summary">
+                            Adaptive                        </div>
                         <div class="left_content contact my-5">
                             <div class="row">
                                 <div class="container">
@@ -62,18 +59,20 @@
                                         </div>
                                         <div class="col">
                                             <h6 class="info_title mb-1">Email</h6>
-                                            <div class="info_text small" id="email_cv">
-                                                paulaml117@gmail.com                                            </div>
+                                            <div class="info_text small">
+                                                <a id="email_cv" style="word-break: break-all; white-space: normal; color: #333; text-decoration: none;" href="mailto:paulaml117@gmail.com">
+                                                    paulaml117@gmail.com                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row align-items-center mb-3">
                                         <div class="col-auto">
-                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <i class="bi bi-globe"></i>
                                         </div>
                                         <div class="col">
-                                            <h6 class="info_title mb-1">Location</h6>
-                                            <div class="info_text small" id="city_cv">
-                                                Bien Hoa                                            </div>
+                                            <h6 class="info_title mb-1">Web</h6>
+                                            <div class="info_text small" id="cv_websites">
+                                                                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +91,7 @@
                                                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 right border-start ps-4">
+                    <div class="col-8 right border-start ps-4">
                         <div class="left_content d-flex align-items-center mb-2">
                             <nav class="navbar mark p-1 me-2">
                                 <span class="navbar-toggler-icon" style="height: 20px; width: 20px; color: #faa91e;"></span>
@@ -101,23 +100,26 @@
                         </div>
                         <div class="right_content mb-4">
                                                             <div class="ex_block d-flex mb-4 align-items-start">
-                                    <div class="dot ms-2 me-3 d-flex align-items-center justify-content-center" style="width: 24px; height: 24px; font-size: 18px; font-weight: bold; color: #faa91e;">
+                                    <div class="dot ms-2 me-3 d-flex align-items-center justify-content-between" style="width: 24px; height: 24px; font-size: 18px; font-weight: bold; color: #faa91e;">
                                         +
                                     </div>
                                     <div class="inform">
-                                        <div class="inform_top d-flex justify-content-between align-items-center">
+                                        <div class="inform_top d-flex justify-content-between align-items-center mb-1" style="text-align:start;">
                                             <div class="title fw-bold cv_location" style="font-size: 1.1rem; color: #333;">
                                                 Dream                                            </div>
                                             <div class="date small bg-orange-light text-white px-2 py-1 rounded" style="font-size: 0.85rem;">
                                                 <span class="start_date_cv">November 2011</span>
-                                                - <span class="end_date_cv">September 2019</span>
+                                                to
+                                                <span class="end_date_cv">September 2019</span>
                                             </div>
                                         </div>
                                         <div class="inform_bottom">
-                                            <h6 class="sub_title text-orange mt-0 mb-1 cv_title" style="font-size: 1rem;">
-                                                Intern                                            </h6>
-                                            <h6 class="sub_title text-orange mt-0 mb-1 cv_employer" style="font-size: 1rem;">
-                                                Software engineer                                            </h6>
+                                            <h6 class="sub_title text-orange mt-0 mb-1" style="font-size: 1rem;">
+                                                <span class="cv_title">Intern</span>,
+                                                <span class="cv_employer">Software engineer</span>
+                                            </h6>
+                                            <div class="text small text-muted" style="font-size: 0.9rem; line-height: 1.5;">
+                                                A modern job calls for a modern resume. Show employers that you're up to date and make a great first impression by selecting the right template.                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -134,18 +136,52 @@
                                         +
                                     </div>
                                     <div class="inform">
-                                        <div class="title fw-bold cv_degree" style="font-size: 1.1rem; color: #333;">
-                                            Bachelor in <span class="cv_field_study">CS</span>
+                                        <div class="title fw-bold" style="font-size: 1.1rem; color: #333;">
+                                            <span class="cv_degree">Bachelor</span>
+                                            in
+                                            <span class="cv_field_study">CS</span>
                                         </div>
-                                        <h6 class="sub_title text-orange mt-1 mb-1 cv_uni" style="font-size: 1rem;">
-                                            Ho Chi Minh University of Technology                                        </h6>
-                                        <h6 class="sub_title text-orange mt-1 mb-1 cv_city" style="font-size: 1rem;">
-                                            HCM                                        </h6>
-                                        <div class="date small bg-orange-light text-white px-2 py-1 rounded mt-2 cv_year" style="font-size: 0.85rem;">
-                                            August 2021                                        </div>
+                                        <h6 class="sub_title text-orange mt-1 mb-1" style="font-size: 1rem;">
+                                            <span class="cv_uni">Lorem</span>
+                                            University
+                                        </h6>
+                                        <div class="text small text-muted" style="font-size: 0.9rem; line-height: 1.5;">
+                                            BU has been educating students of all kinds for more than 150 years: undergraduates, international scholars, master's and doctoral degree candidates.                                        </div>
+                                        <div class="date small bg-orange-light text-white px-2 py-1 rounded mt-2" style="font-size: 0.85rem;">
+                                            Expected in <span class="cv_year">August 2021</span>
+                                        </div>
                                     </div>
                                 </div>
                                                     </div>
+                        <div class="left_content d-flex align-items-center mb-2">
+                            <nav class="navbar mark p-1 me-2">
+                                <span class="navbar-toggler-icon" style="height: 20px; width: 20px; color: #faa91e;"></span>
+                            </nav>
+                            <p class="h5 text-uppercase fw-semibold mb-0">Skills</p>
+                        </div>
+                        <div class="right_content skills row mb-4">
+                            <div class="skill col gap-2 mb-3">
+                                <div class="skill_content">
+                                    <div class="title small text-muted row h6 skills-list">
+                                                                                    <div>Teamwork and collaboration</div>
+                                                                                    <div>Friendly, positive attitude</div>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left_content d-flex align-items-center mb-4">
+                            <nav class="navbar mark p-1 me-2">
+                                <span class="navbar-toggler-icon" style="height: 20px; width: 20px; color: #faa91e;"></span>
+                            </nav>
+                            <p class="h5 text-uppercase fw-semibold mb-0">Interests &amp; Hobby</p>
+                        </div>
+                        <div class="right_content hobby d-flex justify-content-between">
+                            <i class="bi bi-film fs-3"></i>
+                            <i class="bi bi-bicycle fs-3"></i>
+                            <i class="bi bi-book fs-3"></i>
+                            <i class="bi bi-headphones fs-3"></i>
+                            <i class="bi bi-camera fs-3"></i>
+                        </div>
                     </div>
                 </div>
             </div>

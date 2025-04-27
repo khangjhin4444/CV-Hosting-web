@@ -254,7 +254,7 @@ try {
             echo '</div>';
             echo "
                     <div class='temp-buttons'>
-                      <button class='edit-btn' >Delete</button>
+                      <button class='edit-btn' onclick='deleteTemplate(" . $temp['id'] . ', "' . $userId . "\")'>Delete</button>
                       
                       <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ', "' . $temp['template_name'] . "\")'>Share</button>
                     </div>
@@ -287,7 +287,16 @@ try {
         .then(response => response.json())
         .then(result => {
           if (result.success) {
-            window.location.href = result.link;
+            navigator.clipboard.writeText(result.link)
+                .then(() => {
+                    alert('Share link copied to clipboard!');
+                    window.open(result.link, '_blank');
+                })
+                .catch(err => {
+                    alert('Failed to copy link to clipboard: ' + err);
+                    console.error('Clipboard error:', err);
+                });
+            
           } else {
             alert('Error sharing CV: ' + result.message);
           }
@@ -297,6 +306,44 @@ try {
           console.error('Error:', error);
         });
     }
+
+    function deleteTemplate(cvId, userId) {
+    if (!confirm('Are you sure you want to delete this CV?')) {
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('cv_id', cvId);
+    formData.append('user_id', userId);
+
+    fetch('/CV-Hosting-web-main/public/index.php?page=delete_cv', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.text().then(text => {
+                throw new Error(`Server error: ${response.statusText} (${response.status})\nResponse: ${text}`);
+            });
+        }
+        return response.json();
+    })
+    .then(result => {
+        if (result.success) {
+            alert('CV deleted successfully!');
+            // Reload the page to reflect changes
+            window.location.reload();
+        } else {
+            alert('Error deleting CV: ' + result.message);
+            console.error('Delete failed:', result);
+        }
+    })
+    .catch(error => {
+        alert('Failed to delete CV: ' + error.message);
+        console.error('Error:', error);
+    });
+}
+
   </script>
 </body>
 

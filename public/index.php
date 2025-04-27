@@ -85,6 +85,9 @@ switch ($page) {
     case 'generate_share_link':
         require_once __DIR__ . '/../app/views/generate_share_link.php';
         break;
+    case 'delete_cv':
+        require_once __DIR__ . '/../app/views/delete_cv.php';
+        break;
     default:
 
         break;

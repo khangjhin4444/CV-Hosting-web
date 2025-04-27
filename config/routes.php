@@ -79,6 +79,11 @@ switch ($page) {
         $controller = new HomeController();
         $controller->generate_share_link();
         break;
+    case 'delete_cv':
+
+        $controller = new HomeController();
+        $controller->delete_cv();
+        break;
         
     default:
         $controller = new HomeController();
