@@ -1,16 +1,10 @@
 <?php
 
-
-
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../../config/constant.php';
 
-
 $user = $_SESSION['user'];
 $userId = $_SESSION['user']['id'];
-
-
-
 
 $email = htmlspecialchars($user['email']);
 
@@ -26,72 +20,72 @@ $templates = [];
 $userCVs = [];
 
 try {
-  $stmt = $conn->prepare("SELECT * FROM cvs WHERE user_id = ?");
+  $stmt = $conn->prepare('SELECT * FROM cvs WHERE user_id = ?');
   $stmt->execute([$userId]);
   $cvs = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $i = 1;
-  foreach ($cvs as $cv){
+  foreach ($cvs as $cv) {
     $userCVs[$cv['cv_id']] = $cv;
     $templates[] = [
-        'id' => $cv['cv_id'],
-        'template_name' => "cv_" . htmlspecialchars($cv['content']),
+      'id' => $cv['cv_id'],
+      'template_name' => 'cv_' . htmlspecialchars($cv['content']),
     ];
     $i++;
   }
 
   foreach ($templates as $template) {
     $templateId = $template['id'];
-    
+
     if (isset($userCVs[$templateId])) {
-        $cvId = $templateId;
-        
-        // Fetch heading
-        $stmt = $conn->prepare("SELECT * FROM personal_info WHERE cv_id = ?");
-        $stmt->execute([$cvId]);
-        $heading = $stmt->fetch(PDO::FETCH_ASSOC);
+      $cvId = $templateId;
 
-        // Fetch working history
-        $stmt = $conn->prepare("SELECT * FROM working_history WHERE cv_id = ?");
-        $stmt->execute([$cvId]);
-        $working_history = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      // Fetch heading
+      $stmt = $conn->prepare('SELECT * FROM personal_info WHERE cv_id = ?');
+      $stmt->execute([$cvId]);
+      $heading = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Fetch education
-        $stmt = $conn->prepare("SELECT * FROM education WHERE cv_id = ?");
-        $stmt->execute([$cvId]);
-        $education = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      // Fetch working history
+      $stmt = $conn->prepare('SELECT * FROM working_history WHERE cv_id = ?');
+      $stmt->execute([$cvId]);
+      $working_history = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Fetch skills
-        $stmt = $conn->prepare("SELECT skill_name FROM skills WHERE cv_id = ?");
-        $stmt->execute([$cvId]);
-        $skills = $stmt->fetchAll(PDO::FETCH_COLUMN);
+      // Fetch education
+      $stmt = $conn->prepare('SELECT * FROM education WHERE cv_id = ?');
+      $stmt->execute([$cvId]);
+      $education = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Fetch summary
-        $stmt = $conn->prepare("SELECT summary_text FROM summaries WHERE cv_id = ?");
-        $stmt->execute([$cvId]);
-        $summary = $stmt->fetchAll(PDO::FETCH_COLUMN);
+      // Fetch skills
+      $stmt = $conn->prepare('SELECT skill_name FROM skills WHERE cv_id = ?');
+      $stmt->execute([$cvId]);
+      $skills = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
-        // Fetch additional
-        $stmt = $conn->prepare("SELECT * FROM additional WHERE cv_id = ?");
-        $stmt->execute([$cvId]);
-        $finalize = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        // Store data 
-        $userCVs[$templateId]['data'] = [
-            'heading' => $heading,
-            'working_history' => $working_history,
-            'education' => $education,
-            'skills' => $skills,
-            'summary' => $summary,
-            'finalize' => $finalize
-        ];
+      // Fetch summary
+      $stmt = $conn->prepare('SELECT summary_text FROM summaries WHERE cv_id = ?');
+      $stmt->execute([$cvId]);
+      $summary = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+      // Fetch additional
+      $stmt = $conn->prepare('SELECT * FROM additional WHERE cv_id = ?');
+      $stmt->execute([$cvId]);
+      $finalize = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      // Store data
+      $userCVs[$templateId]['data'] = [
+        'heading' => $heading,
+        'working_history' => $working_history,
+        'education' => $education,
+        'skills' => $skills,
+        'summary' => $summary,
+        'finalize' => $finalize,
+      ];
     } else {
-        // If no CV exists for this template, set data as null or handle accordingly
-        $userCVs[$templateId]['data'] = null;
+      // If no CV exists for this template, set data as null or handle accordingly
+      $userCVs[$templateId]['data'] = null;
     }
   }
-  
-} catch (Exception $e){
-  die('Error fetching ' . $e->getMessage());
+
+} catch (Exception $e) {
+  exit('Error fetching ' . $e->getMessage());
 }
 
 ?>
@@ -225,86 +219,84 @@ try {
   </section>
   <section class="pb-5 h-100">
     <div class="container h-100">
-      <div class="row h-100">
+      <div class="row h-100 justify-content-center">
         <?php foreach ($templates as $temp) {
-          
+
           $cvId = $temp['id'];
           $cvData = $userCVs[$cvId]['data'] ?? null;
 
           if ($cvData) {
-              // Gán dữ liệu cho template
-              $heading = $cvData['heading'];
-              $working_history = $cvData['working_history'];
-              $education = $cvData['education'];
-              $skills = $cvData['skills'];
-              $summary = $cvData['summary'];
-              $finalize = $cvData['finalize'];
+            // Gán dữ liệu cho template
+            $heading = $cvData['heading'];
+            $working_history = $cvData['working_history'];
+            $education = $cvData['education'];
+            $skills = $cvData['skills'];
+            $summary = $cvData['summary'];
+            $finalize = $cvData['finalize'];
+            echo "<div class='col-3 temp-wrapper p-0'>";
+            echo "<div class='temp' data-id='" . $temp['id'] . "'>";
 
-              echo "<div class='col temp-wrapper p-0'>";
-              echo "<div class='temp' data-id='" . $temp['id'] . "'>";
-              
-              // Include template và truyền dữ liệu
-                ob_start();
+            // Include template và truyền dữ liệu
+            ob_start();
 
-                // Thực thi file PHP
-                include __DIR__ . "/../../public/templates/" . $temp['template_name'] . ".php";
+            // Thực thi file PHP
+            include __DIR__ . '/../../public/templates/' . $temp['template_name'] . '.php';
 
-                // Lấy toàn bộ nội dung sau khi đã render
-                $fullContent = ob_get_clean();
+            // Lấy toàn bộ nội dung sau khi đã render
+            $fullContent = ob_get_clean();
 
-                // Tìm phần body
-                echo "<div id='cv-content-" . $temp['id'] . "'>";
-                if (preg_match('/<body[^>]*>(.*?)<\/body>/is', $fullContent, $matches)) {
-                    $bodyContent = $matches[1];
-                    echo $bodyContent;
-                }
-                echo "</div>";
-              echo "
+            // Tìm phần body
+            echo "<div id='cv-content-" . $temp['id'] . "'>";
+            if (preg_match('/<body[^>]*>(.*?)<\/body>/is', $fullContent, $matches)) {
+              $bodyContent = $matches[1];
+              echo $bodyContent;
+            }
+            echo '</div>';
+            echo "
                     <div class='temp-buttons'>
                       <button class='edit-btn' >Delete</button>
                       
-                      <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ", \"" . $temp['template_name'] . "\")'>Share</button>
+                      <button class='share-btn' onclick='shareTemplate(" . $temp['id'] . ', "' . $temp['template_name'] . "\")'>Share</button>
                     </div>
                   </div>
                 </div>
             ";
-              }
+          }
         } ?>
       </div>
     </div>
   </section>
   <!-- <script src="/CV-Hosting-web-main/public/js/my_cvs.js"></script> -->
-   <script>
+  <script>
     function shareTemplate(cvId, template) {
-    const cvElement = document.getElementById('cv-content-' + cvId);
-    if (!cvElement) {
+      const cvElement = document.getElementById('cv-content-' + cvId);
+      if (!cvElement) {
         alert('Error: CV content not found.');
         return;
-    }
-    const cvHtml = cvElement.innerHTML;
+      }
+      const cvHtml = cvElement.innerHTML;
 
-    const formData = new FormData();
-    formData.append('cv_html', cvHtml);
-    formData.append('template', template);
+      const formData = new FormData();
+      formData.append('cv_html', cvHtml);
 
-    fetch('/CV-Hosting-web-main/public/index.php?page=generate_share_link', {
+      fetch('/CV-Hosting-web-main/public/index.php?page=generate_share_link', {
         method: 'POST',
         body: formData
-    })
-    .then(response => response.json())
-    .then(result => {
-        if (result.success) {
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.success) {
             window.location.href = result.link;
-        } else {
+          } else {
             alert('Error sharing CV: ' + result.message);
-        }
-    })
-    .catch(error => {
-        alert('An error occurred while sharing the CV. Please try again.');
-        console.error('Error:', error);
-    });
-}
-    </script>
+          }
+        })
+        .catch(error => {
+          alert('An error occurred while sharing the CV. Please try again.');
+          console.error('Error:', error);
+        });
+    }
+  </script>
 </body>
 
 </html>

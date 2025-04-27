@@ -278,7 +278,8 @@ color: #444;">
         </div>
         <p class="m-0"><a href="mailto:examplemail@mail.com" class="link-secondary text-decoration-none" id="email_cv">examplemail@mail.com</a>
         </p>
-        <p class="link-secondary text-decoration-none m-0" id="phone_cv">Lorem ipsum</p> <h5 class ="text-muted link-secondary cv_websites"></h5>
+        <p class="link-secondary text-decoration-none m-0" id="phone_cv">Lorem ipsum</p>
+        <p class ="text-decoration-none m-0 link-secondary cv_websites"></p>
     </header>
 
     <main class="container py-3">

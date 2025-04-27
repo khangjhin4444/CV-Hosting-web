@@ -5,6 +5,15 @@
   padding: 20px;
 } */
 
+.cv-preview-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 430px;
+  background-color: white;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
 .temp-wrapper {
   display: flex;
   flex-direction: column;
