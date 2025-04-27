@@ -57,7 +57,7 @@ CREATE TABLE education (
     degree VARCHAR(100),
     field_study VARCHAR(100),
     gpa VARCHAR(10),
-    graduation_date VARCHAR(7), 
+    graduation_date VARCHAR(255), 
     FOREIGN KEY (cv_id) REFERENCES cvs(cv_id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
