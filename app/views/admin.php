@@ -1,13 +1,23 @@
 <?php
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/constant.php';
 
-// Kiểm tra quyền admin
+
+
+$authController = new AuthController($conn);
+
+
+// Kiểm tra đăng xuất
+if (isset($_GET['action']) && $_GET['action'] === 'logout') {
+  $authController->logout();
+  header('Location: ' . BASE_URL . '/index.php?page=home');
+  exit;
+}
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
   header('Location: /CV-Hosting-web-main/public/index.php');
   exit;
 }
 
-// Kết nối database
-require_once __DIR__ . '/../../config/database.php';
 
 
 // Lấy danh sách người dùng và số CV
@@ -86,9 +96,11 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
     <h1>Admin Dashboard - CV Hosting</h1>
   </header>
 
-  <nav class="nav nav-custom d-flex flex-wrap">
+  <nav class="nav nav-custom d-flex flex-wrap justify-content-between align-items-center">
     <a href="#user-management">User Management</a>
-
+    <p class="h5 h-100 m-0"><a href="<?= BASE_URL ?>/index.php?page=home&action=logout"
+        class="nav-link text-center text-white">Log Out</a>
+    </p>
   </nav>
 
   <div class="container my-4">
@@ -101,6 +113,7 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
 
     <div class="section" id="user-management">
       <h2>User Management</h2>
+
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
