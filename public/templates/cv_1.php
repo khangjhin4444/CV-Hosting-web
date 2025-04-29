@@ -126,7 +126,10 @@ color: #444;">
                     <h5><a id="email_cv"
                             href="mailto:<?= htmlspecialchars($heading['email'] ?? 'lorem@ipsum.com') ?>"><?= htmlspecialchars($heading['email'] ?? 'lorem@ipsum.com') ?></a>
                     </h5>
-                    <h5 class="cv_mywebsites"><?= htmlspecialchars($finalize[0]['website'] ?? '') ?></h5>
+                    <?php if ($finalize[0]['website']) { ?>
+                        <h5 class="cv_mywebsites">www.<?= htmlspecialchars($finalize[0]['website']) ?></h5>
+                    <?php } ?>
+
                 </div>
             </header>
 
@@ -210,6 +213,41 @@ color: #444;">
                     </div>
                 </section>
             </main>
+            <?php if (!empty($finalize[0]['languages']) || !empty($finalize[0]['programming_languages'])) { ?>
+                <div class="container row languages-container">
+
+                    <?php if (!empty($finalize[0]['languages'])) { ?>
+                        <section class="cv_languages col-5">
+                            <div>
+                                <h2 class="h4">Languages</h2>
+                            </div>
+                            <div class="col-md-9 mb-3">
+                                <ul class="list-unstyled">
+                                    <li class="h5 mb-2">• <?= htmlspecialchars($finalize[0]['languages']) ?> </li>
+                                </ul>
+                            </div>
+                        </section>
+                    <?php } ?>
+
+                    <?php if (!empty($finalize[0]['programming_languages'])) {
+                        $prog_langs = explode(',', $finalize[0]['programming_languages']);
+                        ?>
+                        <section class="cv_pro_languages col-7">
+                            <div>
+                                <h2 class="h4">Programming Languages</h2>
+                            </div>
+                            <div class="col-md-9 mb-3">
+                                <ul class="list-unstyled">
+                                    <?php foreach ($prog_langs as $lang) { ?>
+                                        <li class="h5 mb-2">• <?= htmlspecialchars(trim($lang)) ?> </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </section>
+                    <?php } ?>
+
+                </div>
+            <?php } ?>
 
             <!-- Footer -->
             <footer id="ft" class="border-top text-center py-4 mt-4">
