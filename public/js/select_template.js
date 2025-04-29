@@ -2,7 +2,7 @@ let tempList = [{
     id: 1, name: "Template 1", src: `
   <link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_1.css" media="all" />
     <div data-id="1" class="cv-preview-wrapper temp justify-content-center align-items-center">
-    <div class="cv_template container-fluid" style="font-family: Georgia, serif;
+    <div class="cv_template  template-1 container-fluid" style="font-family: Georgia, serif;
 color: #444;">
         <!-- Header -->
         <header id="hd" class="row border-bottom pb-4 mb-4 d-flex">
@@ -883,26 +883,26 @@ confirmBtn.addEventListener('click', () => {
         let templateId = chosenTemplate.dataset.id;
         // console.log(templateId);
         // window.location.href = `?page=experience.php&template=${templateId}&category=${categoryId}`;
-        fetch('/CV-Hosting-web-main/public/index.php?page=select_template', { 
+        fetch('/CV-Hosting-web-main/public/index.php?page=select_template', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ templateId: templateId }),
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                console.log('Template ID saved to session successfully');
-                // Redirect to another page if needed
-                window.location.href = '/CV-Hosting-web-main/public/index.php?page=information';
-            } else {
-                console.error('Failed to save Template ID:', data.msg);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Template ID saved to session successfully');
+                    // Redirect to another page if needed
+                    window.location.href = '/CV-Hosting-web-main/public/index.php?page=information';
+                } else {
+                    console.error('Failed to save Template ID:', data.msg);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         let xhr = new XMLHttpRequest();
         xhr.open("GET", "?tempId=" + templateId, true);
 

@@ -2,7 +2,7 @@ let tempList = [{
     id: 1, name: "Template 1", src: `
     <link rel="stylesheet" type="text/css" href="/CV-Hosting-web-main/public/css/cv_1.css" media="all" />
     <div data-id="1" class="cv-preview-wrapper temp justify-content-center align-items-center">
-    <div class="cv_template container-fluid" style="font-family: Georgia, serif;
+    <div class="cv_template  template-1 container-fluid" style="font-family: Georgia, serif;
 color: #444;">
     <!-- Header -->
     <header id="hd" class="row border-bottom pb-4 mb-4 display-flex">
@@ -721,7 +721,7 @@ color: #444;">
             </div><!--//main-body-->
         </div>
     </div></div>` }
-    ];
+];
 
 
 window.onload = function () {
@@ -963,7 +963,7 @@ const progressElement = document.querySelector('.sidebar .progress-bar .progress
 
 
 buttonStep1.addEventListener('click', () => {
-    if (!document.getElementById("name").value || !document.getElementById("surname").value || !document.getElementById("phone").value || !document.getElementById("email").value) { 
+    if (!document.getElementById("name").value || !document.getElementById("surname").value || !document.getElementById("phone").value || !document.getElementById("email").value) {
         alert("Please fill all required fields")
         return
     }
@@ -975,7 +975,7 @@ buttonStep2a.addEventListener('click', () => {
     handleButtonClick('step2b')
 })
 buttonStep2b.addEventListener('click', () => {
-    if (!document.getElementById("title").value || !document.getElementById("employer").value || document.getElementById('startMonth').selectedIndex === 0 || document.getElementById('startYear').selectedIndex === 0 || (document.getElementById("endMonth").selectedIndex === 0 && document.getElementById("endYear").selectedIndex === 0)) { 
+    if (!document.getElementById("title").value || !document.getElementById("employer").value || document.getElementById('startMonth').selectedIndex === 0 || document.getElementById('startYear').selectedIndex === 0 || (document.getElementById("endMonth").selectedIndex === 0 && document.getElementById("endYear").selectedIndex === 0)) {
         alert("Please fill all required fields")
         return
     }
@@ -1017,7 +1017,7 @@ buttonStep3a.addEventListener('click', () => {
     buttonStep3b.innerHTML = "NEXT";
 })
 buttonStep3b.addEventListener('click', () => {
-    if (!document.getElementById("institution").value || !document.getElementById("degree").value || !document.getElementById('field-study').value || document.getElementById("gradMonth").selectedIndex === 0 || document.getElementById('gradYear').selectedIndex === 0) { 
+    if (!document.getElementById("institution").value || !document.getElementById("degree").value || !document.getElementById('field-study').value || document.getElementById("gradMonth").selectedIndex === 0 || document.getElementById('gradYear').selectedIndex === 0) {
         alert("Please fill all required fields")
         return
     }
@@ -1252,7 +1252,7 @@ backStep4b.addEventListener('click', () => {
 backStep5a.addEventListener('click', () => {
     skills_content.length = 0
     handleButtonClick('step4b')
-    
+
     changeSideBar('4')
     progressElement.style.width = "60%"
 })
@@ -1262,7 +1262,7 @@ backStep5b.addEventListener('click', () => {
 backStep6.addEventListener('click', () => {
     summary_content.length = 0
     handleButtonClick('step5b')
-    
+
     changeSideBar('5')
     progressElement.style.width = "80%"
 })
@@ -1338,14 +1338,15 @@ let skillExamples = [
 ];
 
 let summaryExamples = [
-    { name: 'Teamwork and collaboration', job: ['IT', 'Teacher'] },
-    { name: 'Friendly, positive attitude', job: ['IT', 'Teacher'] },
-    { name: 'Problem-solving', job: ['IT', 'Teacher'] },
-    { name: 'Time management', job: ['IT', 'Teacher'] },
-    { name: 'Over thinking', job: ['IT'] },
-    { name: 'Creative', job: ['IT'] },
-    { name: 'Adaptive', job: ['IT'] }
+    { name: 'Passionate about building strong teams and fostering collaboration across departments.', job: ['IT', 'Teacher'] },
+    { name: 'Known for maintaining a positive mindset even in high-pressure situations.', job: ['IT', 'Teacher'] },
+    { name: 'Driven by a love for solving complex problems and delivering practical results.', job: ['IT', 'Teacher'] },
+    { name: 'Highly organized with a proven ability to manage competing priorities and meet tight deadlines.', job: ['IT', 'Teacher'] },
+    { name: 'Naturally detail-oriented, always looking deeper to uncover hidden insights.', job: ['IT'] },
+    { name: 'A creative thinker who brings fresh ideas and new approaches to traditional challenges.', job: ['IT'] },
+    { name: 'Thrives in dynamic environments by adapting quickly to change and learning new skills.', job: ['IT'] }
 ];
+
 
 let searchInput = document.querySelector(".search-input");
 let searchBtn = document.querySelector(".search-btn");
@@ -1432,9 +1433,9 @@ function renderSummaryStep5(job) {
 
 // Quill editor logic remains unchanged unless you report issues with it
 document.addEventListener("DOMContentLoaded", function () {
-  const skillSelectedContents = new Set();
-  const summarySelectedContents = new Set();
-  
+    const skillSelectedContents = new Set();
+    const summarySelectedContents = new Set();
+
 
     function updateQuillEditor(quillInstance, selectedSet) {
         const html = `<ul>${Array.from(selectedSet)
@@ -1581,143 +1582,143 @@ document.querySelector('.certifications').addEventListener('input', function () 
 
 
 buttonStep6.addEventListener('click', () => {
-  // Kiểm tra các trường bắt buộc
-//   if (!document.getElementById('name').value || 
-//       !document.getElementById('surname').value || 
-//       !document.getElementById('phone').value || 
-//       !document.getElementById('email').value) {
-//       alert('Please fill in all required fields (Name, Surname, Phone, Email).');
-//       return;
-//   }
+    // Kiểm tra các trường bắt buộc
+    //   if (!document.getElementById('name').value || 
+    //       !document.getElementById('surname').value || 
+    //       !document.getElementById('phone').value || 
+    //       !document.getElementById('email').value) {
+    //       alert('Please fill in all required fields (Name, Surname, Phone, Email).');
+    //       return;
+    //   }
 
-  // Thu thập heading
-  const heading = {
-      name: document.getElementById('name').value ,
-      surname: document.getElementById('surname').value ,
-      city: document.getElementById('city').value || '',
-      country: document.getElementById('country').value || '',
-      postcode: document.getElementById('postcode').value || '',
-      phone: document.getElementById('phone').value ,
-      email: document.getElementById('email').value ,
-      address: ''
-  };
+    // Thu thập heading
+    const heading = {
+        name: document.getElementById('name').value,
+        surname: document.getElementById('surname').value,
+        city: document.getElementById('city').value || '',
+        country: document.getElementById('country').value || '',
+        postcode: document.getElementById('postcode').value || '',
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        address: ''
+    };
 
-  // Thu thập workingHistory
-  const startMonth = document.getElementById('startMonth').value;
-  const startYear = document.getElementById('startYear').value;
-  const endMonth = document.getElementById('endMonth').value;
-  const endYear = document.getElementById('endYear').value;
-  const currentlyWorking = document.getElementById('currentlyWorking').checked;
+    // Thu thập workingHistory
+    const startMonth = document.getElementById('startMonth').value;
+    const startYear = document.getElementById('startYear').value;
+    const endMonth = document.getElementById('endMonth').value;
+    const endYear = document.getElementById('endYear').value;
+    const currentlyWorking = document.getElementById('currentlyWorking').checked;
 
-  const workingHistory = [
-      {
-          title: document.getElementById('title').value || '',
-          employer: document.getElementById('employer').value || '',
-          location: document.getElementById('location').value || '',
-          start_date: startMonth && startYear && startMonth !== 'Month' && startYear !== 'Year' ? `${startMonth} ${startYear}` : '',
-          end_date: currentlyWorking ? 'Present' : (endMonth && endYear && endMonth !== 'Month' && endYear !== 'Year' ? `${endMonth} ${endYear}` : '')
-      }
-  ];
+    const workingHistory = [
+        {
+            title: document.getElementById('title').value || '',
+            employer: document.getElementById('employer').value || '',
+            location: document.getElementById('location').value || '',
+            start_date: startMonth && startYear && startMonth !== 'Month' && startYear !== 'Year' ? `${startMonth} ${startYear}` : '',
+            end_date: currentlyWorking ? 'Present' : (endMonth && endYear && endMonth !== 'Month' && endYear !== 'Year' ? `${endMonth} ${endYear}` : '')
+        }
+    ];
 
-  // Thu thập education
-  const education = Array.isArray(eduSum) ? eduSum.map(edu => ({
-      institution: edu.data.institution || '',
-      school_location: edu.data.location || '',
-      degree: edu.data.degree || '',
-      field_study: edu.data.fieldStudy || '',
-      graduation_date: edu.data.gradMonth && edu.data.gradYear ? `${edu.data.gradMonth} ${edu.data.gradYear}` : ''
-  })) : [];
+    // Thu thập education
+    const education = Array.isArray(eduSum) ? eduSum.map(edu => ({
+        institution: edu.data.institution || '',
+        school_location: edu.data.location || '',
+        degree: edu.data.degree || '',
+        field_study: edu.data.fieldStudy || '',
+        graduation_date: edu.data.gradMonth && edu.data.gradYear ? `${edu.data.gradMonth} ${edu.data.gradYear}` : ''
+    })) : [];
 
-  // Thu thập skills
-  const skills = skills_content;
+    // Thu thập skills
+    const skills = skills_content;
 
-  // Thu thập summary
-  const summary = summary_content; 
+    // Thu thập summary
+    const summary = summary_content;
 
-  // Thu thập additional
-  const websiteInput = document.querySelector('.websites') ? document.querySelector('.websites').value : '';
-  const certificationInput = document.querySelector('.certifications') ? document.querySelector('.certifications').value : '';
-  const languagesInput = document.querySelector('.languages') ? document.querySelector('.languages').value : '';
-  const proLanguagesInput = document.querySelector('.pro-languages') ? document.querySelector('.pro-languages').value : '';
-  const yourOwnInput = document.querySelector('.checked-input[id="6"]') ? document.querySelector('.checked-input[id="6"]').value : '';
+    // Thu thập additional
+    const websiteInput = document.querySelector('.websites') ? document.querySelector('.websites').value : '';
+    const certificationInput = document.querySelector('.certifications') ? document.querySelector('.certifications').value : '';
+    const languagesInput = document.querySelector('.languages') ? document.querySelector('.languages').value : '';
+    const proLanguagesInput = document.querySelector('.pro-languages') ? document.querySelector('.pro-languages').value : '';
+    const yourOwnInput = document.querySelector('.checked-input[id="6"]') ? document.querySelector('.checked-input[id="6"]').value : '';
 
-  const additional = {
-      website: websiteInput || '',
-      certification: certificationInput || '',
-      languages: languagesInput ? languagesInput.split(',').map(x => x.trim()).filter(x => x) : [],
-      programming_languages: proLanguagesInput ? proLanguagesInput.split(',').map(x => x.trim()).filter(x => x) : [],
-      your_own: yourOwnInput || ''
-  };
+    const additional = {
+        website: websiteInput || '',
+        certification: certificationInput || '',
+        languages: languagesInput ? languagesInput.split(',').map(x => x.trim()).filter(x => x) : [],
+        programming_languages: proLanguagesInput ? proLanguagesInput.split(',').map(x => x.trim()).filter(x => x) : [],
+        your_own: yourOwnInput || ''
+    };
 
-  // Chuẩn bị cvData
-  const cvData = {
-      heading: heading,
-      working_history: workingHistory,
-      education: education,
-      skills: skills,
-      summary: summary,
-      additional: additional,
-  };
+    // Chuẩn bị cvData
+    const cvData = {
+        heading: heading,
+        working_history: workingHistory,
+        education: education,
+        skills: skills,
+        summary: summary,
+        additional: additional,
+    };
 
-  // Debug dữ liệu trước khi gửi
-  console.log('cvData:', JSON.stringify(cvData, null, 2));
+    // Debug dữ liệu trước khi gửi
+    console.log('cvData:', JSON.stringify(cvData, null, 2));
 
-  // Gửi cvData tới server
-  saveCV(cvData);
+    // Gửi cvData tới server
+    saveCV(cvData);
 });
 
 function saveCV(cvData) {
-  const buttonStep6 = document.getElementById('btn-step6');
+    const buttonStep6 = document.getElementById('btn-step6');
 
-  if (buttonStep6) {
-      buttonStep6.disabled = true;
-      buttonStep6.textContent = 'Saving...';
-  } else {
-      console.warn('Button with ID btn-step6 not found');
-  }
+    if (buttonStep6) {
+        buttonStep6.disabled = true;
+        buttonStep6.textContent = 'Saving...';
+    } else {
+        console.warn('Button with ID btn-step6 not found');
+    }
 
-  fetch('/CV-Hosting-web-main/app/controllers/CVController.php?action=createCV', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-      },
-      body: JSON.stringify(cvData)
-  })
-  .then(response => {
-      if (!response.ok) {
-          return response.text().then(text => {
-              throw new Error(`HTTP error! Status: ${response.status}, Response: ${text}`);
-          });
-      }
-      const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/json')) {
-          return response.text().then(text => {
-              throw new Error(`Response is not JSON. Received: ${text}`);
-          });
-      }
-      return response.json();
-  })
-  .then(data => {
-      if (data.success) {
-          alert('CV created successfully!' );
-          localStorage.clear()
-          window.location.href = '/CV-Hosting-web-main/public/index.php?page=my_cvs';
-      } else {
-          throw new Error(data.msg || 'Unknown error from server');
-      }
-  })
-  .catch(error => {
-      console.error('Error details:', {
-          message: error.message,
-          stack: error.stack
-      });
-      alert(`Failed to create CV: ${error.message}. Please try again.`);
-  })
-  .finally(() => {
-      if (buttonStep6) {
-          buttonStep6.disabled = false;
-          buttonStep6.textContent = 'NEXT';
-      }
-  });
+    fetch('/CV-Hosting-web-main/app/controllers/CVController.php?action=createCV', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(cvData)
+    })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(text => {
+                    throw new Error(`HTTP error! Status: ${response.status}, Response: ${text}`);
+                });
+            }
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                return response.text().then(text => {
+                    throw new Error(`Response is not JSON. Received: ${text}`);
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                alert('CV created successfully!');
+                localStorage.clear()
+                window.location.href = '/CV-Hosting-web-main/public/index.php?page=my_cvs';
+            } else {
+                throw new Error(data.msg || 'Unknown error from server');
+            }
+        })
+        .catch(error => {
+            console.error('Error details:', {
+                message: error.message,
+                stack: error.stack
+            });
+            alert(`Failed to create CV: ${error.message}. Please try again.`);
+        })
+        .finally(() => {
+            if (buttonStep6) {
+                buttonStep6.disabled = false;
+                buttonStep6.textContent = 'NEXT';
+            }
+        });
 };
