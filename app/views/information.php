@@ -2,10 +2,10 @@
 $tempId = $_SESSION['tempId'];
 // echo $tempId;
 if (isset($_GET['tempId'])) {
-    $tempId = $_GET['tempId'];
+  $tempId = $_GET['tempId'];
 }
-require_once __DIR__.'/../../config/database.php';
-require_once __DIR__.'/../../config/constant.php';
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/constant.php';
 
 ?>
 
@@ -578,18 +578,115 @@ require_once __DIR__.'/../../config/constant.php';
                 <div style="font-size: 20px;">Languages</div>
               </div>
               <div class="col-12 col-lg-6">
-                <input class="checked-input languages" id="3" type="text">
+                <input class="checked-input languages" id="language-input" list="language-list" type="text">
+                <datalist id="language-list">
+                  <option value="English">
+                  <option value="Vietnamese">
+                  <option value="French">
+                  <option value="Spanish">
+                  <option value="German">
+                  <option value="Chinese">
+                  <option value="Japanese">
+                  <option value="Korean">
+                  <option value="Italian">
+                  <option value="Portuguese">
+                  <option value="Russian">
+                  <option value="Arabic">
+                  <option value="Hindi">
+                  <option value="Bengali">
+                  <option value="Urdu">
+                  <option value="Turkish">
+                  <option value="Dutch">
+                  <option value="Polish">
+                  <option value="Swedish">
+                  <option value="Norwegian">
+                  <option value="Danish">
+                  <option value="Finnish">
+                  <option value="Greek">
+                  <option value="Hebrew">
+                  <option value="Thai">
+                  <option value="Malay">
+                  <option value="Indonesian">
+                  <option value="Filipino">
+                  <option value="Czech">
+                  <option value="Hungarian">
+                  <option value="Romanian">
+                  <option value="Slovak">
+                  <option value="Ukrainian">
+                  <option value="Croatian">
+                  <option value="Bulgarian">
+                  <option value="Serbian">
+                  <option value="Slovenian">
+                  <option value="Lithuanian">
+                  <option value="Latvian">
+                  <option value="Estonian">
+                  <option value="Swahili">
+                  <option value="Persian (Farsi)">
+                  <option value="Pashto">
+                  <option value="Tamil">
+                  <option value="Telugu">
+                  <option value="Marathi">
+                  <option value="Gujarati">
+                  <option value="Punjabi">
+                  <option value="Kannada">
+                  <option value="Malayalam">
+                  <option value="Sinhala">
+                  <option value="Burmese">
+                  <option value="Khmer">
+                  <option value="Lao">
+                  <option value="Mongolian">
+                  <option value="Nepali">
+                  <option value="Amharic">
+                  <option value="Yoruba">
+                  <option value="Igbo">
+                  <option value="Zulu">
+                </datalist>
+
               </div>
             </div>
+
             <div class="row pt-4">
               <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
                 <input class="step6-check" type="checkbox" name="" id="4" style="width: 30px; height: 30px;">
-                <div style="font-size: 20px;">Programing Languages</div>
+                <div style="font-size: 20px;">Programming Languages</div>
               </div>
               <div class="col-12 col-lg-6">
-                <input class="checked-input pro-languages" id="4" type="text">
+                <input class="checked-input pro-languages" id="programming-input" list="programming-list" type="text">
+                <datalist id="programming-list">
+                  <option value="Python">
+                  <option value="JavaScript">
+                  <option value="Java">
+                  <option value="C">
+                  <option value="C++">
+                  <option value="C#">
+                  <option value="Go">
+                  <option value="Rust">
+                  <option value="TypeScript">
+                  <option value="Ruby">
+                  <option value="PHP">
+                  <option value="Swift">
+                  <option value="Kotlin">
+                  <option value="R">
+                  <option value="Scala">
+                  <option value="Perl">
+                  <option value="Haskell">
+                  <option value="Dart">
+                  <option value="Elixir">
+                  <option value="Lua">
+                  <option value="Shell Script">
+                  <option value="SQL">
+                  <option value="HTML">
+                  <option value="CSS">
+                  <option value="Assembly">
+                  <option value="MATLAB">
+                  <option value="VHDL">
+                  <option value="Verilog">
+                  <option value="Fortran">
+                  <option value="COBOL">
+                </datalist>
               </div>
             </div>
+
 
             <div class="row pt-4">
               <div class="col-12 col-lg-6 d-flex align-items-center gap-2">
@@ -603,7 +700,8 @@ require_once __DIR__.'/../../config/constant.php';
             </div>
           </div>
 
-          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container p-2" id="<?php echo $tempId; ?>" data-state="normal">
+          <div class="col-12 col-xxl-3 d-none d-xxl-block cv-container p-2" id="<?php echo $tempId; ?>"
+            data-state="normal">
             <!-- <img src="cv_template_img/Business-Analyst-Resume-Example-RNerd 1.png" alt="" srcset="">
             <p class="pt-2" style="color: blue;">Change templates</p> -->
           </div>
